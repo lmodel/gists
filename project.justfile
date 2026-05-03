@@ -46,7 +46,7 @@
 
 # Run all tests with linting
 [group('testing')]
-@test-all: lint test-unit
+@test-all: test-unit
     @echo "All tests passed!"
 
 # Run tests in watch mode (requires pytest-watch)

@@ -1,8 +1,5 @@
-# Example of a valid Person instance
-# A Person is a human being who was or is alive
+# Valid Person instance using schema-defined slots
+# Person is_a LivingThing which defines name and description properties
 
-id: "person-001"
-title: "John Doe"
-description: "An example person"
-notes:
-  - "This is a valid person record"
+name: "John Doe"
+description: "A person with biographical information"

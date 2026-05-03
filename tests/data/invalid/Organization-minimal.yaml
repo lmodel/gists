@@ -1,4 +1,5 @@
-# Invalid example: Missing title (if required by schema)
-# This example shows a minimal record that might be missing key fields
+# Invalid Organization: undefined properties not in schema
+# These are not valid GIST schema properties
 
-id: "org-invalid-001"
+not_a_real_field: "This property does not exist in GIST"
+undefined_attribute: 42

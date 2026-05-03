@@ -21,9 +21,9 @@ prefixes:
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   xsd: http://www.w3.org/2001/XMLSchema#
   owl: http://www.w3.org/2002/07/owl#
-  media-app: https://www.iana.org/assignments/media-types/application/
-  media-img: https://www.iana.org/assignments/media-types/image/
-  media-txt: https://www.iana.org/assignments/media-types/text/
+  media_app: https://www.iana.org/assignments/media-types/application/
+  media_img: https://www.iana.org/assignments/media-types/image/
+  media_txt: https://www.iana.org/assignments/media-types/text/
 
 default_prefix: gist
 default_range: string
@@ -44,45 +44,45 @@ enums:
     permissible_values:
       JSON:
         title: JSON
-        meaning: media-app:json
+        meaning: media_app:json
       LD_PLUS_JSON:
         title: JSON-LD
-        meaning: media-app:ld+json
+        meaning: media_app:ld+json
       N_QUADS:
         title: N-Quads
-        meaning: media-app:n-quads
+        meaning: media_app:n-quads
       N_TRIPLES:
         title: N-Triples
-        meaning: media-app:n-triples
+        meaning: media_app:n-triples
       RDF_PLUS_XML:
         title: RDF/XML
-        meaning: media-app:rdf+xml
+        meaning: media_app:rdf+xml
       SPARQL_RESULTS_PLUS_JSON:
         title: SPARQL 1.1 Query Results JSON
-        meaning: media-app:sparql-results+json
+        meaning: media_app:sparql-results+json
       SPARQL_RESULTS_PLUS_XML:
         title: SPARQL 1.1 Query Results XML
-        meaning: media-app:sparql-results+xml
+        meaning: media_app:sparql-results+xml
       TRIG:
         title: TriG
-        meaning: media-app:trig
+        meaning: media_app:trig
       JPG:
         title: JPG
-        meaning: media-img:jpg
+        meaning: media_img:jpg
       PNG:
         title: PNG
-        meaning: media-img:png
+        meaning: media_img:png
       CSV:
         title: CSV
-        meaning: media-txt:csv
+        meaning: media_txt:csv
       HTML:
         title: HTML
-        meaning: media-txt:html
+        meaning: media_txt:html
       PLAIN:
         title: Plain Text
-        meaning: media-txt:plain
+        meaning: media_txt:plain
       TURTLE:
         title: Turtle
-        meaning: media-txt:turtle
+        meaning: media_txt:turtle
     in_subset:
     - gist_media_types

@@ -1,6 +1,5 @@
-# Example of a valid System instance
-# A System is an arrangement in which each part or component is connected to or dependent on others
+# Valid System instance using schema-defined slots
+# System is_a Composite which defines name and description properties
 
-id: "system-001"
-title: "Solar System"
-description: "The planetary system containing the sun and planets"
+name: "Enterprise Data Architecture"
+description: "A composite system integrating multiple databases, APIs, and processing components"

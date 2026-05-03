@@ -1,8 +1,5 @@
-# Example of a valid Account instance
-# An Account is an agreement having a balance
+# Valid Account instance using schema-defined slots
+# Account is_a Agreement which defines name and description properties
 
-id: "account-001"
-title: "My Bank Account"
-description: "A checking account with a financial balance"
-has_aspect:
-  - ASPECT_FINANCIAL_BALANCE
+name: "Primary Checking Account"
+description: "A bank account with transaction history and financial balance tracking"

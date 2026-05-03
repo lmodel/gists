@@ -15,15 +15,15 @@ Usage
     uv run python scripts/owl_to_linkml.py [TTL_FILE ...] [-d OUTPUT_DIR]
 
 100% coverage goals:
-  - Every owl:Class                             → LinkML class
-  - Every owl:ObjectProperty / DatatypeProperty → LinkML slot
-  - Every owl:AnnotationProperty (gist: ns)     → LinkML slot
-  - Named individuals (gistd:*, media-*)        → enum permissible values
-  - SHACL PrefixDeclarations                   → PrefixDeclarationInstance enum
+  - Every owl:Class                              -> LinkML class
+  - Every owl:ObjectProperty / DatatypeProperty  -> LinkML slot
+  - Every owl:AnnotationProperty (gist: ns)      -> LinkML slot
+  - Named individuals (gistd:*, media-*)         -> enum permissible values
+  - SHACL PrefixDeclarations                    -> PrefixDeclarationInstance enum
   - All SKOS/RDFS annotations preserved
     (definition, prefLabel, altLabel, example, scopeNote, editorialNote,
      rdfs:label, rdfs:comment DEFINITION:/EXAMPLE:/NOTE: prefixes)
-  - OWL axioms without direct LinkML equivalents → notes/comments
+  - OWL axioms without direct LinkML equivalents  -> notes/comments
 """
 
 from __future__ import annotations
@@ -58,10 +58,25 @@ MEDIA_IMG = rdflib.Namespace("https://www.iana.org/assignments/media-types/image
 MEDIA_TXT = rdflib.Namespace("https://www.iana.org/assignments/media-types/text/")
 
 MEDIA_PREFIXES = {
-    "https://www.iana.org/assignments/media-types/application/": "media-app",
-    "https://www.iana.org/assignments/media-types/image/": "media-img",
-    "https://www.iana.org/assignments/media-types/text/": "media-txt",
+    "https://www.iana.org/assignments/media-types/application/": "media_app",
+    "https://www.iana.org/assignments/media-types/image/": "media_img",
+    "https://www.iana.org/assignments/media-types/text/": "media_txt",
 }
+
+# Ordered prefix table used by uri_to_curie() — longest namespace first avoids prefix ambiguity
+_CURIE_PREFIXES: list[tuple[str, str]] = [
+    (GIST_NS, "gist_upstream"),
+    (GISTD_NS, "gistd"),
+    (LMODEL_NS, "gist"),
+    ("http://schema.org/", "schema"),
+    ("https://schema.org/", "schema"),
+    ("http://www.w3.org/2004/02/skos/core#", "skos"),
+    ("http://purl.org/dc/terms/", "dct"),
+    ("https://www.wikidata.org/wiki/", "WIKIDATA"),
+    ("http://purl.obolibrary.org/obo/BFO_", "BFO"),
+    ("http://purl.obolibrary.org/obo/IAO_", "IAO"),
+    ("http://purl.obolibrary.org/obo/RO_", "RO"),
+]
 
 # Prefixes used in gistRdfsAnnotations rdfs:comment values
 _DEFINITION_RE = re.compile(r"^DEFINITION:\s*")
@@ -69,7 +84,7 @@ _EXAMPLE_RE = re.compile(r"^EXAMPLE:\s*")
 _NOTE_RE = re.compile(r"^NOTE:\s*")
 
 # ---------------------------------------------------------------------------
-# XSD → LinkML type mapping
+# XSD  -> LinkML type mapping
 # ---------------------------------------------------------------------------
 XSD_TO_LINKML: dict[str, str] = {
     str(XSD.string): "string",
@@ -133,6 +148,15 @@ def gistd_local(uri: URIRef) -> str | None:
     s = str(uri)
     if s.startswith(GISTD_NS):
         return s[len(GISTD_NS):]
+    return None
+
+
+def uri_to_curie(uri: URIRef) -> str | None:
+    """Convert a URIRef to a CURIE using the known prefix table. Returns None if unknown."""
+    s = str(uri)
+    for ns, prefix in _CURIE_PREFIXES:
+        if s.startswith(ns):
+            return f"{prefix}:{s[len(ns):]}"
     return None
 
 
@@ -247,9 +271,34 @@ def owl_expr_str(g: Graph, node, depth: int = 0) -> str:
 # Core extraction functions
 # ---------------------------------------------------------------------------
 
+def _ifp_slots_by_domain_class(g: Graph) -> dict[str, list[str]]:
+    """Map each gist class to the snake_case slot names of every
+    owl:InverseFunctionalProperty whose rdfs:domain (named or unionOf) includes it.
+    Used to attach LinkML unique_keys at the class level.
+    """
+    by_class: dict[str, list[str]] = defaultdict(list)
+    for prop in g.subjects(RDF.type, OWL.InverseFunctionalProperty):
+        if not isinstance(prop, URIRef):
+            continue
+        prop_local = gist_local(prop)
+        if not prop_local:
+            continue
+        slot_name = camel_to_snake(prop_local)
+        for d in g.objects(prop, RDFS.domain):
+            if isinstance(d, URIRef) and gist_local(d):
+                by_class[gist_local(d)].append(slot_name)
+            elif isinstance(d, BNode):
+                members = union_members(g, d) or []
+                for m in members:
+                    if gist_local(m):
+                        by_class[gist_local(m)].append(slot_name)
+    return by_class
+
+
 def extract_classes(g: Graph) -> dict[str, dict]:
     """Extract owl:Class entries defined in the gist: namespace."""
     classes: dict[str, dict] = {}
+    ifp_slots_by_class = _ifp_slots_by_domain_class(g)
 
     for cls in g.subjects(RDF.type, OWL.Class):
         if not isinstance(cls, URIRef):
@@ -306,13 +355,20 @@ def extract_classes(g: Graph) -> dict[str, dict]:
         entry["class_uri"] = f"gist_upstream:{cls_local}"
 
         # --- equivalentClass ---
+        # Named URIs  -> exact_mappings (owl:equivalentClass = owl:equivalentClass semantics)
+        # Anonymous BNode expressions (intersections, restrictions)  -> notes
         equiv_nodes = list(g.objects(cls, OWL.equivalentClass))
-        named_equiv = [o for o in equiv_nodes if isinstance(o, URIRef) and gist_local(o)]
+        named_equiv = [o for o in equiv_nodes if isinstance(o, URIRef)]
         anon_equiv = [o for o in equiv_nodes if isinstance(o, BNode)]
 
         if named_equiv:
-            # Named gist: equivalents (different from self) → exact_mappings
-            equiv_curies = [f"gist_upstream:{gist_local(o)}" for o in named_equiv]
+            equiv_curies = []
+            for o in named_equiv:
+                curie = uri_to_curie(o)
+                if curie:
+                    equiv_curies.append(curie)
+                else:
+                    equiv_curies.append(str(o))  # fall back to full URI
             entry["exact_mappings"] = entry.get("exact_mappings", []) + equiv_curies
         if anon_equiv:
             axioms = [owl_expr_str(g, e) for e in anon_equiv]
@@ -362,12 +418,22 @@ def extract_classes(g: Graph) -> dict[str, dict]:
         if ed_notes:
             entry["notes"] = entry.get("notes", []) + ed_notes
 
-        # --- disjointWith ---
-        disjoints = [gist_local(o) for o in named_objects(g, cls, OWL.disjointWith)]
+        # --- disjointWith  -> LinkML disjoint_with (class level) ---
+        disjoints = [gist_local(o) for o in named_objects(g, cls, OWL.disjointWith)
+                     if gist_local(o)]
         if disjoints:
-            entry["notes"] = entry.get("notes", []) + [
-                f"OWL disjointWith: " + ", ".join(str(d) for d in disjoints)
-            ]
+            entry["disjoint_with"] = disjoints if len(disjoints) > 1 else disjoints[0]
+
+        # --- InverseFunctionalProperty  -> unique_keys ---
+        # An IFP whose rdfs:domain (named or unionOf) includes this class becomes
+        # a single-slot unique_keys entry on the class. The slot uniquely
+        # identifies the subject (inverse functional semantics).
+        ifp_slots = ifp_slots_by_class.get(cls_local, [])
+        if ifp_slots:
+            entry["unique_keys"] = {
+                f"by_{slot}": {"unique_key_slots": [slot]}
+                for slot in dict.fromkeys(ifp_slots)  # dedupe, preserve order
+            }
 
         # --- historyNote ---
         hist = get_literals(g, cls, SKOS.historyNote)
@@ -422,7 +488,7 @@ def extract_slots(g: Graph) -> dict[str, dict]:
                         "OWL additional subPropertyOf (gist:): "
                         + ", ".join(camel_to_snake(gist_local(o)) for o in sub_of[1:])
                     ]
-            # Cross-namespace subPropertyOf → related_mappings
+            # Cross-namespace subPropertyOf  -> related_mappings
             cross_sub = [
                 o for o in g.objects(prop, RDFS.subPropertyOf)
                 if isinstance(o, URIRef) and not gist_local(o)
@@ -430,30 +496,36 @@ def extract_slots(g: Graph) -> dict[str, dict]:
             if cross_sub:
                 entry["related_mappings"] = [str(o) for o in cross_sub]
 
-            # --- domain (OWL open-world; preserve as notes, not LinkML domain:) ---
+            # --- domain (rdfs:domain  -> LinkML domain; unionOf  -> domain + any_of) ---
             gist_domains = [
                 gist_local(o) for o in g.objects(prop, RDFS.domain)
                 if isinstance(o, URIRef) and gist_local(o)
             ]
             anon_domains = [o for o in g.objects(prop, RDFS.domain) if isinstance(o, BNode)]
 
-            if gist_domains:
-                entry["notes"] = entry.get("notes", []) + [
-                    "OWL domain: " + " | ".join(gist_domains)
-                ]
-            if anon_domains:
-                for ad in anon_domains:
-                    members = union_members(g, ad)
-                    if members:
-                        gist_ms = [gist_local(m) for m in members if gist_local(m)]
-                        if gist_ms:
-                            entry["notes"] = entry.get("notes", []) + [
-                                "OWL domain (union): " + " | ".join(gist_ms)
-                            ]
-                    else:
-                        entry["notes"] = entry.get("notes", []) + [
-                            "OWL domain restriction: " + owl_expr_str(g, ad)
-                        ]
+            union_domain_members: list[str] = []
+            for ad in anon_domains:
+                members = union_members(g, ad)
+                if members:
+                    union_domain_members.extend(
+                        gist_local(m) for m in members if gist_local(m)
+                    )
+                else:
+                    entry["notes"] = entry.get("notes", []) + [
+                        "OWL domain restriction: " + owl_expr_str(g, ad)
+                    ]
+
+            all_domains = list(gist_domains) + union_domain_members
+            # Deduplicate while preserving order
+            seen = set()
+            all_domains = [d for d in all_domains if not (d in seen or seen.add(d))]
+
+            if all_domains:
+                entry["domain"] = all_domains[0]
+                if len(all_domains) > 1:
+                    entry["any_of"] = (entry.get("any_of") or []) + [
+                        {"range": d} for d in all_domains
+                    ]
 
             # --- range ---
             range_uris = [o for o in g.objects(prop, RDFS.range) if isinstance(o, URIRef)]
@@ -504,6 +576,16 @@ def extract_slots(g: Graph) -> dict[str, dict]:
             if inv:
                 entry["inverse"] = camel_to_snake(inv[0])
 
+            # --- equivalentProperty  -> exact_mappings ---
+            equiv_props = [o for o in named_objects(g, prop, OWL.equivalentProperty)
+                           if isinstance(o, URIRef)]
+            if equiv_props:
+                equiv_curies = []
+                for o in equiv_props:
+                    curie = uri_to_curie(o)
+                    equiv_curies.append(curie if curie else str(o))
+                entry["exact_mappings"] = entry.get("exact_mappings", []) + equiv_curies
+
             # --- property characteristics ---
             all_types = set(g.objects(prop, RDF.type))
             if OWL.TransitiveProperty in all_types:
@@ -515,7 +597,10 @@ def extract_slots(g: Graph) -> dict[str, dict]:
             if OWL.FunctionalProperty in all_types:
                 entry["notes"] = entry.get("notes", []) + ["OWL FunctionalProperty (at most one value)"]
             if OWL.InverseFunctionalProperty in all_types:
-                entry["notes"] = entry.get("notes", []) + ["OWL InverseFunctionalProperty"]
+                # OWL InverseFunctionalProperty  -> LinkML unique_keys (added at class
+                # level by extract_classes); also annotate the slot for visibility
+                ann = entry.setdefault("annotations", {})
+                ann["owl_inverse_functional"] = True
 
             # --- deprecated ---
             depr = first_literal(g, prop, OWL.deprecated)
@@ -553,16 +638,14 @@ def extract_slots(g: Graph) -> dict[str, dict]:
             if ed_notes:
                 entry["notes"] = entry.get("notes", []) + ed_notes
 
-            # --- propertyDisjointWith ---
+            # --- propertyDisjointWith  -> LinkML disjoint_with ---
             disj = [
                 camel_to_snake(gist_local(o))
                 for o in named_objects(g, prop, OWL.propertyDisjointWith)
                 if gist_local(o)
             ]
             if disj:
-                entry["notes"] = entry.get("notes", []) + [
-                    "OWL propertyDisjointWith: " + ", ".join(disj)
-                ]
+                entry["disjoint_with"] = disj if len(disj) > 1 else disj[0]
 
             slots[sname] = entry
 
@@ -820,10 +903,10 @@ _ELEMENT_KEY_ORDER = [
     "class_uri", "slot_uri",
     # documentation
     "description", "title", "aliases", "comments", "examples", "notes",
-    # range / cardinality (slots)
-    "range", "multivalued", "required", "recommended", "identifier", "any_of",
+    # domain / range / cardinality (slots)
+    "domain", "range", "multivalued", "required", "recommended", "identifier", "any_of",
     # object-property characteristics
-    "inverse", "transitive", "symmetric", "antisymmetric", "reflexive",
+    "inverse", "transitive", "symmetric", "antisymmetric", "reflexive", "disjoint_with",
     # deprecation
     "deprecated", "deprecated_element_has_exact_replacement",
     # partitioning
@@ -832,7 +915,8 @@ _ELEMENT_KEY_ORDER = [
     "exact_mappings", "close_mappings", "narrow_mappings",
     "broad_mappings", "related_mappings", "see_also",
     # class-level structural
-    "slots", "slot_usage", "id_prefixes", "union_of", "rules", "defining_slots",
+    "slots", "slot_usage", "id_prefixes", "union_of", "unique_keys",
+    "rules", "defining_slots",
     # slot constraints
     "ifabsent", "inlined", "inlined_as_list", "unit",
     "minimum_value", "maximum_value", "pattern", "string_serialization",
@@ -983,16 +1067,16 @@ def build_schema(
     subset_name = "gist_core"
     prefixes = _base_prefixes()
     prefixes.update({
-        "media-app": "https://www.iana.org/assignments/media-types/application/",
-        "media-img": "https://www.iana.org/assignments/media-types/image/",
-        "media-txt": "https://www.iana.org/assignments/media-types/text/",
+        "media_app": "https://www.iana.org/assignments/media-types/application/",
+        "media_img": "https://www.iana.org/assignments/media-types/image/",
+        "media_txt": "https://www.iana.org/assignments/media-types/text/",
     })
     schema: dict[str, Any] = {
         "id": schema_id,
         "name": schema_name,
         "title": "gist Core",
         "description": (
-            "gist is a minimalist upper ontology created by Semantic Arts. "
+            "gist, a upper ontology for the Enterprise."
             "This LinkML schema is generated from gistCore " + version + "."
         ),
         "license": "CC-BY-4.0",
@@ -1004,6 +1088,25 @@ def build_schema(
     }
     if source:
         schema["source"] = source
+
+    # Inject GistThing mixin for universal slots (name, description have no OWL domain)
+    classes = dict(classes)  # copy to avoid mutating caller's dict
+    classes["GistThing"] = {
+        "mixin": True,
+        "description": (
+            "Mixin providing universal slots applicable to any GIST entity. "
+            "Covers OWL properties with no rdfs:domain (open-world)."
+        ),
+        "slots": ["name", "description"],
+        "in_subset": [subset_name],
+    }
+    # Apply GistThing mixin to all root classes (no is_a  -> no inherited slots)
+    for cls_entry in classes.values():
+        if not cls_entry.get("is_a") and not cls_entry.get("mixin"):
+            existing = cls_entry.get("mixins", [])
+            if "GistThing" not in existing:
+                cls_entry["mixins"] = ["GistThing"] + existing
+
     schema.update({
         "prefixes": prefixes,
         "default_prefix": "gist",
@@ -1029,9 +1132,9 @@ def build_media_types_schema(
     subset_name = "gist_media_types"
     prefixes = _base_prefixes()
     prefixes.update({
-        "media-app": "https://www.iana.org/assignments/media-types/application/",
-        "media-img": "https://www.iana.org/assignments/media-types/image/",
-        "media-txt": "https://www.iana.org/assignments/media-types/text/",
+        "media_app": "https://www.iana.org/assignments/media-types/application/",
+        "media_img": "https://www.iana.org/assignments/media-types/image/",
+        "media_txt": "https://www.iana.org/assignments/media-types/text/",
     })
     schema: dict[str, Any] = {
         "id": f"{LMODEL_BASE}/media-types",
@@ -1118,8 +1221,8 @@ def build_rdfs_annotations_schema(
         "title": "gist RDFS Annotations",
         "description": (
             f"RDFS label and comment annotations for gist classes and properties ({version}). "
-            "Documentation-layer schema: rdfs:label → aliases; "
-            "rdfs:comment DEFINITION:/EXAMPLE:/NOTE: prefixes → description/examples/comments."
+            "Documentation-layer schema: rdfs:label  -> aliases; "
+            "rdfs:comment DEFINITION:/EXAMPLE:/NOTE: prefixes  -> description/examples/comments."
         ),
         "license": "CC-BY-4.0",
         "see_also": ["https://www.semanticarts.com/gist/"],
@@ -1186,7 +1289,7 @@ def build_gist_schema(version: str = "14.1.0") -> dict:
         "name": "gist",
         "title": "gist",
         "description": (
-            "gist (general, integrated, semantic taxonomy) is a minimalist upper ontology "
+            "gist  is a minimalist upper ontology "
             "created by Semantic Arts for enterprise knowledge graph applications. "
             "This LinkML schema (version " + version + ") aggregates the gist modules: "
             "Core (classes and properties), MediaTypes (IANA media type instances), and "
@@ -1196,14 +1299,20 @@ def build_gist_schema(version: str = "14.1.0") -> dict:
         ),
         "license": "CC-BY-4.0",
         "see_also": [
-            "https://lmodel.github.io/gist",
             "https://www.semanticarts.com/gist/",
             "https://w3id.org/semanticarts/ontology/gistCore",
+            "https://lmodel.github.io/gist",
+
         ],
         "version": version,
         "prefixes": {
             "gist": LMODEL_NS,
+            "gist_upstream": GIST_NS,
+            "gistd": GISTD_NS,
             "linkml": "https://w3id.org/linkml/",
+            "media_app": "https://www.iana.org/assignments/media-types/application/",
+            "media_img": "https://www.iana.org/assignments/media-types/image/",
+            "media_txt": "https://www.iana.org/assignments/media-types/text/",
         },
         "default_prefix": "gist",
         "default_range": "string",
@@ -1246,12 +1355,12 @@ def coverage_report(g: Graph, classes: dict, slots: dict, enums: dict) -> str:
     lines = [
         "Coverage report",
         "---------------",
-        f"  OWL classes:              {n_classes:4d}  →  LinkML classes: {len(classes):4d}",
+        f"  OWL classes:              {n_classes:4d}   ->  LinkML classes: {len(classes):4d}",
         f"  OWL object properties:    {n_obj_props:4d}",
         f"  OWL datatype properties:  {n_data_props:4d}",
         f"  OWL annotation props:     {n_ann_props:4d}",
-        f"                                    →  LinkML slots:   {len(slots):4d}",
-        f"  Enum groups:                      →  LinkML enums:   {len(enums):4d}",
+        f"                                     ->  LinkML slots:   {len(slots):4d}",
+        f"  Enum groups:                       ->  LinkML enums:   {len(enums):4d}",
         f"  Enum values total:               {sum(len(e.get('permissible_values', {})) for e in enums.values()):5d}",
         f"  SHACL prefix decls:       {n_prefix_decls:4d}",
     ]
@@ -1295,7 +1404,7 @@ def _write_schema_file(
         for e in schema.get("enums", {}).values()
     )
     print(
-        f"  → {path.name}  "
+        f"   -> {path.name}  "
         f"(classes={n_cls}, slots={n_slt}, enums={n_enm}, enum_values={n_pv})",
         file=sys.stderr,
     )
@@ -1405,7 +1514,7 @@ def generate_per_file_schemas(
     gist_schema = build_gist_schema(version=version)
     _write_schema_file(gist_schema, output_dir / "gist.yaml")
 
-    print(f"\nPer-file generation complete → {output_dir}", file=sys.stderr)
+    print(f"\nPer-file generation complete  -> {output_dir}", file=sys.stderr)
 
 
 # ---------------------------------------------------------------------------

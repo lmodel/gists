@@ -1,8 +1,7 @@
-# Invalid example: Person with invalid aspect value
-# has_aspect should reference valid AspectInstance enum values
+# Invalid Person: has_aspect with invalid enum value
+# MADE_UP_ASPECT is not a valid AspectInstance permissible value
 
-id: "person-invalid-001"
-title: "Person with Invalid Aspect"
-description: "This person has an invalid aspect value"
+name: "Invalid Person"
+description: "Person with invalid aspect value"
 has_aspect:
-  - INVALID_ASPECT_VALUE  # This is not a valid AspectInstance enum value
+  - MADE_UP_ASPECT

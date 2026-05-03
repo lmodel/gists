@@ -94,15 +94,15 @@ class TestGistdLocal:
 class TestMediaCurie:
     def test_application_namespace(self):
         uri = URIRef("https://www.iana.org/assignments/media-types/application/json")
-        assert M.media_curie(uri) == "media-app:json"
+        assert M.media_curie(uri) == "media_app:json"
 
     def test_image_namespace(self):
         uri = URIRef("https://www.iana.org/assignments/media-types/image/png")
-        assert M.media_curie(uri) == "media-img:png"
+        assert M.media_curie(uri) == "media_img:png"
 
     def test_text_namespace(self):
         uri = URIRef("https://www.iana.org/assignments/media-types/text/csv")
-        assert M.media_curie(uri) == "media-txt:csv"
+        assert M.media_curie(uri) == "media_txt:csv"
 
     def test_unknown_namespace_returns_none(self):
         assert M.media_curie(URIRef("https://example.org/foo")) is None
@@ -406,14 +406,59 @@ class TestExtractSlots:
         slots = M.extract_slots(g)
         assert slots["has_parent"]["inverse"] == "has_child"
 
-    def test_domain_goes_to_notes_not_domain_key(self):
+    def test_domain_named_class_becomes_domain_key(self):
         g = Graph()
         g.add((GIST.hasRole, RDF.type, OWL.ObjectProperty))
         g.add((GIST.hasRole, RDFS.domain, GIST.Actor))
         slots = M.extract_slots(g)
-        assert "domain" not in slots["has_role"]
-        notes = slots["has_role"].get("notes", [])
-        assert any("OWL domain" in n for n in notes)
+        assert slots["has_role"]["domain"] == "Actor"
+
+    def test_domain_union_becomes_domain_and_any_of(self):
+        g = Graph()
+        g.add((GIST.owns, RDF.type, OWL.ObjectProperty))
+        bn = BNode()
+        items = [GIST.Organization, GIST.Person]
+        col = rdflib.collection.Collection(g, None, items)
+        g.add((bn, OWL.unionOf, col.uri))
+        g.add((GIST.owns, RDFS.domain, bn))
+        slots = M.extract_slots(g)
+        assert slots["owns"]["domain"] == "Organization"
+        any_of_ranges = {entry["range"] for entry in slots["owns"].get("any_of", [])}
+        assert {"Organization", "Person"}.issubset(any_of_ranges)
+
+    def test_property_disjoint_with_becomes_disjoint_with_key(self):
+        g = Graph()
+        g.add((GIST.hasGiver, RDF.type, OWL.ObjectProperty))
+        g.add((GIST.hasRecipient, RDF.type, OWL.ObjectProperty))
+        g.add((GIST.hasGiver, OWL.propertyDisjointWith, GIST.hasRecipient))
+        slots = M.extract_slots(g)
+        assert slots["has_giver"]["disjoint_with"] == "has_recipient"
+
+    def test_inverse_functional_property_annotated(self):
+        g = Graph()
+        g.add((GIST.isIdentifiedBy, RDF.type, OWL.ObjectProperty))
+        g.add((GIST.isIdentifiedBy, RDF.type, OWL.InverseFunctionalProperty))
+        slots = M.extract_slots(g)
+        assert slots["is_identified_by"]["annotations"]["owl_inverse_functional"] is True
+
+    def test_inverse_functional_property_with_domain_adds_unique_keys(self):
+        g = Graph()
+        g.add((GIST.Thing, RDF.type, OWL.Class))
+        g.add((GIST.uniqueProp, RDF.type, OWL.ObjectProperty))
+        g.add((GIST.uniqueProp, RDF.type, OWL.InverseFunctionalProperty))
+        g.add((GIST.uniqueProp, RDFS.domain, GIST.Thing))
+        classes = M.extract_classes(g)
+        uk = classes["Thing"].get("unique_keys", {})
+        assert "by_unique_prop" in uk
+        assert uk["by_unique_prop"]["unique_key_slots"] == ["unique_prop"]
+
+    def test_class_disjoint_with_becomes_disjoint_with_key(self):
+        g = Graph()
+        g.add((GIST.Aspect, RDF.type, OWL.Class))
+        g.add((GIST.Event, RDF.type, OWL.Class))
+        g.add((GIST.Aspect, OWL.disjointWith, GIST.Event))
+        classes = M.extract_classes(g)
+        assert classes["Aspect"]["disjoint_with"] == "Event"
 
     def test_deprecated_slot(self):
         g = Graph()
@@ -623,21 +668,21 @@ class TestExtractPrefixDeclarations:
 
     def test_returns_pv_entry(self):
         pv = M.extract_prefix_declarations(self._make_prefix_graph())
-        assert "_PREFIXDECLARATION_GIST" in pv
+        assert "PREFIXDECLARATION_GIST" in pv
 
     def test_title_is_prefix(self):
         pv = M.extract_prefix_declarations(self._make_prefix_graph())
-        entry = pv["_PREFIXDECLARATION_GIST"]
+        entry = pv["PREFIXDECLARATION_GIST"]
         assert entry["title"] == "gist"
 
     def test_description_contains_namespace(self):
         pv = M.extract_prefix_declarations(self._make_prefix_graph())
-        entry = pv["_PREFIXDECLARATION_GIST"]
+        entry = pv["PREFIXDECLARATION_GIST"]
         assert "https://w3id.org/semanticarts/ns/ontology/gist/" in entry["description"]
 
     def test_meaning_set(self):
         pv = M.extract_prefix_declarations(self._make_prefix_graph())
-        assert "meaning" in pv["_PREFIXDECLARATION_GIST"]
+        assert "meaning" in pv["PREFIXDECLARATION_GIST"]
 
 
 # ===========================================================================
