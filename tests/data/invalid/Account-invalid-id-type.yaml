@@ -1,0 +1,6 @@
+# Invalid example: Account with wrong type for id
+# The id field should be a string, not a number
+
+id: 12345
+title: "Invalid Account"
+description: "This should fail validation due to wrong id type"

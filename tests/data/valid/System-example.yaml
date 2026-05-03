@@ -1,0 +1,6 @@
+# Example of a valid System instance
+# A System is an arrangement in which each part or component is connected to or dependent on others
+
+id: "system-001"
+title: "Solar System"
+description: "The planetary system containing the sun and planets"

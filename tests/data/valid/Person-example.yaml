@@ -1,0 +1,8 @@
+# Example of a valid Person instance
+# A Person is a human being who was or is alive
+
+id: "person-001"
+title: "John Doe"
+description: "An example person"
+notes:
+  - "This is a valid person record"

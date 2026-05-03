@@ -1,0 +1,4 @@
+# Invalid example: Missing title (if required by schema)
+# This example shows a minimal record that might be missing key fields
+
+id: "org-invalid-001"

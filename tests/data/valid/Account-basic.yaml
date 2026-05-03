@@ -1,0 +1,8 @@
+# Example of a valid Account instance
+# An Account is an agreement having a balance
+
+id: "account-001"
+title: "My Bank Account"
+description: "A checking account with a financial balance"
+has_aspect:
+  - ASPECT_FINANCIAL_BALANCE
