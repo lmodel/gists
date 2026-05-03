@@ -3,7 +3,7 @@ requires = ["hatchling", "uv-dynamic-versioning"]
 build-backend = "hatchling.build"
 
 [project]
-name = "gist"
+name = "gistl"
 description = "Gist - LinkML Schema"
 authors = [
   {name = "Noel McLoughlin", email = "noel.mcloughlin@gmail.com"},
@@ -52,8 +52,8 @@ skip = [
   "pyproject.toml",
   "uv.lock",
   "project/*",
-  "src/gist/datamodel/gist_pydantic.py",
-  "src/gist/datamodel/gist.py",
+  "src/gistl/datamodel/GISTL_pydantic.py",
+  "src/gistl/datamodel/gistl.py",
 ]
 
 # Reminder: words have to be lowercased for the ignore-words-list
@@ -69,6 +69,6 @@ extend-exclude = [
   "uv.lock",
   "pyproject.toml",
   "project/*",
-  "src/gist/datamodel/gist_pydantic.py",
-  "src/gist/datamodel/gist.py",
+  "src/gistl/datamodel/gist_pydantic.py",
+  "src/gistl/datamodel/gist.py",
 ]

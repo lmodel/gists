@@ -3,7 +3,7 @@
 # imports: http://www.w3.org/ns/shacl#
 
 @prefix dash: <http://datashapes.org/dash#> .
-@prefix gist: <https://w3id.org/semanticarts/ns/ontology/gist/> .
+@prefix gistl: <https://w3id.org/semanticarts/ns/ontology/gist/> .
 @prefix gshapes: <https://shapes.semanticarts.com/gist/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -82,7 +82,7 @@ gshapes:InstanceShape
 gshapes:LowerCase
 	a sh:PropertyShape ;
 	skos:definition "Enforces lower case, allowing for all-caps words for acronyms, as well as numbers."^^xsd:string ;
-	skos:editorialNote "Entities which require a prefLabel that does not conform to this rule should be annotated with gist:nonConformingLabel to pass validation."^^xsd:string ;
+	skos:editorialNote "Entities which require a prefLabel that does not conform to this rule should be annotated with gistl:nonConformingLabel to pass validation."^^xsd:string ;
 	sh:maxCount "1"^^xsd:integer ;
 	sh:minCount "1"^^xsd:integer ;
 	sh:name "Lower Case Label"^^xsd:string ;
@@ -103,7 +103,7 @@ gshapes:NonConformingLabel
 	skos:definition "Excluded from label validation."^^xsd:string ;
 	sh:hasValue "true"^^xsd:boolean ;
 	sh:name "Non-Conforming Label"^^xsd:string ;
-	sh:path gist:nonConformingLabel ;
+	sh:path gistl:nonConformingLabel ;
 	.
 
 gshapes:PropertyShape
@@ -125,7 +125,7 @@ gshapes:PropertyShape
 gshapes:SentenceCase
 	a sh:PropertyShape ;
 	skos:definition "Enforces Sentence Case, allowing for all-caps words for acronyms."^^xsd:string ;
-	skos:editorialNote "Entities which require a prefLabel that does not conform to this rule should be annotated with gist:nonConformingLabel to pass validation."^^xsd:string ;
+	skos:editorialNote "Entities which require a prefLabel that does not conform to this rule should be annotated with gistl:nonConformingLabel to pass validation."^^xsd:string ;
 	sh:maxCount "1"^^xsd:integer ;
 	sh:minCount "1"^^xsd:integer ;
 	sh:name "Sentence Case Label"^^xsd:string ;
@@ -136,7 +136,7 @@ gshapes:SentenceCase
 gshapes:TitleCase
 	a sh:PropertyShape ;
 	skos:definition "Enforces title case, allowing for numbers, all-caps words for acronyms and lower case conjunctions and prepositions."^^xsd:string ;
-	skos:editorialNote "Entities which require a prefLabel that does not conform to this rule should be annotated with gist:nonConformingLabel to pass validation."^^xsd:string ;
+	skos:editorialNote "Entities which require a prefLabel that does not conform to this rule should be annotated with gistl:nonConformingLabel to pass validation."^^xsd:string ;
 	sh:maxCount "1"^^xsd:integer ;
 	sh:minCount "1"^^xsd:integer ;
 	sh:name "Title Case Label"^^xsd:string ;

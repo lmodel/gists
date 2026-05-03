@@ -6,7 +6,7 @@ from pathlib import Path
 from linkml.generators.jsonschemagen import JsonSchemaGenerator
 
 
-SCHEMA_DIR = Path(__file__).parent.parent / "src" / "gist" / "schema"
+SCHEMA_DIR = Path(__file__).parent.parent / "src" / "gistl" / "schema"
 
 
 def load_schema(schema_file):
@@ -20,17 +20,17 @@ class TestPythonDatamodelGeneration:
 
     def test_datamodel_package_exists(self):
         """Test that gist datamodel package exists."""
-        datamodel_path = Path(__file__).parent.parent / "src" / "gist" / "datamodel"
+        datamodel_path = Path(__file__).parent.parent / "src" / "gistl" / "datamodel"
         assert datamodel_path.exists(), "Datamodel package should exist"
 
     def test_datamodel_init_exists(self):
         """Test that datamodel __init__.py exists."""
-        init_path = Path(__file__).parent.parent / "src" / "gist" / "datamodel" / "__init__.py"
+        init_path = Path(__file__).parent.parent / "src" / "gistl" / "datamodel" / "__init__.py"
         assert init_path.exists(), "Datamodel __init__.py should exist"
 
     def test_gist_module_imports(self):
         """Test that gist datamodel module can be imported."""
-        datamodel_file = Path(__file__).parent.parent / "src" / "gist" / "datamodel" / "gist.py"
+        datamodel_file = Path(__file__).parent.parent / "src" / "gistl" / "datamodel" / "gist.py"
         if not datamodel_file.exists():
             pytest.skip("Datamodel not yet generated - run 'just gen-python' first")
         try:
@@ -46,7 +46,7 @@ class TestJsonSchemaGeneration:
     @pytest.fixture(scope="class")
     def json_schema(self):
         """Generate JSON Schema from main gist schema."""
-        schema_file = SCHEMA_DIR / "gist.yaml"
+        schema_file = SCHEMA_DIR / "gistl.yaml"
         gen = JsonSchemaGenerator(str(schema_file))
         return json.loads(gen.serialize())
 
@@ -81,7 +81,7 @@ class TestSchemaArtifacts:
 
     def test_yaml_schema_exists(self):
         """Test that YAML schema files exist."""
-        schema_file = SCHEMA_DIR / "gist.yaml"
+        schema_file = SCHEMA_DIR / "gistl.yaml"
         assert schema_file.exists(), f"YAML schema not found at {schema_file}"
 
     def test_schema_files_are_valid_yaml(self):
@@ -104,7 +104,7 @@ class TestSchemaConsistency:
     @pytest.fixture(scope="class")
     def main_schema(self):
         """Load main schema."""
-        schema_file = SCHEMA_DIR / "gist.yaml"
+        schema_file = SCHEMA_DIR / "gistl.yaml"
         return load_schema(schema_file)
 
     @pytest.fixture(scope="class")

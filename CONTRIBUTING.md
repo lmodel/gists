@@ -1,9 +1,9 @@
-# Contributing to gist
+# Contributing to gistl
 
 :+1: First of all: Thank you for taking the time to contribute!
 
 The following is a set of guidelines for contributing to
-gist. These guidelines are not strict rules.
+gistl. These guidelines are not strict rules.
 Use your best judgment, and feel free to propose changes to this document
 in a pull request.
 
@@ -115,7 +115,7 @@ Core developers should read the material on the [LinkML site](https://linkml.io/
 [about-branches]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches
 [about-issues]: https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues
 [about-pulls]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests
-[issues]: https://github.com/lmodel/gist/issues/
-[pulls]: https://github.com/lmodel/gist/pulls/
+[issues]: https://github.com/lmodel/gistl/issues/
+[pulls]: https://github.com/lmodel/gistl/pulls/
 
 We recommend also reading [GitHub Pull Requests: 10 Tips to Know](https://blog.mergify.com/github-pull-requests-10-tips-to-know/)

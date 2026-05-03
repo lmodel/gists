@@ -1,12 +1,12 @@
 <a href="https://github.com/linkml/linkml-project-copier"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-teal.json" alt="Copier Badge" style="max-width:100%;"/></a>
 
-# gist
+# gistl
 
 Gist - LinkML Schema
 
 ## Documentation Website
 
-[https://lmodel.github.io/gist](https://lmodel.github.io/gist)
+[https://lmodel.github.io/gistl](https://lmodel.github.io/gistl)
 
 ## Repository Structure
 
@@ -15,10 +15,10 @@ Gist - LinkML Schema
 * [examples/](examples/) - Examples of using the schema
 * [project/](project/) - project files (these files are auto-generated, do not edit)
 * [src/](src/) - source files (edit these)
-  * [gist](src/gist)
-    * [schema/](src/gist/schema) -- LinkML schema
+  * [gist](src/gistl)
+    * [schema/](src/gistl/schema) -- LinkML schema
       (edit this)
-    * [datamodel/](src/gist/datamodel) -- generated
+    * [datamodel/](src/gistl/datamodel) -- generated
       Python datamodel
 * [tests/](tests/) - Python tests
   * [data/](tests/data) - Example data

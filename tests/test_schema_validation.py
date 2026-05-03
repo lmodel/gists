@@ -4,7 +4,7 @@ import yaml
 from pathlib import Path
 
 
-SCHEMA_DIR = Path(__file__).parent.parent / "src" / "gist" / "schema"
+SCHEMA_DIR = Path(__file__).parent.parent / "src" / "gistl" / "schema"
 SCHEMA_FILES = list(SCHEMA_DIR.glob("gist*.yaml"))
 
 
@@ -18,8 +18,8 @@ class TestSchemaExistence:
     """Test that expected schema files exist."""
 
     def test_main_schema_exists(self):
-        """Test that main gist.yaml schema exists."""
-        schema_file = SCHEMA_DIR / "gist.yaml"
+        """Test that main gistl.yaml schema exists."""
+        schema_file = SCHEMA_DIR / "gistl.yaml"
         assert schema_file.exists(), f"Main schema not found at {schema_file}"
 
     def test_core_schema_exists(self):
@@ -40,7 +40,7 @@ class TestSchemaStructure:
     @pytest.fixture(scope="class")
     def main_schema(self):
         """Load main schema."""
-        schema_file = SCHEMA_DIR / "gist.yaml"
+        schema_file = SCHEMA_DIR / "gistl.yaml"
         return load_schema(schema_file)
 
     def test_schema_has_id(self, main_schema):
@@ -172,7 +172,7 @@ class TestOntologyAlignment:
     @pytest.fixture(scope="class")
     def main_schema(self):
         """Load main schema."""
-        schema_file = SCHEMA_DIR / "gist.yaml"
+        schema_file = SCHEMA_DIR / "gistl.yaml"
         return load_schema(schema_file)
 
     def test_schema_elements_have_mappings(self, main_schema):
@@ -194,7 +194,7 @@ class TestSchemaConsistency:
     @pytest.fixture(scope="class")
     def main_schema(self):
         """Load main schema."""
-        schema_file = SCHEMA_DIR / "gist.yaml"
+        schema_file = SCHEMA_DIR / "gistl.yaml"
         return load_schema(schema_file)
 
     @pytest.fixture(scope="class")

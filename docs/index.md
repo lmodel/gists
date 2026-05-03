@@ -1,4 +1,4 @@
-# gist
+# gistl
 
 Gist - LinkML Schema
 

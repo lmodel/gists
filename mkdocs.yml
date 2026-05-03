@@ -1,5 +1,5 @@
 ---
-site_name: "gist"
+site_name: "gistl"
 theme:
   # https://www.mkdocs.org/user-guide/configuration/#theme
   name: material
@@ -62,7 +62,7 @@ markdown_extensions:
   #       - gen_pages.py  # or any other name or path
 
 watch:
-  - src/gist/schema
+  - src/gistl/schema
 
 nav:
   - Home: index.md
@@ -72,8 +72,8 @@ nav:
 exclude_docs: |
   /templates-linkml/
 
-site_url: https://lmodel.github.io/gist
-repo_url: https://github.com/lmodel/gist
+site_url: https://lmodel.github.io/gistl
+repo_url: https://github.com/lmodel/gistl
 
 # Uncomment this block to enable use of Google Analytics.
 # Replace the property value with your own ID.

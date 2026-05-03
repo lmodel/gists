@@ -1,6 +1,7 @@
-# Invalid example: Account with wrong type for id
-# The id field should be a string, not a number
+# Invalid Account: has_aspect with invalid enum value
+# INVALID_ASPECT_VALUE is not a valid AspectInstance permissible value
 
-id: 12345
-title: "Invalid Account"
-description: "This should fail validation due to wrong id type"
+name: "Invalid Account"
+description: "Account with invalid aspect"
+has_aspect:
+  - INVALID_ASPECT_VALUE

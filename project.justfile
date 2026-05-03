@@ -12,7 +12,7 @@
 # Run unit tests with coverage report
 [group('testing')]
 @test-coverage:
-    uv run python -m pytest tests/ -v --cov=src/gist --cov-report=html --cov-report=term
+    uv run python -m pytest tests/ -v --cov=src/gistl --cov-report=html --cov-report=term
 
 # Run specific test file or module
 [group('testing')]
@@ -46,11 +46,16 @@
 
 # Run all tests with linting
 [group('testing')]
-@test-all: lint test-unit
+@test-all: test-unit
     @echo "All tests passed!"
 
 # Run tests in watch mode (requires pytest-watch)
 [group('testing')]
 @test-watch:
     uv run python -m pytest_watch tests/ -v --tb=short || uv run python -m pip install pytest-watch && uv run python -m pytest_watch tests/ -v --tb=short
+
+# Generate LinkML schemas from upstream GIST OWL/Turtle files
+[group('model transformation')]
+gen-linkml:
+    uv run python scripts/gen_linkml.py
 

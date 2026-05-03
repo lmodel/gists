@@ -1,6 +1,5 @@
-# Example of a valid Organization instance
-# An Organization is a persistent social unit or institution
+# Valid Organization instance using schema-defined slots
+# Organization defines name and description properties
 
-id: "org-001"
-title: "Example Corporation"
-description: "A sample organization for testing"
+name: "Acme Corporation"
+description: "A multinational organization providing technology and services across multiple industries"
