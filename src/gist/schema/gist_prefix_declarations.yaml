@@ -1,4 +1,4 @@
-id: https://w3id.org/model/gistl/prefix-declarations
+id: https://w3id.org/lmodel/gist/prefix-declarations
 name: gist_prefix_declarations
 title: gist Prefix Declarations
 description: |-
@@ -10,9 +10,9 @@ source: https://w3id.org/semanticarts/ontology/gistPrefixDeclarations
 version: 14.1.0
 
 prefixes:
-  gistl: https://w3id.org/model/gistl/
   gist: https://w3id.org/semanticarts/ns/ontology/gist/
   gistd: https://w3id.org/semanticarts/ns/data/gist/
+  gist_linkml: https://w3id.org/lmodel/gist/
   linkml: https://w3id.org/linkml/
   schema: http://schema.org/
   skos: http://www.w3.org/2004/02/skos/core#
@@ -23,7 +23,7 @@ prefixes:
   owl: http://www.w3.org/2002/07/owl#
   sh: http://www.w3.org/ns/shacl#
 
-default_prefix: gistl
+default_prefix: gist_linkml
 default_range: string
 
 imports:

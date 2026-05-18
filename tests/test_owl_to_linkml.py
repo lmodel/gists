@@ -18,7 +18,7 @@ GISTD = rdflib.Namespace(M.GISTD_NS)
 SH = rdflib.Namespace("http://www.w3.org/ns/shacl#")
 
 # ---------------------------------------------------------------------------
-# Helper to build a minimal gistl: class triple set
+# Helper to build a minimal gist: class triple set
 # ---------------------------------------------------------------------------
 
 
@@ -203,7 +203,7 @@ class TestOwlExprStr:
     def test_gist_uri(self):
         g = Graph()
         result = M.owl_expr_str(g, GIST.Category)
-        assert result == "gistl:Category"
+        assert result == "gist:Category"
 
     def test_owl_uri(self):
         g = Graph()
@@ -235,7 +235,7 @@ class TestOwlExprStr:
 
 
 def _core_class_graph() -> Graph:
-    """Minimal graph with one gistl:Category owl:Class."""
+    """Minimal graph with one gist:Category owl:Class."""
     g = Graph()
     g.add((GIST.Category, RDF.type, OWL.Class))
     g.add((GIST.Category, SKOS.definition, Literal("A category of things.")))
@@ -262,7 +262,7 @@ class TestExtractClasses:
     def test_class_uri_set(self):
         g = _core_class_graph()
         classes = M.extract_classes(g)
-        assert classes["Category"]["class_uri"] == "gist :Category"
+        assert classes["Category"]["class_uri"] == "gist:Category"
 
     def test_is_a_from_subclassof(self):
         g = _core_class_graph()
@@ -348,7 +348,7 @@ class TestExtractSlots:
     def test_object_property_slot_uri(self):
         g = _object_prop_graph()
         slots = M.extract_slots(g)
-        assert slots["has_party"]["slot_uri"] == "gist :hasParty"
+        assert slots["has_party"]["slot_uri"] == "gist:hasParty"
 
     def test_object_property_range(self):
         g = _object_prop_graph()
@@ -655,13 +655,13 @@ class TestExtractSubClassAssertions:
         g = Graph()
         g.add((GIST.Category, RDFS.subClassOf, GIST.Thing))
         classes = M.extract_sub_class_assertions(g)
-        assert classes["Category"]["class_uri"] == "gist :Category"
+        assert classes["Category"]["class_uri"] == "gist:Category"
 
     def test_non_gist_subjects_ignored(self):
         g = Graph()
         g.add((URIRef("http://schema.org/Cat"), RDFS.subClassOf, GIST.Thing))
         classes = M.extract_sub_class_assertions(g)
-        assert not any(k for k in classes if "Cat" in k and "gistl" not in k)
+        assert not any(k for k in classes if "Cat" in k and "gist" not in k)
 
     def test_blank_node_subjects_ignored(self):
         g = Graph()
@@ -686,29 +686,29 @@ class TestExtractSubClassAssertions:
 class TestExtractPrefixDeclarations:
     def _make_prefix_graph(self) -> Graph:
         g = Graph()
-        decl = GIST["_PrefixDeclaration_gistl"]
+        decl = GIST["_PrefixDeclaration_gist"]
         g.add((decl, RDF.type, SH.PrefixDeclaration))
-        g.add((decl, SH.prefix, Literal("gistl")))
+        g.add((decl, SH.prefix, Literal("gist")))
         g.add((decl, SH.namespace, Literal("https://w3id.org/semanticarts/ns/ontology/gist/")))
         return g
 
     def test_returns_pv_entry(self):
         pv = M.extract_prefix_declarations(self._make_prefix_graph())
-        assert "PREFIXDECLARATION_GISTL" in pv
+        assert "PREFIXDECLARATION_GIST" in pv
 
     def test_title_is_prefix(self):
         pv = M.extract_prefix_declarations(self._make_prefix_graph())
-        entry = pv["PREFIXDECLARATION_GISTL"]
-        assert entry["title"] == "gistl"
+        entry = pv["PREFIXDECLARATION_GIST"]
+        assert entry["title"] == "gist"
 
     def test_description_contains_namespace(self):
         pv = M.extract_prefix_declarations(self._make_prefix_graph())
-        entry = pv["PREFIXDECLARATION_GISTL"]
+        entry = pv["PREFIXDECLARATION_GIST"]
         assert "https://w3id.org/semanticarts/ns/ontology/gist/" in entry["description"]
 
     def test_meaning_set(self):
         pv = M.extract_prefix_declarations(self._make_prefix_graph())
-        assert "meaning" in pv["PREFIXDECLARATION_GISTL"]
+        assert "meaning" in pv["PREFIXDECLARATION_GIST"]
 
 
 # ===========================================================================
@@ -909,7 +909,7 @@ class TestBuildMediaTypesSchema:
 
 class TestBuildPrefixDeclarationsSchema:
     def _make_schema(self, **kw):
-        pv = {"GIST": {"title": "gistl", "description": "d", "meaning": "gist :_PrefixDeclaration_gist"}}
+        pv = {"GIST": {"title": "gist", "description": "d", "meaning": "gist:_PrefixDeclaration_gist"}}
         return M.build_prefix_declarations_schema(pv, **kw)
 
     def test_prefix_declaration_instance_enum(self):
@@ -928,8 +928,8 @@ class TestBuildPrefixDeclarationsSchema:
 
 class TestBuildRdfsAnnotationsSchema:
     def _make_schema(self, **kw):
-        classes = {"Foo": {"class_uri": "gist :Foo"}}
-        slots = {"has_foo": {"slot_uri": "gist :hasFoo"}}
+        classes = {"Foo": {"class_uri": "gist:Foo"}}
+        slots = {"has_foo": {"slot_uri": "gist:hasFoo"}}
         return M.build_rdfs_annotations_schema(classes, slots, **kw)
 
     def test_has_classes_and_slots(self):
@@ -953,8 +953,8 @@ class TestBuildRdfsAnnotationsSchema:
 class TestBuildSubClassAssertionsSchema:
     def _make_schema(self, **kw):
         classes = {
-            "Category": {"class_uri": "gist :Category", "is_a": "Thing"},
-            "Thing": {"class_uri": "gist :Thing"},
+            "Category": {"class_uri": "gist:Category", "is_a": "Thing"},
+            "Thing": {"class_uri": "gist:Thing"},
         }
         return M.build_sub_class_assertions_schema(classes, **kw)
 
@@ -1073,7 +1073,7 @@ class TestCoverageReport:
 
 
 _MINIMAL_TTL = textwrap.dedent("""\
-    @prefix gistl: <https://w3id.org/semanticarts/ns/ontology/gist/> .
+    @prefix gist: <https://w3id.org/semanticarts/ns/ontology/gist/> .
     @prefix gistd: <https://w3id.org/semanticarts/ns/data/gist/> .
     @prefix owl: <http://www.w3.org/2002/07/owl#> .
     @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -1083,28 +1083,28 @@ _MINIMAL_TTL = textwrap.dedent("""\
 
     <https://example.org/testOntology> a owl:Ontology .
 
-    gistl:Category
+    gist:Category
         a owl:Class ;
         skos:definition "A broad category of things."^^xsd:string ;
         skos:prefLabel "Category"^^xsd:string .
 
-    gistl:SubCategory
+    gist:SubCategory
         a owl:Class ;
-        rdfs:subClassOf gistl:Category ;
+        rdfs:subClassOf gist:Category ;
         skos:definition "A more specific category."^^xsd:string .
 
-    gistl:hasLabel
+    gist:hasLabel
         a owl:DatatypeProperty ;
         rdfs:range xsd:string ;
         skos:definition "A human-readable label."^^xsd:string .
 
-    gistl:isPartOf
+    gist:isPartOf
         a owl:ObjectProperty ;
-        rdfs:range gistl:Category ;
+        rdfs:range gist:Category ;
         skos:definition "Links to a containing category."^^xsd:string .
 
     gistd:_Aspect_mass
-        a gistl:Aspect .
+        a gist:Aspect .
 """)
 
 
@@ -1171,4 +1171,4 @@ class TestIntegrationMinimalGraph:
         M.generate_per_file_schemas([ttl_path], tmp_path / "out", version="14.1.0")
         out = tmp_path / "out"
         assert (out / "gist_core.yaml").exists()
-        assert (out / "gistl.yaml").exists()
+        assert (out / "gist.yaml").exists()

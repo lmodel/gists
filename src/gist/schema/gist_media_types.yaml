@@ -1,4 +1,4 @@
-id: https://w3id.org/model/gistl/media-types
+id: https://w3id.org/lmodel/gist/media-types
 name: gist_media_types
 title: gist Media Types
 description: |-
@@ -10,9 +10,9 @@ source: https://w3id.org/semanticarts/ontology/gistMediaTypes
 version: 14.1.0
 
 prefixes:
-  gistl: https://w3id.org/model/gistl/
   gist: https://w3id.org/semanticarts/ns/ontology/gist/
   gistd: https://w3id.org/semanticarts/ns/data/gist/
+  gist_linkml: https://w3id.org/lmodel/gist/
   linkml: https://w3id.org/linkml/
   schema: http://schema.org/
   skos: http://www.w3.org/2004/02/skos/core#
@@ -25,7 +25,7 @@ prefixes:
   media_img: https://www.iana.org/assignments/media-types/image/
   media_txt: https://www.iana.org/assignments/media-types/text/
 
-default_prefix: gistl
+default_prefix: gist_linkml
 default_range: string
 
 imports:
@@ -40,7 +40,7 @@ subsets:
 enums:
 
   MediaTypeInstance:
-    description: Named instances of gistl:MediaType from gist reference data.
+    description: Named instances of gist:MediaType from gist reference data.
     permissible_values:
       JSON:
         title: JSON

@@ -1,7 +1,11 @@
 # gen-owl gaps: schema metadata not emitted as OWL axioms
 
 **LinkML version:** 1.11.0  
-**Discovered while:** comparing `gen-owl` output from the gistl schema against the upstream gist 14.1.0 OWL ontology to assess round-trip fidelity.
+**Discovered while:** comparing `gen-owl` output from the gist schema against the upstream gist 14.1.0 OWL ontology to assess round-trip fidelity.
+
+## Status
+
+Nine gen-owl gaps are documented below — each filable as an upstream bug. A separate set of **structural limitations** in the LinkML metamodel itself prevents some upstream OWL constructs from being expressed in any schema at all (OWL class expressions, `rdfs:isDefinedBy`, ontology-header `owl:versionIRI` / `skos:historyNote`, reference-data instance typing); these are catalogued in [docs/about.md → Not representable in LinkML](docs/about.md#not-representable-in-linkml-structural-gaps) and are out of scope for this file. The companion upstream artifacts `gistRdfsAnnotations14.1.0.ttl` and `gistSubClassAssertions14.1.0.ttl` are not produced by `gen-project` and would require dedicated generators.
 
 ---
 
@@ -12,7 +16,7 @@
 The LinkML metamodel supports `disjoint_with` on both classes and slots
 (`owl:propertyDisjointWith`). `gen-owl` silently ignores both.
 
-The gistl schema has 62 class disjoint pairs and 1 slot disjoint pair.
+The gist schema has 62 class disjoint pairs and 1 slot disjoint pair.
 None appear in the generated OWL.
 
 ### Minimal reproducer
@@ -69,7 +73,7 @@ LinkML's `deprecated` metamodel slot maps semantically to
 `owl:deprecated true`. `gen-owl` does not emit `owl:deprecated` for any
 element that has `deprecated: 'true'` in the schema.
 
-The gistl schema has 5 deprecated elements (2 classes, 3 slots).
+The gist schema has 5 deprecated elements (2 classes, 3 slots).
 None produce `owl:deprecated true` in the generated OWL.
 
 ### Minimal reproducer
@@ -112,7 +116,7 @@ cannot be expressed in a schema. `gen-owl` therefore never emits
 `owl:FunctionalProperty` or `owl:InverseFunctionalProperty`.
 
 The gist ontology declares 9 functional properties and 1 inverse-functional
-property. As a workaround, gistl uses freeform annotations
+property. As a workaround, gist uses freeform annotations
 (`annotations: {owl_functional: true}` / `owl_inverse_functional: true`)
 as documentation metadata, but `gen-owl` does not act on these.
 
@@ -154,7 +158,7 @@ and emit the corresponding OWL property type.
 LinkML's `examples` metamodel slot maps semantically to `skos:example`.
 `gen-owl` does not emit `skos:example` for any element.
 
-The gist ontology has 146 `skos:example` annotations. The gistl schema
+The gist ontology has 146 `skos:example` annotations. The gist schema
 carries these as `examples:` entries, but they are absent from the gen-owl
 output.
 
@@ -245,7 +249,7 @@ practice in OWL ontologies that enables tools and reasoners to trace each term
 to its defining module.
 
 The LinkML metamodel has no direct equivalent, and `gen-owl` never emits
-`rdfs:isDefinedBy`. The gistl schema's `id:` and `source_file:` metadata
+`rdfs:isDefinedBy`. The gist schema's `id:` and `source_file:` metadata
 carry analogous information but are not propagated to individual entities in the
 OWL output.
 
@@ -402,6 +406,61 @@ class definitions (not built-in types), classify the slot as
 
 ---
 
+---
+
+## Gap 9 — `slot_uri:` not used as primary property IRI
+
+### Description
+
+When gen-owl serializes a slot, it constructs the property IRI from the
+slot's **name** combined with the schema's `default_prefix` namespace.
+The `slot_uri:` value — which captures the original ontology's canonical
+property IRI — is emitted only as `skos:exactMatch`, not as the primary IRI.
+
+For schemas derived from an external OWL ontology this means all multi-word
+properties round-trip with a *different* primary IRI than the upstream source:
+
+| Upstream IRI | gen-owl primary IRI | Relationship emitted |
+|---|---|---|
+| `gist:isPartOf` | `gist_linkml:is_part_of` | `skos:exactMatch` |
+| `gist:conversionFactor` | `gist_linkml:conversion_factor` | `skos:exactMatch` |
+
+In the gist schema, 106 of 120 properties are affected. The 14 single-word
+properties (e.g. `allows`, `owns`, `precedes`) share the same local name in
+both namespaces but still differ in namespace (`gist:` vs `gist_linkml:`).
+
+### Minimal reproducer
+
+```yaml
+slots:
+  is_part_of:
+    slot_uri: gist:isPartOf
+    range: Aspect
+```
+
+gen-owl output:
+```turtle
+gist_linkml:is_part_of a owl:ObjectProperty ;
+    skos:exactMatch gist:isPartOf .
+```
+
+Expected (for round-trip fidelity with the source ontology):
+```turtle
+gist:isPartOf a owl:ObjectProperty .
+```
+
+### Suggested fix
+
+In `owlgen.py`, when `slot_uri:` resolves to a full URI in an external
+namespace (not the schema's own `default_prefix`), use the `slot_uri` value
+as the primary property IRI. The snake_case slot name in `default_prefix`
+could then be emitted as `skos:altLabel` or omitted.
+
+Alternatively, add a generator option `--use-slot-uri-as-primary` to opt in
+per generation run.
+
+---
+
 ## Summary table
 
 | Gap | Schema syntax | OWL target | Status |
@@ -416,3 +475,4 @@ class definitions (not built-in types), classify the slot as
 | Defining module | *(no metamodel slot)* | `rdfs:isDefinedBy` | Not emitted |
 | Exact mappings vocabulary | `exact_mappings:` | `owl:equivalentClass` | Uses `skos:exactMatch` instead |
 | `any_of:` class ranges ignored for OP/DP | `any_of: [{range: MyClass}]` | `owl:ObjectProperty` | ✅ Resolved via `implements: [owl:ObjectProperty]` workaround |
+| Primary property IRI | `slot_uri:` | Property IRI = `slot_uri` value | `slot_uri` used as `skos:exactMatch`; slot name + `default_prefix` used as primary IRI — 106/120 properties affected |

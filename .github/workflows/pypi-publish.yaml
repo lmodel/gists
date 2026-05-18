@@ -73,7 +73,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi-release
-      url: https://pypi.org/p/gistl
+      url: https://pypi.org/p/gist
     permissions:
       id-token: write  # this permission is mandatory for trusted publishing
     steps:

@@ -4,7 +4,7 @@ import glob
 import pytest
 from pathlib import Path
 
-import gistl.datamodel.gistl
+import gist.datamodel.gist
 from linkml_runtime.loaders import yaml_loader
 
 DATA_DIR_VALID = Path(__file__).parent / "data" / "valid"
@@ -22,7 +22,7 @@ class TestValidDataFiles:
         """Test loading of all valid data files."""
         target_class_name = Path(filepath).stem.split("-")[0]
         tgt_class = getattr(
-            gistl.datamodel.gistl,
+            gist.datamodel.gist,
             target_class_name,
         )
         try:
@@ -37,7 +37,7 @@ class TestValidDataFiles:
         """Test that valid files can be loaded (even if producing minimal objects)."""
         target_class_name = Path(filepath).stem.split("-")[0]
         tgt_class = getattr(
-            gistl.datamodel.gistl,
+            gist.datamodel.gist,
             target_class_name,
         )
         try:
@@ -54,7 +54,7 @@ class TestValidDataFiles:
         try:
             target_class_name = Path(filepath).stem.split("-")[0]
             tgt_class = getattr(
-                gistl.datamodel.gistl,
+                gist.datamodel.gist,
                 target_class_name,
             )
             # Attempt to load with validation enabled

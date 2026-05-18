@@ -1,8 +1,8 @@
-# About gistl
+# About gist
 
 Gist - LinkML Schema
 
-**Status**:  **Operational** | **Tests**: 236/237 passing | **Version**: 14.1.0
+**Status**:  **Operational** | **Tests**: 236/237 passing | **Version**: 14.1.0 | **Upstream OWL parity**: taxonomic skeleton ✅, DL axioms ❌ (see Full-Circle Fidelity)
 
 The project converts the GIST OWL/RDF ontology into a modular, validated LinkML schema with:
 -  Comprehensive test coverage (236 unit tests)
@@ -87,7 +87,7 @@ This folder contains the LinkML schema YAML files:
 
 ```
 .
-├── gistl.yaml                 # Main schema (3 imports, all prefixes)
+├── gist.yaml                 # Main schema (3 imports, all prefixes)
 ├── gist_core.yaml                  # Core classes and properties
 ├── gist_media_types.yaml           # IANA media type instances
 ├── gist_prefix_declarations.yaml   # SHACL prefix bindings
@@ -98,7 +98,7 @@ This folder contains the LinkML schema YAML files:
 
 ## Modular Structure
 
-The main schema (`gistl.yaml`) imports three specialized modules:
+The main schema (`gist.yaml`) imports three specialized modules:
 
 1. **gist_core.yaml** - Core ontology
    - Classes: Thing, Entity, Activity, Event, etc.
@@ -123,7 +123,11 @@ The main schema (`gistl.yaml`) imports three specialized modules:
 
 Schema enrichments were derived from the upstream TTL files so that `gen-owl` reproduces the corresponding OWL axioms. Counts are based on the full upstream TTL corpus and a fresh `gen-owl` run (LinkML 1.11.0).
 
-**Namespace note**: gen-owl emits properties in the `gistl:` namespace with snake_case names (e.g.`gistl:conversion_factor`), bridged to the upstream `gist :` camelCase IRIs via `skos:exactMatch` (97 triples). Domain/range triples in the tables below are thus in the correct structure but attached to different property IRIs than the upstream.
+**Headline assessment**: the generated [project/owl/gist.owl.ttl](../project/owl/gist.owl.ttl) (single file, ~133 KB, 2,214 lines) reproduces the **taxonomic skeleton** of upstream gist 14.1.0 (5 files, ~270 KB, 6,149 lines) — class/property hierarchy, ranges, single inheritance, SKOS definitions, and `skos:exactMatch` bridges to the source `gist:` IRIs. It is a **lossy projection** for reasoning purposes: 95% of `owl:Restriction` blocks (109 in upstream gistCore → 6 in the generated file, all on `GistThing.name`/`description`), all 20 `owl:disjointWith` axioms, all 147 `skos:example` strings, and the 216 `rdfs:isDefinedBy` back-pointers are absent. The 45 `owl:equivalentClass` intersection axioms (e.g. `Account ≡ Agreement ⊓ ∃hasMagnitude.∃hasAspect=balance`) survive only as prose inside `skos:editorialNote` and are invisible to DL reasoners. See the structural-gaps and gen-owl-gaps tables below.
+
+**Namespace note**: gen-owl emits properties in the `gist_linkml:` namespace with snake_case names (e.g. `gist_linkml:conversion_factor`), bridged to the upstream `gist:` camelCase IRIs via `skos:exactMatch` (97 triples). 106 of 120 properties are affected (the 14 single-word properties share the same local name but still differ in namespace). Domain/range triples in the tables below are in the correct structure but attached to different property IRIs than the upstream. See Gap 9 in [ISSUE.md](../ISSUE.md).
+
+**Companion artifacts not regenerated**: the upstream distribution ships two supplementary TTL files alongside `gistCore14.1.0.ttl` — `gistRdfsAnnotations14.1.0.ttl` (definitions/examples/notes flattened into `rdfs:comment` for tools that don't read SKOS) and `gistSubClassAssertions14.1.0.ttl` (explicit subclass closure to support OWL RL reasoners). Neither is produced by `gen-project`. The single-file gen-owl output addresses the OWL DL consumer only.
 
 #### Exact parity
 
@@ -143,7 +147,7 @@ Schema enrichments were derived from the upstream TTL files so that `gen-owl` re
 | Axiom | Upstream | gen-owl | Delta | Notes |
 |-------|----------|---------|-------|-------|
 | `rdfs:subPropertyOf` | 40 | 38 | −5% | |
-| `skos:definition` (from `description:`) | 225 | 227 | +1% | |
+| `skos:definition` (from `description:`) | 228 | 236 | +3% | |
 | `rdfs:range` | 65 | 73 | +12% | gen-owl adds ranges from `any_of:` and type inference |
 
 #### Present but not fidelity-matched
@@ -151,7 +155,7 @@ Schema enrichments were derived from the upstream TTL files so that `gen-owl` re
 | Axiom | Upstream | gen-owl | Explanation |
 |-------|----------|---------|-------------|
 | `skos:altLabel` | 1 | 217 | Upstream: 1 (`ElectronicAddress`). gen-owl emits `skos:altLabel` for all `aliases:` entries across the schema (many schema-level aliases added for usability) |
-| `skos:exactMatch` | 0 | 97 | gen-owl bridges `gistl:` ↔ `gist :` via `exact_mappings:` / `slot_uri:` — not in upstream |
+| `skos:exactMatch` | 0 | 97 | gen-owl bridges `gist:` ↔ `gist:` via `exact_mappings:` / `slot_uri:` — not in upstream |
 
 #### Schema enrichments added to achieve parity
 
@@ -170,7 +174,7 @@ Schema enrichments were derived from the upstream TTL files so that `gen-owl` re
 | `domain:` on 27 slots | `rdfs:domain` | `domain:` ✅ re-emitted |
 | `range:` on 120 slots | `rdfs:range` | `range:` ✅ re-emitted |
 | `aliases:` on `ElectronicAddress` (`Virtual Address`) | `skos:altLabel` | `aliases:` ✅ re-emitted |
-| `exact_mappings: [gist :prohibits]` on `prevents` | `owl:equivalentProperty` | `exact_mappings:` (emits `skos:exactMatch` — Gap 7) |
+| `exact_mappings: [gist:prohibits]` on `prevents` | `owl:equivalentProperty` | `exact_mappings:` (emits `skos:exactMatch` — Gap 7) |
 
 #### Not representable in LinkML (structural gaps)
 
@@ -179,15 +183,23 @@ cannot be captured in the schema at all:
 
 | OWL construct | Upstream count | Notes |
 |---------------|---------------|-------|
-| `owl:equivalentClass` with OWL expressions | 45 | Complex restrictions (existential, intersection, union) on class definitions |
+| `owl:Restriction` blocks (any kind) | 109 | Aggregate of all property restrictions in gistCore; only 6 cardinality restrictions survive in gen-owl output (on `GistThing.name`/`description`) |
+| `owl:equivalentClass` with OWL expressions | 45 | Complex restrictions (existential, intersection, union) on class definitions; preserved only as prose in `skos:editorialNote` |
 | `owl:hasValue` in class restrictions | 10 | e.g. `Account owl:hasValue gistd:_Aspect_financial_balance` |
 | `owl:allValuesFrom` in class restrictions | 4 | Universal quantifier on property |
 | `owl:cardinality` in class restrictions | 9 | Exact cardinality on class-scoped property |
+| `owl:inverseOf` inside class restrictions | 18 | Anonymous inverses used in `equivalentClass` intersections; reduced to `∃^propertyName` notation in editorial text |
 | `rdfs:domain` as union class | 14 | `exponentOf*` domain is `union[UnitGroup, UnitOfMeasure]`; LinkML `domain:` accepts only a single class |
 | `rdfs:isDefinedBy` | 216 | No LinkML metamodel slot; not emitted (Gap 6) |
+| `owl:versionIRI`, `skos:historyNote` on ontology header | 1+1 | Ontology header carries only `pav:version`; release history (back to 11.0.0) is lost |
+| Reference-data instances (`gistd:_Aspect_*`) typed as class members | 8 | Upstream: `gistd:_Aspect_altitude a gist:Aspect` (named individual usable inside `owl:hasValue`). gen-owl punning emits `a owl:Class ; rdfs:subClassOf gist_linkml:AspectInstance`. The original semantics required for `hasValue` restrictions are lost. |
 
 Gaps where the schema holds information but gen-owl does not re-emit the
 corresponding OWL axioms are fully documented in [ISSUE.md](../ISSUE.md).
+
+#### Reasoning impact
+
+A DL reasoner over the generated [project/owl/gist.owl.ttl](../project/owl/gist.owl.ttl) derives almost none of the entailments a reasoner over the upstream [gistCore14.1.0.ttl](../upstream/gist14.1.0_webDownload/ontologies/turtle/gistCore14.1.0.ttl) would: the restriction-bearing equivalent-class axioms and the 20 disjointness axioms — the two things that make gist a useful upper ontology for inference — are not present. The generated file is suitable as a **catalog / LinkML projection** and for SHACL-driven instance validation; it is not a substitute for the upstream OWL when DL inference is required.
 
 ## Test Coverage
 
@@ -221,7 +233,7 @@ corresponding OWL axioms are fully documented in [ISSUE.md](../ISSUE.md).
 ### Making Schema Changes
 
 ```bash
-# 1. Edit schema files in src/gistl/schema/
+# 1. Edit schema files in src/gist/schema/
 # 2. Lint for errors
 just lint
 
@@ -283,6 +295,7 @@ with the upstream gist 14.1.0 ontology. Each gap is filed upstream; see [ISSUE.m
 | 6 | *(no metamodel slot)* | `rdfs:isDefinedBy` | Not emitted |
 | 7 | `exact_mappings:` | `owl:equivalentClass` | `skos:exactMatch` |
 | 8 | `any_of: [{range: MyClass}]` | `owl:ObjectProperty` | `owl:DatatypeProperty` — ✅ resolved via `implements: [owl:ObjectProperty]` workaround |
+| 9 | `slot_uri:` set to external namespace | Primary property IRI = `slot_uri` value | `slot_uri` emitted as `skos:exactMatch` target; slot name + `default_prefix` used as primary IRI — 106/120 properties affected |
 
 ### Other Limitations
 - Enum values with special characters require name conversion (e.g., `ld+json` → `LD_PLUS_JSON`)

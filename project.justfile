@@ -12,7 +12,7 @@
 # Run unit tests with coverage report
 [group('testing')]
 @test-coverage:
-    uv run python -m pytest tests/ -v --cov=src/gistl --cov-report=html --cov-report=term
+    uv run python -m pytest tests/ -v --cov=src/gist --cov-report=html --cov-report=term
 
 # Run specific test file or module
 [group('testing')]

@@ -95,7 +95,7 @@ class TestVendorContentValidation:
         """Test that shapes reference gist namespace."""
         with open(SHAPES_FILE, 'r') as f:
             content = f.read()
-            assert "gistl:" in content, \
+            assert "gist:" in content, \
                 "Shapes should reference gist namespace"
 
     def test_shapes_reference_gshapes_namespace(self):
