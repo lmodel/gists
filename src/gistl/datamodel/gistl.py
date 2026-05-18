@@ -3,7 +3,7 @@
 # Schema: gistl
 #
 # id: https://w3id.org/model/gistl
-# description: gist  is a minimalist upper ontology created by Semantic Arts for enterprise knowledge graph applications. This LinkML schema (version 14.1.0) aggregates the gist modules: Core (classes and properties), MediaTypes (IANA media type instances), and PrefixDeclarations (SHACL namespace bindings). Supplementary schemas gist_rdfs_annotations and gist_sub_class_assertions are available for annotation enrichment and OWL RL reasoner support.
+# description: gist is a minimalist upper ontology created by Semantic Arts for enterprise knowledge graph applications. This LinkML schema (version 14.1.0) aggregates the gist modules: Core (classes and properties), MediaTypes (IANA media type instances), and PrefixDeclarations (SHACL namespace bindings). Supplementary schemas gist_rdfs_annotations and gist_sub_class_assertions are available for annotation enrichment and OWL RL reasoner support.
 # license: CC-BY-4.0
 
 import dataclasses
@@ -63,7 +63,7 @@ metamodel_version = "1.11.0"
 version = "14.1.0"
 
 # Namespaces
-GIST_UPSTREAM = CurieNamespace('gist_upstream', 'https://w3id.org/semanticarts/ns/ontology/gist/')
+GIST_UPSTREAM = CurieNamespace('gist ', 'https://w3id.org/semanticarts/ns/ontology/gist/')
 GISTD = CurieNamespace('gistd', 'https://w3id.org/semanticarts/ns/data/gist/')
 GISTL = CurieNamespace('gistl', 'https://w3id.org/model/gistl/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
@@ -88,7 +88,7 @@ class Aspect(YAMLRoot):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Aspect"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Aspect"
+    class_class_curie: ClassVar[str] = "gist :Aspect"
     class_name: ClassVar[str] = "Aspect"
     class_model_uri: ClassVar[URIRef] = GISTL.Aspect
 
@@ -113,7 +113,7 @@ class Organization(YAMLRoot):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Organization"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Organization"
+    class_class_curie: ClassVar[str] = "gist :Organization"
     class_name: ClassVar[str] = "Organization"
     class_model_uri: ClassVar[URIRef] = GISTL.Organization
 
@@ -138,7 +138,7 @@ class GovernmentOrganization(Organization):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["GovernmentOrganization"]
-    class_class_curie: ClassVar[str] = "gist_upstream:GovernmentOrganization"
+    class_class_curie: ClassVar[str] = "gist :GovernmentOrganization"
     class_name: ClassVar[str] = "GovernmentOrganization"
     class_model_uri: ClassVar[URIRef] = GISTL.GovernmentOrganization
 
@@ -152,7 +152,7 @@ class PhysicalIdentifiableItem(YAMLRoot):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["PhysicalIdentifiableItem"]
-    class_class_curie: ClassVar[str] = "gist_upstream:PhysicalIdentifiableItem"
+    class_class_curie: ClassVar[str] = "gist :PhysicalIdentifiableItem"
     class_name: ClassVar[str] = "PhysicalIdentifiableItem"
     class_model_uri: ClassVar[URIRef] = GISTL.PhysicalIdentifiableItem
 
@@ -178,7 +178,7 @@ class Event(YAMLRoot):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Event"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Event"
+    class_class_curie: ClassVar[str] = "gist :Event"
     class_name: ClassVar[str] = "Event"
     class_model_uri: ClassVar[URIRef] = GISTL.Event
 
@@ -202,7 +202,7 @@ class ContemporaryEvent(Event):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["ContemporaryEvent"]
-    class_class_curie: ClassVar[str] = "gist_upstream:ContemporaryEvent"
+    class_class_curie: ClassVar[str] = "gist :ContemporaryEvent"
     class_name: ClassVar[str] = "ContemporaryEvent"
     class_model_uri: ClassVar[URIRef] = GISTL.ContemporaryEvent
 
@@ -215,7 +215,7 @@ class Content(YAMLRoot):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Content"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Content"
+    class_class_curie: ClassVar[str] = "gist :Content"
     class_name: ClassVar[str] = "Content"
     class_model_uri: ClassVar[URIRef] = GISTL.Content
 
@@ -239,7 +239,7 @@ class ContentExpression(Content):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["ContentExpression"]
-    class_class_curie: ClassVar[str] = "gist_upstream:ContentExpression"
+    class_class_curie: ClassVar[str] = "gist :ContentExpression"
     class_name: ClassVar[str] = "ContentExpression"
     class_model_uri: ClassVar[URIRef] = GISTL.ContentExpression
 
@@ -251,7 +251,7 @@ class Text(ContentExpression):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Text"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Text"
+    class_class_curie: ClassVar[str] = "gist :Text"
     class_name: ClassVar[str] = "Text"
     class_model_uri: ClassVar[URIRef] = GISTL.Text
 
@@ -264,7 +264,7 @@ class GeoLocation(YAMLRoot):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["GeoLocation"]
-    class_class_curie: ClassVar[str] = "gist_upstream:GeoLocation"
+    class_class_curie: ClassVar[str] = "gist :GeoLocation"
     class_name: ClassVar[str] = "GeoLocation"
     class_model_uri: ClassVar[URIRef] = GISTL.GeoLocation
 
@@ -290,7 +290,7 @@ class GeoPoint(GeoLocation):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["GeoPoint"]
-    class_class_curie: ClassVar[str] = "gist_upstream:GeoPoint"
+    class_class_curie: ClassVar[str] = "gist :GeoPoint"
     class_name: ClassVar[str] = "GeoPoint"
     class_model_uri: ClassVar[URIRef] = GISTL.GeoPoint
 
@@ -302,7 +302,7 @@ class GeoRegion(GeoLocation):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["GeoRegion"]
-    class_class_curie: ClassVar[str] = "gist_upstream:GeoRegion"
+    class_class_curie: ClassVar[str] = "gist :GeoRegion"
     class_name: ClassVar[str] = "GeoRegion"
     class_model_uri: ClassVar[URIRef] = GISTL.GeoRegion
 
@@ -314,7 +314,7 @@ class ContingentEvent(Event):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["ContingentEvent"]
-    class_class_curie: ClassVar[str] = "gist_upstream:ContingentEvent"
+    class_class_curie: ClassVar[str] = "gist :ContingentEvent"
     class_name: ClassVar[str] = "ContingentEvent"
     class_model_uri: ClassVar[URIRef] = GISTL.ContingentEvent
 
@@ -326,7 +326,7 @@ class LivingThing(PhysicalIdentifiableItem):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["LivingThing"]
-    class_class_curie: ClassVar[str] = "gist_upstream:LivingThing"
+    class_class_curie: ClassVar[str] = "gist :LivingThing"
     class_name: ClassVar[str] = "LivingThing"
     class_model_uri: ClassVar[URIRef] = GISTL.LivingThing
 
@@ -339,7 +339,7 @@ class Language(YAMLRoot):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Language"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Language"
+    class_class_curie: ClassVar[str] = "gist :Language"
     class_name: ClassVar[str] = "Language"
     class_model_uri: ClassVar[URIRef] = GISTL.Language
 
@@ -365,7 +365,7 @@ class Component(YAMLRoot):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Component"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Component"
+    class_class_curie: ClassVar[str] = "gist :Component"
     class_name: ClassVar[str] = "Component"
     class_model_uri: ClassVar[URIRef] = GISTL.Component
 
@@ -390,7 +390,7 @@ class OrderedMember(Component):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["OrderedMember"]
-    class_class_curie: ClassVar[str] = "gist_upstream:OrderedMember"
+    class_class_curie: ClassVar[str] = "gist :OrderedMember"
     class_name: ClassVar[str] = "OrderedMember"
     class_model_uri: ClassVar[URIRef] = GISTL.OrderedMember
 
@@ -402,7 +402,7 @@ class NetworkLink(Component):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["NetworkLink"]
-    class_class_curie: ClassVar[str] = "gist_upstream:NetworkLink"
+    class_class_curie: ClassVar[str] = "gist :NetworkLink"
     class_name: ClassVar[str] = "NetworkLink"
     class_model_uri: ClassVar[URIRef] = GISTL.NetworkLink
 
@@ -414,7 +414,7 @@ class GovernedGeoRegion(GeoRegion):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["GovernedGeoRegion"]
-    class_class_curie: ClassVar[str] = "gist_upstream:GovernedGeoRegion"
+    class_class_curie: ClassVar[str] = "gist :GovernedGeoRegion"
     class_name: ClassVar[str] = "GovernedGeoRegion"
     class_model_uri: ClassVar[URIRef] = GISTL.GovernedGeoRegion
 
@@ -428,7 +428,7 @@ class PhysicalSubstance(YAMLRoot):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["PhysicalSubstance"]
-    class_class_curie: ClassVar[str] = "gist_upstream:PhysicalSubstance"
+    class_class_curie: ClassVar[str] = "gist :PhysicalSubstance"
     class_name: ClassVar[str] = "PhysicalSubstance"
     class_model_uri: ClassVar[URIRef] = GISTL.PhysicalSubstance
 
@@ -454,7 +454,7 @@ class TimeInterval(YAMLRoot):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["TimeInterval"]
-    class_class_curie: ClassVar[str] = "gist_upstream:TimeInterval"
+    class_class_curie: ClassVar[str] = "gist :TimeInterval"
     class_name: ClassVar[str] = "TimeInterval"
     class_model_uri: ClassVar[URIRef] = GISTL.TimeInterval
 
@@ -478,7 +478,7 @@ class GeoVolume(GeoLocation):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["GeoVolume"]
-    class_class_curie: ClassVar[str] = "gist_upstream:GeoVolume"
+    class_class_curie: ClassVar[str] = "gist :GeoVolume"
     class_name: ClassVar[str] = "GeoVolume"
     class_model_uri: ClassVar[URIRef] = GISTL.GeoVolume
 
@@ -491,7 +491,7 @@ class SubCountryGovernment(GovernmentOrganization):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["SubCountryGovernment"]
-    class_class_curie: ClassVar[str] = "gist_upstream:SubCountryGovernment"
+    class_class_curie: ClassVar[str] = "gist :SubCountryGovernment"
     class_name: ClassVar[str] = "SubCountryGovernment"
     class_model_uri: ClassVar[URIRef] = GISTL.SubCountryGovernment
 
@@ -505,7 +505,7 @@ class IntellectualProperty(YAMLRoot):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["IntellectualProperty"]
-    class_class_curie: ClassVar[str] = "gist_upstream:IntellectualProperty"
+    class_class_curie: ClassVar[str] = "gist :IntellectualProperty"
     class_name: ClassVar[str] = "IntellectualProperty"
     class_model_uri: ClassVar[URIRef] = GISTL.IntellectualProperty
 
@@ -530,7 +530,7 @@ class TemporalRelation(YAMLRoot):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["TemporalRelation"]
-    class_class_curie: ClassVar[str] = "gist_upstream:TemporalRelation"
+    class_class_curie: ClassVar[str] = "gist :TemporalRelation"
     class_name: ClassVar[str] = "TemporalRelation"
     class_model_uri: ClassVar[URIRef] = GISTL.TemporalRelation
 
@@ -554,7 +554,7 @@ class FormattedContent(ContentExpression):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["FormattedContent"]
-    class_class_curie: ClassVar[str] = "gist_upstream:FormattedContent"
+    class_class_curie: ClassVar[str] = "gist :FormattedContent"
     class_name: ClassVar[str] = "FormattedContent"
     class_model_uri: ClassVar[URIRef] = GISTL.FormattedContent
 
@@ -567,7 +567,7 @@ class Template(YAMLRoot):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Template"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Template"
+    class_class_curie: ClassVar[str] = "gist :Template"
     class_name: ClassVar[str] = "Template"
     class_model_uri: ClassVar[URIRef] = GISTL.Template
 
@@ -591,7 +591,7 @@ class TaskTemplate(Template):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["TaskTemplate"]
-    class_class_curie: ClassVar[str] = "gist_upstream:TaskTemplate"
+    class_class_curie: ClassVar[str] = "gist :TaskTemplate"
     class_name: ClassVar[str] = "TaskTemplate"
     class_model_uri: ClassVar[URIRef] = GISTL.TaskTemplate
 
@@ -603,7 +603,7 @@ class Equipment(PhysicalIdentifiableItem):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Equipment"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Equipment"
+    class_class_curie: ClassVar[str] = "gist :Equipment"
     class_name: ClassVar[str] = "Equipment"
     class_model_uri: ClassVar[URIRef] = GISTL.Equipment
 
@@ -615,7 +615,7 @@ class HistoricalEvent(Event):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["HistoricalEvent"]
-    class_class_curie: ClassVar[str] = "gist_upstream:HistoricalEvent"
+    class_class_curie: ClassVar[str] = "gist :HistoricalEvent"
     class_name: ClassVar[str] = "HistoricalEvent"
     class_model_uri: ClassVar[URIRef] = GISTL.HistoricalEvent
 
@@ -628,7 +628,7 @@ class IntergovernmentalOrganization(Organization):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["IntergovernmentalOrganization"]
-    class_class_curie: ClassVar[str] = "gist_upstream:IntergovernmentalOrganization"
+    class_class_curie: ClassVar[str] = "gist :IntergovernmentalOrganization"
     class_name: ClassVar[str] = "IntergovernmentalOrganization"
     class_model_uri: ClassVar[URIRef] = GISTL.IntergovernmentalOrganization
 
@@ -640,7 +640,7 @@ class Task(Event):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Task"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Task"
+    class_class_curie: ClassVar[str] = "gist :Task"
     class_name: ClassVar[str] = "Task"
     class_model_uri: ClassVar[URIRef] = GISTL.Task
 
@@ -652,7 +652,7 @@ class ScheduledTask(Task):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["ScheduledTask"]
-    class_class_curie: ClassVar[str] = "gist_upstream:ScheduledTask"
+    class_class_curie: ClassVar[str] = "gist :ScheduledTask"
     class_name: ClassVar[str] = "ScheduledTask"
     class_model_uri: ClassVar[URIRef] = GISTL.ScheduledTask
 
@@ -664,7 +664,7 @@ class Project(Task):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Project"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Project"
+    class_class_curie: ClassVar[str] = "gist :Project"
     class_name: ClassVar[str] = "Project"
     class_model_uri: ClassVar[URIRef] = GISTL.Project
 
@@ -677,7 +677,7 @@ class Magnitude(YAMLRoot):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Magnitude"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Magnitude"
+    class_class_curie: ClassVar[str] = "gist :Magnitude"
     class_name: ClassVar[str] = "Magnitude"
     class_model_uri: ClassVar[URIRef] = GISTL.Magnitude
 
@@ -702,7 +702,7 @@ class CountryGovernment(GovernmentOrganization):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["CountryGovernment"]
-    class_class_curie: ClassVar[str] = "gist_upstream:CountryGovernment"
+    class_class_curie: ClassVar[str] = "gist :CountryGovernment"
     class_name: ClassVar[str] = "CountryGovernment"
     class_model_uri: ClassVar[URIRef] = GISTL.CountryGovernment
 
@@ -714,7 +714,7 @@ class CountryGeoRegion(GovernedGeoRegion):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["CountryGeoRegion"]
-    class_class_curie: ClassVar[str] = "gist_upstream:CountryGeoRegion"
+    class_class_curie: ClassVar[str] = "gist :CountryGeoRegion"
     class_name: ClassVar[str] = "CountryGeoRegion"
     class_model_uri: ClassVar[URIRef] = GISTL.CountryGeoRegion
 
@@ -726,7 +726,7 @@ class PhysicalEvent(Event):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["PhysicalEvent"]
-    class_class_curie: ClassVar[str] = "gist_upstream:PhysicalEvent"
+    class_class_curie: ClassVar[str] = "gist :PhysicalEvent"
     class_name: ClassVar[str] = "PhysicalEvent"
     class_model_uri: ClassVar[URIRef] = GISTL.PhysicalEvent
 
@@ -739,7 +739,7 @@ class Intention(YAMLRoot):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Intention"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Intention"
+    class_class_curie: ClassVar[str] = "gist :Intention"
     class_name: ClassVar[str] = "Intention"
     class_model_uri: ClassVar[URIRef] = GISTL.Intention
 
@@ -763,7 +763,7 @@ class Permission(Intention):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Permission"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Permission"
+    class_class_curie: ClassVar[str] = "gist :Permission"
     class_name: ClassVar[str] = "Permission"
     class_model_uri: ClassVar[URIRef] = GISTL.Permission
 
@@ -775,7 +775,7 @@ class Requirement(Intention):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Requirement"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Requirement"
+    class_class_curie: ClassVar[str] = "gist :Requirement"
     class_name: ClassVar[str] = "Requirement"
     class_model_uri: ClassVar[URIRef] = GISTL.Requirement
 
@@ -787,7 +787,7 @@ class Restriction(Intention):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Restriction"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Restriction"
+    class_class_curie: ClassVar[str] = "gist :Restriction"
     class_name: ClassVar[str] = "Restriction"
     class_model_uri: ClassVar[URIRef] = GISTL.Restriction
 
@@ -799,7 +799,7 @@ class Function(Intention):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Function"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Function"
+    class_class_curie: ClassVar[str] = "gist :Function"
     class_name: ClassVar[str] = "Function"
     class_model_uri: ClassVar[URIRef] = GISTL.Function
 
@@ -813,7 +813,7 @@ class Specification(Intention):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Specification"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Specification"
+    class_class_curie: ClassVar[str] = "gist :Specification"
     class_name: ClassVar[str] = "Specification"
     class_model_uri: ClassVar[URIRef] = GISTL.Specification
 
@@ -825,7 +825,7 @@ class ContractTerm(Specification):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["ContractTerm"]
-    class_class_curie: ClassVar[str] = "gist_upstream:ContractTerm"
+    class_class_curie: ClassVar[str] = "gist :ContractTerm"
     class_name: ClassVar[str] = "ContractTerm"
     class_model_uri: ClassVar[URIRef] = GISTL.ContractTerm
 
@@ -838,7 +838,7 @@ class CatalogItem(Specification):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["CatalogItem"]
-    class_class_curie: ClassVar[str] = "gist_upstream:CatalogItem"
+    class_class_curie: ClassVar[str] = "gist :CatalogItem"
     class_name: ClassVar[str] = "CatalogItem"
     class_model_uri: ClassVar[URIRef] = GISTL.CatalogItem
 
@@ -850,7 +850,7 @@ class BundledCatalogItem(CatalogItem):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["BundledCatalogItem"]
-    class_class_curie: ClassVar[str] = "gist_upstream:BundledCatalogItem"
+    class_class_curie: ClassVar[str] = "gist :BundledCatalogItem"
     class_name: ClassVar[str] = "BundledCatalogItem"
     class_model_uri: ClassVar[URIRef] = GISTL.BundledCatalogItem
 
@@ -863,7 +863,7 @@ class ProductSpecification(CatalogItem):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["ProductSpecification"]
-    class_class_curie: ClassVar[str] = "gist_upstream:ProductSpecification"
+    class_class_curie: ClassVar[str] = "gist :ProductSpecification"
     class_name: ClassVar[str] = "ProductSpecification"
     class_model_uri: ClassVar[URIRef] = GISTL.ProductSpecification
 
@@ -875,7 +875,7 @@ class Person(LivingThing):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Person"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Person"
+    class_class_curie: ClassVar[str] = "gist :Person"
     class_name: ClassVar[str] = "Person"
     class_model_uri: ClassVar[URIRef] = GISTL.Person
 
@@ -887,7 +887,7 @@ class Commitment(Intention):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Commitment"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Commitment"
+    class_class_curie: ClassVar[str] = "gist :Commitment"
     class_name: ClassVar[str] = "Commitment"
     class_model_uri: ClassVar[URIRef] = GISTL.Commitment
 
@@ -900,7 +900,7 @@ class ContingentObligation(Commitment):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["ContingentObligation"]
-    class_class_curie: ClassVar[str] = "gist_upstream:ContingentObligation"
+    class_class_curie: ClassVar[str] = "gist :ContingentObligation"
     class_name: ClassVar[str] = "ContingentObligation"
     class_model_uri: ClassVar[URIRef] = GISTL.ContingentObligation
 
@@ -913,7 +913,7 @@ class Offer(ContingentObligation):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Offer"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Offer"
+    class_class_curie: ClassVar[str] = "gist :Offer"
     class_name: ClassVar[str] = "Offer"
     class_model_uri: ClassVar[URIRef] = GISTL.Offer
 
@@ -925,7 +925,7 @@ class ID(Content):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["ID"]
-    class_class_curie: ClassVar[str] = "gist_upstream:ID"
+    class_class_curie: ClassVar[str] = "gist :ID"
     class_name: ClassVar[str] = "ID"
     class_model_uri: ClassVar[URIRef] = GISTL.ID
 
@@ -938,7 +938,7 @@ class UnitOfMeasure(YAMLRoot):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["UnitOfMeasure"]
-    class_class_curie: ClassVar[str] = "gist_upstream:UnitOfMeasure"
+    class_class_curie: ClassVar[str] = "gist :UnitOfMeasure"
     class_name: ClassVar[str] = "UnitOfMeasure"
     class_model_uri: ClassVar[URIRef] = GISTL.UnitOfMeasure
 
@@ -963,7 +963,7 @@ class Address(Content):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Address"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Address"
+    class_class_curie: ClassVar[str] = "gist :Address"
     class_name: ClassVar[str] = "Address"
     class_model_uri: ClassVar[URIRef] = GISTL.Address
 
@@ -975,7 +975,7 @@ class PhysicalAddress(Address):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["PhysicalAddress"]
-    class_class_curie: ClassVar[str] = "gist_upstream:PhysicalAddress"
+    class_class_curie: ClassVar[str] = "gist :PhysicalAddress"
     class_name: ClassVar[str] = "PhysicalAddress"
     class_model_uri: ClassVar[URIRef] = GISTL.PhysicalAddress
 
@@ -988,7 +988,7 @@ class ElectronicAddress(Address):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["ElectronicAddress"]
-    class_class_curie: ClassVar[str] = "gist_upstream:ElectronicAddress"
+    class_class_curie: ClassVar[str] = "gist :ElectronicAddress"
     class_name: ClassVar[str] = "ElectronicAddress"
     class_model_uri: ClassVar[URIRef] = GISTL.ElectronicAddress
 
@@ -1000,7 +1000,7 @@ class Landmark(PhysicalIdentifiableItem):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Landmark"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Landmark"
+    class_class_curie: ClassVar[str] = "gist :Landmark"
     class_name: ClassVar[str] = "Landmark"
     class_model_uri: ClassVar[URIRef] = GISTL.Landmark
 
@@ -1013,7 +1013,7 @@ class Composite(YAMLRoot):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Composite"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Composite"
+    class_class_curie: ClassVar[str] = "gist :Composite"
     class_name: ClassVar[str] = "Composite"
     class_model_uri: ClassVar[URIRef] = GISTL.Composite
 
@@ -1037,7 +1037,7 @@ class Network(Composite):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Network"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Network"
+    class_class_curie: ClassVar[str] = "gist :Network"
     class_name: ClassVar[str] = "Network"
     class_model_uri: ClassVar[URIRef] = GISTL.Network
 
@@ -1049,7 +1049,7 @@ class Collection(Composite):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Collection"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Collection"
+    class_class_curie: ClassVar[str] = "gist :Collection"
     class_name: ClassVar[str] = "Collection"
     class_model_uri: ClassVar[URIRef] = GISTL.Collection
 
@@ -1061,7 +1061,7 @@ class UnitGroup(Collection):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["UnitGroup"]
-    class_class_curie: ClassVar[str] = "gist_upstream:UnitGroup"
+    class_class_curie: ClassVar[str] = "gist :UnitGroup"
     class_name: ClassVar[str] = "UnitGroup"
     class_model_uri: ClassVar[URIRef] = GISTL.UnitGroup
 
@@ -1073,7 +1073,7 @@ class ControlledVocabulary(Collection):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["ControlledVocabulary"]
-    class_class_curie: ClassVar[str] = "gist_upstream:ControlledVocabulary"
+    class_class_curie: ClassVar[str] = "gist :ControlledVocabulary"
     class_name: ClassVar[str] = "ControlledVocabulary"
     class_model_uri: ClassVar[URIRef] = GISTL.ControlledVocabulary
 
@@ -1085,7 +1085,7 @@ class System(Composite):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["System"]
-    class_class_curie: ClassVar[str] = "gist_upstream:System"
+    class_class_curie: ClassVar[str] = "gist :System"
     class_name: ClassVar[str] = "System"
     class_model_uri: ClassVar[URIRef] = GISTL.System
 
@@ -1097,7 +1097,7 @@ class OrderedCollection(Collection):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["OrderedCollection"]
-    class_class_curie: ClassVar[str] = "gist_upstream:OrderedCollection"
+    class_class_curie: ClassVar[str] = "gist :OrderedCollection"
     class_name: ClassVar[str] = "OrderedCollection"
     class_model_uri: ClassVar[URIRef] = GISTL.OrderedCollection
 
@@ -1109,7 +1109,7 @@ class GeoRoute(OrderedCollection):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["GeoRoute"]
-    class_class_curie: ClassVar[str] = "gist_upstream:GeoRoute"
+    class_class_curie: ClassVar[str] = "gist :GeoRoute"
     class_name: ClassVar[str] = "GeoRoute"
     class_model_uri: ClassVar[URIRef] = GISTL.GeoRoute
 
@@ -1121,7 +1121,7 @@ class Transaction(Event):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Transaction"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Transaction"
+    class_class_curie: ClassVar[str] = "gist :Transaction"
     class_name: ClassVar[str] = "Transaction"
     class_model_uri: ClassVar[URIRef] = GISTL.Transaction
 
@@ -1134,7 +1134,7 @@ class KnowledgeConcept(IntellectualProperty):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["KnowledgeConcept"]
-    class_class_curie: ClassVar[str] = "gist_upstream:KnowledgeConcept"
+    class_class_curie: ClassVar[str] = "gist :KnowledgeConcept"
     class_name: ClassVar[str] = "KnowledgeConcept"
     class_model_uri: ClassVar[URIRef] = GISTL.KnowledgeConcept
 
@@ -1146,7 +1146,7 @@ class RenderedContent(FormattedContent):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["RenderedContent"]
-    class_class_curie: ClassVar[str] = "gist_upstream:RenderedContent"
+    class_class_curie: ClassVar[str] = "gist :RenderedContent"
     class_name: ClassVar[str] = "RenderedContent"
     class_model_uri: ClassVar[URIRef] = GISTL.RenderedContent
 
@@ -1159,7 +1159,7 @@ class Building(Landmark):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Building"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Building"
+    class_class_curie: ClassVar[str] = "gist :Building"
     class_name: ClassVar[str] = "Building"
     class_model_uri: ClassVar[URIRef] = GISTL.Building
 
@@ -1171,7 +1171,7 @@ class ServiceSpecification(CatalogItem):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["ServiceSpecification"]
-    class_class_curie: ClassVar[str] = "gist_upstream:ServiceSpecification"
+    class_class_curie: ClassVar[str] = "gist :ServiceSpecification"
     class_name: ClassVar[str] = "ServiceSpecification"
     class_model_uri: ClassVar[URIRef] = GISTL.ServiceSpecification
 
@@ -1183,7 +1183,7 @@ class Agreement(Intention):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Agreement"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Agreement"
+    class_class_curie: ClassVar[str] = "gist :Agreement"
     class_name: ClassVar[str] = "Agreement"
     class_model_uri: ClassVar[URIRef] = GISTL.Agreement
 
@@ -1195,7 +1195,7 @@ class Contract(Agreement):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Contract"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Contract"
+    class_class_curie: ClassVar[str] = "gist :Contract"
     class_name: ClassVar[str] = "Contract"
     class_model_uri: ClassVar[URIRef] = GISTL.Contract
 
@@ -1207,7 +1207,7 @@ class Account(Agreement):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Account"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Account"
+    class_class_curie: ClassVar[str] = "gist :Account"
     class_name: ClassVar[str] = "Account"
     class_model_uri: ClassVar[URIRef] = GISTL.Account
 
@@ -1219,7 +1219,7 @@ class ScheduledEvent(Event):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["ScheduledEvent"]
-    class_class_curie: ClassVar[str] = "gist_upstream:ScheduledEvent"
+    class_class_curie: ClassVar[str] = "gist :ScheduledEvent"
     class_name: ClassVar[str] = "ScheduledEvent"
     class_model_uri: ClassVar[URIRef] = GISTL.ScheduledEvent
 
@@ -1232,7 +1232,7 @@ class Category(YAMLRoot):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Category"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Category"
+    class_class_curie: ClassVar[str] = "gist :Category"
     class_name: ClassVar[str] = "Category"
     class_model_uri: ClassVar[URIRef] = GISTL.Category
 
@@ -1256,7 +1256,7 @@ class MediaType(Category):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["MediaType"]
-    class_class_curie: ClassVar[str] = "gist_upstream:MediaType"
+    class_class_curie: ClassVar[str] = "gist :MediaType"
     class_name: ClassVar[str] = "MediaType"
     class_model_uri: ClassVar[URIRef] = GISTL.MediaType
 
@@ -1268,7 +1268,7 @@ class DegreeOfCommitment(Category):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["DegreeOfCommitment"]
-    class_class_curie: ClassVar[str] = "gist_upstream:DegreeOfCommitment"
+    class_class_curie: ClassVar[str] = "gist :DegreeOfCommitment"
     class_name: ClassVar[str] = "DegreeOfCommitment"
     class_model_uri: ClassVar[URIRef] = GISTL.DegreeOfCommitment
 
@@ -1280,7 +1280,7 @@ class EquipmentType(Category):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["EquipmentType"]
-    class_class_curie: ClassVar[str] = "gist_upstream:EquipmentType"
+    class_class_curie: ClassVar[str] = "gist :EquipmentType"
     class_name: ClassVar[str] = "EquipmentType"
     class_model_uri: ClassVar[URIRef] = GISTL.EquipmentType
 
@@ -1293,7 +1293,7 @@ class ElectronicAddressType(Category):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["ElectronicAddressType"]
-    class_class_curie: ClassVar[str] = "gist_upstream:ElectronicAddressType"
+    class_class_curie: ClassVar[str] = "gist :ElectronicAddressType"
     class_name: ClassVar[str] = "ElectronicAddressType"
     class_model_uri: ClassVar[URIRef] = GISTL.ElectronicAddressType
 
@@ -1305,7 +1305,7 @@ class Tag(Category):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Tag"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Tag"
+    class_class_curie: ClassVar[str] = "gist :Tag"
     class_name: ClassVar[str] = "Tag"
     class_model_uri: ClassVar[URIRef] = GISTL.Tag
 
@@ -1317,7 +1317,7 @@ class Behavior(Category):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Behavior"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Behavior"
+    class_class_curie: ClassVar[str] = "gist :Behavior"
     class_name: ClassVar[str] = "Behavior"
     class_model_uri: ClassVar[URIRef] = GISTL.Behavior
 
@@ -1329,7 +1329,7 @@ class GeneralMediaType(Category):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["GeneralMediaType"]
-    class_class_curie: ClassVar[str] = "gist_upstream:GeneralMediaType"
+    class_class_curie: ClassVar[str] = "gist :GeneralMediaType"
     class_name: ClassVar[str] = "GeneralMediaType"
     class_model_uri: ClassVar[URIRef] = GISTL.GeneralMediaType
 
@@ -1341,7 +1341,7 @@ class AddressUsageType(Category):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["AddressUsageType"]
-    class_class_curie: ClassVar[str] = "gist_upstream:AddressUsageType"
+    class_class_curie: ClassVar[str] = "gist :AddressUsageType"
     class_name: ClassVar[str] = "AddressUsageType"
     class_model_uri: ClassVar[URIRef] = GISTL.AddressUsageType
 
@@ -1353,7 +1353,7 @@ class Discipline(Category):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Discipline"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Discipline"
+    class_class_curie: ClassVar[str] = "gist :Discipline"
     class_name: ClassVar[str] = "Discipline"
     class_model_uri: ClassVar[URIRef] = GISTL.Discipline
 
@@ -1365,7 +1365,7 @@ class Medium(Category):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Medium"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Medium"
+    class_class_curie: ClassVar[str] = "gist :Medium"
     class_name: ClassVar[str] = "Medium"
     class_model_uri: ClassVar[URIRef] = GISTL.Medium
 
@@ -1377,7 +1377,7 @@ class ProductCategory(Category):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["ProductCategory"]
-    class_class_curie: ClassVar[str] = "gist_upstream:ProductCategory"
+    class_class_curie: ClassVar[str] = "gist :ProductCategory"
     class_name: ClassVar[str] = "ProductCategory"
     class_model_uri: ClassVar[URIRef] = GISTL.ProductCategory
 
@@ -1389,7 +1389,7 @@ class PhysicalActionType(Category):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["PhysicalActionType"]
-    class_class_curie: ClassVar[str] = "gist_upstream:PhysicalActionType"
+    class_class_curie: ClassVar[str] = "gist :PhysicalActionType"
     class_name: ClassVar[str] = "PhysicalActionType"
     class_model_uri: ClassVar[URIRef] = GISTL.PhysicalActionType
 
@@ -1401,7 +1401,7 @@ class PhysicalAddressType(Category):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["PhysicalAddressType"]
-    class_class_curie: ClassVar[str] = "gist_upstream:PhysicalAddressType"
+    class_class_curie: ClassVar[str] = "gist :PhysicalAddressType"
     class_name: ClassVar[str] = "PhysicalAddressType"
     class_model_uri: ClassVar[URIRef] = GISTL.PhysicalAddressType
 
@@ -1413,7 +1413,7 @@ class Assignment(TemporalRelation):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Assignment"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Assignment"
+    class_class_curie: ClassVar[str] = "gist :Assignment"
     class_name: ClassVar[str] = "Assignment"
     class_model_uri: ClassVar[URIRef] = GISTL.Assignment
 
@@ -1426,7 +1426,7 @@ class SchemaMetaData(YAMLRoot):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["SchemaMetaData"]
-    class_class_curie: ClassVar[str] = "gist_upstream:SchemaMetaData"
+    class_class_curie: ClassVar[str] = "gist :SchemaMetaData"
     class_name: ClassVar[str] = "SchemaMetaData"
     class_model_uri: ClassVar[URIRef] = GISTL.SchemaMetaData
 
@@ -1450,7 +1450,7 @@ class Message(ContentExpression):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Message"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Message"
+    class_class_curie: ClassVar[str] = "gist :Message"
     class_name: ClassVar[str] = "Message"
     class_model_uri: ClassVar[URIRef] = GISTL.Message
 
@@ -1462,7 +1462,7 @@ class NetworkNode(Component):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["NetworkNode"]
-    class_class_curie: ClassVar[str] = "gist_upstream:NetworkNode"
+    class_class_curie: ClassVar[str] = "gist :NetworkNode"
     class_name: ClassVar[str] = "NetworkNode"
     class_model_uri: ClassVar[URIRef] = GISTL.NetworkNode
 
@@ -1474,7 +1474,7 @@ class ReferenceValue(Magnitude):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["ReferenceValue"]
-    class_class_curie: ClassVar[str] = "gist_upstream:ReferenceValue"
+    class_class_curie: ClassVar[str] = "gist :ReferenceValue"
     class_name: ClassVar[str] = "ReferenceValue"
     class_model_uri: ClassVar[URIRef] = GISTL.ReferenceValue
 
@@ -1487,7 +1487,7 @@ class Determination(Event):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["Determination"]
-    class_class_curie: ClassVar[str] = "gist_upstream:Determination"
+    class_class_curie: ClassVar[str] = "gist :Determination"
     class_name: ClassVar[str] = "Determination"
     class_model_uri: ClassVar[URIRef] = GISTL.Determination
 
@@ -1499,7 +1499,7 @@ class EventSpecification(Specification):
     _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GIST_UPSTREAM["EventSpecification"]
-    class_class_curie: ClassVar[str] = "gist_upstream:EventSpecification"
+    class_class_curie: ClassVar[str] = "gist :EventSpecification"
     class_name: ClassVar[str] = "EventSpecification"
     class_model_uri: ClassVar[URIRef] = GISTL.EventSpecification
 

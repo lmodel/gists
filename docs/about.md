@@ -116,14 +116,14 @@ The main schema (`gistl.yaml`) imports three specialized modules:
 ## Ontology Alignment
 
 - **Exact Mappings**: Schema.org, Wikidata, NCIT
-- **Semantic URIs**: All classes and properties mapped to gist_upstream namespace
+- **Semantic URIs**: All classes and properties mapped to gist  namespace
 - **RDF/OWL Support**: Exportable to OWL/Turtle format via `gen-owl`
 
 ### Full-Circle Fidelity (gist 14.1.0 upstream OWL vs `gen-owl` output)
 
 Schema enrichments were derived from the upstream TTL files so that `gen-owl` reproduces the corresponding OWL axioms. Counts are based on the full upstream TTL corpus and a fresh `gen-owl` run (LinkML 1.11.0).
 
-**Namespace note**: gen-owl emits properties in the `gistl:` namespace with snake_case names (e.g.`gistl:conversion_factor`), bridged to the upstream `gist_upstream:` camelCase IRIs via `skos:exactMatch` (97 triples). Domain/range triples in the tables below are thus in the correct structure but attached to different property IRIs than the upstream.
+**Namespace note**: gen-owl emits properties in the `gistl:` namespace with snake_case names (e.g.`gistl:conversion_factor`), bridged to the upstream `gist :` camelCase IRIs via `skos:exactMatch` (97 triples). Domain/range triples in the tables below are thus in the correct structure but attached to different property IRIs than the upstream.
 
 #### Exact parity
 
@@ -151,7 +151,7 @@ Schema enrichments were derived from the upstream TTL files so that `gen-owl` re
 | Axiom | Upstream | gen-owl | Explanation |
 |-------|----------|---------|-------------|
 | `skos:altLabel` | 1 | 217 | Upstream: 1 (`ElectronicAddress`). gen-owl emits `skos:altLabel` for all `aliases:` entries across the schema (many schema-level aliases added for usability) |
-| `skos:exactMatch` | 0 | 97 | gen-owl bridges `gistl:` ↔ `gist_upstream:` via `exact_mappings:` / `slot_uri:` — not in upstream |
+| `skos:exactMatch` | 0 | 97 | gen-owl bridges `gistl:` ↔ `gist :` via `exact_mappings:` / `slot_uri:` — not in upstream |
 
 #### Schema enrichments added to achieve parity
 
@@ -170,7 +170,7 @@ Schema enrichments were derived from the upstream TTL files so that `gen-owl` re
 | `domain:` on 27 slots | `rdfs:domain` | `domain:` ✅ re-emitted |
 | `range:` on 120 slots | `rdfs:range` | `range:` ✅ re-emitted |
 | `aliases:` on `ElectronicAddress` (`Virtual Address`) | `skos:altLabel` | `aliases:` ✅ re-emitted |
-| `exact_mappings: [gist_upstream:prohibits]` on `prevents` | `owl:equivalentProperty` | `exact_mappings:` (emits `skos:exactMatch` — Gap 7) |
+| `exact_mappings: [gist :prohibits]` on `prevents` | `owl:equivalentProperty` | `exact_mappings:` (emits `skos:exactMatch` — Gap 7) |
 
 #### Not representable in LinkML (structural gaps)
 

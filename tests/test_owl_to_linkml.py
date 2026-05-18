@@ -262,7 +262,7 @@ class TestExtractClasses:
     def test_class_uri_set(self):
         g = _core_class_graph()
         classes = M.extract_classes(g)
-        assert classes["Category"]["class_uri"] == "gist_upstream:Category"
+        assert classes["Category"]["class_uri"] == "gist :Category"
 
     def test_is_a_from_subclassof(self):
         g = _core_class_graph()
@@ -348,7 +348,7 @@ class TestExtractSlots:
     def test_object_property_slot_uri(self):
         g = _object_prop_graph()
         slots = M.extract_slots(g)
-        assert slots["has_party"]["slot_uri"] == "gist_upstream:hasParty"
+        assert slots["has_party"]["slot_uri"] == "gist :hasParty"
 
     def test_object_property_range(self):
         g = _object_prop_graph()
@@ -655,7 +655,7 @@ class TestExtractSubClassAssertions:
         g = Graph()
         g.add((GIST.Category, RDFS.subClassOf, GIST.Thing))
         classes = M.extract_sub_class_assertions(g)
-        assert classes["Category"]["class_uri"] == "gist_upstream:Category"
+        assert classes["Category"]["class_uri"] == "gist :Category"
 
     def test_non_gist_subjects_ignored(self):
         g = Graph()
@@ -909,7 +909,7 @@ class TestBuildMediaTypesSchema:
 
 class TestBuildPrefixDeclarationsSchema:
     def _make_schema(self, **kw):
-        pv = {"GIST": {"title": "gistl", "description": "d", "meaning": "gist_upstream:_PrefixDeclaration_gist"}}
+        pv = {"GIST": {"title": "gistl", "description": "d", "meaning": "gist :_PrefixDeclaration_gist"}}
         return M.build_prefix_declarations_schema(pv, **kw)
 
     def test_prefix_declaration_instance_enum(self):
@@ -928,8 +928,8 @@ class TestBuildPrefixDeclarationsSchema:
 
 class TestBuildRdfsAnnotationsSchema:
     def _make_schema(self, **kw):
-        classes = {"Foo": {"class_uri": "gist_upstream:Foo"}}
-        slots = {"has_foo": {"slot_uri": "gist_upstream:hasFoo"}}
+        classes = {"Foo": {"class_uri": "gist :Foo"}}
+        slots = {"has_foo": {"slot_uri": "gist :hasFoo"}}
         return M.build_rdfs_annotations_schema(classes, slots, **kw)
 
     def test_has_classes_and_slots(self):
@@ -953,8 +953,8 @@ class TestBuildRdfsAnnotationsSchema:
 class TestBuildSubClassAssertionsSchema:
     def _make_schema(self, **kw):
         classes = {
-            "Category": {"class_uri": "gist_upstream:Category", "is_a": "Thing"},
-            "Thing": {"class_uri": "gist_upstream:Thing"},
+            "Category": {"class_uri": "gist :Category", "is_a": "Thing"},
+            "Thing": {"class_uri": "gist :Thing"},
         }
         return M.build_sub_class_assertions_schema(classes, **kw)
 

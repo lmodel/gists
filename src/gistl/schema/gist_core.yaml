@@ -12,7 +12,7 @@ version: 14.1.0
 
 prefixes:
   gistl: https://w3id.org/model/gistl/
-  gist_upstream: https://w3id.org/semanticarts/ns/ontology/gist/
+  gist: https://w3id.org/semanticarts/ns/ontology/gist/
   gistd: https://w3id.org/semanticarts/ns/data/gist/
   linkml: https://w3id.org/linkml/
   schema: http://schema.org/
@@ -104,7 +104,7 @@ enums:
 slots:
 
   is_rendered_on:
-    slot_uri: gist_upstream:isRenderedOn
+    slot_uri: gist:isRenderedOn
     implements:
     - owl:ObjectProperty
     description: Relates content to the media on which it is rendered.
@@ -118,7 +118,7 @@ slots:
     - gist_core
 
   is_made_up_of:
-    slot_uri: gist_upstream:isMadeUpOf
+    slot_uri: gist:isMadeUpOf
     implements:
     - owl:ObjectProperty
     description: Relates something to a substance that it is made up of.
@@ -132,7 +132,7 @@ slots:
     - gist_core
 
   is_based_on:
-    slot_uri: gist_upstream:isBasedOn
+    slot_uri: gist:isBasedOn
     implements:
     - owl:ObjectProperty
     description: |-
@@ -148,7 +148,7 @@ slots:
 
   has_unique_navigational_parent:
     is_a: has_navigational_parent
-    slot_uri: gist_upstream:hasUniqueNavigationalParent
+    slot_uri: gist:hasUniqueNavigationalParent
     implements:
     - owl:ObjectProperty
     description: |-
@@ -165,7 +165,7 @@ slots:
       owl_functional: true
 
   goes_to_place:
-    slot_uri: gist_upstream:goesToPlace
+    slot_uri: gist:goesToPlace
     implements:
     - owl:ObjectProperty
     description: Relates something to its destination place.
@@ -183,7 +183,7 @@ slots:
 
   has_unique_broader:
     is_a: has_broader
-    slot_uri: gist_upstream:hasUniqueBroader
+    slot_uri: gist:hasUniqueBroader
     implements:
     - owl:ObjectProperty
     description: Relates a thing to a unique other thing with a broader meaning.
@@ -200,7 +200,7 @@ slots:
 
   is_first_member_of:
     is_a: is_member_of
-    slot_uri: gist_upstream:isFirstMemberOf
+    slot_uri: gist:isFirstMemberOf
     implements:
     - owl:ObjectProperty
     description: Relates the first member of an ordered collection to the collection.
@@ -221,7 +221,7 @@ slots:
       owl_functional: true
 
   has_address:
-    slot_uri: gist_upstream:hasAddress
+    slot_uri: gist:hasAddress
     implements:
     - owl:ObjectProperty
     description: Relates something to its physical or electronic address.
@@ -236,7 +236,7 @@ slots:
     - gist_core
 
   has_biological_parent:
-    slot_uri: gist_upstream:hasBiologicalParent
+    slot_uri: gist:hasBiologicalParent
     implements:
     - owl:ObjectProperty
     description: Relates a living thing to its biological parent.
@@ -249,7 +249,7 @@ slots:
     - gist_core
 
   has_goal:
-    slot_uri: gist_upstream:hasGoal
+    slot_uri: gist:hasGoal
     implements:
     - owl:ObjectProperty
     description: Relates something to the end towards which it directs effort.
@@ -264,7 +264,7 @@ slots:
 
   has_direct_broader:
     is_a: has_broader
-    slot_uri: gist_upstream:hasDirectBroader
+    slot_uri: gist:hasDirectBroader
     implements:
     - owl:ObjectProperty
     description: |-
@@ -279,7 +279,7 @@ slots:
     - gist_core
 
   is_member_of:
-    slot_uri: gist_upstream:isMemberOf
+    slot_uri: gist:isMemberOf
     implements:
     - owl:ObjectProperty
     description: |-
@@ -294,7 +294,7 @@ slots:
     - gist_core
 
   is_triggered_by:
-    slot_uri: gist_upstream:isTriggeredBy
+    slot_uri: gist:isTriggeredBy
     implements:
     - owl:ObjectProperty
     description: |-
@@ -312,7 +312,7 @@ slots:
     - gist_core
 
   refers_to:
-    slot_uri: gist_upstream:refersTo
+    slot_uri: gist:refersTo
     implements:
     - owl:ObjectProperty
     description: |-
@@ -324,7 +324,7 @@ slots:
     - gist_core
 
   is_identified_by:
-    slot_uri: gist_upstream:isIdentifiedBy
+    slot_uri: gist:isIdentifiedBy
     implements:
     - owl:ObjectProperty
     description: Relates something to a content object that uniquely identifies it.
@@ -341,7 +341,7 @@ slots:
       owl_inverse_functional: true
 
   has_unit_group:
-    slot_uri: gist_upstream:hasUnitGroup
+    slot_uri: gist:hasUnitGroup
     implements:
     - owl:ObjectProperty
     description: |-
@@ -358,7 +358,7 @@ slots:
     - gist_core
 
   is_about:
-    slot_uri: gist_upstream:isAbout
+    slot_uri: gist:isAbout
     implements:
     - owl:ObjectProperty
     description: Subject matter of a document.
@@ -371,7 +371,7 @@ slots:
 
   has_recipient:
     is_a: has_participant
-    slot_uri: gist_upstream:hasRecipient
+    slot_uri: gist:hasRecipient
     implements:
     - owl:ObjectProperty
     description: Relates something to the participant that receives or is intended to receive it.
@@ -388,7 +388,7 @@ slots:
     - gist_core
 
   has_accuracy:
-    slot_uri: gist_upstream:hasAccuracy
+    slot_uri: gist:hasAccuracy
     implements:
     - owl:ObjectProperty
     description: Relates a magnitude to another magnitude that describes its accuracy.
@@ -419,7 +419,7 @@ slots:
 
   links_from:
     is_a: links
-    slot_uri: gist_upstream:linksFrom
+    slot_uri: gist:linksFrom
     implements:
     - owl:ObjectProperty
     description: |-
@@ -432,7 +432,7 @@ slots:
     - gist_core
 
   is_under_jurisdiction_of:
-    slot_uri: gist_upstream:isUnderJurisdictionOf
+    slot_uri: gist:isUnderJurisdictionOf
     implements:
     - owl:ObjectProperty
     description: |-
@@ -446,7 +446,7 @@ slots:
 
   goes_to_agent:
     is_a: has_participant
-    slot_uri: gist_upstream:goesToAgent
+    slot_uri: gist:goesToAgent
     implements:
     - owl:ObjectProperty
     description: Relates something to the agent that receives it.
@@ -468,7 +468,7 @@ slots:
 
   precedes_directly:
     is_a: precedes
-    slot_uri: gist_upstream:precedesDirectly
+    slot_uri: gist:precedesDirectly
     implements:
     - owl:ObjectProperty
     description: |-
@@ -487,7 +487,7 @@ slots:
     - gist_core
 
   is_expressed_in:
-    slot_uri: gist_upstream:isExpressedIn
+    slot_uri: gist:isExpressedIn
     implements:
     - owl:ObjectProperty
     description: Relates something to the language it is expressed in.
@@ -500,7 +500,7 @@ slots:
 
   comes_from_agent:
     is_a: has_participant
-    slot_uri: gist_upstream:comesFromAgent
+    slot_uri: gist:comesFromAgent
     implements:
     - owl:ObjectProperty
     description: Relates something to the originating agent.
@@ -522,7 +522,7 @@ slots:
     - gist_core
 
   prohibits:
-    slot_uri: gist_upstream:prohibits
+    slot_uri: gist:prohibits
     implements:
     - owl:ObjectProperty
     description: Relates an intention to a behavior that it forbids or seeks to prevent.
@@ -542,7 +542,7 @@ slots:
     - gist_core
 
   offers_to_provide:
-    slot_uri: gist_upstream:offersToProvide
+    slot_uri: gist:offersToProvide
     implements:
     - owl:ObjectProperty
     description: Relates an offer to the thing being made available for exchange.
@@ -559,7 +559,7 @@ slots:
     - gist_core
 
   comes_from_place:
-    slot_uri: gist_upstream:comesFromPlace
+    slot_uri: gist:comesFromPlace
     implements:
     - owl:ObjectProperty
     description: Relates something to its place of origin.
@@ -576,7 +576,7 @@ slots:
     - gist_core
 
   has_broader:
-    slot_uri: gist_upstream:hasBroader
+    slot_uri: gist:hasBroader
     implements:
     - owl:ObjectProperty
     description: Relates a thing to another thing with a broader meaning.
@@ -585,12 +585,11 @@ slots:
     examples:
     - value: The aspect distance is broader than the aspect height.
     multivalued: true
-    transitive: true
     in_subset:
     - gist_core
 
   is_categorized_by:
-    slot_uri: gist_upstream:isCategorizedBy
+    slot_uri: gist:isCategorizedBy
     implements:
     - owl:ObjectProperty
     description: |-
@@ -603,7 +602,7 @@ slots:
     - gist_core
 
   requires:
-    slot_uri: gist_upstream:requires
+    slot_uri: gist:requires
     implements:
     - owl:ObjectProperty
     description: The subject needs the object or makes it necessary, mandatory, or compulsory.
@@ -621,7 +620,7 @@ slots:
     - gist_core
 
   conforms_to:
-    slot_uri: gist_upstream:conformsTo
+    slot_uri: gist:conformsTo
     implements:
     - owl:ObjectProperty
     description: |-
@@ -637,7 +636,7 @@ slots:
     - gist_core
 
   has_multiplier:
-    slot_uri: gist_upstream:hasMultiplier
+    slot_uri: gist:hasMultiplier
     implements:
     - owl:ObjectProperty
     description: |-
@@ -656,7 +655,7 @@ slots:
 
   links_to:
     is_a: links
-    slot_uri: gist_upstream:linksTo
+    slot_uri: gist:linksTo
     implements:
     - owl:ObjectProperty
     description: |-
@@ -669,7 +668,7 @@ slots:
     - gist_core
 
   is_produced_by:
-    slot_uri: gist_upstream:isProducedBy
+    slot_uri: gist:isProducedBy
     implements:
     - owl:ObjectProperty
     description: |-
@@ -685,7 +684,7 @@ slots:
     - gist_core
 
   is_assignment_to:
-    slot_uri: gist_upstream:isAssignmentTo
+    slot_uri: gist:isAssignmentTo
     implements:
     - owl:ObjectProperty
     description: |-
@@ -700,7 +699,7 @@ slots:
     - gist_core
 
   precedes:
-    slot_uri: gist_upstream:precedes
+    slot_uri: gist:precedes
     implements:
     - owl:ObjectProperty
     description: A generic ordering relation indicating that the subject comes before the object.
@@ -717,7 +716,7 @@ slots:
     - gist_core
 
   is_affected_by:
-    slot_uri: gist_upstream:isAffectedBy
+    slot_uri: gist:isAffectedBy
     implements:
     - owl:ObjectProperty
     description: Relates an affected thing to the source of the effect.
@@ -728,7 +727,7 @@ slots:
     - gist_core
 
   is_recognized_by:
-    slot_uri: gist_upstream:isRecognizedBy
+    slot_uri: gist:isRecognizedBy
     implements:
     - owl:ObjectProperty
     description: |-
@@ -745,7 +744,7 @@ slots:
     - gist_core
 
   occurs_in:
-    slot_uri: gist_upstream:occursIn
+    slot_uri: gist:occursIn
     implements:
     - owl:ObjectProperty
     description: |-
@@ -757,7 +756,7 @@ slots:
     - gist_core
 
   has_participant:
-    slot_uri: gist_upstream:hasParticipant
+    slot_uri: gist:hasParticipant
     implements:
     - owl:ObjectProperty
     description: |-
@@ -777,7 +776,7 @@ slots:
     - gist_core
 
   has_navigational_parent:
-    slot_uri: gist_upstream:hasNavigationalParent
+    slot_uri: gist:hasNavigationalParent
     implements:
     - owl:ObjectProperty
     description: |-
@@ -792,7 +791,7 @@ slots:
     - gist_core
 
   is_connected_to:
-    slot_uri: gist_upstream:isConnectedTo
+    slot_uri: gist:isConnectedTo
     implements:
     - owl:ObjectProperty
     description: A non-owning, non-causal, non-subordinate (i.e., peer-to-peer) relationship.
@@ -804,7 +803,7 @@ slots:
     - gist_core
 
   has_physical_location:
-    slot_uri: gist_upstream:hasPhysicalLocation
+    slot_uri: gist:hasPhysicalLocation
     implements:
     - owl:ObjectProperty
     description: Relates something to its physical location.
@@ -820,7 +819,7 @@ slots:
     - gist_core
 
   is_part_of:
-    slot_uri: gist_upstream:isPartOf
+    slot_uri: gist:isPartOf
     implements:
     - owl:ObjectProperty
     description: |-
@@ -837,7 +836,7 @@ slots:
 
   has_giver:
     is_a: has_participant
-    slot_uri: gist_upstream:hasGiver
+    slot_uri: gist:hasGiver
     implements:
     - owl:ObjectProperty
     description: Relates something to the participant that provides it.
@@ -856,7 +855,7 @@ slots:
     - gist_core
 
   is_geo_contained_in:
-    slot_uri: gist_upstream:isGeoContainedIn
+    slot_uri: gist:isGeoContainedIn
     implements:
     - owl:ObjectProperty
     description: Relates one geographic location to another that contains it.
@@ -870,7 +869,7 @@ slots:
     - gist_core
 
   has_aspect:
-    slot_uri: gist_upstream:hasAspect
+    slot_uri: gist:hasAspect
     implements:
     - owl:ObjectProperty
     description: Relates a magnitude to its aspect (measurable characteristic).
@@ -887,7 +886,7 @@ slots:
       owl_functional: true
 
   has_divisor:
-    slot_uri: gist_upstream:hasDivisor
+    slot_uri: gist:hasDivisor
     implements:
     - owl:ObjectProperty
     description: |-
@@ -906,7 +905,7 @@ slots:
 
   has_party:
     is_a: has_participant
-    slot_uri: gist_upstream:hasParty
+    slot_uri: gist:hasParty
     implements:
     - owl:ObjectProperty
     description: |-
@@ -926,7 +925,7 @@ slots:
     - gist_core
 
   is_allocated_by:
-    slot_uri: gist_upstream:isAllocatedBy
+    slot_uri: gist:isAllocatedBy
     implements:
     - owl:ObjectProperty
     description: Relates something to whomever or whatever assigns or distributes it.
@@ -946,7 +945,7 @@ slots:
     - gist_core
 
   has_addend:
-    slot_uri: gist_upstream:hasAddend
+    slot_uri: gist:hasAddend
     implements:
     - owl:ObjectProperty
     description: Relates an aspect to another aspect that is an additive component of it.
@@ -962,7 +961,7 @@ slots:
     - gist_core
 
   has_magnitude:
-    slot_uri: gist_upstream:hasMagnitude
+    slot_uri: gist:hasMagnitude
     implements:
     - owl:ObjectProperty
     description: Relates a thing to a magnitude.
@@ -977,7 +976,7 @@ slots:
     - gist_core
 
   is_assignment_of:
-    slot_uri: gist_upstream:isAssignmentOf
+    slot_uri: gist:isAssignmentOf
     implements:
     - owl:ObjectProperty
     description: Relates an assignment to the resource it assigns.
@@ -999,7 +998,7 @@ slots:
     - gist_core
 
   allows:
-    slot_uri: gist_upstream:allows
+    slot_uri: gist:allows
     implements:
     - owl:ObjectProperty
     description: Relates a permission to a particular activity or type of activity it allows.
@@ -1013,7 +1012,7 @@ slots:
     - gist_core
 
   is_governed_by:
-    slot_uri: gist_upstream:isGovernedBy
+    slot_uri: gist:isGovernedBy
     implements:
     - owl:ObjectProperty
     description: |-
@@ -1029,7 +1028,7 @@ slots:
 
   is_direct_part_of:
     is_a: is_part_of
-    slot_uri: gist_upstream:isDirectPartOf
+    slot_uri: gist:isDirectPartOf
     implements:
     - owl:ObjectProperty
     description: |-
@@ -1045,7 +1044,7 @@ slots:
     - gist_core
 
   has_subtrahend:
-    slot_uri: gist_upstream:hasSubtrahend
+    slot_uri: gist:hasSubtrahend
     implements:
     - owl:ObjectProperty
     description: Relates an aspect to another aspect that is a subtracted component of it.
@@ -1061,7 +1060,7 @@ slots:
     - gist_core
 
   has_incumbent:
-    slot_uri: gist_upstream:hasIncumbent
+    slot_uri: gist:hasIncumbent
     implements:
     - owl:ObjectProperty
     description: Relates a position to the thing or person that currently holds that position.
@@ -1075,7 +1074,7 @@ slots:
     - gist_core
 
   has_unit_of_measure:
-    slot_uri: gist_upstream:hasUnitOfMeasure
+    slot_uri: gist:hasUnitOfMeasure
     implements:
     - owl:ObjectProperty
     description: Relates a magnitude to its unit of measure.
@@ -1090,7 +1089,7 @@ slots:
     - gist_core
 
   prevents:
-    slot_uri: gist_upstream:prevents
+    slot_uri: gist:prevents
     implements:
     - owl:ObjectProperty
     description: Relates an intention to behavior that it prohibits.
@@ -1109,10 +1108,10 @@ slots:
     in_subset:
     - gist_core
     exact_mappings:
-    - gist_upstream:prohibits
+    - gist:prohibits
 
   offers_to_receive:
-    slot_uri: gist_upstream:offersToReceive
+    slot_uri: gist:offersToReceive
     implements:
     - owl:ObjectProperty
     description: Relates an offer to the thing expected in return for the offered item.
@@ -1129,7 +1128,7 @@ slots:
     - gist_core
 
   owns:
-    slot_uri: gist_upstream:owns
+    slot_uri: gist:owns
     implements:
     - owl:ObjectProperty
     description: Relates a party to something that it possesses and controls.
@@ -1147,7 +1146,7 @@ slots:
     - gist_core
 
   provides_order_for:
-    slot_uri: gist_upstream:providesOrderFor
+    slot_uri: gist:providesOrderFor
     implements:
     - owl:ObjectProperty
     description: |-
@@ -1165,7 +1164,7 @@ slots:
       owl_functional: true
 
   links:
-    slot_uri: gist_upstream:links
+    slot_uri: gist:links
     implements:
     - owl:ObjectProperty
     description: |-
@@ -1178,7 +1177,7 @@ slots:
     - gist_core
 
   contributes_to:
-    slot_uri: gist_upstream:contributesTo
+    slot_uri: gist:contributesTo
     implements:
     - owl:ObjectProperty
     description: The subject helps achieve or fulfill the goals or functions of the object.
@@ -1189,7 +1188,7 @@ slots:
     - gist_core
 
   symbol:
-    slot_uri: gist_upstream:symbol
+    slot_uri: gist:symbol
     implements:
     - owl:DatatypeProperty
     description: A symbol for something using only ASCII characters.
@@ -1201,7 +1200,7 @@ slots:
     - gist_core
 
   exponent_of_steradian:
-    slot_uri: gist_upstream:exponentOfSteradian
+    slot_uri: gist:exponentOfSteradian
     implements:
     - owl:DatatypeProperty
     description: The exponent of steradian in a product of powers of base units.
@@ -1224,7 +1223,7 @@ slots:
 
   actual_start_minute:
     is_a: actual_start_date_time
-    slot_uri: gist_upstream:actualStartMinute
+    slot_uri: gist:actualStartMinute
     implements:
     - owl:DatatypeProperty
     description: The actual date and time that something started, with precision of one minute.
@@ -1240,7 +1239,7 @@ slots:
     - gist_core
 
   latitude:
-    slot_uri: gist_upstream:latitude
+    slot_uri: gist:latitude
     implements:
     - owl:DatatypeProperty
     description: Degrees above or below the equator.
@@ -1253,7 +1252,7 @@ slots:
 
   planned_start_date:
     is_a: planned_start_date_time
-    slot_uri: gist_upstream:plannedStartDate
+    slot_uri: gist:plannedStartDate
     implements:
     - owl:DatatypeProperty
     description: The date that something is or was planned to start, with precision of one day.
@@ -1270,7 +1269,7 @@ slots:
 
   end_date_time:
     is_a: at_date_time
-    slot_uri: gist_upstream:endDateTime
+    slot_uri: gist:endDateTime
     implements:
     - owl:DatatypeProperty
     description: The date and time that something ends.
@@ -1287,7 +1286,7 @@ slots:
 
   planned_end_date_time:
     is_a: end_date_time
-    slot_uri: gist_upstream:plannedEndDateTime
+    slot_uri: gist:plannedEndDateTime
     implements:
     - owl:DatatypeProperty
     description: The date that something is or was planned to end, with no implied precision.
@@ -1304,7 +1303,7 @@ slots:
 
   actual_end_minute:
     is_a: actual_end_date_time
-    slot_uri: gist_upstream:actualEndMinute
+    slot_uri: gist:actualEndMinute
     implements:
     - owl:DatatypeProperty
     description: The actual date and time that something ended, with precision of one minute.
@@ -1320,7 +1319,7 @@ slots:
     - gist_core
 
   exponent_of_mole:
-    slot_uri: gist_upstream:exponentOfMole
+    slot_uri: gist:exponentOfMole
     implements:
     - owl:DatatypeProperty
     description: The exponent of mole in a product of powers of base units.
@@ -1340,7 +1339,7 @@ slots:
 
   start_date_time:
     is_a: at_date_time
-    slot_uri: gist_upstream:startDateTime
+    slot_uri: gist:startDateTime
     implements:
     - owl:DatatypeProperty
     description: The date and time that something starts.
@@ -1356,7 +1355,7 @@ slots:
     - gist_core
 
   conversion_offset:
-    slot_uri: gist_upstream:conversionOffset
+    slot_uri: gist:conversionOffset
     implements:
     - owl:DatatypeProperty
     description: "\r\n\t\tA value used along with a conversion factor to relate a unit to its corresponding unit in the International\
@@ -1377,7 +1376,7 @@ slots:
       owl_functional: true
 
   exponent_of_bit:
-    slot_uri: gist_upstream:exponentOfBit
+    slot_uri: gist:exponentOfBit
     implements:
     - owl:DatatypeProperty
     description: The exponent of bit in a product of powers of base units.
@@ -1396,7 +1395,7 @@ slots:
     - gist_core
 
   exponent_of_meter:
-    slot_uri: gist_upstream:exponentOfMeter
+    slot_uri: gist:exponentOfMeter
     implements:
     - owl:DatatypeProperty
     description: The exponent of meter in a product of powers of base units.
@@ -1416,7 +1415,7 @@ slots:
     - gist_core
 
   contained_text:
-    slot_uri: gist_upstream:containedText
+    slot_uri: gist:containedText
     implements:
     - owl:DatatypeProperty
     description: |-
@@ -1432,7 +1431,7 @@ slots:
     - gist_core
 
   conversion_factor:
-    slot_uri: gist_upstream:conversionFactor
+    slot_uri: gist:conversionFactor
     implements:
     - owl:DatatypeProperty
     description: |-
@@ -1454,13 +1453,13 @@ slots:
     in_subset:
     - gist_core
     see_also:
-    - gist_upstream:conversionOffset
+    - gist:conversionOffset
     annotations:
       owl_functional: true
 
   encrypted_text:
     is_a: contained_text
-    slot_uri: gist_upstream:encryptedText
+    slot_uri: gist:encryptedText
     implements:
     - owl:DatatypeProperty
     description: |-
@@ -1473,7 +1472,7 @@ slots:
 
   actual_start_year:
     is_a: actual_start_date_time
-    slot_uri: gist_upstream:actualStartYear
+    slot_uri: gist:actualStartYear
     implements:
     - owl:DatatypeProperty
     description: The actual date that something started, with precision of one year.
@@ -1490,7 +1489,7 @@ slots:
     - gist_core
 
   exponent_of_us_dollar:
-    slot_uri: gist_upstream:exponentOfUSDollar
+    slot_uri: gist:exponentOfUSDollar
     implements:
     - owl:DatatypeProperty
     description: The exponent of US Dollar in a product of powers of base units.
@@ -1512,7 +1511,7 @@ slots:
     - gist_core
 
   exponent_of_kelvin:
-    slot_uri: gist_upstream:exponentOfKelvin
+    slot_uri: gist:exponentOfKelvin
     implements:
     - owl:DatatypeProperty
     description: The exponent of Kelvin in a product of powers of base units.
@@ -1532,7 +1531,7 @@ slots:
     - gist_core
 
   exponent_of_ampere:
-    slot_uri: gist_upstream:exponentOfAmpere
+    slot_uri: gist:exponentOfAmpere
     implements:
     - owl:DatatypeProperty
     description: The exponent of ampere in a product of powers of base units.
@@ -1551,7 +1550,7 @@ slots:
     - gist_core
 
   exponent_of_radian:
-    slot_uri: gist_upstream:exponentOfRadian
+    slot_uri: gist:exponentOfRadian
     implements:
     - owl:DatatypeProperty
     description: The exponent of radian in a product of powers of base units.
@@ -1570,7 +1569,7 @@ slots:
     - gist_core
 
   id_text:
-    slot_uri: gist_upstream:idText
+    slot_uri: gist:idText
     implements:
     - owl:DatatypeProperty
     description: A text string that identifies an individual.
@@ -1591,7 +1590,7 @@ slots:
 
   actual_start_date_time:
     is_a: start_date_time
-    slot_uri: gist_upstream:actualStartDateTime
+    slot_uri: gist:actualStartDateTime
     implements:
     - owl:DatatypeProperty
     description: The actual date and time that something started, with no implied precision.
@@ -1606,7 +1605,7 @@ slots:
 
   actual_end_year:
     is_a: actual_end_date_time
-    slot_uri: gist_upstream:actualEndYear
+    slot_uri: gist:actualEndYear
     implements:
     - owl:DatatypeProperty
     description: The actual date that something ended, with precision of one year.
@@ -1624,7 +1623,7 @@ slots:
 
   actual_start_microsecond:
     is_a: actual_start_date_time
-    slot_uri: gist_upstream:actualStartMicrosecond
+    slot_uri: gist:actualStartMicrosecond
     implements:
     - owl:DatatypeProperty
     description: |-
@@ -1642,7 +1641,7 @@ slots:
 
   actual_end_microsecond:
     is_a: actual_end_date_time
-    slot_uri: gist_upstream:actualEndMicrosecond
+    slot_uri: gist:actualEndMicrosecond
     implements:
     - owl:DatatypeProperty
     description: |-
@@ -1660,7 +1659,7 @@ slots:
 
   is_recorded_at:
     is_a: at_date_time
-    slot_uri: gist_upstream:isRecordedAt
+    slot_uri: gist:isRecordedAt
     implements:
     - owl:DatatypeProperty
     description: |-
@@ -1676,7 +1675,7 @@ slots:
 
   planned_start_date_time:
     is_a: start_date_time
-    slot_uri: gist_upstream:plannedStartDateTime
+    slot_uri: gist:plannedStartDateTime
     implements:
     - owl:DatatypeProperty
     description: |-
@@ -1693,7 +1692,7 @@ slots:
     - gist_core
 
   exponent_of_candela:
-    slot_uri: gist_upstream:exponentOfCandela
+    slot_uri: gist:exponentOfCandela
     implements:
     - owl:DatatypeProperty
     description: The exponent of candela in a product of powers of base units.
@@ -1712,7 +1711,7 @@ slots:
     - gist_core
 
   description:
-    slot_uri: gist_upstream:description
+    slot_uri: gist:description
     implements:
     - owl:DatatypeProperty
     description: A statement about someone or something's attributes or characteristics.
@@ -1730,7 +1729,7 @@ slots:
     - gist_core
 
   exponent_of_second:
-    slot_uri: gist_upstream:exponentOfSecond
+    slot_uri: gist:exponentOfSecond
     implements:
     - owl:DatatypeProperty
     description: The exponent of second in a product of powers of base units.
@@ -1751,7 +1750,7 @@ slots:
 
   planned_end_date:
     is_a: planned_end_date_time
-    slot_uri: gist_upstream:plannedEndDate
+    slot_uri: gist:plannedEndDate
     implements:
     - owl:DatatypeProperty
     description: The date that something is or was planned to end, with precision of one day.
@@ -1767,7 +1766,7 @@ slots:
     - gist_core
 
   exponent_of_kilogram:
-    slot_uri: gist_upstream:exponentOfKilogram
+    slot_uri: gist:exponentOfKilogram
     implements:
     - owl:DatatypeProperty
     description: The exponent of kilogram in a product of powers of base units.
@@ -1787,7 +1786,7 @@ slots:
 
   unique_text:
     is_a: contained_text
-    slot_uri: gist_upstream:uniqueText
+    slot_uri: gist:uniqueText
     implements:
     - owl:DatatypeProperty
     description: |-
@@ -1809,7 +1808,7 @@ slots:
 
   actual_start_date:
     is_a: actual_start_date_time
-    slot_uri: gist_upstream:actualStartDate
+    slot_uri: gist:actualStartDate
     implements:
     - owl:DatatypeProperty
     description: The actual date that something started, with precision of one day.
@@ -1825,7 +1824,7 @@ slots:
     - gist_core
 
   exponent_of_number:
-    slot_uri: gist_upstream:exponentOfNumber
+    slot_uri: gist:exponentOfNumber
     implements:
     - owl:DatatypeProperty
     description: The exponent of number in a product of powers of base units.
@@ -1846,7 +1845,7 @@ slots:
     - gist_core
 
   sequence:
-    slot_uri: gist_upstream:sequence
+    slot_uri: gist:sequence
     implements:
     - owl:DatatypeProperty
     description: A number that specifies the position of an element within a series.
@@ -1858,7 +1857,7 @@ slots:
 
   planned_end_year:
     is_a: planned_end_date_time
-    slot_uri: gist_upstream:plannedEndYear
+    slot_uri: gist:plannedEndYear
     implements:
     - owl:DatatypeProperty
     description: The date that something is or was planned to end, with precision of one year.
@@ -1876,7 +1875,7 @@ slots:
     - gist_core
 
   at_date_time:
-    slot_uri: gist_upstream:atDateTime
+    slot_uri: gist:atDateTime
     implements:
     - owl:DatatypeProperty
     description: |-
@@ -1904,7 +1903,7 @@ slots:
     - gist_core
 
   name:
-    slot_uri: gist_upstream:name
+    slot_uri: gist:name
     implements:
     - owl:DatatypeProperty
     description: Relates an individual to (one of) its name(s).
@@ -1915,7 +1914,7 @@ slots:
 
   planned_start_year:
     is_a: planned_start_date_time
-    slot_uri: gist_upstream:plannedStartYear
+    slot_uri: gist:plannedStartYear
     implements:
     - owl:DatatypeProperty
     description: The date that something is or was planned to start, with precision of one year.
@@ -1934,7 +1933,7 @@ slots:
 
   birth_date:
     is_a: start_date_time
-    slot_uri: gist_upstream:birthDate
+    slot_uri: gist:birthDate
     implements:
     - owl:DatatypeProperty
     description: The date some living thing was or will be born, with precision of one day.
@@ -1951,7 +1950,7 @@ slots:
 
   planned_end_minute:
     is_a: planned_end_date_time
-    slot_uri: gist_upstream:plannedEndMinute
+    slot_uri: gist:plannedEndMinute
     implements:
     - owl:DatatypeProperty
     description: |-
@@ -1969,7 +1968,7 @@ slots:
 
   actual_end_date_time:
     is_a: end_date_time
-    slot_uri: gist_upstream:actualEndDateTime
+    slot_uri: gist:actualEndDateTime
     implements:
     - owl:DatatypeProperty
     description: The actual date and time that something ended, with no implied precision.
@@ -1984,7 +1983,7 @@ slots:
 
   actual_end_date:
     is_a: actual_end_date_time
-    slot_uri: gist_upstream:actualEndDate
+    slot_uri: gist:actualEndDate
     implements:
     - owl:DatatypeProperty
     description: The actual date that something ended, with precision of one day.
@@ -2000,7 +1999,7 @@ slots:
     - gist_core
 
   exponent_of_other:
-    slot_uri: gist_upstream:exponentOfOther
+    slot_uri: gist:exponentOfOther
     implements:
     - owl:DatatypeProperty
     description: |-
@@ -2012,6 +2011,7 @@ slots:
       \ in the examples).\r\n\r\n\t\tOtherwise set the value to 1, which typically means the units of measure in the group\
       \ use a logarithmic scale."
     examples:
+    - value: '''2021-01-01T00:00:00-06:00''^^xsd:dateTime'
     - value: |-
         Decibel, pH, and octave are units of measure that are logarithmic. Their unit groups have exponent of other = 1.
     domain: UnitGroup
@@ -2024,7 +2024,7 @@ slots:
 
   planned_start_minute:
     is_a: planned_start_date_time
-    slot_uri: gist_upstream:plannedStartMinute
+    slot_uri: gist:plannedStartMinute
     implements:
     - owl:DatatypeProperty
     description: |-
@@ -2041,7 +2041,7 @@ slots:
     - gist_core
 
   longitude:
-    slot_uri: gist_upstream:longitude
+    slot_uri: gist:longitude
     implements:
     - owl:DatatypeProperty
     description: Degrees from the prime meridian.
@@ -2053,7 +2053,7 @@ slots:
     - gist_core
 
   numeric_value:
-    slot_uri: gist_upstream:numericValue
+    slot_uri: gist:numericValue
     implements:
     - owl:DatatypeProperty
     description: The actual value of a magnitude.
@@ -2064,7 +2064,7 @@ slots:
 
   death_date:
     is_a: actual_end_date
-    slot_uri: gist_upstream:deathDate
+    slot_uri: gist:deathDate
     implements:
     - owl:DatatypeProperty
     description: The date some living thing died.
@@ -2080,7 +2080,7 @@ slots:
     - gist_core
 
   is_superseded_by:
-    slot_uri: gist_upstream:isSupersededBy
+    slot_uri: gist:isSupersededBy
     implements:
     - owl:AnnotationProperty
     description: |-
@@ -2094,12 +2094,12 @@ slots:
     - gist_core
 
   domain_includes:
-    slot_uri: gist_upstream:domainIncludes
+    slot_uri: gist:domainIncludes
     implements:
     - owl:AnnotationProperty
     description: Relates a property to a class that the property is expected to be used on.
     aliases:
-    - domain includes
+    - exponent of number
     comments:
     - |-
       This property is used to guide the ontology user; like all annotation properties, it does not play a role in inference.
@@ -2112,7 +2112,7 @@ slots:
     - http://www.w3.org/2004/02/skos/core#scopeNote
 
   license:
-    slot_uri: gist_upstream:license
+    slot_uri: gist:license
     implements:
     - owl:AnnotationProperty
     description: Relates something to its conditions of use.
@@ -2127,7 +2127,7 @@ slots:
     - gist_core
 
   range_includes:
-    slot_uri: gist_upstream:rangeIncludes
+    slot_uri: gist:rangeIncludes
     implements:
     - owl:AnnotationProperty
     description: Relates a property to a class that is an expected type of its values.
@@ -2148,7 +2148,7 @@ classes:
 
   ContemporaryEvent:
     is_a: Event
-    class_uri: gist_upstream:ContemporaryEvent
+    class_uri: gist:ContemporaryEvent
     description: An event that has started but has not yet ended.
     aliases:
     - Contemporary Event
@@ -2161,7 +2161,7 @@ classes:
 
   Offer:
     is_a: ContingentObligation
-    class_uri: gist_upstream:Offer
+    class_uri: gist:Offer
     description: |-
       A contingent commitment to buy, sell, swap or provide one or more described or identified goods or services in exchange for another (or others).
     aliases:
@@ -2171,7 +2171,7 @@ classes:
       Dates on an offer represent the time period the offer is valid for, as in '25% off through October 25, 2025.'
     examples:
     - value: |-
-        An offer to sell a book for a given price; an offer to purchase real estate for a particular price; an offer to swap a sea kayak for a mountain bike; currency exchange. A donation may be modeled as an offer to receive money typically in exchange for $0.00, but sometimes for items of value such as coffee mugs or T-shirts.
+        A fire insurance payout is contingent on a particular building burning down; selling 20 shares of stock in a given company is contingent on the price dropping below $200/share; the death benefit payout on a life insurance policy is contingent on the death of the insured person.
     notes:
     - |-
       OWL equivalentClass: (gistl:ContingentObligation & ∃hasGiver.(gistl:Organization | gistl:Person) & ∃offersToProvide.owl:Thing & ∃offersToReceive.owl:Thing & ∃plannedEndDateTime.<http://www.w3.org/2001/XMLSchema#dateTime> & ∃plannedStartDateTime.<http://www.w3.org/2001/XMLSchema#dateTime>)
@@ -2180,7 +2180,7 @@ classes:
 
   OrderedMember:
     is_a: Component
-    class_uri: gist_upstream:OrderedMember
+    class_uri: gist:OrderedMember
     description: |-
       A member of an ordered collection serving as a proxy for a real world item, which can appear in different orders in different collections. The ordered member appears in exactly one ordered collection.
     aliases:
@@ -2200,7 +2200,7 @@ classes:
   Aspect:
     mixins:
     - GistThing
-    class_uri: gist_upstream:Aspect
+    class_uri: gist:Aspect
     description: A measurable characteristic.
     aliases:
     - Aspect
@@ -2218,7 +2218,7 @@ classes:
 
   MediaType:
     is_a: Category
-    class_uri: gist_upstream:MediaType
+    class_uri: gist:MediaType
     description: A digitized type that computer applications can recognize.
     aliases:
     - Media Type
@@ -2237,7 +2237,7 @@ classes:
 
   BundledCatalogItem:
     is_a: CatalogItem
-    class_uri: gist_upstream:BundledCatalogItem
+    class_uri: gist:BundledCatalogItem
     description: Any combination of descriptions of things offered together.
     aliases:
     - Bundled Catalog Item
@@ -2250,7 +2250,7 @@ classes:
 
   PhysicalAddress:
     is_a: Address
-    class_uri: gist_upstream:PhysicalAddress
+    class_uri: gist:PhysicalAddress
     description: An address that refers to a locatable place within the physical universe.
     aliases:
     - Physical Address
@@ -2264,7 +2264,7 @@ classes:
 
   ContentExpression:
     is_a: Content
-    class_uri: gist_upstream:ContentExpression
+    class_uri: gist:ContentExpression
     description: Content reduced to text, audio, etc.
     aliases:
     - Content Expression
@@ -2282,7 +2282,7 @@ classes:
 
   Permission:
     is_a: Intention
-    class_uri: gist_upstream:Permission
+    class_uri: gist:Permission
     description: A description of things one is permitted to do.
     aliases:
     - Permission
@@ -2296,7 +2296,7 @@ classes:
 
   DegreeOfCommitment:
     is_a: Category
-    class_uri: gist_upstream:DegreeOfCommitment
+    class_uri: gist:DegreeOfCommitment
     description: The difficulty of reversing a commitment.
     aliases:
     - Degree Of Commitment
@@ -2308,7 +2308,7 @@ classes:
 
   Requirement:
     is_a: Intention
-    class_uri: gist_upstream:Requirement
+    class_uri: gist:Requirement
     description: The obligation of a person or organization to behave in a certain way.
     aliases:
     - Requirement
@@ -2319,7 +2319,7 @@ classes:
 
   EquipmentType:
     is_a: Category
-    class_uri: gist_upstream:EquipmentType
+    class_uri: gist:EquipmentType
     description: A category of equipment.
     aliases:
     - Equipment Type
@@ -2328,7 +2328,7 @@ classes:
 
   NetworkLink:
     is_a: Component
-    class_uri: gist_upstream:NetworkLink
+    class_uri: gist:NetworkLink
     description: |-
       An abstract representation of the connection between two or more nodes in a network.
     aliases:
@@ -2348,7 +2348,7 @@ classes:
 
   TaskTemplate:
     is_a: Template
-    class_uri: gist_upstream:TaskTemplate
+    class_uri: gist:TaskTemplate
     description: |-
       An outline of a task of a particular type, which is the basis for executing such tasks.
     aliases:
@@ -2366,7 +2366,7 @@ classes:
 
   ElectronicAddressType:
     is_a: Category
-    class_uri: gist_upstream:ElectronicAddressType
+    class_uri: gist:ElectronicAddressType
     description: |-
       A category indicating a kind of electronic address. Such a category is usually based on the technology that enables routing to the address referent.
     aliases:
@@ -2379,7 +2379,7 @@ classes:
   Organization:
     mixins:
     - GistThing
-    class_uri: gist_upstream:Organization
+    class_uri: gist:Organization
     description: |-
       A structured entity formed to achieve specific goals, typically involving members with defined roles.
     aliases:
@@ -2401,7 +2401,7 @@ classes:
 
   Contract:
     is_a: Agreement
-    class_uri: gist_upstream:Contract
+    class_uri: gist:Contract
     description: An agreement which can be enforced by law.
     aliases:
     - Contract
@@ -2413,7 +2413,7 @@ classes:
 
   Text:
     is_a: ContentExpression
-    class_uri: gist_upstream:Text
+    class_uri: gist:Text
     description: Content expressed as a written sequence of characters.
     aliases:
     - Text
@@ -2431,7 +2431,7 @@ classes:
 
   GovernmentOrganization:
     is_a: Organization
-    class_uri: gist_upstream:GovernmentOrganization
+    class_uri: gist:GovernmentOrganization
     description: |-
       An independent organization exercising political and/or regulatory authority over a political unit, people, geographical region, etc., as well as performing certain functions for this unit or body.
     aliases:
@@ -2451,7 +2451,7 @@ classes:
   PhysicalIdentifiableItem:
     mixins:
     - GistThing
-    class_uri: gist_upstream:PhysicalIdentifiableItem
+    class_uri: gist:PhysicalIdentifiableItem
     description: |-
       A discrete physical object which, if subdivided, will result in parts that are distinguishable in nature from the whole and in general also from the other parts.
     aliases:
@@ -2474,7 +2474,7 @@ classes:
   Event:
     mixins:
     - GistThing
-    class_uri: gist_upstream:Event
+    class_uri: gist:Event
     description: |-
       Something that occurs over a period of time, often characterized as an activity being carried out by some person, organization, or software application or brought about by natural forces.
     aliases:
@@ -2495,7 +2495,7 @@ classes:
 
   GeoRoute:
     is_a: OrderedCollection
-    class_uri: gist_upstream:GeoRoute
+    class_uri: gist:GeoRoute
     description: |-
       An ordered set of geographic points that defines a path from a starting point to an ending point.
     aliases:
@@ -2511,7 +2511,7 @@ classes:
   Content:
     mixins:
     - GistThing
-    class_uri: gist_upstream:Content
+    class_uri: gist:Content
     description: Information available in some medium.
     aliases:
     - Content
@@ -2534,7 +2534,7 @@ classes:
 
   ScheduledTask:
     is_a: Task
-    class_uri: gist_upstream:ScheduledTask
+    class_uri: gist:ScheduledTask
     description: A task with a planned start datetime.
     aliases:
     - Scheduled Task
@@ -2550,7 +2550,7 @@ classes:
 
   GeoPoint:
     is_a: GeoLocation
-    class_uri: gist_upstream:GeoPoint
+    class_uri: gist:GeoPoint
     description: |-
       An individual point on or above the Earth's surface, identified by latitude, longitude and altitude. Altitude is the distance measured from sea level. If altitude is missing, the point is assumed to be at the Earth's surface. These points are described using decimal latitude/longitude.
     aliases:
@@ -2573,7 +2573,7 @@ classes:
   GeoLocation:
     mixins:
     - GistThing
-    class_uri: gist_upstream:GeoLocation
+    class_uri: gist:GeoLocation
     description: A physical location, with the earth as a frame of reference.
     aliases:
     - Geographic Location
@@ -2584,7 +2584,7 @@ classes:
 
   Restriction:
     is_a: Intention
-    class_uri: gist_upstream:Restriction
+    class_uri: gist:Restriction
     description: A description of things one is prevented from doing.
     aliases:
     - Restriction
@@ -2598,7 +2598,7 @@ classes:
 
   Project:
     is_a: Task
-    class_uri: gist_upstream:Project
+    class_uri: gist:Project
     description: A task, usually of longer duration, made up of other tasks.
     aliases:
     - Project
@@ -2612,7 +2612,7 @@ classes:
 
   GeoRegion:
     is_a: GeoLocation
-    class_uri: gist_upstream:GeoRegion
+    class_uri: gist:GeoRegion
     description: A bounded region (or set of regions) on the surface of the Earth.
     aliases:
     - Geographic Region
@@ -2640,7 +2640,7 @@ classes:
 
   ContingentEvent:
     is_a: Event
-    class_uri: gist_upstream:ContingentEvent
+    class_uri: gist:ContingentEvent
     description: |-
       An event with a probability of happening in the future, and usually dependent upon some other event or condition.
     aliases:
@@ -2656,7 +2656,7 @@ classes:
 
   LivingThing:
     is_a: PhysicalIdentifiableItem
-    class_uri: gist_upstream:LivingThing
+    class_uri: gist:LivingThing
     description: Something that is currently, or at some point in time was, alive.
     aliases:
     - Living Thing
@@ -2675,7 +2675,7 @@ classes:
   Language:
     mixins:
     - GistThing
-    class_uri: gist_upstream:Language
+    class_uri: gist:Language
     description: A recognized, organized set of symbols and grammar.
     aliases:
     - Language
@@ -2694,7 +2694,7 @@ classes:
 
   Tag:
     is_a: Category
-    class_uri: gist_upstream:Tag
+    class_uri: gist:Tag
     description: |-
       A term in a folksonomy used to categorize things. Tags can be made up on the fly by users.
     aliases:
@@ -2711,7 +2711,7 @@ classes:
   Component:
     mixins:
     - GistThing
-    class_uri: gist_upstream:Component
+    class_uri: gist:Component
     description: |-
       Something that, while having an independent existence, is inherently part of or designed to be part of a larger entity, such as a system or network.
     aliases:
@@ -2734,7 +2734,7 @@ classes:
 
   ElectronicAddress:
     is_a: Address
-    class_uri: gist_upstream:ElectronicAddress
+    class_uri: gist:ElectronicAddress
     description: |-
       An address referring to a locatable virtual place that does not physically exist but is made by software or electronics to appear to do so.
     aliases:
@@ -2750,7 +2750,7 @@ classes:
 
   Function:
     is_a: Intention
-    class_uri: gist_upstream:Function
+    class_uri: gist:Function
     description: The activity that a human-made item is intended to perform.
     aliases:
     - Function
@@ -2761,7 +2761,7 @@ classes:
 
   ContractTerm:
     is_a: Specification
-    class_uri: gist_upstream:ContractTerm
+    class_uri: gist:ContractTerm
     description: A specification of some aspect of a contract.
     aliases:
     - Contract Term
@@ -2770,7 +2770,7 @@ classes:
 
   GovernedGeoRegion:
     is_a: GeoRegion
-    class_uri: gist_upstream:GovernedGeoRegion
+    class_uri: gist:GovernedGeoRegion
     description: A geographic region governed by at least one government organization.
     aliases:
     - Governed Geographic Region
@@ -2786,7 +2786,7 @@ classes:
   PhysicalSubstance:
     mixins:
     - GistThing
-    class_uri: gist_upstream:PhysicalSubstance
+    class_uri: gist:PhysicalSubstance
     description: |-
       An undifferentiated amount of physical material which, when subdivided, results in each part being indistinguishable in nature from the whole and from every other part.
     aliases:
@@ -2809,7 +2809,7 @@ classes:
 
   ProductSpecification:
     is_a: CatalogItem
-    class_uri: gist_upstream:ProductSpecification
+    class_uri: gist:ProductSpecification
     description: |-
       A description of something that could be physically warehoused or digitally stored and physically or digitally delivered.
     aliases:
@@ -2822,7 +2822,7 @@ classes:
 
   UnitGroup:
     is_a: Collection
-    class_uri: gist_upstream:UnitGroup
+    class_uri: gist:UnitGroup
     description: |-
       A collection of units of measure that can all be used to measure the same aspects.
     aliases:
@@ -2843,7 +2843,7 @@ classes:
   TimeInterval:
     mixins:
     - GistThing
-    class_uri: gist_upstream:TimeInterval
+    class_uri: gist:TimeInterval
     description: |-
       A span of time with a known start time, end time, and duration. As long as two of the three are known, the third can be inferred.
     aliases:
@@ -2863,7 +2863,7 @@ classes:
 
   Behavior:
     is_a: Category
-    class_uri: gist_upstream:Behavior
+    class_uri: gist:Behavior
     description: A category indicating the nature of an activity.
     aliases:
     - Behavior
@@ -2874,7 +2874,7 @@ classes:
 
   GeoVolume:
     is_a: GeoLocation
-    class_uri: gist_upstream:GeoVolume
+    class_uri: gist:GeoVolume
     description: A three-dimensional space on or near the surface of the Earth.
     aliases:
     - Geographic Volume
@@ -2886,30 +2886,10 @@ classes:
     in_subset:
     - gist_core
 
-  SubCountryGovernment:
-    is_a: GovernmentOrganization
-    class_uri: gist_upstream:SubCountryGovernment
-    description: |-
-      The government of a governed geographic region other than a country which is under the direct or indirect control of a country government.
-    aliases:
-    - Sub-Country Government
-    comments:
-    - |-
-      There are many types of sub-regions of a country and the governments thereof (as well as different terms, like 'province' and 'state,' which refer to essentially the same type of thing). We should not automatically assume 'state,' 'county,' and 'city.' Subclasses or categories can be defined if greater specificity is needed.
-    - |-
-      Note that the predicate gist:isGovernedBy is used both for the relationship a governed geographic region has to its government and for the relationship a sub-region government has to the government of the larger region.
-    - |-
-      This class applies only to organizations governing geographic regions. Regulatory and bureaucratic organizations are members of the more generic gist:GovernmentOrganization class.
-    notes:
-    - |-
-      OWL equivalentClass: (gistl:GovernmentOrganization & ∃isGovernedBy.gistl:CountryGovernment & ∃^isGovernedBy.gistl:GeoRegion)
-    in_subset:
-    - gist_core
-
   IntellectualProperty:
     mixins:
     - GistThing
-    class_uri: gist_upstream:IntellectualProperty
+    class_uri: gist:IntellectualProperty
     description: |-
       An intangible work, invention, or concept, independent of its being expressed in text, audio, video, image, or live performance. IP can also be tacit knowledge, know-how, or skill.
     aliases:
@@ -2932,7 +2912,7 @@ classes:
 
   Network:
     is_a: Composite
-    class_uri: gist_upstream:Network
+    class_uri: gist:Network
     description: A composite consisting of nodes connected by links.
     aliases:
     - Network
@@ -2947,7 +2927,7 @@ classes:
 
   Collection:
     is_a: Composite
-    class_uri: gist_upstream:Collection
+    class_uri: gist:Collection
     description: A grouping of things.
     aliases:
     - Collection
@@ -2963,7 +2943,7 @@ classes:
   TemporalRelation:
     mixins:
     - GistThing
-    class_uri: gist_upstream:TemporalRelation
+    class_uri: gist:TemporalRelation
     description: A relationship existing for a period of time.
     aliases:
     - Temporal Relation
@@ -2980,7 +2960,7 @@ classes:
 
   FormattedContent:
     is_a: ContentExpression
-    class_uri: gist_upstream:FormattedContent
+    class_uri: gist:FormattedContent
     description: |-
       Content encoded in a specific format, but existing as data independent of any particular physical medium.
     aliases:
@@ -2997,7 +2977,7 @@ classes:
 
   GeneralMediaType:
     is_a: Category
-    class_uri: gist_upstream:GeneralMediaType
+    class_uri: gist:GeneralMediaType
     description: The real-world media type for content.
     aliases:
     - General Media Type
@@ -3007,9 +2987,54 @@ classes:
     in_subset:
     - gist_core
 
+  Medium:
+    is_a: Category
+    class_uri: gist:Medium
+    description: |-
+      A physical material on which a work can be rendered, represented, or implemented.
+    aliases:
+    - Medium
+    examples:
+    - value: Paper, clay, a computer monitor.
+    in_subset:
+    - gist_core
+
+  Assignment:
+    is_a: TemporalRelation
+    class_uri: gist:Assignment
+    description: |-
+      A temporal relationship between an assignee, the thing assigned, and the resource that made the assignment.
+    aliases:
+    - Assignment
+    comments:
+    - |-
+      For some assignments, such as the assignment of a person to a task, it may seem equally correct in ordinary speech to say it is an assignment of a task to a person. Since gist:isAssignmentTo and gist:isAssignmentOf have no formal domains or ranges, the choice of which predicate to use for which is left as an implementation decision. Consistency is a key consideration.
+    - Based on the Open World Assumption, the assigner may not be asserted or known.
+    examples:
+    - value: |-
+        An employee is assigned to a task by a supervisor. A person is assigned to a position.
+    notes:
+    - |-
+      OWL equivalentClass: (gist:TemporalRelation & ∃hasGiver.owl:Thing & ∃isAssignmentOf.owl:Thing & ∃isAssignmentTo.owl:Thing)
+    in_subset:
+    - gist_core
+
+  CountryGeoRegion:
+    is_a: GovernedGeoRegion
+    class_uri: gist:CountryGeoRegion
+    description: A geographic region governed by exactly one country government.
+    aliases:
+    - Country Geographic Region
+    notes:
+    - 'OWL subClassOf restrictions: =1isGovernedBy'
+    - |-
+      OWL equivalentClass: (gist:GovernedGeoRegion & ∃isGovernedBy.gist:CountryGovernment)
+    in_subset:
+    - gist_core
+
   CatalogItem:
     is_a: Specification
-    class_uri: gist_upstream:CatalogItem
+    class_uri: gist:CatalogItem
     description: |-
       A description of a product or service to be delivered, given in a sufficient level of detail that a receiver could determine whether delivery constituted discharge of the obligation to deliver.
     aliases:
@@ -3023,7 +3048,7 @@ classes:
   Template:
     mixins:
     - GistThing
-    class_uri: gist_upstream:Template
+    class_uri: gist:Template
     description: Something used to make objects in its own image.
     aliases:
     - Template
@@ -3040,7 +3065,7 @@ classes:
 
   Equipment:
     is_a: PhysicalIdentifiableItem
-    class_uri: gist_upstream:Equipment
+    class_uri: gist:Equipment
     description: |-
       Human-made, tangible property other than land or buildings used to perform a task or activity.
     aliases:
@@ -3055,7 +3080,7 @@ classes:
 
   HistoricalEvent:
     is_a: Event
-    class_uri: gist_upstream:HistoricalEvent
+    class_uri: gist:HistoricalEvent
     description: |-
       An event which occurred in time, with an actual end earlier than the present moment.
     aliases:
@@ -3070,7 +3095,7 @@ classes:
 
   IntergovernmentalOrganization:
     is_a: Organization
-    class_uri: gist_upstream:IntergovernmentalOrganization
+    class_uri: gist:IntergovernmentalOrganization
     description: |-
       An organization whose members are government organizations. This can comprise regional, municipal, state/province, or national level entities.
     aliases:
@@ -3085,7 +3110,7 @@ classes:
 
   Task:
     is_a: Event
-    class_uri: gist_upstream:Task
+    class_uri: gist:Task
     description: |-
       An activity or piece of work that is either proposed, planned, scheduled, underway, or completed.
     aliases:
@@ -3103,7 +3128,7 @@ classes:
 
   Account:
     is_a: Agreement
-    class_uri: gist_upstream:Account
+    class_uri: gist:Account
     description: An agreement having a balance.
     aliases:
     - Account
@@ -3118,7 +3143,7 @@ classes:
   Magnitude:
     mixins:
     - GistThing
-    class_uri: gist_upstream:Magnitude
+    class_uri: gist:Magnitude
     description: The amount of a measurable characteristic (aspect).
     aliases:
     - Magnitude
@@ -3138,11 +3163,11 @@ classes:
     in_subset:
     - gist_core
     see_also:
-    - gist_upstream:hasAccuracy
+    - gist:hasAccuracy
 
   CountryGovernment:
     is_a: GovernmentOrganization
-    class_uri: gist_upstream:CountryGovernment
+    class_uri: gist:CountryGovernment
     description: |-
       A government organization which asserts both sovereignty (i.e., it is not governed by some other government organization) and governance over an entity generally recognized as a country.
     aliases:
@@ -3162,7 +3187,7 @@ classes:
 
   AddressUsageType:
     is_a: Category
-    class_uri: gist_upstream:AddressUsageType
+    class_uri: gist:AddressUsageType
     description: A category indicating the context or manner in which an address may be used.
     aliases:
     - Address Usage Type
@@ -3174,22 +3199,9 @@ classes:
     in_subset:
     - gist_core
 
-  CountryGeoRegion:
-    is_a: GovernedGeoRegion
-    class_uri: gist_upstream:CountryGeoRegion
-    description: A geographic region governed by exactly one country government.
-    aliases:
-    - Country Geographic Region
-    notes:
-    - 'OWL subClassOf restrictions: =1isGovernedBy'
-    - |-
-      OWL equivalentClass: (gistl:GovernedGeoRegion & ∃isGovernedBy.gistl:CountryGovernment)
-    in_subset:
-    - gist_core
-
   Discipline:
     is_a: Category
-    class_uri: gist_upstream:Discipline
+    class_uri: gist:Discipline
     description: An area of study or practice.
     aliases:
     - Discipline
@@ -3200,7 +3212,7 @@ classes:
 
   PhysicalEvent:
     is_a: Event
-    class_uri: gist_upstream:PhysicalEvent
+    class_uri: gist:PhysicalEvent
     description: An event that can be said to have occurred at some place in space.
     aliases:
     - Physical Event
@@ -3215,7 +3227,7 @@ classes:
 
   ContingentObligation:
     is_a: Commitment
-    class_uri: gist_upstream:ContingentObligation
+    class_uri: gist:ContingentObligation
     description: |-
       An obligation that is not yet firm. There is some contingent event whose occurrence will cause the obligation to become firm.
     aliases:
@@ -3232,7 +3244,7 @@ classes:
   Intention:
     mixins:
     - GistThing
-    class_uri: gist_upstream:Intention
+    class_uri: gist:Intention
     description: A goal, desire, or aspiration.
     aliases:
     - Intention
@@ -3250,7 +3262,7 @@ classes:
 
   ControlledVocabulary:
     is_a: Collection
-    class_uri: gist_upstream:ControlledVocabulary
+    class_uri: gist:ControlledVocabulary
     description: A collection of terms approved and managed by some organization or person.
     aliases:
     - Controlled Vocabulary
@@ -3265,7 +3277,7 @@ classes:
 
   System:
     is_a: Composite
-    class_uri: gist_upstream:System
+    class_uri: gist:System
     description: |-
       A composite made up of interacting or interdependent components that together operate as a whole.
     aliases:
@@ -3281,7 +3293,7 @@ classes:
 
   Specification:
     is_a: Intention
-    class_uri: gist_upstream:Specification
+    class_uri: gist:Specification
     description: |-
       The set of characteristics and constraints on their values that specify what it means to be a particular type of thing, such as a material, product, service or event. A specification is sufficiently precise to allow evaluating conformance to the specification.
     aliases:
@@ -3297,7 +3309,7 @@ classes:
 
   Person:
     is_a: LivingThing
-    class_uri: gist_upstream:Person
+    class_uri: gist:Person
     description: A human being who was or is alive.
     aliases:
     - Person
@@ -3311,7 +3323,7 @@ classes:
 
   OrderedCollection:
     is_a: Collection
-    class_uri: gist_upstream:OrderedCollection
+    class_uri: gist:OrderedCollection
     description: A collection whose members are ordered in some way.
     aliases:
     - Ordered Collection
@@ -3326,7 +3338,7 @@ classes:
 
   Commitment:
     is_a: Intention
-    class_uri: gist_upstream:Commitment
+    class_uri: gist:Commitment
     description: |-
       A promise made by a single party to one or more parties to do or not do something or act in a particular way.
     aliases:
@@ -3351,7 +3363,7 @@ classes:
 
   ID:
     is_a: Content
-    class_uri: gist_upstream:ID
+    class_uri: gist:ID
     description: Content that is used to uniquely identify something or someone.
     aliases:
     - ID
@@ -3368,7 +3380,7 @@ classes:
   UnitOfMeasure:
     mixins:
     - GistThing
-    class_uri: gist_upstream:UnitOfMeasure
+    class_uri: gist:UnitOfMeasure
     description: A standard amount used to measure or specify things.
     aliases:
     - Unit of Measure
@@ -3377,21 +3389,9 @@ classes:
     in_subset:
     - gist_core
 
-  Medium:
-    is_a: Category
-    class_uri: gist_upstream:Medium
-    description: |-
-      A physical material on which a work can be rendered, represented, or implemented.
-    aliases:
-    - Medium
-    examples:
-    - value: Paper, clay, a computer monitor.
-    in_subset:
-    - gist_core
-
   Address:
     is_a: Content
-    class_uri: gist_upstream:Address
+    class_uri: gist:Address
     description: |-
       A reference to a place (real or virtual) that can be located by some routing algorithm and where messages or things can be sent or received.
     aliases:
@@ -3403,11 +3403,23 @@ classes:
 
   Landmark:
     is_a: PhysicalIdentifiableItem
-    class_uri: gist_upstream:Landmark
+    class_uri: gist:Landmark
     description: Something permanently attached to the Earth.
     aliases:
-    - Landmark
+    - Product Specification
     notes:
+    - 'OWL equivalentClass: (gist:CatalogItem & ∃isCategorizedBy.gist:ProductCategory)'
+    in_subset:
+    - gist_core
+
+  Building:
+    is_a: Landmark
+    class_uri: gist:Building
+    description: |-
+      A relatively permanent man-made structure situated on a plot of land, having a roof and walls, commonly used for dwelling, entertaining, or working.
+    aliases:
+    - Building
+    comments:
     - |-
       OWL subClassOf restrictions: ∃hasPhysicalLocation.(gistl:GeoRegion | gistl:GeoVolume)
     - |-
@@ -3418,7 +3430,7 @@ classes:
 
   ProductCategory:
     is_a: Category
-    class_uri: gist_upstream:ProductCategory
+    class_uri: gist:ProductCategory
     description: Any of many ways of categorizing products.
     aliases:
     - Product Category
@@ -3429,7 +3441,7 @@ classes:
 
   PhysicalActionType:
     is_a: Category
-    class_uri: gist_upstream:PhysicalActionType
+    class_uri: gist:PhysicalActionType
     description: |-
       A category indicating the type of an action based on its effect in the physical world.
     aliases:
@@ -3442,7 +3454,7 @@ classes:
   Composite:
     mixins:
     - GistThing
-    class_uri: gist_upstream:Composite
+    class_uri: gist:Composite
     description: |-
       Something which is made up of various parts or elements that are independently identifiable.
     aliases:
@@ -3461,7 +3473,7 @@ classes:
 
   Transaction:
     is_a: Event
-    class_uri: gist_upstream:Transaction
+    class_uri: gist:Transaction
     description: An exchange or transfer of goods, services, or funds.
     aliases:
     - Transaction
@@ -3473,7 +3485,7 @@ classes:
 
   PhysicalAddressType:
     is_a: Category
-    class_uri: gist_upstream:PhysicalAddressType
+    class_uri: gist:PhysicalAddressType
     description: A category indicating local customary characterizations of physical addresses.
     aliases:
     - Physical Address Type
@@ -3484,7 +3496,7 @@ classes:
 
   KnowledgeConcept:
     is_a: IntellectualProperty
-    class_uri: gist_upstream:KnowledgeConcept
+    class_uri: gist:KnowledgeConcept
     description: |-
       An abstract concept that arises from the distillation of experience. It is similar to a category but, rather than being a simple tag, it has rich structure.
     aliases:
@@ -3514,7 +3526,7 @@ classes:
 
   RenderedContent:
     is_a: FormattedContent
-    class_uri: gist_upstream:RenderedContent
+    class_uri: gist:RenderedContent
     description: Content expressed via some physical medium.
     aliases:
     - Rendered Content
@@ -3529,27 +3541,9 @@ classes:
     in_subset:
     - gist_core
 
-  Building:
-    is_a: Landmark
-    class_uri: gist_upstream:Building
-    description: |-
-      A relatively permanent man-made structure situated on a plot of land, having a roof and walls, commonly used for dwelling, entertaining, or working.
-    aliases:
-    - Building
-    comments:
-    - |-
-      User discretion can be applied to edge cases: e.g., is a traditional yurt 'relatively permanently situated' although it is portable and has a tent-like construction?
-    examples:
-    - value: |-
-        Negative examples: houseboats (not built on land), caves (not man-made), food trucks and RVs (not permanently situated).
-    - value: A house, school, store, factory, chicken coop.
-    deprecated: 'true'
-    in_subset:
-    - gist_core
-
   ServiceSpecification:
     is_a: CatalogItem
-    class_uri: gist_upstream:ServiceSpecification
+    class_uri: gist:ServiceSpecification
     description: |-
       A description of something that can be done for a person or organization (which produces some form of an act).
     aliases:
@@ -3559,28 +3553,20 @@ classes:
     in_subset:
     - gist_core
 
-  Agreement:
-    is_a: Intention
-    class_uri: gist_upstream:Agreement
-    description: |-
-      A mutually understood arrangement in which two or more parties make commitments to one another.
+  ReferenceValue:
+    is_a: Magnitude
+    class_uri: gist:ReferenceValue
+    description: A magnitude that was neither measured nor estimated but set by fiat.
     aliases:
-    - Agreement
-    comments:
-    - |-
-      While an agreement has two or more parties, and contains commitments which bind those parties, it will not always be necessary to instantiate each individual commitment.
+    - Reference Value
     examples:
-    - value: |-
-        A gym membership is an agreement in which the member commits to paying the gym a certain price and the gym commits to allowing access to their facilities.
-    notes:
-    - |-
-      OWL equivalentClass: (gistl:Intention & ∃hasParty.(gistl:Organization | gistl:Person) & ≥2^isDirectPartOf.gistl:Commitment)
+    - value: The sales goal for a company.
     in_subset:
     - gist_core
 
   ScheduledEvent:
     is_a: Event
-    class_uri: gist_upstream:ScheduledEvent
+    class_uri: gist:ScheduledEvent
     description: An event with a planned start datetime.
     aliases:
     - Scheduled Event
@@ -3596,7 +3582,7 @@ classes:
   Category:
     mixins:
     - GistThing
-    class_uri: gist_upstream:Category
+    class_uri: gist:Category
     description: |-
       A concept or label used to categorize other instances without specifying any formal semantics.
     aliases:
@@ -3614,30 +3600,10 @@ classes:
     in_subset:
     - gist_core
 
-  Assignment:
-    is_a: TemporalRelation
-    class_uri: gist_upstream:Assignment
-    description: |-
-      A temporal relationship between an assignee, the thing assigned, and the resource that made the assignment.
-    aliases:
-    - Assignment
-    comments:
-    - Based on the Open World Assumption, the assigner may not be asserted or known.
-    - |-
-      For some assignments, such as the assignment of a person to a task, it may seem equally correct in ordinary speech to say it is an assignment of a task to a person. Since gist:isAssignmentTo and gist:isAssignmentOf have no formal domains or ranges, the choice of which predicate to use for which is left as an implementation decision. Consistency is a key consideration.
-    examples:
-    - value: |-
-        An employee is assigned to a task by a supervisor. A person is assigned to a position.
-    notes:
-    - |-
-      OWL equivalentClass: (gistl:TemporalRelation & ∃hasGiver.owl:Thing & ∃isAssignmentOf.owl:Thing & ∃isAssignmentTo.owl:Thing)
-    in_subset:
-    - gist_core
-
   SchemaMetaData:
     mixins:
     - GistThing
-    class_uri: gist_upstream:SchemaMetaData
+    class_uri: gist:SchemaMetaData
     description: Superclass for all types of metadata.
     aliases:
     - Schema Meta Data
@@ -3654,7 +3620,7 @@ classes:
 
   Message:
     is_a: ContentExpression
-    class_uri: gist_upstream:Message
+    class_uri: gist:Message
     description: |-
       A specific instance of content sent from a sender to at least one other recipient.
     aliases:
@@ -3669,7 +3635,7 @@ classes:
 
   NetworkNode:
     is_a: Component
-    class_uri: gist_upstream:NetworkNode
+    class_uri: gist:NetworkNode
     description: A node in a network.
     aliases:
     - Network Node
@@ -3681,20 +3647,9 @@ classes:
     in_subset:
     - gist_core
 
-  ReferenceValue:
-    is_a: Magnitude
-    class_uri: gist_upstream:ReferenceValue
-    description: A magnitude that was neither measured nor estimated but set by fiat.
-    aliases:
-    - Reference Value
-    examples:
-    - value: The sales goal for a company.
-    in_subset:
-    - gist_core
-
   Determination:
     is_a: Event
-    class_uri: gist_upstream:Determination
+    class_uri: gist:Determination
     description: |-
       An event whose purpose is to establish a specific result, value, or outcome, usually by research, measuring, evaluating, or calculating.
     aliases:
@@ -3707,7 +3662,7 @@ classes:
 
   EventSpecification:
     is_a: Specification
-    class_uri: gist_upstream:EventSpecification
+    class_uri: gist:EventSpecification
     description: A characterization of an event that might happen.
     aliases:
     - Event Specification

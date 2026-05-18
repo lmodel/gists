@@ -10,7 +10,7 @@ version: 14.1.0
 
 prefixes:
   gistl: https://w3id.org/model/gistl/
-  gist_upstream: https://w3id.org/semanticarts/ns/ontology/gist/
+  gist: https://w3id.org/semanticarts/ns/ontology/gist/
   gistd: https://w3id.org/semanticarts/ns/data/gist/
   linkml: https://w3id.org/linkml/
   schema: http://schema.org/
@@ -35,7 +35,7 @@ subsets:
 slots:
 
   actual_end_date:
-    slot_uri: gist_upstream:actualEndDate
+    slot_uri: gist:actualEndDate
     description: The actual date that something ended, with precision of one day.
     aliases:
     - actual end date
@@ -48,7 +48,7 @@ slots:
     - gist_rdfs_annotations
 
   actual_end_date_time:
-    slot_uri: gist_upstream:actualEndDateTime
+    slot_uri: gist:actualEndDateTime
     description: The actual date and time that something ended, with no implied precision.
     aliases:
     - actual end date time
@@ -59,7 +59,7 @@ slots:
     - gist_rdfs_annotations
 
   actual_end_microsecond:
-    slot_uri: gist_upstream:actualEndMicrosecond
+    slot_uri: gist:actualEndMicrosecond
     description: |-
       The actual time that something ended, expressed as a system time used for timestamps.
     aliases:
@@ -73,7 +73,7 @@ slots:
     - gist_rdfs_annotations
 
   actual_end_minute:
-    slot_uri: gist_upstream:actualEndMinute
+    slot_uri: gist:actualEndMinute
     description: The actual date and time that something ended, with precision of one minute.
     aliases:
     - actual end minute
@@ -86,7 +86,7 @@ slots:
     - gist_rdfs_annotations
 
   actual_end_year:
-    slot_uri: gist_upstream:actualEndYear
+    slot_uri: gist:actualEndYear
     description: The actual date that something ended, with precision of one year.
     aliases:
     - actual end year
@@ -100,7 +100,7 @@ slots:
     - gist_rdfs_annotations
 
   actual_start_date:
-    slot_uri: gist_upstream:actualStartDate
+    slot_uri: gist:actualStartDate
     description: The actual date that something started, with precision of one day.
     aliases:
     - actual start date
@@ -113,7 +113,7 @@ slots:
     - gist_rdfs_annotations
 
   actual_start_date_time:
-    slot_uri: gist_upstream:actualStartDateTime
+    slot_uri: gist:actualStartDateTime
     description: The actual date and time that something started, with no implied precision.
     aliases:
     - actual start date time
@@ -124,7 +124,7 @@ slots:
     - gist_rdfs_annotations
 
   actual_start_microsecond:
-    slot_uri: gist_upstream:actualStartMicrosecond
+    slot_uri: gist:actualStartMicrosecond
     description: |-
       The actual time that something started, expressed as a system time used for timestamps.
     aliases:
@@ -138,7 +138,7 @@ slots:
     - gist_rdfs_annotations
 
   actual_start_minute:
-    slot_uri: gist_upstream:actualStartMinute
+    slot_uri: gist:actualStartMinute
     description: The actual date and time that something started, with precision of one minute.
     aliases:
     - actual start minute
@@ -151,7 +151,7 @@ slots:
     - gist_rdfs_annotations
 
   actual_start_year:
-    slot_uri: gist_upstream:actualStartYear
+    slot_uri: gist:actualStartYear
     description: The actual date that something started, with precision of one year.
     aliases:
     - actual start year
@@ -165,7 +165,7 @@ slots:
     - gist_rdfs_annotations
 
   allows:
-    slot_uri: gist_upstream:allows
+    slot_uri: gist:allows
     description: Relates a permission to a particular activity or type of activity it allows.
     aliases:
     - allows
@@ -176,7 +176,7 @@ slots:
     - gist_rdfs_annotations
 
   at_date_time:
-    slot_uri: gist_upstream:atDateTime
+    slot_uri: gist:atDateTime
     description: |-
       The date and time at which something did or will occur, with variants for precision, start and end, and actual vs. planned.
     aliases:
@@ -201,7 +201,7 @@ slots:
     - gist_rdfs_annotations
 
   birth_date:
-    slot_uri: gist_upstream:birthDate
+    slot_uri: gist:birthDate
     description: The date some living thing was or will be born, with precision of one day.
     aliases:
     - birth date
@@ -214,7 +214,7 @@ slots:
     - gist_rdfs_annotations
 
   comes_from_agent:
-    slot_uri: gist_upstream:comesFromAgent
+    slot_uri: gist:comesFromAgent
     description: Relates something to the originating agent.
     aliases:
     - comes from agent
@@ -230,7 +230,7 @@ slots:
     - gist_rdfs_annotations
 
   comes_from_place:
-    slot_uri: gist_upstream:comesFromPlace
+    slot_uri: gist:comesFromPlace
     description: Relates something to its place of origin.
     aliases:
     - comes from place
@@ -241,7 +241,7 @@ slots:
     - gist_rdfs_annotations
 
   conforms_to:
-    slot_uri: gist_upstream:conformsTo
+    slot_uri: gist:conformsTo
     description: |-
       The subject is consistent with or satisfies the requirements, rules, or expectations established by the object.
     aliases:
@@ -253,7 +253,7 @@ slots:
     - gist_rdfs_annotations
 
   contained_text:
-    slot_uri: gist_upstream:containedText
+    slot_uri: gist:containedText
     description: |-
       Relates an entity containing textual information to the string constituting that textual information.
     aliases:
@@ -267,7 +267,7 @@ slots:
     - gist_rdfs_annotations
 
   contributes_to:
-    slot_uri: gist_upstream:contributesTo
+    slot_uri: gist:contributesTo
     description: The subject helps achieve or fulfill the goals or functions of the object.
     aliases:
     - contributes to
@@ -275,7 +275,7 @@ slots:
     - gist_rdfs_annotations
 
   conversion_factor:
-    slot_uri: gist_upstream:conversionFactor
+    slot_uri: gist:conversionFactor
     description: |-
       A value that relates a unit of measure to units of the International System of Units.
     aliases:
@@ -292,7 +292,7 @@ slots:
     - gist_rdfs_annotations
 
   conversion_offset:
-    slot_uri: gist_upstream:conversionOffset
+    slot_uri: gist:conversionOffset
     description: "A value used along with a conversion factor to relate a unit to its corresponding unit in the International\
       \ System of Units. In the equation below, the conversion offset is 459.669607 and the conversion factor is 5/9.\r\n\r\
       \n\t\ty degrees Fahrenheit = (y + 459.669607) x 5/9 degrees Kelvin\r\n\r\n\t\tTo convert from Fahrenheit to Kelvin,\
@@ -304,7 +304,7 @@ slots:
     - gist_rdfs_annotations
 
   death_date:
-    slot_uri: gist_upstream:deathDate
+    slot_uri: gist:deathDate
     description: The date some living thing died.
     aliases:
     - death date
@@ -317,7 +317,7 @@ slots:
     - gist_rdfs_annotations
 
   description:
-    slot_uri: gist_upstream:description
+    slot_uri: gist:description
     description: A statement about someone or something's attributes or characteristics.
     aliases:
     - description
@@ -333,7 +333,7 @@ slots:
     - gist_rdfs_annotations
 
   domain_includes:
-    slot_uri: gist_upstream:domainIncludes
+    slot_uri: gist:domainIncludes
     description: Relates a property to a class that the property is expected to be used on.
     aliases:
     - domain includes
@@ -347,7 +347,7 @@ slots:
     - gist_rdfs_annotations
 
   encrypted_text:
-    slot_uri: gist_upstream:encryptedText
+    slot_uri: gist:encryptedText
     description: |-
       Encoded text produced from readable data by an algorithm so that it can only be understood or restored with a decryption key.
     aliases:
@@ -356,7 +356,7 @@ slots:
     - gist_rdfs_annotations
 
   end_date_time:
-    slot_uri: gist_upstream:endDateTime
+    slot_uri: gist:endDateTime
     description: The date and time that something ends.
     aliases:
     - end date time
@@ -369,7 +369,7 @@ slots:
     - gist_rdfs_annotations
 
   exponent_of_ampere:
-    slot_uri: gist_upstream:exponentOfAmpere
+    slot_uri: gist:exponentOfAmpere
     description: The exponent of ampere in a product of powers of base units.
     aliases:
     - exponent of ampere
@@ -381,7 +381,7 @@ slots:
     - gist_rdfs_annotations
 
   exponent_of_bit:
-    slot_uri: gist_upstream:exponentOfBit
+    slot_uri: gist:exponentOfBit
     description: The exponent of bit in a product of powers of base units.
     aliases:
     - exponent of bit
@@ -393,7 +393,7 @@ slots:
     - gist_rdfs_annotations
 
   exponent_of_candela:
-    slot_uri: gist_upstream:exponentOfCandela
+    slot_uri: gist:exponentOfCandela
     description: The exponent of candela in a product of powers of base units.
     aliases:
     - exponent of candela
@@ -405,7 +405,7 @@ slots:
     - gist_rdfs_annotations
 
   exponent_of_kelvin:
-    slot_uri: gist_upstream:exponentOfKelvin
+    slot_uri: gist:exponentOfKelvin
     description: The exponent of Kelvin in a product of powers of base units.
     aliases:
     - exponent of Kelvin
@@ -418,7 +418,7 @@ slots:
     - gist_rdfs_annotations
 
   exponent_of_kilogram:
-    slot_uri: gist_upstream:exponentOfKilogram
+    slot_uri: gist:exponentOfKilogram
     description: The exponent of kilogram in a product of powers of base units.
     aliases:
     - exponent of kilogram
@@ -430,7 +430,7 @@ slots:
     - gist_rdfs_annotations
 
   exponent_of_meter:
-    slot_uri: gist_upstream:exponentOfMeter
+    slot_uri: gist:exponentOfMeter
     description: The exponent of meter in a product of powers of base units.
     aliases:
     - exponent of meter
@@ -443,7 +443,7 @@ slots:
     - gist_rdfs_annotations
 
   exponent_of_mole:
-    slot_uri: gist_upstream:exponentOfMole
+    slot_uri: gist:exponentOfMole
     description: The exponent of mole in a product of powers of base units.
     aliases:
     - exponent of mole
@@ -455,7 +455,7 @@ slots:
     - gist_rdfs_annotations
 
   exponent_of_number:
-    slot_uri: gist_upstream:exponentOfNumber
+    slot_uri: gist:exponentOfNumber
     description: The exponent of number in a product of powers of base units.
     aliases:
     - exponent of number
@@ -469,7 +469,7 @@ slots:
     - gist_rdfs_annotations
 
   exponent_of_other:
-    slot_uri: gist_upstream:exponentOfOther
+    slot_uri: gist:exponentOfOther
     description: |-
       Indicates whether a unit of measure can be expressed in terms of the standard exponents (as shown in the examples).
     aliases:
@@ -485,7 +485,7 @@ slots:
     - gist_rdfs_annotations
 
   exponent_of_radian:
-    slot_uri: gist_upstream:exponentOfRadian
+    slot_uri: gist:exponentOfRadian
     description: The exponent of radian in a product of powers of base units.
     aliases:
     - exponent of radian
@@ -497,7 +497,7 @@ slots:
     - gist_rdfs_annotations
 
   exponent_of_second:
-    slot_uri: gist_upstream:exponentOfSecond
+    slot_uri: gist:exponentOfSecond
     description: The exponent of second in a product of powers of base units.
     aliases:
     - exponent of second
@@ -510,7 +510,7 @@ slots:
     - gist_rdfs_annotations
 
   exponent_of_steradian:
-    slot_uri: gist_upstream:exponentOfSteradian
+    slot_uri: gist:exponentOfSteradian
     description: The exponent of steradian in a product of powers of base units.
     aliases:
     - exponent of steradian
@@ -525,7 +525,7 @@ slots:
     - gist_rdfs_annotations
 
   exponent_of_us_dollar:
-    slot_uri: gist_upstream:exponentOfUSDollar
+    slot_uri: gist:exponentOfUSDollar
     description: The exponent of US Dollar in a product of powers of base units.
     aliases:
     - exponent of US dollar
@@ -540,7 +540,7 @@ slots:
     - gist_rdfs_annotations
 
   goes_to_agent:
-    slot_uri: gist_upstream:goesToAgent
+    slot_uri: gist:goesToAgent
     description: Relates something to the agent that receives it.
     aliases:
     - goes to agent
@@ -555,7 +555,7 @@ slots:
     - gist_rdfs_annotations
 
   goes_to_place:
-    slot_uri: gist_upstream:goesToPlace
+    slot_uri: gist:goesToPlace
     description: Relates something to its destination place.
     aliases:
     - goes to place
@@ -566,7 +566,7 @@ slots:
     - gist_rdfs_annotations
 
   has_accuracy:
-    slot_uri: gist_upstream:hasAccuracy
+    slot_uri: gist:hasAccuracy
     description: Relates a magnitude to another magnitude that describes its accuracy.
     aliases:
     - has accuracy
@@ -585,7 +585,7 @@ slots:
     - gist_rdfs_annotations
 
   has_addend:
-    slot_uri: gist_upstream:hasAddend
+    slot_uri: gist:hasAddend
     description: Relates an aspect to another aspect that is an additive component of it.
     aliases:
     - has addend
@@ -598,7 +598,7 @@ slots:
     - gist_rdfs_annotations
 
   has_address:
-    slot_uri: gist_upstream:hasAddress
+    slot_uri: gist:hasAddress
     description: Relates something to its physical or electronic address.
     aliases:
     - has address
@@ -609,7 +609,7 @@ slots:
     - gist_rdfs_annotations
 
   has_aspect:
-    slot_uri: gist_upstream:hasAspect
+    slot_uri: gist:hasAspect
     description: Relates a magnitude to its aspect (measurable characteristic).
     aliases:
     - has aspect
@@ -617,7 +617,7 @@ slots:
     - gist_rdfs_annotations
 
   has_biological_parent:
-    slot_uri: gist_upstream:hasBiologicalParent
+    slot_uri: gist:hasBiologicalParent
     description: Relates a living thing to its biological parent.
     aliases:
     - has biological parent
@@ -625,7 +625,7 @@ slots:
     - gist_rdfs_annotations
 
   has_broader:
-    slot_uri: gist_upstream:hasBroader
+    slot_uri: gist:hasBroader
     description: Relates a thing to another thing with a broader meaning.
     aliases:
     - has broader
@@ -635,7 +635,7 @@ slots:
     - gist_rdfs_annotations
 
   has_direct_broader:
-    slot_uri: gist_upstream:hasDirectBroader
+    slot_uri: gist:hasDirectBroader
     description: |-
       Relates a thing to another thing with a broader meaning, when there is no intermediate between them.
     aliases:
@@ -647,7 +647,7 @@ slots:
     - gist_rdfs_annotations
 
   has_divisor:
-    slot_uri: gist_upstream:hasDivisor
+    slot_uri: gist:hasDivisor
     description: |-
       Relates a unit of measure to another unit of measure that is a divisor, or relates an aspect to another aspect that is a divisor.
     aliases:
@@ -662,7 +662,7 @@ slots:
     - gist_rdfs_annotations
 
   has_giver:
-    slot_uri: gist_upstream:hasGiver
+    slot_uri: gist:hasGiver
     description: Relates something to the participant that provides it.
     aliases:
     - has giver
@@ -676,7 +676,7 @@ slots:
     - gist_rdfs_annotations
 
   has_goal:
-    slot_uri: gist_upstream:hasGoal
+    slot_uri: gist:hasGoal
     description: Relates something to the end towards which it directs effort.
     aliases:
     - has goal
@@ -687,7 +687,7 @@ slots:
     - gist_rdfs_annotations
 
   has_incumbent:
-    slot_uri: gist_upstream:hasIncumbent
+    slot_uri: gist:hasIncumbent
     description: Relates a position to the thing or person that currently holds that position.
     aliases:
     - has incumbent
@@ -698,7 +698,7 @@ slots:
     - gist_rdfs_annotations
 
   has_magnitude:
-    slot_uri: gist_upstream:hasMagnitude
+    slot_uri: gist:hasMagnitude
     description: Relates a thing to a magnitude.
     aliases:
     - has magnitude
@@ -709,7 +709,7 @@ slots:
     - gist_rdfs_annotations
 
   has_multiplier:
-    slot_uri: gist_upstream:hasMultiplier
+    slot_uri: gist:hasMultiplier
     description: |-
       Relates a unit of measure to another unit of measure that is a factor, or relates an aspect to another aspect that is a factor.
     aliases:
@@ -724,7 +724,7 @@ slots:
     - gist_rdfs_annotations
 
   has_navigational_parent:
-    slot_uri: gist_upstream:hasNavigationalParent
+    slot_uri: gist:hasNavigationalParent
     description: |-
       Relates a child category to a parent category in an informal (e.g., faceted) hierarchy.
     aliases:
@@ -736,7 +736,7 @@ slots:
     - gist_rdfs_annotations
 
   has_participant:
-    slot_uri: gist_upstream:hasParticipant
+    slot_uri: gist:hasParticipant
     description: |-
       Relates something (e.g. an agreement) to things that play a role, or take part or are otherwise involved in some way.
     aliases:
@@ -753,7 +753,7 @@ slots:
     - gist_rdfs_annotations
 
   has_party:
-    slot_uri: gist_upstream:hasParty
+    slot_uri: gist:hasParty
     description: |-
       Relates an event, agreement, or obligation to a participating person or organization.
     aliases:
@@ -767,7 +767,7 @@ slots:
     - gist_rdfs_annotations
 
   has_physical_location:
-    slot_uri: gist_upstream:hasPhysicalLocation
+    slot_uri: gist:hasPhysicalLocation
     description: Relates something to its physical location.
     aliases:
     - has physical location
@@ -778,7 +778,7 @@ slots:
     - gist_rdfs_annotations
 
   has_recipient:
-    slot_uri: gist_upstream:hasRecipient
+    slot_uri: gist:hasRecipient
     description: Relates something to the participant that receives or is intended to receive it.
     aliases:
     - has recipient
@@ -792,7 +792,7 @@ slots:
     - gist_rdfs_annotations
 
   has_subtrahend:
-    slot_uri: gist_upstream:hasSubtrahend
+    slot_uri: gist:hasSubtrahend
     description: Relates an aspect to another aspect that is a subtracted component of it.
     aliases:
     - has subtrahend
@@ -805,7 +805,7 @@ slots:
     - gist_rdfs_annotations
 
   has_unique_broader:
-    slot_uri: gist_upstream:hasUniqueBroader
+    slot_uri: gist:hasUniqueBroader
     description: Relates a thing to a unique other thing with a broader meaning.
     aliases:
     - has unique broader
@@ -813,7 +813,7 @@ slots:
     - gist_rdfs_annotations
 
   has_unique_navigational_parent:
-    slot_uri: gist_upstream:hasUniqueNavigationalParent
+    slot_uri: gist:hasUniqueNavigationalParent
     description: |-
       Relates a subject category to a unique parent category in an informal (e.g., faceted) hierarchy.
     aliases:
@@ -822,7 +822,7 @@ slots:
     - gist_rdfs_annotations
 
   has_unit_group:
-    slot_uri: gist_upstream:hasUnitGroup
+    slot_uri: gist:hasUnitGroup
     description: |-
       Relates an aspect to a unit group. The aspect can be measured using any of the members of the unit group.
     aliases:
@@ -834,7 +834,7 @@ slots:
     - gist_rdfs_annotations
 
   has_unit_of_measure:
-    slot_uri: gist_upstream:hasUnitOfMeasure
+    slot_uri: gist:hasUnitOfMeasure
     description: Relates a magnitude to its unit of measure.
     aliases:
     - has unit of measure
@@ -844,7 +844,7 @@ slots:
     - gist_rdfs_annotations
 
   id_text:
-    slot_uri: gist_upstream:idText
+    slot_uri: gist:idText
     description: A text string that identifies an individual.
     aliases:
     - id text
@@ -861,7 +861,7 @@ slots:
     - gist_rdfs_annotations
 
   is_about:
-    slot_uri: gist_upstream:isAbout
+    slot_uri: gist:isAbout
     description: Subject matter of a document.
     aliases:
     - is about
@@ -869,7 +869,7 @@ slots:
     - gist_rdfs_annotations
 
   is_affected_by:
-    slot_uri: gist_upstream:isAffectedBy
+    slot_uri: gist:isAffectedBy
     description: Relates an affected thing to the source of the effect.
     aliases:
     - is affected by
@@ -877,7 +877,7 @@ slots:
     - gist_rdfs_annotations
 
   is_allocated_by:
-    slot_uri: gist_upstream:isAllocatedBy
+    slot_uri: gist:isAllocatedBy
     description: Relates something to whomever or whatever assigns or distributes it.
     aliases:
     - is allocated by
@@ -890,7 +890,7 @@ slots:
     - gist_rdfs_annotations
 
   is_assignment_of:
-    slot_uri: gist_upstream:isAssignmentOf
+    slot_uri: gist:isAssignmentOf
     description: Relates an assignment to the resource it assigns.
     aliases:
     - is assignment of
@@ -904,7 +904,7 @@ slots:
     - gist_rdfs_annotations
 
   is_assignment_to:
-    slot_uri: gist_upstream:isAssignmentTo
+    slot_uri: gist:isAssignmentTo
     description: |-
       Relates something (typically an assignment) to the thing the resource is assigned to, such as a project, position, organization, pay rate, or billing rate.
     aliases:
@@ -916,7 +916,7 @@ slots:
     - gist_rdfs_annotations
 
   is_based_on:
-    slot_uri: gist_upstream:isBasedOn
+    slot_uri: gist:isBasedOn
     description: |-
       The object is a foundation for, a starting point for, gave rise to, or justifies the subject.
     aliases:
@@ -928,7 +928,7 @@ slots:
     - gist_rdfs_annotations
 
   is_categorized_by:
-    slot_uri: gist_upstream:isCategorizedBy
+    slot_uri: gist:isCategorizedBy
     description: |-
       Relates something to a taxonomy term or other less formally defined classification.
     aliases:
@@ -937,7 +937,7 @@ slots:
     - gist_rdfs_annotations
 
   is_connected_to:
-    slot_uri: gist_upstream:isConnectedTo
+    slot_uri: gist:isConnectedTo
     description: A non-owning, non-causal, non-subordinate (i.e., peer-to-peer) relationship.
     aliases:
     - is connected to
@@ -945,7 +945,7 @@ slots:
     - gist_rdfs_annotations
 
   is_direct_part_of:
-    slot_uri: gist_upstream:isDirectPartOf
+    slot_uri: gist:isDirectPartOf
     description: |-
       The relationship between a part and a whole where the part has independent existence and there are no other parts in between.
     aliases:
@@ -958,7 +958,7 @@ slots:
     - gist_rdfs_annotations
 
   is_expressed_in:
-    slot_uri: gist_upstream:isExpressedIn
+    slot_uri: gist:isExpressedIn
     description: Relates something to the language it is expressed in.
     aliases:
     - is expressed in
@@ -966,7 +966,7 @@ slots:
     - gist_rdfs_annotations
 
   is_first_member_of:
-    slot_uri: gist_upstream:isFirstMemberOf
+    slot_uri: gist:isFirstMemberOf
     description: Relates the first member of an ordered collection to the collection.
     aliases:
     - is first member of
@@ -977,7 +977,7 @@ slots:
     - gist_rdfs_annotations
 
   is_geo_contained_in:
-    slot_uri: gist_upstream:isGeoContainedIn
+    slot_uri: gist:isGeoContainedIn
     description: Relates one geographic location to another that contains it.
     aliases:
     - is geographically contained in
@@ -985,7 +985,7 @@ slots:
     - gist_rdfs_annotations
 
   is_governed_by:
-    slot_uri: gist_upstream:isGovernedBy
+    slot_uri: gist:isGovernedBy
     description: |-
       Relates an entity to another entity that controls, directs, determines or has a guiding influence or authority over it.
     aliases:
@@ -997,7 +997,7 @@ slots:
     - gist_rdfs_annotations
 
   is_identified_by:
-    slot_uri: gist_upstream:isIdentifiedBy
+    slot_uri: gist:isIdentifiedBy
     description: Relates something to a content object that uniquely identifies it.
     aliases:
     - is identified by
@@ -1008,7 +1008,7 @@ slots:
     - gist_rdfs_annotations
 
   is_made_up_of:
-    slot_uri: gist_upstream:isMadeUpOf
+    slot_uri: gist:isMadeUpOf
     description: Relates something to a substance that it is made up of.
     aliases:
     - is made up of
@@ -1018,7 +1018,7 @@ slots:
     - gist_rdfs_annotations
 
   is_member_of:
-    slot_uri: gist_upstream:isMemberOf
+    slot_uri: gist:isMemberOf
     description: |-
       Relates a member individual to the thing, such as a collection or organization, that it is a member of.
     aliases:
@@ -1027,7 +1027,7 @@ slots:
     - gist_rdfs_annotations
 
   is_part_of:
-    slot_uri: gist_upstream:isPartOf
+    slot_uri: gist:isPartOf
     description: |-
       The relationship between a part and a whole where the part has independent existence.
     aliases:
@@ -1039,7 +1039,7 @@ slots:
     - gist_rdfs_annotations
 
   is_produced_by:
-    slot_uri: gist_upstream:isProducedBy
+    slot_uri: gist:isProducedBy
     description: |-
       Relates something to the thing that created, composed, or brought it into existence.
     aliases:
@@ -1052,7 +1052,7 @@ slots:
     - gist_rdfs_annotations
 
   is_recognized_by:
-    slot_uri: gist_upstream:isRecognizedBy
+    slot_uri: gist:isRecognizedBy
     description: |-
       Relates something to a party that formally acknowledges its existence, validity, or legality.
     aliases:
@@ -1063,7 +1063,7 @@ slots:
     - gist_rdfs_annotations
 
   is_recorded_at:
-    slot_uri: gist_upstream:isRecordedAt
+    slot_uri: gist:isRecordedAt
     description: |-
       The date that something was posted (which is not necessarily the date it occurred). It must be after the date of occurrence, but could be before or after the planned date.
     aliases:
@@ -1076,7 +1076,7 @@ slots:
     - gist_rdfs_annotations
 
   is_rendered_on:
-    slot_uri: gist_upstream:isRenderedOn
+    slot_uri: gist:isRenderedOn
     description: Relates content to the media on which it is rendered.
     aliases:
     - is rendered on
@@ -1087,7 +1087,7 @@ slots:
     - gist_rdfs_annotations
 
   is_superseded_by:
-    slot_uri: gist_upstream:isSupersededBy
+    slot_uri: gist:isSupersededBy
     description: |-
       Relates a deprecated term to a term that replaces it, which is either an exact (in the case of simple renaming) or approximate (in the case of renaming and some semantic change) semantic match.
     aliases:
@@ -1099,7 +1099,7 @@ slots:
     - gist_rdfs_annotations
 
   is_triggered_by:
-    slot_uri: gist_upstream:isTriggeredBy
+    slot_uri: gist:isTriggeredBy
     description: |-
       Relates a contingency, such as an event or obligation, to the event that gives rise to it.
     aliases:
@@ -1114,7 +1114,7 @@ slots:
     - gist_rdfs_annotations
 
   is_under_jurisdiction_of:
-    slot_uri: gist_upstream:isUnderJurisdictionOf
+    slot_uri: gist:isUnderJurisdictionOf
     description: |-
       Relates a law, contract, etc., to the system of law or government which has the power, right, or authority to interpret and apply it.
     aliases:
@@ -1123,7 +1123,7 @@ slots:
     - gist_rdfs_annotations
 
   latitude:
-    slot_uri: gist_upstream:latitude
+    slot_uri: gist:latitude
     description: Degrees above or below the equator.
     aliases:
     - latitude
@@ -1131,7 +1131,7 @@ slots:
     - gist_rdfs_annotations
 
   license:
-    slot_uri: gist_upstream:license
+    slot_uri: gist:license
     description: Relates something to its conditions of use.
     aliases:
     - license
@@ -1144,7 +1144,7 @@ slots:
     - gist_rdfs_annotations
 
   links:
-    slot_uri: gist_upstream:links
+    slot_uri: gist:links
     description: |-
       Relates a network link to a network node that it connects to another node. Used when the connection is undirected or the direction is not known.
     aliases:
@@ -1153,7 +1153,7 @@ slots:
     - gist_rdfs_annotations
 
   links_from:
-    slot_uri: gist_upstream:linksFrom
+    slot_uri: gist:linksFrom
     description: |-
       Relates a network link to its origin network node. Unlike the superproperty, this represents a directed connection.
     aliases:
@@ -1162,7 +1162,7 @@ slots:
     - gist_rdfs_annotations
 
   links_to:
-    slot_uri: gist_upstream:linksTo
+    slot_uri: gist:linksTo
     description: |-
       Relates a network link to its destination network node. Unlike the superproperty, this represents a directed connection.
     aliases:
@@ -1171,7 +1171,7 @@ slots:
     - gist_rdfs_annotations
 
   longitude:
-    slot_uri: gist_upstream:longitude
+    slot_uri: gist:longitude
     description: Degrees from the prime meridian.
     aliases:
     - longitude
@@ -1179,7 +1179,7 @@ slots:
     - gist_rdfs_annotations
 
   name:
-    slot_uri: gist_upstream:name
+    slot_uri: gist:name
     description: Relates an individual to (one of) its name(s).
     aliases:
     - name
@@ -1187,7 +1187,7 @@ slots:
     - gist_rdfs_annotations
 
   numeric_value:
-    slot_uri: gist_upstream:numericValue
+    slot_uri: gist:numericValue
     description: The actual value of a magnitude.
     aliases:
     - numeric value
@@ -1195,7 +1195,7 @@ slots:
     - gist_rdfs_annotations
 
   occurs_in:
-    slot_uri: gist_upstream:occursIn
+    slot_uri: gist:occursIn
     description: |-
       Relates something, such as an event, to the geographic location where it did, does, or will happen.
     aliases:
@@ -1204,7 +1204,7 @@ slots:
     - gist_rdfs_annotations
 
   offers_to_provide:
-    slot_uri: gist_upstream:offersToProvide
+    slot_uri: gist:offersToProvide
     description: Relates an offer to the thing being made available for exchange.
     aliases:
     - offers to provide
@@ -1218,7 +1218,7 @@ slots:
     - gist_rdfs_annotations
 
   offers_to_receive:
-    slot_uri: gist_upstream:offersToReceive
+    slot_uri: gist:offersToReceive
     description: Relates an offer to the thing expected in return for the offered item.
     aliases:
     - offers to receive
@@ -1232,7 +1232,7 @@ slots:
     - gist_rdfs_annotations
 
   owns:
-    slot_uri: gist_upstream:owns
+    slot_uri: gist:owns
     description: Relates a party to something that it possesses and controls.
     aliases:
     - owns
@@ -1243,7 +1243,7 @@ slots:
     - gist_rdfs_annotations
 
   planned_end_date:
-    slot_uri: gist_upstream:plannedEndDate
+    slot_uri: gist:plannedEndDate
     description: The date that something is or was planned to end, with precision of one day.
     aliases:
     - planned end date
@@ -1256,7 +1256,7 @@ slots:
     - gist_rdfs_annotations
 
   planned_end_date_time:
-    slot_uri: gist_upstream:plannedEndDateTime
+    slot_uri: gist:plannedEndDateTime
     description: The date that something is or was planned to end, with no implied precision.
     aliases:
     - planned end date time
@@ -1269,7 +1269,7 @@ slots:
     - gist_rdfs_annotations
 
   planned_end_minute:
-    slot_uri: gist_upstream:plannedEndMinute
+    slot_uri: gist:plannedEndMinute
     description: |-
       The date and time that something is or was planned to end, with precision of one minute.
     aliases:
@@ -1283,7 +1283,7 @@ slots:
     - gist_rdfs_annotations
 
   planned_end_year:
-    slot_uri: gist_upstream:plannedEndYear
+    slot_uri: gist:plannedEndYear
     description: The date that something is or was planned to end, with precision of one year.
     aliases:
     - planned end year
@@ -1298,7 +1298,7 @@ slots:
     - gist_rdfs_annotations
 
   planned_start_date:
-    slot_uri: gist_upstream:plannedStartDate
+    slot_uri: gist:plannedStartDate
     description: The date that something is or was planned to start, with precision of one day.
     aliases:
     - planned start date
@@ -1311,7 +1311,7 @@ slots:
     - gist_rdfs_annotations
 
   planned_start_date_time:
-    slot_uri: gist_upstream:plannedStartDateTime
+    slot_uri: gist:plannedStartDateTime
     description: |-
       The date and time that something is or was planned to start, with no implied precision.
     aliases:
@@ -1325,7 +1325,7 @@ slots:
     - gist_rdfs_annotations
 
   planned_start_minute:
-    slot_uri: gist_upstream:plannedStartMinute
+    slot_uri: gist:plannedStartMinute
     description: |-
       The date and time that something is or was planned to start, with precision of one minute.
     aliases:
@@ -1339,7 +1339,7 @@ slots:
     - gist_rdfs_annotations
 
   planned_start_year:
-    slot_uri: gist_upstream:plannedStartYear
+    slot_uri: gist:plannedStartYear
     description: The date that something is or was planned to start, with precision of one year.
     aliases:
     - planned start year
@@ -1354,7 +1354,7 @@ slots:
     - gist_rdfs_annotations
 
   precedes:
-    slot_uri: gist_upstream:precedes
+    slot_uri: gist:precedes
     description: A generic ordering relation indicating that the subject comes before the object.
     aliases:
     - precedes
@@ -1367,7 +1367,7 @@ slots:
     - gist_rdfs_annotations
 
   precedes_directly:
-    slot_uri: gist_upstream:precedesDirectly
+    slot_uri: gist:precedesDirectly
     description: |-
       A generic ordering relation indicating that the subject comes immediately before the object.
     aliases:
@@ -1383,7 +1383,7 @@ slots:
     - gist_rdfs_annotations
 
   prevents:
-    slot_uri: gist_upstream:prevents
+    slot_uri: gist:prevents
     description: Relates an intention to behavior that it prohibits.
     aliases:
     - prevents
@@ -1393,7 +1393,7 @@ slots:
     - gist_rdfs_annotations
 
   prohibits:
-    slot_uri: gist_upstream:prohibits
+    slot_uri: gist:prohibits
     description: Relates an intention to a behavior that it forbids or seeks to prevent.
     aliases:
     - prohibits
@@ -1408,7 +1408,7 @@ slots:
     - gist_rdfs_annotations
 
   provides_order_for:
-    slot_uri: gist_upstream:providesOrderFor
+    slot_uri: gist:providesOrderFor
     description: |-
       Links a member of an ordered collection to the real-world item it represents in that collection.
     aliases:
@@ -1417,7 +1417,7 @@ slots:
     - gist_rdfs_annotations
 
   range_includes:
-    slot_uri: gist_upstream:rangeIncludes
+    slot_uri: gist:rangeIncludes
     description: Relates a property to a class that is an expected type of its values.
     aliases:
     - range includes
@@ -1431,7 +1431,7 @@ slots:
     - gist_rdfs_annotations
 
   refers_to:
-    slot_uri: gist_upstream:refersTo
+    slot_uri: gist:refersTo
     description: |-
       Relates something to another resource that it points to, indicates, or references.
     aliases:
@@ -1440,7 +1440,7 @@ slots:
     - gist_rdfs_annotations
 
   requires:
-    slot_uri: gist_upstream:requires
+    slot_uri: gist:requires
     description: The subject needs the object or makes it necessary, mandatory, or compulsory.
     aliases:
     - requires
@@ -1455,7 +1455,7 @@ slots:
     - gist_rdfs_annotations
 
   sequence:
-    slot_uri: gist_upstream:sequence
+    slot_uri: gist:sequence
     description: A number that specifies the position of an element within a series.
     aliases:
     - sequence
@@ -1463,7 +1463,7 @@ slots:
     - gist_rdfs_annotations
 
   start_date_time:
-    slot_uri: gist_upstream:startDateTime
+    slot_uri: gist:startDateTime
     description: The date and time that something starts.
     aliases:
     - start date time
@@ -1476,7 +1476,7 @@ slots:
     - gist_rdfs_annotations
 
   symbol:
-    slot_uri: gist_upstream:symbol
+    slot_uri: gist:symbol
     description: A symbol for something using only ASCII characters.
     aliases:
     - symbol
@@ -1486,7 +1486,7 @@ slots:
     - gist_rdfs_annotations
 
   unique_text:
-    slot_uri: gist_upstream:uniqueText
+    slot_uri: gist:uniqueText
     description: |-
       The unique string value of some content object, to be used when there is no possibility of having more than one value.
     aliases:
@@ -1502,7 +1502,7 @@ slots:
 classes:
 
   Account:
-    class_uri: gist_upstream:Account
+    class_uri: gist:Account
     description: An agreement having a balance.
     aliases:
     - Account
@@ -1512,7 +1512,7 @@ classes:
     - gist_rdfs_annotations
 
   Address:
-    class_uri: gist_upstream:Address
+    class_uri: gist:Address
     description: |-
       A reference to a place (real or virtual) that can be located by some routing algorithm and where messages or things can be sent or received.
     aliases:
@@ -1523,7 +1523,7 @@ classes:
     - gist_rdfs_annotations
 
   AddressUsageType:
-    class_uri: gist_upstream:AddressUsageType
+    class_uri: gist:AddressUsageType
     description: A category indicating the context or manner in which an address may be used.
     aliases:
     - Address Usage Type
@@ -1536,7 +1536,7 @@ classes:
     - gist_rdfs_annotations
 
   Agreement:
-    class_uri: gist_upstream:Agreement
+    class_uri: gist:Agreement
     description: |-
       A mutually understood arrangement in which two or more parties make commitments to one another.
     aliases:
@@ -1551,7 +1551,7 @@ classes:
     - gist_rdfs_annotations
 
   Aspect:
-    class_uri: gist_upstream:Aspect
+    class_uri: gist:Aspect
     description: A measurable characteristic.
     aliases:
     - Aspect
@@ -1566,7 +1566,7 @@ classes:
     - gist_rdfs_annotations
 
   Assignment:
-    class_uri: gist_upstream:Assignment
+    class_uri: gist:Assignment
     description: |-
       A temporal relationship between an assignee, the thing assigned, and the resource that made the assignment.
     aliases:
@@ -1582,7 +1582,7 @@ classes:
     - gist_rdfs_annotations
 
   Behavior:
-    class_uri: gist_upstream:Behavior
+    class_uri: gist:Behavior
     description: A category indicating the nature of an activity.
     aliases:
     - Behavior
@@ -1592,7 +1592,7 @@ classes:
     - gist_rdfs_annotations
 
   Building:
-    class_uri: gist_upstream:Building
+    class_uri: gist:Building
     description: |-
       A relatively permanent man-made structure situated on a plot of land, having a roof and walls, commonly used for dwelling, entertaining, or working.
     aliases:
@@ -1608,7 +1608,7 @@ classes:
     - gist_rdfs_annotations
 
   BundledCatalogItem:
-    class_uri: gist_upstream:BundledCatalogItem
+    class_uri: gist:BundledCatalogItem
     description: Any combination of descriptions of things offered together.
     aliases:
     - Bundled Catalog Item
@@ -1618,7 +1618,7 @@ classes:
     - gist_rdfs_annotations
 
   CatalogItem:
-    class_uri: gist_upstream:CatalogItem
+    class_uri: gist:CatalogItem
     description: |-
       A description of a product or service to be delivered, given in a sufficient level of detail that a receiver could determine whether delivery constituted discharge of the obligation to deliver.
     aliases:
@@ -1630,7 +1630,7 @@ classes:
     - gist_rdfs_annotations
 
   Category:
-    class_uri: gist_upstream:Category
+    class_uri: gist:Category
     description: |-
       A concept or label used to categorize other instances without specifying any formal semantics.
     aliases:
@@ -1644,7 +1644,7 @@ classes:
     - gist_rdfs_annotations
 
   Collection:
-    class_uri: gist_upstream:Collection
+    class_uri: gist:Collection
     description: A grouping of things.
     aliases:
     - Collection
@@ -1658,7 +1658,7 @@ classes:
     - gist_rdfs_annotations
 
   Commitment:
-    class_uri: gist_upstream:Commitment
+    class_uri: gist:Commitment
     description: |-
       A promise made by a single party to one or more parties to do or not do something or act in a particular way.
     aliases:
@@ -1679,7 +1679,7 @@ classes:
     - gist_rdfs_annotations
 
   Component:
-    class_uri: gist_upstream:Component
+    class_uri: gist:Component
     description: |-
       Something that, while having an independent existence, is inherently part of or designed to be part of a larger entity, such as a system or network.
     aliases:
@@ -1699,7 +1699,7 @@ classes:
     - gist_rdfs_annotations
 
   Composite:
-    class_uri: gist_upstream:Composite
+    class_uri: gist:Composite
     description: |-
       Something which is made up of various parts or elements that are independently identifiable.
     aliases:
@@ -1717,7 +1717,7 @@ classes:
     - gist_rdfs_annotations
 
   ContemporaryEvent:
-    class_uri: gist_upstream:ContemporaryEvent
+    class_uri: gist:ContemporaryEvent
     description: An event that has started but has not yet ended.
     aliases:
     - Contemporary Event
@@ -1727,7 +1727,7 @@ classes:
     - gist_rdfs_annotations
 
   Content:
-    class_uri: gist_upstream:Content
+    class_uri: gist:Content
     description: Information available in some medium.
     aliases:
     - Content
@@ -1742,7 +1742,7 @@ classes:
     - gist_rdfs_annotations
 
   ContentExpression:
-    class_uri: gist_upstream:ContentExpression
+    class_uri: gist:ContentExpression
     description: Content reduced to text, audio, etc.
     aliases:
     - Content Expression
@@ -1757,7 +1757,7 @@ classes:
     - gist_rdfs_annotations
 
   ContingentEvent:
-    class_uri: gist_upstream:ContingentEvent
+    class_uri: gist:ContingentEvent
     description: |-
       An event with a probability of happening in the future, and usually dependent upon some other event or condition.
     aliases:
@@ -1769,7 +1769,7 @@ classes:
     - gist_rdfs_annotations
 
   ContingentObligation:
-    class_uri: gist_upstream:ContingentObligation
+    class_uri: gist:ContingentObligation
     description: |-
       An obligation that is not yet firm. There is some contingent event whose occurrence will cause the obligation to become firm.
     aliases:
@@ -1781,7 +1781,7 @@ classes:
     - gist_rdfs_annotations
 
   Contract:
-    class_uri: gist_upstream:Contract
+    class_uri: gist:Contract
     description: An agreement which can be enforced by law.
     aliases:
     - Contract
@@ -1789,7 +1789,7 @@ classes:
     - gist_rdfs_annotations
 
   ContractTerm:
-    class_uri: gist_upstream:ContractTerm
+    class_uri: gist:ContractTerm
     description: A specification of some aspect of a contract.
     aliases:
     - Contract Term
@@ -1797,7 +1797,7 @@ classes:
     - gist_rdfs_annotations
 
   ControlledVocabulary:
-    class_uri: gist_upstream:ControlledVocabulary
+    class_uri: gist:ControlledVocabulary
     description: A collection of terms approved and managed by some organization or person.
     aliases:
     - Controlled Vocabulary
@@ -1808,7 +1808,7 @@ classes:
     - gist_rdfs_annotations
 
   CountryGeoRegion:
-    class_uri: gist_upstream:CountryGeoRegion
+    class_uri: gist:CountryGeoRegion
     description: A geographic region governed by exactly one country government.
     aliases:
     - Country Geographic Region
@@ -1816,7 +1816,7 @@ classes:
     - gist_rdfs_annotations
 
   CountryGovernment:
-    class_uri: gist_upstream:CountryGovernment
+    class_uri: gist:CountryGovernment
     description: |-
       A government organization which asserts both sovereignty (i.e., it is not governed by some other government organization) and governance over an entity generally recognized as a country.
     aliases:
@@ -1828,7 +1828,7 @@ classes:
     - gist_rdfs_annotations
 
   DegreeOfCommitment:
-    class_uri: gist_upstream:DegreeOfCommitment
+    class_uri: gist:DegreeOfCommitment
     description: The difficulty of reversing a commitment.
     aliases:
     - Degree Of Commitment
@@ -1839,7 +1839,7 @@ classes:
     - gist_rdfs_annotations
 
   Determination:
-    class_uri: gist_upstream:Determination
+    class_uri: gist:Determination
     description: |-
       An event whose purpose is to establish a specific result, value, or outcome, usually by research, measuring, evaluating, or calculating.
     aliases:
@@ -1851,7 +1851,7 @@ classes:
     - gist_rdfs_annotations
 
   Discipline:
-    class_uri: gist_upstream:Discipline
+    class_uri: gist:Discipline
     description: An area of study or practice.
     aliases:
     - Discipline
@@ -1861,7 +1861,7 @@ classes:
     - gist_rdfs_annotations
 
   ElectronicAddress:
-    class_uri: gist_upstream:ElectronicAddress
+    class_uri: gist:ElectronicAddress
     description: |-
       An address referring to a locatable virtual place that does not physically exist but is made by software or electronics to appear to do so.
     aliases:
@@ -1873,7 +1873,7 @@ classes:
     - gist_rdfs_annotations
 
   ElectronicAddressType:
-    class_uri: gist_upstream:ElectronicAddressType
+    class_uri: gist:ElectronicAddressType
     description: |-
       A category indicating a kind of electronic address. Such a category is usually based on the technology that enables routing to the address referent.
     aliases:
@@ -1884,7 +1884,7 @@ classes:
     - gist_rdfs_annotations
 
   Equipment:
-    class_uri: gist_upstream:Equipment
+    class_uri: gist:Equipment
     description: |-
       Human-made, tangible property other than land or buildings used to perform a task or activity.
     aliases:
@@ -1895,7 +1895,7 @@ classes:
     - gist_rdfs_annotations
 
   EquipmentType:
-    class_uri: gist_upstream:EquipmentType
+    class_uri: gist:EquipmentType
     description: A category of equipment.
     aliases:
     - Equipment Type
@@ -1903,7 +1903,7 @@ classes:
     - gist_rdfs_annotations
 
   Event:
-    class_uri: gist_upstream:Event
+    class_uri: gist:Event
     description: |-
       Something that occurs over a period of time, often characterized as an activity being carried out by some person, organization, or software application or brought about by natural forces.
     aliases:
@@ -1918,7 +1918,7 @@ classes:
     - gist_rdfs_annotations
 
   EventSpecification:
-    class_uri: gist_upstream:EventSpecification
+    class_uri: gist:EventSpecification
     description: A characterization of an event that might happen.
     aliases:
     - Event Specification
@@ -1931,7 +1931,7 @@ classes:
     - gist_rdfs_annotations
 
   FormattedContent:
-    class_uri: gist_upstream:FormattedContent
+    class_uri: gist:FormattedContent
     description: |-
       Content encoded in a specific format, but existing as data independent of any particular physical medium.
     aliases:
@@ -1945,7 +1945,7 @@ classes:
     - gist_rdfs_annotations
 
   Function:
-    class_uri: gist_upstream:Function
+    class_uri: gist:Function
     description: The activity that a human-made item is intended to perform.
     aliases:
     - Function
@@ -1955,7 +1955,7 @@ classes:
     - gist_rdfs_annotations
 
   GeneralMediaType:
-    class_uri: gist_upstream:GeneralMediaType
+    class_uri: gist:GeneralMediaType
     description: The real-world media type for content.
     aliases:
     - General Media Type
@@ -1966,7 +1966,7 @@ classes:
     - gist_rdfs_annotations
 
   GeoLocation:
-    class_uri: gist_upstream:GeoLocation
+    class_uri: gist:GeoLocation
     description: A physical location, with the earth as a frame of reference.
     aliases:
     - Geographic Location
@@ -1976,7 +1976,7 @@ classes:
     - gist_rdfs_annotations
 
   GeoPoint:
-    class_uri: gist_upstream:GeoPoint
+    class_uri: gist:GeoPoint
     description: |-
       An individual point on or above the Earth's surface, identified by latitude, longitude and altitude. Altitude is the distance measured from sea level. If altitude is missing, the point is assumed to be at the Earth's surface. These points are described using decimal latitude/longitude.
     aliases:
@@ -1985,7 +1985,7 @@ classes:
     - gist_rdfs_annotations
 
   GeoRegion:
-    class_uri: gist_upstream:GeoRegion
+    class_uri: gist:GeoRegion
     description: A bounded region (or set of regions) on the surface of the Earth.
     aliases:
     - Geographic Region
@@ -1999,7 +1999,7 @@ classes:
     - gist_rdfs_annotations
 
   GeoRoute:
-    class_uri: gist_upstream:GeoRoute
+    class_uri: gist:GeoRoute
     description: |-
       An ordered set of geographic points that defines a path from a starting point to an ending point.
     aliases:
@@ -2011,7 +2011,7 @@ classes:
     - gist_rdfs_annotations
 
   GeoVolume:
-    class_uri: gist_upstream:GeoVolume
+    class_uri: gist:GeoVolume
     description: A three-dimensional space on or near the surface of the Earth.
     aliases:
     - Geographic Volume
@@ -2021,7 +2021,7 @@ classes:
     - gist_rdfs_annotations
 
   GovernedGeoRegion:
-    class_uri: gist_upstream:GovernedGeoRegion
+    class_uri: gist:GovernedGeoRegion
     description: A geographic region governed by at least one government organization.
     aliases:
     - Governed Geographic Region
@@ -2032,7 +2032,7 @@ classes:
     - gist_rdfs_annotations
 
   GovernmentOrganization:
-    class_uri: gist_upstream:GovernmentOrganization
+    class_uri: gist:GovernmentOrganization
     description: |-
       An independent organization exercising political and/or regulatory authority over a political unit, people, geographical region, etc., as well as performing certain functions for this unit or body.
     aliases:
@@ -2048,7 +2048,7 @@ classes:
     - gist_rdfs_annotations
 
   HistoricalEvent:
-    class_uri: gist_upstream:HistoricalEvent
+    class_uri: gist:HistoricalEvent
     description: |-
       An event which occurred in time, with an actual end earlier than the present moment.
     aliases:
@@ -2057,7 +2057,7 @@ classes:
     - gist_rdfs_annotations
 
   ID:
-    class_uri: gist_upstream:ID
+    class_uri: gist:ID
     description: Content that is used to uniquely identify something or someone.
     aliases:
     - ID
@@ -2069,7 +2069,7 @@ classes:
     - gist_rdfs_annotations
 
   IntellectualProperty:
-    class_uri: gist_upstream:IntellectualProperty
+    class_uri: gist:IntellectualProperty
     description: |-
       An intangible work, invention, or concept, independent of its being expressed in text, audio, video, image, or live performance. IP can also be tacit knowledge, know-how, or skill.
     aliases:
@@ -2085,7 +2085,7 @@ classes:
     - gist_rdfs_annotations
 
   Intention:
-    class_uri: gist_upstream:Intention
+    class_uri: gist:Intention
     description: A goal, desire, or aspiration.
     aliases:
     - Intention
@@ -2096,7 +2096,7 @@ classes:
     - gist_rdfs_annotations
 
   IntergovernmentalOrganization:
-    class_uri: gist_upstream:IntergovernmentalOrganization
+    class_uri: gist:IntergovernmentalOrganization
     description: |-
       An organization whose members are government organizations. This can comprise regional, municipal, state/province, or national level entities.
     aliases:
@@ -2107,7 +2107,7 @@ classes:
     - gist_rdfs_annotations
 
   KnowledgeConcept:
-    class_uri: gist_upstream:KnowledgeConcept
+    class_uri: gist:KnowledgeConcept
     description: |-
       An abstract concept that arises from the distillation of experience. It is similar to a category but, rather than being a simple tag, it has rich structure.
     aliases:
@@ -2136,7 +2136,7 @@ classes:
     - gist_rdfs_annotations
 
   Landmark:
-    class_uri: gist_upstream:Landmark
+    class_uri: gist:Landmark
     description: Something permanently attached to the Earth.
     aliases:
     - Landmark
@@ -2144,7 +2144,7 @@ classes:
     - gist_rdfs_annotations
 
   Language:
-    class_uri: gist_upstream:Language
+    class_uri: gist:Language
     description: A recognized, organized set of symbols and grammar.
     aliases:
     - Language
@@ -2155,7 +2155,7 @@ classes:
     - gist_rdfs_annotations
 
   LivingThing:
-    class_uri: gist_upstream:LivingThing
+    class_uri: gist:LivingThing
     description: Something that is currently, or at some point in time was, alive.
     aliases:
     - Living Thing
@@ -2169,7 +2169,7 @@ classes:
     - gist_rdfs_annotations
 
   Magnitude:
-    class_uri: gist_upstream:Magnitude
+    class_uri: gist:Magnitude
     description: The amount of a measurable characteristic (aspect).
     aliases:
     - Magnitude
@@ -2182,7 +2182,7 @@ classes:
     - gist_rdfs_annotations
 
   MediaType:
-    class_uri: gist_upstream:MediaType
+    class_uri: gist:MediaType
     description: A digitized type that computer applications can recognize.
     aliases:
     - Media Type
@@ -2195,7 +2195,7 @@ classes:
     - gist_rdfs_annotations
 
   Medium:
-    class_uri: gist_upstream:Medium
+    class_uri: gist:Medium
     description: |-
       A physical material on which a work can be rendered, represented, or implemented.
     aliases:
@@ -2206,7 +2206,7 @@ classes:
     - gist_rdfs_annotations
 
   Message:
-    class_uri: gist_upstream:Message
+    class_uri: gist:Message
     description: |-
       A specific instance of content sent from a sender to at least one other recipient.
     aliases:
@@ -2217,7 +2217,7 @@ classes:
     - gist_rdfs_annotations
 
   Network:
-    class_uri: gist_upstream:Network
+    class_uri: gist:Network
     description: A composite consisting of nodes connected by links.
     aliases:
     - Network
@@ -2228,7 +2228,7 @@ classes:
     - gist_rdfs_annotations
 
   NetworkLink:
-    class_uri: gist_upstream:NetworkLink
+    class_uri: gist:NetworkLink
     description: |-
       An abstract representation of the connection between two or more nodes in a network.
     aliases:
@@ -2243,7 +2243,7 @@ classes:
     - gist_rdfs_annotations
 
   NetworkNode:
-    class_uri: gist_upstream:NetworkNode
+    class_uri: gist:NetworkNode
     description: A node in a network.
     aliases:
     - Network Node
@@ -2254,7 +2254,7 @@ classes:
     - gist_rdfs_annotations
 
   Offer:
-    class_uri: gist_upstream:Offer
+    class_uri: gist:Offer
     description: |-
       A contingent commitment to buy, sell, swap or provide one or more described or identified goods or services in exchange for another (or others).
     aliases:
@@ -2269,7 +2269,7 @@ classes:
     - gist_rdfs_annotations
 
   OrderedCollection:
-    class_uri: gist_upstream:OrderedCollection
+    class_uri: gist:OrderedCollection
     description: A collection whose members are ordered in some way.
     aliases:
     - Ordered Collection
@@ -2280,7 +2280,7 @@ classes:
     - gist_rdfs_annotations
 
   OrderedMember:
-    class_uri: gist_upstream:OrderedMember
+    class_uri: gist:OrderedMember
     description: |-
       A member of an ordered collection serving as a proxy for a real world item, which can appear in different orders in different collections. The ordered member appears in exactly one ordered collection.
     aliases:
@@ -2295,7 +2295,7 @@ classes:
     - gist_rdfs_annotations
 
   Organization:
-    class_uri: gist_upstream:Organization
+    class_uri: gist:Organization
     description: |-
       A structured entity formed to achieve specific goals, typically involving members with defined roles.
     aliases:
@@ -2311,7 +2311,7 @@ classes:
     - gist_rdfs_annotations
 
   Permission:
-    class_uri: gist_upstream:Permission
+    class_uri: gist:Permission
     description: A description of things one is permitted to do.
     aliases:
     - Permission
@@ -2322,7 +2322,7 @@ classes:
     - gist_rdfs_annotations
 
   Person:
-    class_uri: gist_upstream:Person
+    class_uri: gist:Person
     description: A human being who was or is alive.
     aliases:
     - Person
@@ -2332,7 +2332,7 @@ classes:
     - gist_rdfs_annotations
 
   PhysicalActionType:
-    class_uri: gist_upstream:PhysicalActionType
+    class_uri: gist:PhysicalActionType
     description: |-
       A category indicating the type of an action based on its effect in the physical world.
     aliases:
@@ -2343,7 +2343,7 @@ classes:
     - gist_rdfs_annotations
 
   PhysicalAddress:
-    class_uri: gist_upstream:PhysicalAddress
+    class_uri: gist:PhysicalAddress
     description: An address that refers to a locatable place within the physical universe.
     aliases:
     - Physical Address
@@ -2354,7 +2354,7 @@ classes:
     - gist_rdfs_annotations
 
   PhysicalAddressType:
-    class_uri: gist_upstream:PhysicalAddressType
+    class_uri: gist:PhysicalAddressType
     description: A category indicating local customary characterizations of physical addresses.
     aliases:
     - Physical Address Type
@@ -2364,7 +2364,7 @@ classes:
     - gist_rdfs_annotations
 
   PhysicalEvent:
-    class_uri: gist_upstream:PhysicalEvent
+    class_uri: gist:PhysicalEvent
     description: An event that can be said to have occurred at some place in space.
     aliases:
     - Physical Event
@@ -2376,7 +2376,7 @@ classes:
     - gist_rdfs_annotations
 
   PhysicalIdentifiableItem:
-    class_uri: gist_upstream:PhysicalIdentifiableItem
+    class_uri: gist:PhysicalIdentifiableItem
     description: |-
       A discrete physical object which, if subdivided, will result in parts that are distinguishable in nature from the whole and in general also from the other parts.
     aliases:
@@ -2391,7 +2391,7 @@ classes:
     - gist_rdfs_annotations
 
   PhysicalSubstance:
-    class_uri: gist_upstream:PhysicalSubstance
+    class_uri: gist:PhysicalSubstance
     description: |-
       An undifferentiated amount of physical material which, when subdivided, results in each part being indistinguishable in nature from the whole and from every other part.
     aliases:
@@ -2408,7 +2408,7 @@ classes:
     - gist_rdfs_annotations
 
   ProductCategory:
-    class_uri: gist_upstream:ProductCategory
+    class_uri: gist:ProductCategory
     description: Any of many ways of categorizing products.
     aliases:
     - Product Category
@@ -2418,7 +2418,7 @@ classes:
     - gist_rdfs_annotations
 
   ProductSpecification:
-    class_uri: gist_upstream:ProductSpecification
+    class_uri: gist:ProductSpecification
     description: |-
       A description of something that could be physically warehoused or digitally stored and physically or digitally delivered.
     aliases:
@@ -2427,7 +2427,7 @@ classes:
     - gist_rdfs_annotations
 
   Project:
-    class_uri: gist_upstream:Project
+    class_uri: gist:Project
     description: A task, usually of longer duration, made up of other tasks.
     aliases:
     - Project
@@ -2438,7 +2438,7 @@ classes:
     - gist_rdfs_annotations
 
   ReferenceValue:
-    class_uri: gist_upstream:ReferenceValue
+    class_uri: gist:ReferenceValue
     description: A magnitude that was neither measured nor estimated but set by fiat.
     aliases:
     - Reference Value
@@ -2448,7 +2448,7 @@ classes:
     - gist_rdfs_annotations
 
   RenderedContent:
-    class_uri: gist_upstream:RenderedContent
+    class_uri: gist:RenderedContent
     description: Content expressed via some physical medium.
     aliases:
     - Rendered Content
@@ -2462,7 +2462,7 @@ classes:
     - gist_rdfs_annotations
 
   Requirement:
-    class_uri: gist_upstream:Requirement
+    class_uri: gist:Requirement
     description: The obligation of a person or organization to behave in a certain way.
     aliases:
     - Requirement
@@ -2472,7 +2472,7 @@ classes:
     - gist_rdfs_annotations
 
   Restriction:
-    class_uri: gist_upstream:Restriction
+    class_uri: gist:Restriction
     description: A description of things one is prevented from doing.
     aliases:
     - Restriction
@@ -2483,7 +2483,7 @@ classes:
     - gist_rdfs_annotations
 
   ScheduledEvent:
-    class_uri: gist_upstream:ScheduledEvent
+    class_uri: gist:ScheduledEvent
     description: An event with a planned start datetime.
     aliases:
     - Scheduled Event
@@ -2494,7 +2494,7 @@ classes:
     - gist_rdfs_annotations
 
   ScheduledTask:
-    class_uri: gist_upstream:ScheduledTask
+    class_uri: gist:ScheduledTask
     description: A task with a planned start datetime.
     aliases:
     - Scheduled Task
@@ -2505,7 +2505,7 @@ classes:
     - gist_rdfs_annotations
 
   SchemaMetaData:
-    class_uri: gist_upstream:SchemaMetaData
+    class_uri: gist:SchemaMetaData
     description: Superclass for all types of metadata.
     aliases:
     - Schema Meta Data
@@ -2518,7 +2518,7 @@ classes:
     - gist_rdfs_annotations
 
   ServiceSpecification:
-    class_uri: gist_upstream:ServiceSpecification
+    class_uri: gist:ServiceSpecification
     description: |-
       A description of something that can be done for a person or organization (which produces some form of an act).
     aliases:
@@ -2527,7 +2527,7 @@ classes:
     - gist_rdfs_annotations
 
   Specification:
-    class_uri: gist_upstream:Specification
+    class_uri: gist:Specification
     description: |-
       The set of characteristics and constraints on their values that specify what it means to be a particular type of thing, such as a material, product, service or event. A specification is sufficiently precise to allow evaluating conformance to the specification.
     aliases:
@@ -2542,7 +2542,7 @@ classes:
     - gist_rdfs_annotations
 
   SubCountryGovernment:
-    class_uri: gist_upstream:SubCountryGovernment
+    class_uri: gist:SubCountryGovernment
     description: |-
       The government of a governed geographic region other than a country which is under the direct or indirect control of a country government.
     aliases:
@@ -2558,7 +2558,7 @@ classes:
     - gist_rdfs_annotations
 
   System:
-    class_uri: gist_upstream:System
+    class_uri: gist:System
     description: |-
       A composite made up of interacting or interdependent components that together operate as a whole.
     aliases:
@@ -2571,7 +2571,7 @@ classes:
     - gist_rdfs_annotations
 
   Tag:
-    class_uri: gist_upstream:Tag
+    class_uri: gist:Tag
     description: |-
       A term in a folksonomy used to categorize things. Tags can be made up on the fly by users.
     aliases:
@@ -2583,7 +2583,7 @@ classes:
     - gist_rdfs_annotations
 
   Task:
-    class_uri: gist_upstream:Task
+    class_uri: gist:Task
     description: |-
       An activity or piece of work that is either proposed, planned, scheduled, underway, or completed.
     aliases:
@@ -2598,7 +2598,7 @@ classes:
     - gist_rdfs_annotations
 
   TaskTemplate:
-    class_uri: gist_upstream:TaskTemplate
+    class_uri: gist:TaskTemplate
     description: |-
       An outline of a task of a particular type, which is the basis for executing such tasks.
     aliases:
@@ -2613,7 +2613,7 @@ classes:
     - gist_rdfs_annotations
 
   Template:
-    class_uri: gist_upstream:Template
+    class_uri: gist:Template
     description: Something used to make objects in its own image.
     aliases:
     - Template
@@ -2627,7 +2627,7 @@ classes:
     - gist_rdfs_annotations
 
   TemporalRelation:
-    class_uri: gist_upstream:TemporalRelation
+    class_uri: gist:TemporalRelation
     description: A relationship existing for a period of time.
     aliases:
     - Temporal Relation
@@ -2641,7 +2641,7 @@ classes:
     - gist_rdfs_annotations
 
   Text:
-    class_uri: gist_upstream:Text
+    class_uri: gist:Text
     description: Content expressed as a written sequence of characters.
     aliases:
     - Text
@@ -2655,7 +2655,7 @@ classes:
     - gist_rdfs_annotations
 
   TimeInterval:
-    class_uri: gist_upstream:TimeInterval
+    class_uri: gist:TimeInterval
     description: |-
       A span of time with a known start time, end time, and duration. As long as two of the three are known, the third can be inferred.
     aliases:
@@ -2672,7 +2672,7 @@ classes:
     - gist_rdfs_annotations
 
   Transaction:
-    class_uri: gist_upstream:Transaction
+    class_uri: gist:Transaction
     description: An exchange or transfer of goods, services, or funds.
     aliases:
     - Transaction
@@ -2683,7 +2683,7 @@ classes:
     - gist_rdfs_annotations
 
   UnitGroup:
-    class_uri: gist_upstream:UnitGroup
+    class_uri: gist:UnitGroup
     description: |-
       A collection of units of measure that can all be used to measure the same aspects.
     aliases:
@@ -2698,7 +2698,7 @@ classes:
     - gist_rdfs_annotations
 
   UnitOfMeasure:
-    class_uri: gist_upstream:UnitOfMeasure
+    class_uri: gist:UnitOfMeasure
     description: A standard amount used to measure or specify things.
     aliases:
     - Unit of Measure

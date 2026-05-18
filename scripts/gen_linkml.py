@@ -65,7 +65,7 @@ MEDIA_PREFIXES = {
 
 # Ordered prefix table used by uri_to_curie() — longest namespace first avoids prefix ambiguity
 _CURIE_PREFIXES: list[tuple[str, str]] = [
-    (GIST_NS, "gist_upstream"),
+    (GIST_NS, "gist "),
     (GISTD_NS, "gistd"),
     (LMODEL_NS, "gistl"),
     ("http://schema.org/", "schema"),
@@ -352,7 +352,7 @@ def extract_classes(g: Graph) -> dict[str, dict]:
             ]
 
         # --- class_uri maps to the upstream OWL class URI ---
-        entry["class_uri"] = f"gist_upstream:{cls_local}"
+        entry["class_uri"] = f"gist :{cls_local}"
 
         # --- equivalentClass ---
         # Named URIs  -> exact_mappings (owl:equivalentClass = owl:equivalentClass semantics)
@@ -480,7 +480,7 @@ def extract_slots(g: Graph) -> dict[str, dict]:
             entry: dict[str, Any] = {}
 
             # slot_uri maps to the upstream predicate URI
-            entry["slot_uri"] = f"gist_upstream:{prop_local}"
+            entry["slot_uri"] = f"gist :{prop_local}"
 
             # implements: drives gen-owl's choice of OWL property type
             # (without this, slots with no class-typed range default to DatatypeProperty)
@@ -860,10 +860,10 @@ def extract_rdfs_annotations(
             entry["comments"] = notes
 
         if is_slot:
-            entry["slot_uri"] = f"gist_upstream:{gist_name}"
+            entry["slot_uri"] = f"gist :{gist_name}"
             slots[camel_to_snake(gist_name)] = entry
         else:
-            entry["class_uri"] = f"gist_upstream:{gist_name}"
+            entry["class_uri"] = f"gist :{gist_name}"
             classes[gist_name] = entry
 
     return classes, slots
@@ -887,7 +887,7 @@ def extract_sub_class_assertions(g: Graph) -> dict[str, dict]:
 
         if subj_name not in classes:
             classes[subj_name] = {
-                "class_uri": f"gist_upstream:{subj_name}",
+                "class_uri": f"gist :{subj_name}",
                 "is_a": obj_name,
             }
         else:
@@ -901,7 +901,7 @@ def extract_sub_class_assertions(g: Graph) -> dict[str, dict]:
     all_parents = {entry["is_a"] for entry in classes.values() if "is_a" in entry}
     for parent in sorted(all_parents):
         if parent not in classes:
-            classes[parent] = {"class_uri": f"gist_upstream:{parent}"}
+            classes[parent] = {"class_uri": f"gist :{parent}"}
 
     return classes
 
@@ -924,7 +924,7 @@ def extract_prefix_declarations(g: Graph) -> dict[str, dict]:
 
         gist_name = gist_local(subj)
         key = _enum_val_key(gist_name) if gist_name else _enum_val_key(prefix_val)
-        meaning = f"gist_upstream:{gist_name}" if gist_name else str(subj)
+        meaning = f"gist :{gist_name}" if gist_name else str(subj)
 
         pv[key] = {
             "title": prefix_val,
@@ -1096,7 +1096,7 @@ def get_ontology_iri(g: Graph) -> str | None:
 def _base_prefixes() -> dict[str, str]:
     return {
         "gistl": LMODEL_NS,
-        "gist_upstream": GIST_NS,
+        "gist ": GIST_NS,
         "gistd": GISTD_NS,
         "linkml": "https://w3id.org/linkml/",
         "schema": "http://schema.org/",
@@ -1343,7 +1343,7 @@ def build_gist_schema(version: str = "14.1.0") -> dict:
         "name": "gistl",
         "title": "gistl",
         "description": (
-            "gist  is a minimalist upper ontology "
+            "gist is a minimalist upper ontology "
             "created by Semantic Arts for enterprise knowledge graph applications. "
             "This LinkML schema (version " + version + ") aggregates the gist modules: "
             "Core (classes and properties), MediaTypes (IANA media type instances), and "
@@ -1361,7 +1361,7 @@ def build_gist_schema(version: str = "14.1.0") -> dict:
         "version": version,
         "prefixes": {
             "gistl": LMODEL_NS,
-            "gist_upstream": GIST_NS,
+            "gist ": GIST_NS,
             "gistd": GISTD_NS,
             "linkml": "https://w3id.org/linkml/",
             "media_app": "https://www.iana.org/assignments/media-types/application/",

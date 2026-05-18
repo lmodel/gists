@@ -68,7 +68,7 @@ class LinkMLMeta(RootModel):
 
 linkml_meta = LinkMLMeta({'default_prefix': 'gistl',
      'default_range': 'string',
-     'description': 'gist  is a minimalist upper ontology created by Semantic Arts '
+     'description': 'gist is a minimalist upper ontology created by Semantic Arts '
                     'for enterprise knowledge graph applications. This LinkML '
                     'schema (version 14.1.0) aggregates the gist modules: Core '
                     '(classes and properties), MediaTypes (IANA media type '
@@ -83,7 +83,7 @@ linkml_meta = LinkMLMeta({'default_prefix': 'gistl',
                  './gist_prefix_declarations'],
      'license': 'CC-BY-4.0',
      'name': 'gistl',
-     'prefixes': {'gist_upstream': {'prefix_prefix': 'gist_upstream',
+     'prefixes': {'gist ': {'prefix_prefix': 'gist ',
                                     'prefix_reference': 'https://w3id.org/semanticarts/ns/ontology/gist/'},
                   'gistd': {'prefix_prefix': 'gistd',
                             'prefix_reference': 'https://w3id.org/semanticarts/ns/data/gist/'},
@@ -208,7 +208,7 @@ class GistThing(ConfiguredBaseModel):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -226,7 +226,7 @@ class GistThing(ConfiguredBaseModel):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Aspect(GistThing):
@@ -234,7 +234,7 @@ class Aspect(GistThing):
     A measurable characteristic.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Aspect'],
-         'class_uri': 'gist_upstream:Aspect',
+         'class_uri': 'gist :Aspect',
          'comments': ['Rule of thumb: use the least specific aspect that serves the '
                       'intended purpose, increasing specificity only when required '
                       '(e.g., to distinguish between two magnitudes attached to the '
@@ -256,7 +256,7 @@ class Aspect(GistThing):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -274,7 +274,7 @@ class Aspect(GistThing):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Organization(GistThing):
@@ -282,7 +282,7 @@ class Organization(GistThing):
     A structured entity formed to achieve specific goals, typically involving members with defined roles.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Organization'],
-         'class_uri': 'gist_upstream:Organization',
+         'class_uri': 'gist :Organization',
          'comments': ['Not all organizations have members, e.g. shell companies.',
                       'While typically the members of organizations are people, in '
                       'some cases they are other organizations; e.g., the members of '
@@ -301,7 +301,7 @@ class Organization(GistThing):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -319,7 +319,7 @@ class Organization(GistThing):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class GovernmentOrganization(Organization):
@@ -327,7 +327,7 @@ class GovernmentOrganization(Organization):
     An independent organization exercising political and/or regulatory authority over a political unit, people, geographical region, etc., as well as performing certain functions for this unit or body.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Government Organization'],
-         'class_uri': 'gist_upstream:GovernmentOrganization',
+         'class_uri': 'gist :GovernmentOrganization',
          'comments': ['Includes administrative, regulatory, and enforcement '
                       'organizations created or sanctioned by country or sub-country '
                       'governments.'],
@@ -344,7 +344,7 @@ class GovernmentOrganization(Organization):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -362,7 +362,7 @@ class GovernmentOrganization(Organization):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class PhysicalIdentifiableItem(GistThing):
@@ -370,7 +370,7 @@ class PhysicalIdentifiableItem(GistThing):
     A discrete physical object which, if subdivided, will result in parts that are distinguishable in nature from the whole and in general also from the other parts.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Physical Identifiable Item'],
-         'class_uri': 'gist_upstream:PhysicalIdentifiableItem',
+         'class_uri': 'gist :PhysicalIdentifiableItem',
          'comments': ['This concept generally corresponds to count nouns in English. '
                       'By contrast, physical substances, such as an amount of water, '
                       'flour, or sand, are mass nouns. Physical identifiable items are '
@@ -397,7 +397,7 @@ class PhysicalIdentifiableItem(GistThing):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -415,7 +415,7 @@ class PhysicalIdentifiableItem(GistThing):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Event(GistThing):
@@ -423,7 +423,7 @@ class Event(GistThing):
     Something that occurs over a period of time, often characterized as an activity being carried out by some person, organization, or software application or brought about by natural forces.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Event'],
-         'class_uri': 'gist_upstream:Event',
+         'class_uri': 'gist :Event',
          'comments': ['An event occurs during a time interval, which is distinct from '
                       'the event.',
                       'An event does not necessarily have either planned or actual '
@@ -443,7 +443,7 @@ class Event(GistThing):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -461,7 +461,7 @@ class Event(GistThing):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class ContemporaryEvent(Event):
@@ -469,7 +469,7 @@ class ContemporaryEvent(Event):
     An event that has started but has not yet ended.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Contemporary Event'],
-         'class_uri': 'gist_upstream:ContemporaryEvent',
+         'class_uri': 'gist :ContemporaryEvent',
          'comments': ['When the event actually ends, it will cease being '
                       'contemporary.'],
          'from_schema': 'https://w3id.org/model/gistl/core',
@@ -481,7 +481,7 @@ class ContemporaryEvent(Event):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -499,7 +499,7 @@ class ContemporaryEvent(Event):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Content(GistThing):
@@ -507,7 +507,7 @@ class Content(GistThing):
     Information available in some medium.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Content'],
-         'class_uri': 'gist_upstream:Content',
+         'class_uri': 'gist :Content',
          'comments': ['Categories are not content until they are written down.',
                       'This class includes both abstract content and its expression, '
                       'but it must have at least one expression in order to be '
@@ -532,7 +532,7 @@ class Content(GistThing):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -550,7 +550,7 @@ class Content(GistThing):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class ContentExpression(Content):
@@ -558,7 +558,7 @@ class ContentExpression(Content):
     Content reduced to text, audio, etc.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Content Expression'],
-         'class_uri': 'gist_upstream:ContentExpression',
+         'class_uri': 'gist :ContentExpression',
          'comments': ['If it contains text (written or spoken), it will be expressed '
                       'in a language.',
                       "While the content expression is less abstract than a 'Work,' it "
@@ -578,7 +578,7 @@ class ContentExpression(Content):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -596,7 +596,7 @@ class ContentExpression(Content):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Text(ContentExpression):
@@ -604,7 +604,7 @@ class Text(ContentExpression):
     Content expressed as a written sequence of characters.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Text'],
-         'class_uri': 'gist_upstream:Text',
+         'class_uri': 'gist :Text',
          'comments': ['Text is expressed in a language (human or computer) and may but '
                       'need not specify an encoding.'],
          'examples': [{'value': 'Negative example: photographs or scans of text are '
@@ -620,7 +620,7 @@ class Text(ContentExpression):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -638,7 +638,7 @@ class Text(ContentExpression):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class GeoLocation(GistThing):
@@ -646,7 +646,7 @@ class GeoLocation(GistThing):
     A physical location, with the earth as a frame of reference.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Geographic Location'],
-         'class_uri': 'gist_upstream:GeoLocation',
+         'class_uri': 'gist :GeoLocation',
          'comments': ['A geographic location may be a point, region, or volume.'],
          'from_schema': 'https://w3id.org/model/gistl/core',
          'in_subset': ['gist_core'],
@@ -656,7 +656,7 @@ class GeoLocation(GistThing):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -674,7 +674,7 @@ class GeoLocation(GistThing):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class GeoPoint(GeoLocation):
@@ -682,7 +682,7 @@ class GeoPoint(GeoLocation):
     An individual point on or above the Earth's surface, identified by latitude, longitude and altitude. Altitude is the distance measured from sea level. If altitude is missing, the point is assumed to be at the Earth's surface. These points are described using decimal latitude/longitude.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Geographic Point'],
-         'class_uri': 'gist_upstream:GeoPoint',
+         'class_uri': 'gist :GeoPoint',
          'disjoint_with': ['Organization',
                            'Magnitude',
                            'Language',
@@ -701,7 +701,7 @@ class GeoPoint(GeoLocation):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -719,7 +719,7 @@ class GeoPoint(GeoLocation):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class GeoRegion(GeoLocation):
@@ -727,7 +727,7 @@ class GeoRegion(GeoLocation):
     A bounded region (or set of regions) on the surface of the Earth.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Geographic Region'],
-         'class_uri': 'gist_upstream:GeoRegion',
+         'class_uri': 'gist :GeoRegion',
          'comments': ['A geographic region could be non-contiguous; e.g., the region '
                       'governed by the US federal government is the contiguous area of '
                       'the lower 48 states plus Alaska, Hawaii, and overseas '
@@ -754,7 +754,7 @@ class GeoRegion(GeoLocation):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -772,7 +772,7 @@ class GeoRegion(GeoLocation):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class ContingentEvent(Event):
@@ -780,7 +780,7 @@ class ContingentEvent(Event):
     An event with a probability of happening in the future, and usually dependent upon some other event or condition.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Contingent Event'],
-         'class_uri': 'gist_upstream:ContingentEvent',
+         'class_uri': 'gist :ContingentEvent',
          'examples': [{'value': 'A fire insurance payout is contingent on a particular '
                                 'building burning down; selling 20 shares of stock in '
                                 'a given company is contingent on the price dropping '
@@ -797,7 +797,7 @@ class ContingentEvent(Event):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -815,7 +815,7 @@ class ContingentEvent(Event):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class LivingThing(PhysicalIdentifiableItem):
@@ -823,7 +823,7 @@ class LivingThing(PhysicalIdentifiableItem):
     Something that is currently, or at some point in time was, alive.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Living Thing'],
-         'class_uri': 'gist_upstream:LivingThing',
+         'class_uri': 'gist :LivingThing',
          'comments': ['Not all life forms have exactly two parents, so the restriction '
                       'only specifies a minimum of one.'],
          'examples': [{'value': 'A cat, a mushroom, a tree.'},
@@ -838,7 +838,7 @@ class LivingThing(PhysicalIdentifiableItem):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -856,7 +856,7 @@ class LivingThing(PhysicalIdentifiableItem):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Language(GistThing):
@@ -864,7 +864,7 @@ class Language(GistThing):
     A recognized, organized set of symbols and grammar.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Language'],
-         'class_uri': 'gist_upstream:Language',
+         'class_uri': 'gist :Language',
          'deprecated': 'true',
          'disjoint_with': ['UnitOfMeasure',
                            'PhysicalIdentifiableItem',
@@ -881,7 +881,7 @@ class Language(GistThing):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -899,7 +899,7 @@ class Language(GistThing):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Component(GistThing):
@@ -907,7 +907,7 @@ class Component(GistThing):
     Something that, while having an independent existence, is inherently part of or designed to be part of a larger entity, such as a system or network.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Component'],
-         'class_uri': 'gist_upstream:Component',
+         'class_uri': 'gist :Component',
          'comments': ['Many things are in a trivial sense a part of a larger thing, '
                       'but are not considered components because they are not '
                       'inherently part of that larger thing. For example, while a book '
@@ -937,7 +937,7 @@ class Component(GistThing):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -955,7 +955,7 @@ class Component(GistThing):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class OrderedMember(Component):
@@ -963,7 +963,7 @@ class OrderedMember(Component):
     A member of an ordered collection serving as a proxy for a real world item, which can appear in different orders in different collections. The ordered member appears in exactly one ordered collection.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Ordered Member'],
-         'class_uri': 'gist_upstream:OrderedMember',
+         'class_uri': 'gist :OrderedMember',
          'comments': ['An ordered member points to the real world item via the '
                       'providesOrderFor property. Ordering information is represented '
                       'either as a number in a sequence, or by preceding or following '
@@ -983,7 +983,7 @@ class OrderedMember(Component):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -1001,7 +1001,7 @@ class OrderedMember(Component):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class NetworkLink(Component):
@@ -1009,7 +1009,7 @@ class NetworkLink(Component):
     An abstract representation of the connection between two or more nodes in a network.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Network Link'],
-         'class_uri': 'gist_upstream:NetworkLink',
+         'class_uri': 'gist :NetworkLink',
          'comments': ['Each network link is connected to a network node via the '
                       'property gist:links or one of its subproperties.'],
          'examples': [{'value': 'A network link may be physical, such as pipes, wired '
@@ -1026,7 +1026,7 @@ class NetworkLink(Component):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -1044,7 +1044,7 @@ class NetworkLink(Component):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class GovernedGeoRegion(GeoRegion):
@@ -1052,7 +1052,7 @@ class GovernedGeoRegion(GeoRegion):
     A geographic region governed by at least one government organization.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Governed Geographic Region'],
-         'class_uri': 'gist_upstream:GovernedGeoRegion',
+         'class_uri': 'gist :GovernedGeoRegion',
          'comments': ['Geographic regions do not need not be physically contiguous in '
                       'order to constitute a governed geographic region; e.g., Alaska '
                       'and Hawaii are part of the region governed by the United '
@@ -1066,7 +1066,7 @@ class GovernedGeoRegion(GeoRegion):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -1084,7 +1084,7 @@ class GovernedGeoRegion(GeoRegion):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class PhysicalSubstance(GistThing):
@@ -1092,7 +1092,7 @@ class PhysicalSubstance(GistThing):
     An undifferentiated amount of physical material which, when subdivided, results in each part being indistinguishable in nature from the whole and from every other part.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Physical Substance'],
-         'class_uri': 'gist_upstream:PhysicalSubstance',
+         'class_uri': 'gist :PhysicalSubstance',
          'comments': ['An instance of this class has weight and takes up space. We '
                       'mean the physical gold in a ring, not the concept of gold that '
                       'shows up in the periodic table. The latter would be an instance '
@@ -1121,7 +1121,7 @@ class PhysicalSubstance(GistThing):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -1139,7 +1139,7 @@ class PhysicalSubstance(GistThing):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class TimeInterval(GistThing):
@@ -1147,7 +1147,7 @@ class TimeInterval(GistThing):
     A span of time with a known start time, end time, and duration. As long as two of the three are known, the third can be inferred.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Time Interval'],
-         'class_uri': 'gist_upstream:TimeInterval',
+         'class_uri': 'gist :TimeInterval',
          'comments': ['This is distinct from a duration, which describes how long a '
                       'time interval lasts (e.g., one hour; 3 days; 22 minutes).',
                       'An ongoing state of affairs with an unknown end time in the '
@@ -1167,7 +1167,7 @@ class TimeInterval(GistThing):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -1185,7 +1185,7 @@ class TimeInterval(GistThing):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class GeoVolume(GeoLocation):
@@ -1193,7 +1193,7 @@ class GeoVolume(GeoLocation):
     A three-dimensional space on or near the surface of the Earth.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Geographic Volume'],
-         'class_uri': 'gist_upstream:GeoVolume',
+         'class_uri': 'gist :GeoVolume',
          'examples': [{'value': 'An oil reservoir, the body of a lake, or an '
                                 'airspace.'}],
          'from_schema': 'https://w3id.org/model/gistl/core',
@@ -1206,7 +1206,7 @@ class GeoVolume(GeoLocation):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -1224,7 +1224,7 @@ class GeoVolume(GeoLocation):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class SubCountryGovernment(GovernmentOrganization):
@@ -1232,7 +1232,7 @@ class SubCountryGovernment(GovernmentOrganization):
     The government of a governed geographic region other than a country which is under the direct or indirect control of a country government.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Sub-Country Government'],
-         'class_uri': 'gist_upstream:SubCountryGovernment',
+         'class_uri': 'gist :SubCountryGovernment',
          'comments': ['There are many types of sub-regions of a country and the '
                       'governments thereof (as well as different terms, like '
                       "'province' and 'state,' which refer to essentially the same "
@@ -1256,7 +1256,7 @@ class SubCountryGovernment(GovernmentOrganization):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -1274,7 +1274,7 @@ class SubCountryGovernment(GovernmentOrganization):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class IntellectualProperty(GistThing):
@@ -1282,7 +1282,7 @@ class IntellectualProperty(GistThing):
     An intangible work, invention, or concept, independent of its being expressed in text, audio, video, image, or live performance. IP can also be tacit knowledge, know-how, or skill.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Intellectual Property'],
-         'class_uri': 'gist_upstream:IntellectualProperty',
+         'class_uri': 'gist :IntellectualProperty',
          'comments': ["For literature this could be called the 'Work,' except that "
                       "'work' is a highly overloaded term (expenditure of energy, "
                       'resource consumption, art). Often the first expression precedes '
@@ -1308,7 +1308,7 @@ class IntellectualProperty(GistThing):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -1326,7 +1326,7 @@ class IntellectualProperty(GistThing):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class TemporalRelation(GistThing):
@@ -1334,7 +1334,7 @@ class TemporalRelation(GistThing):
     A relationship existing for a period of time.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Temporal Relation'],
-         'class_uri': 'gist_upstream:TemporalRelation',
+         'class_uri': 'gist :TemporalRelation',
          'comments': ['A temporal relation must have a minimum of two participants. '
                       'For example, both the employer and the employee are '
                       'participants in a temporal relation representing a period of '
@@ -1354,7 +1354,7 @@ class TemporalRelation(GistThing):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -1372,7 +1372,7 @@ class TemporalRelation(GistThing):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class FormattedContent(ContentExpression):
@@ -1380,7 +1380,7 @@ class FormattedContent(ContentExpression):
     Content encoded in a specific format, but existing as data independent of any particular physical medium.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Formatted Content'],
-         'class_uri': 'gist_upstream:FormattedContent',
+         'class_uri': 'gist :FormattedContent',
          'comments': ['Each instance of formatted content is a distinct formatting of '
                       'some Content. Thus, a PDF-formatted version and an '
                       'HTML-formatted version of the same content are separate '
@@ -1395,7 +1395,7 @@ class FormattedContent(ContentExpression):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -1413,7 +1413,7 @@ class FormattedContent(ContentExpression):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Template(GistThing):
@@ -1421,7 +1421,7 @@ class Template(GistThing):
     Something used to make objects in its own image.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Template'],
-         'class_uri': 'gist_upstream:Template',
+         'class_uri': 'gist :Template',
          'comments': ['Use gist:isBasedOn to link the object made from the template '
                       'back to the template.'],
          'disjoint_with': ['UnitOfMeasure'],
@@ -1436,7 +1436,7 @@ class Template(GistThing):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -1454,7 +1454,7 @@ class Template(GistThing):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class TaskTemplate(Template):
@@ -1462,7 +1462,7 @@ class TaskTemplate(Template):
     An outline of a task of a particular type, which is the basis for executing such tasks.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Task Template'],
-         'class_uri': 'gist_upstream:TaskTemplate',
+         'class_uri': 'gist :TaskTemplate',
          'comments': ['A task template may define a single activity or a series of '
                       'activities; the level of granularity can be varied according to '
                       'use case. For example, in a new employee onboarding process, '
@@ -1480,7 +1480,7 @@ class TaskTemplate(Template):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -1498,7 +1498,7 @@ class TaskTemplate(Template):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Equipment(PhysicalIdentifiableItem):
@@ -1506,7 +1506,7 @@ class Equipment(PhysicalIdentifiableItem):
     Human-made, tangible property other than land or buildings used to perform a task or activity.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Equipment'],
-         'class_uri': 'gist_upstream:Equipment',
+         'class_uri': 'gist :Equipment',
          'examples': [{'value': 'A machine, a router, a car, a baseball bat.'}],
          'from_schema': 'https://w3id.org/model/gistl/core',
          'in_subset': ['gist_core'],
@@ -1517,7 +1517,7 @@ class Equipment(PhysicalIdentifiableItem):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -1535,7 +1535,7 @@ class Equipment(PhysicalIdentifiableItem):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class HistoricalEvent(Event):
@@ -1543,7 +1543,7 @@ class HistoricalEvent(Event):
     An event which occurred in time, with an actual end earlier than the present moment.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Historical Event'],
-         'class_uri': 'gist_upstream:HistoricalEvent',
+         'class_uri': 'gist :HistoricalEvent',
          'from_schema': 'https://w3id.org/model/gistl/core',
          'in_subset': ['gist_core'],
          'notes': ['OWL subClassOf restrictions: '
@@ -1555,7 +1555,7 @@ class HistoricalEvent(Event):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -1573,7 +1573,7 @@ class HistoricalEvent(Event):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class IntergovernmentalOrganization(Organization):
@@ -1581,7 +1581,7 @@ class IntergovernmentalOrganization(Organization):
     An organization whose members are government organizations. This can comprise regional, municipal, state/province, or national level entities.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Intergovernmental Organization'],
-         'class_uri': 'gist_upstream:IntergovernmentalOrganization',
+         'class_uri': 'gist :IntergovernmentalOrganization',
          'examples': [{'value': 'The United Nations, the European Union, the '
                                 'Metropolitan Transit Authority.'}],
          'from_schema': 'https://w3id.org/model/gistl/core',
@@ -1593,7 +1593,7 @@ class IntergovernmentalOrganization(Organization):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -1611,7 +1611,7 @@ class IntergovernmentalOrganization(Organization):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Task(Event):
@@ -1619,7 +1619,7 @@ class Task(Event):
     An activity or piece of work that is either proposed, planned, scheduled, underway, or completed.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Task'],
-         'class_uri': 'gist_upstream:Task',
+         'class_uri': 'gist :Task',
          'comments': ["This term is broader than the English word 'task,' which "
                       'implies assignment, responsibility, or duty. In ordinary '
                       'English going to a concert has a goal but is (generally) done '
@@ -1643,7 +1643,7 @@ class Task(Event):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -1661,7 +1661,7 @@ class Task(Event):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class ScheduledTask(Task):
@@ -1669,7 +1669,7 @@ class ScheduledTask(Task):
     A task with a planned start datetime.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Scheduled Task'],
-         'class_uri': 'gist_upstream:ScheduledTask',
+         'class_uri': 'gist :ScheduledTask',
          'comments': ['If work on the task has already started, but has not yet ended, '
                       'it will have an actual start datetime. If the task is '
                       'completed, it will also have an actual end datetime. The task '
@@ -1685,7 +1685,7 @@ class ScheduledTask(Task):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -1703,7 +1703,7 @@ class ScheduledTask(Task):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Project(Task):
@@ -1711,7 +1711,7 @@ class Project(Task):
     A task, usually of longer duration, made up of other tasks.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Project'],
-         'class_uri': 'gist_upstream:Project',
+         'class_uri': 'gist :Project',
          'examples': [{'value': 'Designing an insurance product; adding a new feature '
                                 'to a software application; assessing the level of '
                                 'risk for a mortgage application.'}],
@@ -1723,7 +1723,7 @@ class Project(Task):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -1741,7 +1741,7 @@ class Project(Task):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Magnitude(GistThing):
@@ -1749,7 +1749,7 @@ class Magnitude(GistThing):
     The amount of a measurable characteristic (aspect).
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Magnitude'],
-         'class_uri': 'gist_upstream:Magnitude',
+         'class_uri': 'gist :Magnitude',
          'comments': ['An accuracy can be assigned to a magnitude using the property '
                       'has accuracy.'],
          'disjoint_with': ['UnitOfMeasure',
@@ -1766,13 +1766,13 @@ class Magnitude(GistThing):
          'notes': ['OWL equivalentClass: (∃hasAspect.gistl:Aspect & '
                    '∃hasUnitOfMeasure.gistl:UnitOfMeasure & '
                    '∃numericValue.<http://www.w3.org/2000/01/rdf-schema#Literal>)'],
-         'see_also': ['gist_upstream:hasAccuracy']})
+         'see_also': ['gist :hasAccuracy']})
 
     name: Optional[str] = Field(default=None, description="""Relates an individual to (one of) its name(s).""", json_schema_extra = { "linkml_meta": {'aliases': ['name'],
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -1790,7 +1790,7 @@ class Magnitude(GistThing):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class CountryGovernment(GovernmentOrganization):
@@ -1798,7 +1798,7 @@ class CountryGovernment(GovernmentOrganization):
     A government organization which asserts both sovereignty (i.e., it is not governed by some other government organization) and governance over an entity generally recognized as a country.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Country Government'],
-         'class_uri': 'gist_upstream:CountryGovernment',
+         'class_uri': 'gist :CountryGovernment',
          'comments': ['While a country government may enter into treaties with other '
                       'country governments, there are no governing relationships among '
                       'the treaty members.'],
@@ -1814,7 +1814,7 @@ class CountryGovernment(GovernmentOrganization):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -1832,7 +1832,7 @@ class CountryGovernment(GovernmentOrganization):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class CountryGeoRegion(GovernedGeoRegion):
@@ -1840,7 +1840,7 @@ class CountryGeoRegion(GovernedGeoRegion):
     A geographic region governed by exactly one country government.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Country Geographic Region'],
-         'class_uri': 'gist_upstream:CountryGeoRegion',
+         'class_uri': 'gist :CountryGeoRegion',
          'from_schema': 'https://w3id.org/model/gistl/core',
          'in_subset': ['gist_core'],
          'notes': ['OWL subClassOf restrictions: =1isGovernedBy',
@@ -1851,7 +1851,7 @@ class CountryGeoRegion(GovernedGeoRegion):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -1869,7 +1869,7 @@ class CountryGeoRegion(GovernedGeoRegion):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class PhysicalEvent(Event):
@@ -1877,7 +1877,7 @@ class PhysicalEvent(Event):
     An event that can be said to have occurred at some place in space.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Physical Event'],
-         'class_uri': 'gist_upstream:PhysicalEvent',
+         'class_uri': 'gist :PhysicalEvent',
          'examples': [{'value': 'A meeting, a car accident.'},
                       {'value': 'Negative examples: Excludes events that have no '
                                 'meaningful location, such as financial events or '
@@ -1890,7 +1890,7 @@ class PhysicalEvent(Event):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -1908,7 +1908,7 @@ class PhysicalEvent(Event):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Intention(GistThing):
@@ -1916,7 +1916,7 @@ class Intention(GistThing):
     A goal, desire, or aspiration.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Intention'],
-         'class_uri': 'gist_upstream:Intention',
+         'class_uri': 'gist :Intention',
          'comments': ["The 'teleological' aspect of a system that indicates things are "
                       'done with a purpose.'],
          'disjoint_with': ['UnitOfMeasure',
@@ -1932,7 +1932,7 @@ class Intention(GistThing):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -1950,7 +1950,7 @@ class Intention(GistThing):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Permission(Intention):
@@ -1958,7 +1958,7 @@ class Permission(Intention):
     A description of things one is permitted to do.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Permission'],
-         'class_uri': 'gist_upstream:Permission',
+         'class_uri': 'gist :Permission',
          'examples': [{'value': 'Permission could be broad, such as free speech, but '
                                 'more often is very specific, such as the right to '
                                 'enter a particular property.'}],
@@ -1970,7 +1970,7 @@ class Permission(Intention):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -1988,7 +1988,7 @@ class Permission(Intention):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Requirement(Intention):
@@ -1996,7 +1996,7 @@ class Requirement(Intention):
     The obligation of a person or organization to behave in a certain way.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Requirement'],
-         'class_uri': 'gist_upstream:Requirement',
+         'class_uri': 'gist :Requirement',
          'examples': [{'value': 'In the US, drivers must drive on the right side of '
                                 'the road.'}],
          'from_schema': 'https://w3id.org/model/gistl/core',
@@ -2006,7 +2006,7 @@ class Requirement(Intention):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -2024,7 +2024,7 @@ class Requirement(Intention):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Restriction(Intention):
@@ -2032,7 +2032,7 @@ class Restriction(Intention):
     A description of things one is prevented from doing.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Restriction'],
-         'class_uri': 'gist_upstream:Restriction',
+         'class_uri': 'gist :Restriction',
          'examples': [{'value': 'In the US, tax laws restrict the amount of money a '
                                 'person can put in retirement accounts over the course '
                                 'of a year.'}],
@@ -2044,7 +2044,7 @@ class Restriction(Intention):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -2062,7 +2062,7 @@ class Restriction(Intention):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Function(Intention):
@@ -2070,7 +2070,7 @@ class Function(Intention):
     The activity that a human-made item is intended to perform.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Function'],
-         'class_uri': 'gist_upstream:Function',
+         'class_uri': 'gist :Function',
          'examples': [{'value': 'Transmit electricity, provide ballast, control '
                                 'ambient temperature.'}],
          'from_schema': 'https://w3id.org/model/gistl/core',
@@ -2080,7 +2080,7 @@ class Function(Intention):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -2098,7 +2098,7 @@ class Function(Intention):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Specification(Intention):
@@ -2106,7 +2106,7 @@ class Specification(Intention):
     The set of characteristics and constraints on their values that specify what it means to be a particular type of thing, such as a material, product, service or event. A specification is sufficiently precise to allow evaluating conformance to the specification.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Specification'],
-         'class_uri': 'gist_upstream:Specification',
+         'class_uri': 'gist :Specification',
          'comments': ['Although a characterization of how to do something is often '
                       'called a specification, the intended meaning here is limited to '
                       'specifying what something is. The focus is on the what, not the '
@@ -2129,7 +2129,7 @@ class Specification(Intention):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -2147,7 +2147,7 @@ class Specification(Intention):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class ContractTerm(Specification):
@@ -2155,7 +2155,7 @@ class ContractTerm(Specification):
     A specification of some aspect of a contract.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Contract Term'],
-         'class_uri': 'gist_upstream:ContractTerm',
+         'class_uri': 'gist :ContractTerm',
          'from_schema': 'https://w3id.org/model/gistl/core',
          'in_subset': ['gist_core']})
 
@@ -2163,7 +2163,7 @@ class ContractTerm(Specification):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -2181,7 +2181,7 @@ class ContractTerm(Specification):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class CatalogItem(Specification):
@@ -2189,7 +2189,7 @@ class CatalogItem(Specification):
     A description of a product or service to be delivered, given in a sufficient level of detail that a receiver could determine whether delivery constituted discharge of the obligation to deliver.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Catalog Item'],
-         'class_uri': 'gist_upstream:CatalogItem',
+         'class_uri': 'gist :CatalogItem',
          'comments': ['In short, an unambiguous characterization of what it is that a '
                       'potential buyer is paying for.'],
          'from_schema': 'https://w3id.org/model/gistl/core',
@@ -2199,7 +2199,7 @@ class CatalogItem(Specification):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -2217,7 +2217,7 @@ class CatalogItem(Specification):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class BundledCatalogItem(CatalogItem):
@@ -2225,7 +2225,7 @@ class BundledCatalogItem(CatalogItem):
     Any combination of descriptions of things offered together.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Bundled Catalog Item'],
-         'class_uri': 'gist_upstream:BundledCatalogItem',
+         'class_uri': 'gist :BundledCatalogItem',
          'examples': [{'value': 'A kit containing several parts offered together; a '
                                 'product plus a warranty.'}],
          'from_schema': 'https://w3id.org/model/gistl/core',
@@ -2237,7 +2237,7 @@ class BundledCatalogItem(CatalogItem):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -2255,7 +2255,7 @@ class BundledCatalogItem(CatalogItem):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class ProductSpecification(CatalogItem):
@@ -2263,7 +2263,7 @@ class ProductSpecification(CatalogItem):
     A description of something that could be physically warehoused or digitally stored and physically or digitally delivered.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Product Specification'],
-         'class_uri': 'gist_upstream:ProductSpecification',
+         'class_uri': 'gist :ProductSpecification',
          'from_schema': 'https://w3id.org/model/gistl/core',
          'in_subset': ['gist_core'],
          'notes': ['OWL equivalentClass: (gistl:CatalogItem & '
@@ -2273,7 +2273,7 @@ class ProductSpecification(CatalogItem):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -2291,7 +2291,7 @@ class ProductSpecification(CatalogItem):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Person(LivingThing):
@@ -2299,7 +2299,7 @@ class Person(LivingThing):
     A human being who was or is alive.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Person'],
-         'class_uri': 'gist_upstream:Person',
+         'class_uri': 'gist :Person',
          'examples': [{'value': 'Negative example: fictional characters.'}],
          'from_schema': 'https://w3id.org/model/gistl/core',
          'in_subset': ['gist_core'],
@@ -2311,7 +2311,7 @@ class Person(LivingThing):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -2329,7 +2329,7 @@ class Person(LivingThing):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Commitment(Intention):
@@ -2337,7 +2337,7 @@ class Commitment(Intention):
     A promise made by a single party to one or more parties to do or not do something or act in a particular way.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Commitment'],
-         'class_uri': 'gist_upstream:Commitment',
+         'class_uri': 'gist :Commitment',
          'comments': ['The manner in which a commitment is binding may vary. In a '
                       'business context, we are typically interested in commitments '
                       'that are legally binding.',
@@ -2366,7 +2366,7 @@ class Commitment(Intention):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -2384,7 +2384,7 @@ class Commitment(Intention):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class ContingentObligation(Commitment):
@@ -2392,7 +2392,7 @@ class ContingentObligation(Commitment):
     An obligation that is not yet firm. There is some contingent event whose occurrence will cause the obligation to become firm.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Contingent Obligation'],
-         'class_uri': 'gist_upstream:ContingentObligation',
+         'class_uri': 'gist :ContingentObligation',
          'comments': ['A contingent obligation might have a getter counterparty (as in '
                       'the case of insurance); but it might not (as in the case of an '
                       'offer).'],
@@ -2406,7 +2406,7 @@ class ContingentObligation(Commitment):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -2424,7 +2424,7 @@ class ContingentObligation(Commitment):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Offer(ContingentObligation):
@@ -2432,7 +2432,7 @@ class Offer(ContingentObligation):
     A contingent commitment to buy, sell, swap or provide one or more described or identified goods or services in exchange for another (or others).
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Offer'],
-         'class_uri': 'gist_upstream:Offer',
+         'class_uri': 'gist :Offer',
          'comments': ['Dates on an offer represent the time period the offer is valid '
                       "for, as in '25% off through October 25, 2025.'"],
          'examples': [{'value': 'An offer to sell a book for a given price; an offer '
@@ -2454,7 +2454,7 @@ class Offer(ContingentObligation):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -2472,7 +2472,7 @@ class Offer(ContingentObligation):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class ID(Content):
@@ -2480,7 +2480,7 @@ class ID(Content):
     Content that is used to uniquely identify something or someone.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['ID'],
-         'class_uri': 'gist_upstream:ID',
+         'class_uri': 'gist :ID',
          'comments': ['Used in conjunction with gist:isIdentifiedBy.'],
          'examples': [{'value': 'SSN for a person; serial number for a product; '
                                 'employee ID for a person.'}],
@@ -2495,7 +2495,7 @@ class ID(Content):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -2513,7 +2513,7 @@ class ID(Content):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class UnitOfMeasure(GistThing):
@@ -2521,7 +2521,7 @@ class UnitOfMeasure(GistThing):
     A standard amount used to measure or specify things.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Unit of Measure'],
-         'class_uri': 'gist_upstream:UnitOfMeasure',
+         'class_uri': 'gist :UnitOfMeasure',
          'examples': [{'value': 'An acre is a unit for measuring area.'}],
          'from_schema': 'https://w3id.org/model/gistl/core',
          'in_subset': ['gist_core'],
@@ -2531,7 +2531,7 @@ class UnitOfMeasure(GistThing):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -2549,7 +2549,7 @@ class UnitOfMeasure(GistThing):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Address(Content):
@@ -2557,7 +2557,7 @@ class Address(Content):
     A reference to a place (real or virtual) that can be located by some routing algorithm and where messages or things can be sent or received.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Address'],
-         'class_uri': 'gist_upstream:Address',
+         'class_uri': 'gist :Address',
          'examples': [{'value': 'A PO Box, a URL to a PDF file.'}],
          'from_schema': 'https://w3id.org/model/gistl/core',
          'in_subset': ['gist_core']})
@@ -2566,7 +2566,7 @@ class Address(Content):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -2584,7 +2584,7 @@ class Address(Content):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class PhysicalAddress(Address):
@@ -2592,7 +2592,7 @@ class PhysicalAddress(Address):
     An address that refers to a locatable place within the physical universe.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Physical Address'],
-         'class_uri': 'gist_upstream:PhysicalAddress',
+         'class_uri': 'gist :PhysicalAddress',
          'examples': [{'value': '1600 Pennsylvania Avenue NW, Washington, DC 20500; PO '
                                 'Box 7704, San Francisco, CA 94120-7704; Room 317 in '
                                 'the Louvre Museum.'}],
@@ -2605,7 +2605,7 @@ class PhysicalAddress(Address):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -2623,7 +2623,7 @@ class PhysicalAddress(Address):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class ElectronicAddress(Address):
@@ -2631,7 +2631,7 @@ class ElectronicAddress(Address):
     An address referring to a locatable virtual place that does not physically exist but is made by software or electronics to appear to do so.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Electronic Address', 'Virtual Address'],
-         'class_uri': 'gist_upstream:ElectronicAddress',
+         'class_uri': 'gist :ElectronicAddress',
          'disjoint_with': ['PhysicalAddress'],
          'examples': [{'value': 'A file system path, website URL, IP address, email '
                                 'address, mobile or landline telephone number.'}],
@@ -2642,7 +2642,7 @@ class ElectronicAddress(Address):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -2660,7 +2660,7 @@ class ElectronicAddress(Address):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Landmark(PhysicalIdentifiableItem):
@@ -2668,7 +2668,7 @@ class Landmark(PhysicalIdentifiableItem):
     Something permanently attached to the Earth.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Landmark'],
-         'class_uri': 'gist_upstream:Landmark',
+         'class_uri': 'gist :Landmark',
          'deprecated': 'true',
          'from_schema': 'https://w3id.org/model/gistl/core',
          'in_subset': ['gist_core'],
@@ -2681,7 +2681,7 @@ class Landmark(PhysicalIdentifiableItem):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -2699,7 +2699,7 @@ class Landmark(PhysicalIdentifiableItem):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Composite(GistThing):
@@ -2707,7 +2707,7 @@ class Composite(GistThing):
     Something which is made up of various parts or elements that are independently identifiable.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Composite'],
-         'class_uri': 'gist_upstream:Composite',
+         'class_uri': 'gist :Composite',
          'comments': ['This class is not disjoint with gist:Component, because a '
                       'composite can itself be a component of a larger composite.',
                       'This is an abstract class that will not be directly '
@@ -2726,7 +2726,7 @@ class Composite(GistThing):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -2744,7 +2744,7 @@ class Composite(GistThing):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Network(Composite):
@@ -2752,7 +2752,7 @@ class Network(Composite):
     A composite consisting of nodes connected by links.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Network'],
-         'class_uri': 'gist_upstream:Network',
+         'class_uri': 'gist :Network',
          'examples': [{'value': 'A physical network could include connected computers '
                                 'or routers, whereas a social network would consist of '
                                 'related person or organization members (or their '
@@ -2766,7 +2766,7 @@ class Network(Composite):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -2784,7 +2784,7 @@ class Network(Composite):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Collection(Composite):
@@ -2792,7 +2792,7 @@ class Collection(Composite):
     A grouping of things.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Collection'],
-         'class_uri': 'gist_upstream:Collection',
+         'class_uri': 'gist :Collection',
          'comments': ['Individuals are placed in the collection using the '
                       'gist:isMemberOf property. Collections typically are created '
                       'because the members are functionally connected in some way. '
@@ -2807,7 +2807,7 @@ class Collection(Composite):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -2825,7 +2825,7 @@ class Collection(Composite):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class UnitGroup(Collection):
@@ -2833,7 +2833,7 @@ class UnitGroup(Collection):
     A collection of units of measure that can all be used to measure the same aspects.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Unit Group'],
-         'class_uri': 'gist_upstream:UnitGroup',
+         'class_uri': 'gist :UnitGroup',
          'comments': ['Typically there is one unit group per aspect. An example of an '
                       'aspect with two unit groups is vehicle efficiency, which can be '
                       'measured by miles per gallon (distance per volume) or by liters '
@@ -2854,7 +2854,7 @@ class UnitGroup(Collection):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -2872,7 +2872,7 @@ class UnitGroup(Collection):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class ControlledVocabulary(Collection):
@@ -2880,7 +2880,7 @@ class ControlledVocabulary(Collection):
     A collection of terms approved and managed by some organization or person.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Controlled Vocabulary'],
-         'class_uri': 'gist_upstream:ControlledVocabulary',
+         'class_uri': 'gist :ControlledVocabulary',
          'comments': ['A controlled vocabulary is similar to a skos:ConceptScheme, but '
                       'it could also be used for things that are not concepts, such as '
                       'organizations, US presidents, geographic regions, etc. '
@@ -2896,7 +2896,7 @@ class ControlledVocabulary(Collection):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -2914,7 +2914,7 @@ class ControlledVocabulary(Collection):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class System(Composite):
@@ -2922,7 +2922,7 @@ class System(Composite):
     A composite made up of interacting or interdependent components that together operate as a whole.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['System'],
-         'class_uri': 'gist_upstream:System',
+         'class_uri': 'gist :System',
          'comments': ['May be used to refer to either man-made or natural systems.'],
          'examples': [{'value': 'A manufacturing system, a storm system.'}],
          'from_schema': 'https://w3id.org/model/gistl/core',
@@ -2934,7 +2934,7 @@ class System(Composite):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -2952,7 +2952,7 @@ class System(Composite):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class OrderedCollection(Collection):
@@ -2960,7 +2960,7 @@ class OrderedCollection(Collection):
     A collection whose members are ordered in some way.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Ordered Collection'],
-         'class_uri': 'gist_upstream:OrderedCollection',
+         'class_uri': 'gist :OrderedCollection',
          'comments': ['Includes partially ordered collections as well as collections '
                       "in which members occupy the same position in a 'tie.' All "
                       'members of an ordered collection are ordered members.'],
@@ -2974,7 +2974,7 @@ class OrderedCollection(Collection):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -2992,7 +2992,7 @@ class OrderedCollection(Collection):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class GeoRoute(OrderedCollection):
@@ -3000,7 +3000,7 @@ class GeoRoute(OrderedCollection):
     An ordered set of geographic points that defines a path from a starting point to an ending point.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Geographic Route'],
-         'class_uri': 'gist_upstream:GeoRoute',
+         'class_uri': 'gist :GeoRoute',
          'comments': ['A geographic route could describe a bus route by identifying '
                       'the points where the bus stops. A geographic route could '
                       'describe the boundary of a polygonal geographic region (it does '
@@ -3014,7 +3014,7 @@ class GeoRoute(OrderedCollection):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -3032,7 +3032,7 @@ class GeoRoute(OrderedCollection):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Transaction(Event):
@@ -3040,7 +3040,7 @@ class Transaction(Event):
     An exchange or transfer of goods, services, or funds.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Transaction'],
-         'class_uri': 'gist_upstream:Transaction',
+         'class_uri': 'gist :Transaction',
          'comments': ['Different sorts of transactions can have different datetime '
                       'precisions. For example, an electronic transaction would have a '
                       'gist:actualEndMicrosecond.'],
@@ -3051,7 +3051,7 @@ class Transaction(Event):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -3069,7 +3069,7 @@ class Transaction(Event):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class KnowledgeConcept(IntellectualProperty):
@@ -3077,7 +3077,7 @@ class KnowledgeConcept(IntellectualProperty):
     An abstract concept that arises from the distillation of experience. It is similar to a category but, rather than being a simple tag, it has rich structure.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Knowledge Concept'],
-         'class_uri': 'gist_upstream:KnowledgeConcept',
+         'class_uri': 'gist :KnowledgeConcept',
          'comments': ['Some knowledge is about specific instances that already exist '
                       'in the knowledge graph. We may have knowledge that Judge Jones '
                       'is more lenient on repeat offenders in the morning; we may know '
@@ -3124,7 +3124,7 @@ class KnowledgeConcept(IntellectualProperty):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -3142,7 +3142,7 @@ class KnowledgeConcept(IntellectualProperty):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class RenderedContent(FormattedContent):
@@ -3150,7 +3150,7 @@ class RenderedContent(FormattedContent):
     Content expressed via some physical medium.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Rendered Content'],
-         'class_uri': 'gist_upstream:RenderedContent',
+         'class_uri': 'gist :RenderedContent',
          'comments': ['Renderings of the same file on two different monitors are '
                       'separate instances of rendered content.'],
          'examples': [{'value': 'Words printed on paper; audio played on speakers; an '
@@ -3164,7 +3164,7 @@ class RenderedContent(FormattedContent):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -3182,7 +3182,7 @@ class RenderedContent(FormattedContent):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Building(Landmark):
@@ -3190,7 +3190,7 @@ class Building(Landmark):
     A relatively permanent man-made structure situated on a plot of land, having a roof and walls, commonly used for dwelling, entertaining, or working.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Building'],
-         'class_uri': 'gist_upstream:Building',
+         'class_uri': 'gist :Building',
          'comments': ['User discretion can be applied to edge cases: e.g., is a '
                       "traditional yurt 'relatively permanently situated' although it "
                       'is portable and has a tent-like construction?'],
@@ -3206,7 +3206,7 @@ class Building(Landmark):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -3224,7 +3224,7 @@ class Building(Landmark):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class ServiceSpecification(CatalogItem):
@@ -3232,7 +3232,7 @@ class ServiceSpecification(CatalogItem):
     A description of something that can be done for a person or organization (which produces some form of an act).
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Service Specification'],
-         'class_uri': 'gist_upstream:ServiceSpecification',
+         'class_uri': 'gist :ServiceSpecification',
          'from_schema': 'https://w3id.org/model/gistl/core',
          'in_subset': ['gist_core'],
          'notes': ['OWL equivalentClass: (gistl:CatalogItem & '
@@ -3242,7 +3242,7 @@ class ServiceSpecification(CatalogItem):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -3260,7 +3260,7 @@ class ServiceSpecification(CatalogItem):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Agreement(Intention):
@@ -3268,7 +3268,7 @@ class Agreement(Intention):
     A mutually understood arrangement in which two or more parties make commitments to one another.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Agreement'],
-         'class_uri': 'gist_upstream:Agreement',
+         'class_uri': 'gist :Agreement',
          'comments': ['While an agreement has two or more parties, and contains '
                       'commitments which bind those parties, it will not always be '
                       'necessary to instantiate each individual commitment.'],
@@ -3285,7 +3285,7 @@ class Agreement(Intention):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -3303,7 +3303,7 @@ class Agreement(Intention):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Contract(Agreement):
@@ -3311,7 +3311,7 @@ class Contract(Agreement):
     An agreement which can be enforced by law.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Contract'],
-         'class_uri': 'gist_upstream:Contract',
+         'class_uri': 'gist :Contract',
          'from_schema': 'https://w3id.org/model/gistl/core',
          'in_subset': ['gist_core'],
          'notes': ['OWL equivalentClass: (gistl:Agreement & '
@@ -3321,7 +3321,7 @@ class Contract(Agreement):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -3339,7 +3339,7 @@ class Contract(Agreement):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Account(Agreement):
@@ -3347,7 +3347,7 @@ class Account(Agreement):
     An agreement having a balance.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Account'],
-         'class_uri': 'gist_upstream:Account',
+         'class_uri': 'gist :Account',
          'examples': [{'value': 'A bank account, a credit card account, an accounts '
                                 'receivable account.'}],
          'from_schema': 'https://w3id.org/model/gistl/core',
@@ -3359,7 +3359,7 @@ class Account(Agreement):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -3377,7 +3377,7 @@ class Account(Agreement):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class ScheduledEvent(Event):
@@ -3385,7 +3385,7 @@ class ScheduledEvent(Event):
     An event with a planned start datetime.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Scheduled Event'],
-         'class_uri': 'gist_upstream:ScheduledEvent',
+         'class_uri': 'gist :ScheduledEvent',
          'comments': ['If the event already started, but has not yet ended, it is a '
                       'contemporary event with an actual start datetime. If the event '
                       'is over, it is a historical event having an actual end '
@@ -3400,7 +3400,7 @@ class ScheduledEvent(Event):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -3418,7 +3418,7 @@ class ScheduledEvent(Event):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Category(GistThing):
@@ -3426,7 +3426,7 @@ class Category(GistThing):
     A concept or label used to categorize other instances without specifying any formal semantics.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Category'],
-         'class_uri': 'gist_upstream:Category',
+         'class_uri': 'gist :Category',
          'comments': ['Often a type can be modeled either as an owl:Class or as a '
                       "gist:Category. Use the latter if you don't care much about the "
                       'formal structure of the different types, or if there is a whole '
@@ -3447,7 +3447,7 @@ class Category(GistThing):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -3465,7 +3465,7 @@ class Category(GistThing):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class MediaType(Category):
@@ -3473,7 +3473,7 @@ class MediaType(Category):
     A digitized type that computer applications can recognize.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Media Type'],
-         'class_uri': 'gist_upstream:MediaType',
+         'class_uri': 'gist :MediaType',
          'comments': ['The unique text for an IANA media type is the concatenation of '
                       "the 'Type name', a slash '/', and the 'Subtype name' as "
                       'provided on the page displayed when you resolve the URI of the '
@@ -3489,7 +3489,7 @@ class MediaType(Category):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -3507,7 +3507,7 @@ class MediaType(Category):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class DegreeOfCommitment(Category):
@@ -3515,7 +3515,7 @@ class DegreeOfCommitment(Category):
     The difficulty of reversing a commitment.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Degree Of Commitment'],
-         'class_uri': 'gist_upstream:DegreeOfCommitment',
+         'class_uri': 'gist :DegreeOfCommitment',
          'examples': [{'value': 'A car rental typically has a lower degree of '
                                 'commitment than an airfare reservation.'}],
          'from_schema': 'https://w3id.org/model/gistl/core',
@@ -3525,7 +3525,7 @@ class DegreeOfCommitment(Category):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -3543,7 +3543,7 @@ class DegreeOfCommitment(Category):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class EquipmentType(Category):
@@ -3551,7 +3551,7 @@ class EquipmentType(Category):
     A category of equipment.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Equipment Type'],
-         'class_uri': 'gist_upstream:EquipmentType',
+         'class_uri': 'gist :EquipmentType',
          'from_schema': 'https://w3id.org/model/gistl/core',
          'in_subset': ['gist_core']})
 
@@ -3559,7 +3559,7 @@ class EquipmentType(Category):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -3577,7 +3577,7 @@ class EquipmentType(Category):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class ElectronicAddressType(Category):
@@ -3585,7 +3585,7 @@ class ElectronicAddressType(Category):
     A category indicating a kind of electronic address. Such a category is usually based on the technology that enables routing to the address referent.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Electronic Address Type'],
-         'class_uri': 'gist_upstream:ElectronicAddressType',
+         'class_uri': 'gist :ElectronicAddressType',
          'examples': [{'value': 'A URL, file system path, email address, mobile '
                                 'telephone number.'}],
          'from_schema': 'https://w3id.org/model/gistl/core',
@@ -3595,7 +3595,7 @@ class ElectronicAddressType(Category):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -3613,7 +3613,7 @@ class ElectronicAddressType(Category):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Tag(Category):
@@ -3621,7 +3621,7 @@ class Tag(Category):
     A term in a folksonomy used to categorize things. Tags can be made up on the fly by users.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Tag'],
-         'class_uri': 'gist_upstream:Tag',
+         'class_uri': 'gist :Tag',
          'comments': ['Whether to use gist:containedText or gist:uniqueText on tags is '
                       'an implementation decision. Since the latter is a subproperty '
                       'of the former, the restriction remains valid either way.'],
@@ -3634,7 +3634,7 @@ class Tag(Category):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -3652,7 +3652,7 @@ class Tag(Category):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Behavior(Category):
@@ -3660,7 +3660,7 @@ class Behavior(Category):
     A category indicating the nature of an activity.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Behavior'],
-         'class_uri': 'gist_upstream:Behavior',
+         'class_uri': 'gist :Behavior',
          'examples': [{'value': 'Drilling and cutting are two different kinds of '
                                 'manufacturing event.'}],
          'from_schema': 'https://w3id.org/model/gistl/core',
@@ -3670,7 +3670,7 @@ class Behavior(Category):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -3688,7 +3688,7 @@ class Behavior(Category):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class GeneralMediaType(Category):
@@ -3696,7 +3696,7 @@ class GeneralMediaType(Category):
     The real-world media type for content.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['General Media Type'],
-         'class_uri': 'gist_upstream:GeneralMediaType',
+         'class_uri': 'gist :GeneralMediaType',
          'examples': [{'value': 'Audio, still image, video, textual, physical (e.g., a '
                                 'statue), performance (e.g., a play), oil or pastel '
                                 'for a painting.'}],
@@ -3707,7 +3707,7 @@ class GeneralMediaType(Category):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -3725,7 +3725,7 @@ class GeneralMediaType(Category):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class AddressUsageType(Category):
@@ -3733,7 +3733,7 @@ class AddressUsageType(Category):
     A category indicating the context or manner in which an address may be used.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Address Usage Type'],
-         'class_uri': 'gist_upstream:AddressUsageType',
+         'class_uri': 'gist :AddressUsageType',
          'comments': ['If you are using temporal relations involving addresses, this '
                       'category should be used to qualify the temporal relation rather '
                       'than the address itself, since the same address may have '
@@ -3747,7 +3747,7 @@ class AddressUsageType(Category):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -3765,7 +3765,7 @@ class AddressUsageType(Category):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Discipline(Category):
@@ -3773,7 +3773,7 @@ class Discipline(Category):
     An area of study or practice.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Discipline'],
-         'class_uri': 'gist_upstream:Discipline',
+         'class_uri': 'gist :Discipline',
          'examples': [{'value': 'Finance, accounting, project management, acoustics, '
                                 'ballistics.'}],
          'from_schema': 'https://w3id.org/model/gistl/core',
@@ -3783,7 +3783,7 @@ class Discipline(Category):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -3801,7 +3801,7 @@ class Discipline(Category):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Medium(Category):
@@ -3809,7 +3809,7 @@ class Medium(Category):
     A physical material on which a work can be rendered, represented, or implemented.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Medium'],
-         'class_uri': 'gist_upstream:Medium',
+         'class_uri': 'gist :Medium',
          'examples': [{'value': 'Paper, clay, a computer monitor.'}],
          'from_schema': 'https://w3id.org/model/gistl/core',
          'in_subset': ['gist_core']})
@@ -3818,7 +3818,7 @@ class Medium(Category):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -3836,7 +3836,7 @@ class Medium(Category):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class ProductCategory(Category):
@@ -3844,7 +3844,7 @@ class ProductCategory(Category):
     Any of many ways of categorizing products.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Product Category'],
-         'class_uri': 'gist_upstream:ProductCategory',
+         'class_uri': 'gist :ProductCategory',
          'examples': [{'value': 'Automobile models, NATO product codes.'}],
          'from_schema': 'https://w3id.org/model/gistl/core',
          'in_subset': ['gist_core']})
@@ -3853,7 +3853,7 @@ class ProductCategory(Category):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -3871,7 +3871,7 @@ class ProductCategory(Category):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class PhysicalActionType(Category):
@@ -3879,7 +3879,7 @@ class PhysicalActionType(Category):
     A category indicating the type of an action based on its effect in the physical world.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Physical Action Type'],
-         'class_uri': 'gist_upstream:PhysicalActionType',
+         'class_uri': 'gist :PhysicalActionType',
          'examples': [{'value': 'Lifting a garage door, turning off a valve, dropping '
                                 'cadmium rods.'}],
          'from_schema': 'https://w3id.org/model/gistl/core',
@@ -3889,7 +3889,7 @@ class PhysicalActionType(Category):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -3907,7 +3907,7 @@ class PhysicalActionType(Category):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class PhysicalAddressType(Category):
@@ -3915,7 +3915,7 @@ class PhysicalAddressType(Category):
     A category indicating local customary characterizations of physical addresses.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Physical Address Type'],
-         'class_uri': 'gist_upstream:PhysicalAddressType',
+         'class_uri': 'gist :PhysicalAddressType',
          'examples': [{'value': 'Street address, PO box, FPO code.'}],
          'from_schema': 'https://w3id.org/model/gistl/core',
          'in_subset': ['gist_core']})
@@ -3924,7 +3924,7 @@ class PhysicalAddressType(Category):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -3942,7 +3942,7 @@ class PhysicalAddressType(Category):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Assignment(TemporalRelation):
@@ -3950,7 +3950,7 @@ class Assignment(TemporalRelation):
     A temporal relationship between an assignee, the thing assigned, and the resource that made the assignment.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Assignment'],
-         'class_uri': 'gist_upstream:Assignment',
+         'class_uri': 'gist :Assignment',
          'comments': ['Based on the Open World Assumption, the assigner may not be '
                       'asserted or known.',
                       'For some assignments, such as the assignment of a person to a '
@@ -3971,7 +3971,7 @@ class Assignment(TemporalRelation):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -3989,7 +3989,7 @@ class Assignment(TemporalRelation):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class SchemaMetaData(GistThing):
@@ -3997,7 +3997,7 @@ class SchemaMetaData(GistThing):
     Superclass for all types of metadata.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Schema Meta Data'],
-         'class_uri': 'gist_upstream:SchemaMetaData',
+         'class_uri': 'gist :SchemaMetaData',
          'comments': ['The definition of this class needs additional work.'],
          'deprecated': 'true',
          'disjoint_with': ['UnitOfMeasure'],
@@ -4011,7 +4011,7 @@ class SchemaMetaData(GistThing):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -4029,7 +4029,7 @@ class SchemaMetaData(GistThing):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Message(ContentExpression):
@@ -4037,7 +4037,7 @@ class Message(ContentExpression):
     A specific instance of content sent from a sender to at least one other recipient.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Message'],
-         'class_uri': 'gist_upstream:Message',
+         'class_uri': 'gist :Message',
          'examples': [{'value': 'An email, voice, or web service message; a phone '
                                 'call.'}],
          'from_schema': 'https://w3id.org/model/gistl/core',
@@ -4050,7 +4050,7 @@ class Message(ContentExpression):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -4068,7 +4068,7 @@ class Message(ContentExpression):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class NetworkNode(Component):
@@ -4076,7 +4076,7 @@ class NetworkNode(Component):
     A node in a network.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Network Node'],
-         'class_uri': 'gist_upstream:NetworkNode',
+         'class_uri': 'gist :NetworkNode',
          'examples': [{'value': "A person's account is a node in a social network; a "
                                 'valve is a node in a network of pipes.'}],
          'from_schema': 'https://w3id.org/model/gistl/core',
@@ -4087,7 +4087,7 @@ class NetworkNode(Component):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -4105,7 +4105,7 @@ class NetworkNode(Component):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class ReferenceValue(Magnitude):
@@ -4113,7 +4113,7 @@ class ReferenceValue(Magnitude):
     A magnitude that was neither measured nor estimated but set by fiat.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Reference Value'],
-         'class_uri': 'gist_upstream:ReferenceValue',
+         'class_uri': 'gist :ReferenceValue',
          'examples': [{'value': 'The sales goal for a company.'}],
          'from_schema': 'https://w3id.org/model/gistl/core',
          'in_subset': ['gist_core']})
@@ -4122,7 +4122,7 @@ class ReferenceValue(Magnitude):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -4140,7 +4140,7 @@ class ReferenceValue(Magnitude):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class Determination(Event):
@@ -4148,7 +4148,7 @@ class Determination(Event):
     An event whose purpose is to establish a specific result, value, or outcome, usually by research, measuring, evaluating, or calculating.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Determination'],
-         'class_uri': 'gist_upstream:Determination',
+         'class_uri': 'gist :Determination',
          'examples': [{'value': 'Measuring the sulfur content of crude oil; evaluating '
                                 'a loan application for approval; estimating the price '
                                 'of gas for the next three months; determining whether '
@@ -4161,7 +4161,7 @@ class Determination(Event):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -4179,7 +4179,7 @@ class Determination(Event):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 class EventSpecification(Specification):
@@ -4187,7 +4187,7 @@ class EventSpecification(Specification):
     A characterization of an event that might happen.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'aliases': ['Event Specification'],
-         'class_uri': 'gist_upstream:EventSpecification',
+         'class_uri': 'gist :EventSpecification',
          'comments': ['This concept is useful for risk assessment and insurance '
                       'policies.'],
          'examples': [{'value': 'An insurance company defines the characteristics of a '
@@ -4202,7 +4202,7 @@ class EventSpecification(Specification):
          'domain_of': ['GistThing'],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:name'} })
+         'slot_uri': 'gist :name'} })
     description: Optional[str] = Field(default=None, description="""A statement about someone or something's attributes or characteristics.""", json_schema_extra = { "linkml_meta": {'aliases': ['description'],
          'comments': ['This property is used to describe instance data which is not '
                       'part of the ontology. A definition and a description have '
@@ -4220,7 +4220,7 @@ class EventSpecification(Specification):
                                 'definition.'}],
          'implements': ['owl:DatatypeProperty'],
          'in_subset': ['gist_core'],
-         'slot_uri': 'gist_upstream:description'} })
+         'slot_uri': 'gist :description'} })
 
 
 # Model rebuild
