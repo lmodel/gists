@@ -332,7 +332,8 @@
 <article class="md-content__inner md-typeset">
 <h1 id="class-commitment">Class: Commitment</h1>
 <p><em>A promise made by a single party to one or more parties to do or not do something or act in a particular way.</em></p>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/Commitment">gist_upstream:Commitment</a></p>
+<div>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/Commitment">gist:Commitment</a></p>
 <pre class="mermaid"><code> classDiagram
     class Commitment
     click Commitment href "../Commitment/"
@@ -370,7 +371,7 @@
 <tbody>
 <tr>
 <td>Class URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/Commitment">gist_upstream:Commitment</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/Commitment">gist:Commitment</a></td>
 </tr>
 </tbody>
 </table>
@@ -425,9 +426,9 @@
 </table>
 <h2 id="comments">Comments</h2>
 <ul>
+<li>The manner in which a commitment is binding may vary. In a business context, we are typically interested in commitments that are legally binding.</li>
 <li>A commitment is unilateral in that it is binding on only one party. This contrasts with gist:Agreement, which consists of commitments that bind two or more parties.</li>
 <li>A single commitment may be made to multiple parties at once; it is a single commitment rather than multiple commitments if the same action would fulfill the obligation to all the parties simultaneously. For example, a performer makes a single commitment to hold a performance to all ticket purchasers; by holding the performance, the commitment to all parties is fulfilled in a single action.</li>
-<li>The manner in which a commitment is binding may vary. In a business context, we are typically interested in commitments that are legally binding.</li>
 </ul>
 <h2 id="notes">Notes</h2>
 <ul>
@@ -449,11 +450,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>gist_upstream:Commitment</td>
+<td>gist:Commitment</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist:Commitment</td>
+<td>gist_linkml:Commitment</td>
 </tr>
 </tbody>
 </table>
@@ -468,6 +469,8 @@
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'OWL</span><span class="nv"> </span><span class="s">equivalentClass:</span><span class="nv"> </span><span class="s">(gist:Intention</span><span class="nv"> </span><span class="s">&amp;</span><span class="nv"> </span><span class="s">(gist:Requirement</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">gist:Restriction)</span><span class="nv"> </span><span class="s">&amp;</span>
 <span class="w">  </span><span class="s">∃hasGiver.(gist:Organization</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">gist:Person)</span><span class="nv"> </span><span class="s">&amp;</span><span class="nv"> </span><span class="s">∃isCategorizedBy.gist:DegreeOfCommitment)'</span>
 <span class="nt">comments</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The manner in which a commitment is binding may vary. In a business context, we</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">are typically interested in commitments that are legally binding.</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A commitment is unilateral in that it is binding on only one party. This contrasts</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">with gist:Agreement, which consists of commitments that bind two or more parties.</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A single commitment may be made to multiple parties at once; it is a single commitment</span>
@@ -475,8 +478,6 @@
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">to all the parties simultaneously. For example, a performer makes a single commitment</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">to hold a performance to all ticket purchasers; by holding the performance, the</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">commitment to all parties is fulfilled in a single action.</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The manner in which a commitment is binding may vary. In a business context, we</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">are typically interested in commitments that are legally binding.</span>
 <span class="nt">examples</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">When signing an NDA, the signatory commits to keeping specified information</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">confidential.</span>
@@ -488,7 +489,7 @@
 <span class="nt">aliases</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Commitment</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Intention</span>
-<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:Commitment</span>
+<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:Commitment</span>
 </code></pre></div>
 </details>
 <h3 id="induced">Induced</h3>
@@ -500,6 +501,8 @@
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'OWL</span><span class="nv"> </span><span class="s">equivalentClass:</span><span class="nv"> </span><span class="s">(gist:Intention</span><span class="nv"> </span><span class="s">&amp;</span><span class="nv"> </span><span class="s">(gist:Requirement</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">gist:Restriction)</span><span class="nv"> </span><span class="s">&amp;</span>
 <span class="w">  </span><span class="s">∃hasGiver.(gist:Organization</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">gist:Person)</span><span class="nv"> </span><span class="s">&amp;</span><span class="nv"> </span><span class="s">∃isCategorizedBy.gist:DegreeOfCommitment)'</span>
 <span class="nt">comments</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The manner in which a commitment is binding may vary. In a business context, we</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">are typically interested in commitments that are legally binding.</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A commitment is unilateral in that it is binding on only one party. This contrasts</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">with gist:Agreement, which consists of commitments that bind two or more parties.</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A single commitment may be made to multiple parties at once; it is a single commitment</span>
@@ -507,8 +510,6 @@
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">to all the parties simultaneously. For example, a performer makes a single commitment</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">to hold a performance to all ticket purchasers; by holding the performance, the</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">commitment to all parties is fulfilled in a single action.</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The manner in which a commitment is binding may vary. In a business context, we</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">are typically interested in commitments that are legally binding.</span>
 <span class="nt">examples</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">When signing an NDA, the signatory commits to keeping specified information</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">confidential.</span>
@@ -523,6 +524,8 @@
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
+<span class="w">    </span><span class="nt">implements</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:DatatypeProperty</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Relates an individual to (one of) its name(s).</span>
 <span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_core</span>
@@ -530,14 +533,15 @@
 <span class="w">    </span><span class="nt">aliases</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:name</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
+<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:name</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Commitment</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GistThing</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">  </span><span class="nt">description</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
+<span class="w">    </span><span class="nt">implements</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:DatatypeProperty</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A statement about someone or something's attributes or characteristics.</span>
 <span class="w">    </span><span class="nt">comments</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This property is used to describe instance data which is not part of the ontology.</span>
@@ -545,27 +549,27 @@
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">for a statement of the meaning of a thing and gist:description to describe a</span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">thing's attributes, characteristics, or features.</span>
 <span class="w">    </span><span class="nt">examples</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A person does not have a definition, but might be described as being</span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">six feet tall with brown hair and blue eyes; an ontology class or taxonomy</span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">term has a definition.</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">'</span><span class="se">''</span><span class="s">The</span><span class="nv"> </span><span class="s">Empire</span><span class="nv"> </span><span class="s">State</span><span class="nv"> </span><span class="s">Building</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">102-story</span><span class="nv"> </span><span class="s">Art</span><span class="nv"> </span><span class="s">Deco</span><span class="nv"> </span><span class="s">skyscraper</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">midtown</span>
 <span class="w">        </span><span class="s">Manhattan</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">New</span><span class="nv"> </span><span class="s">York</span><span class="nv"> </span><span class="s">City.</span><span class="nv"> </span><span class="s">It</span><span class="nv"> </span><span class="s">was</span><span class="nv"> </span><span class="s">designed</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">Shreve,</span><span class="nv"> </span><span class="s">Lamb</span><span class="nv"> </span><span class="s">&amp;</span><span class="nv"> </span><span class="s">Harmon</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">built</span>
 <span class="w">        </span><span class="s">from</span><span class="nv"> </span><span class="s">1930</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">1931.</span><span class="se">''</span><span class="s">'</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A person does not have a definition, but might be described as being</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">six feet tall with brown hair and blue eyes; an ontology class or taxonomy</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">term has a definition.</span>
 <span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_core</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/lmodel/gist</span>
 <span class="w">    </span><span class="nt">aliases</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:description</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
+<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:description</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Commitment</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GistThing</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:Commitment</span>
+<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:Commitment</span>
 </code></pre></div>
 </details>
+</div>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>

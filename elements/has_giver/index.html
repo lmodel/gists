@@ -531,8 +531,8 @@
 
 <h1 id="slot-has_giver">Slot: has_giver</h1>
 <p><em>Relates something to the participant that provides it.</em></p>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/hasGiver">gist_upstream:hasGiver</a>
-Alias: has_giver</p>
+<div>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/hasGiver">gist:hasGiver</a></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../has_participant/">has_participant</a><ul>
@@ -556,7 +556,7 @@ Alias: has_giver</p>
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/hasGiver">gist_upstream:hasGiver</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/hasGiver">gist:hasGiver</a></td>
 </tr>
 </tbody>
 </table>
@@ -580,7 +580,6 @@ Alias: has_giver</p>
 **Disjoint With:** [has_recipient](has_recipient.md)
 
 </details>
-
 <h2 id="in-subsets">In Subsets</h2>
 <ul>
 <li><a href="../GistCore/">GistCore</a></li>
@@ -622,17 +621,19 @@ Alias: has_giver</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>gist_upstream:hasGiver</td>
+<td>gist:hasGiver</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist:has_giver</td>
+<td>gist_linkml:has_giver</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">has_giver</span>
+<span class="nt">implements</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:ObjectProperty</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Relates something to the participant that provides it.</span>
 <span class="nt">comments</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This property is often used in abstract contexts such as agreements, obligations,</span>
@@ -650,20 +651,23 @@ Alias: has_giver</p>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">has giver</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">has_participant</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:hasGiver</span>
-<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">has_giver</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:hasGiver</span>
 <span class="nt">disjoint_with</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">has_recipient</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

@@ -509,10 +509,9 @@
 
 <h1 id="slot-comes_from_place">Slot: comes_from_place</h1>
 <p><em>Relates something to its place of origin.</em></p>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/comesFromPlace">gist_upstream:comesFromPlace</a>
-Alias: comes_from_place</p>
+<div>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/comesFromPlace">gist:comesFromPlace</a></p>
 <!-- no inheritance hierarchy -->
-
 <h2 id="properties">Properties</h2>
 <h3 id="type-and-range">Type and Range</h3>
 <table>
@@ -525,11 +524,11 @@ Alias: comes_from_place</p>
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../GeoLocation/">GeoLocation</a>&nbsp;or&nbsp;<br /><a href="../Address/">Address</a>&nbsp;or&nbsp;<br /><a href="../String/">String</a></td>
+<td><a href="../String/">String</a>&nbsp;or&nbsp;<br /><a href="../Address/">Address</a>&nbsp;or&nbsp;<br /><a href="../GeoLocation/">GeoLocation</a></td>
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/comesFromPlace">gist_upstream:comesFromPlace</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/comesFromPlace">gist:comesFromPlace</a></td>
 </tr>
 </tbody>
 </table>
@@ -549,7 +548,7 @@ Alias: comes_from_place</p>
 </tbody>
 </table>
 <details>
-<summary>Expressions & Logic</summary>
+<summary>Expressions &amp; Logic</summary>
 #### Any Of
 
 Value must satisfy at least one of:
@@ -557,7 +556,6 @@ Value must satisfy at least one of:
 - AnonymousSlotExpression({'range': 'GeoLocation'})
 
 </details>
-
 <h2 id="in-subsets">In Subsets</h2>
 <ul>
 <li><a href="../GistCore/">GistCore</a></li>
@@ -595,17 +593,19 @@ Value must satisfy at least one of:
 <tbody>
 <tr>
 <td>self</td>
-<td>gist_upstream:comesFromPlace</td>
+<td>gist:comesFromPlace</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist:comes_from_place</td>
+<td>gist_linkml:comes_from_place</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">comes_from_place</span>
+<span class="nt">implements</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:ObjectProperty</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Relates something to its place of origin.</span>
 <span class="nt">examples</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A letter has a return address indicating its origin; a delivery route originates</span>
@@ -616,8 +616,7 @@ Value must satisfy at least one of:
 <span class="nt">aliases</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">comes from place</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:comesFromPlace</span>
-<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">comes_from_place</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:comesFromPlace</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">any_of</span><span class="p">:</span>
@@ -625,12 +624,16 @@ Value must satisfy at least one of:
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeoLocation</span>
 </code></pre></div>
 </details>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

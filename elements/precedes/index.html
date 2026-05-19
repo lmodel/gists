@@ -520,8 +520,8 @@
 
 <h1 id="slot-precedes">Slot: precedes</h1>
 <p><em>A generic ordering relation indicating that the subject comes before the object.</em></p>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/precedes">gist_upstream:precedes</a>
-Alias: precedes</p>
+<div>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/precedes">gist:precedes</a></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><strong>precedes</strong><ul>
@@ -545,7 +545,7 @@ Alias: precedes</p>
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/precedes">gist_upstream:precedes</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/precedes">gist:precedes</a></td>
 </tr>
 </tbody>
 </table>
@@ -572,7 +572,6 @@ Alias: precedes</p>
 | Transitive | Yes |
 
 </details>
-
 <h2 id="in-subsets">In Subsets</h2>
 <ul>
 <li><a href="../GistCore/">GistCore</a></li>
@@ -603,17 +602,19 @@ Alias: precedes</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>gist_upstream:precedes</td>
+<td>gist:precedes</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist:precedes</td>
+<td>gist_linkml:precedes</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">precedes</span>
+<span class="nt">implements</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:ObjectProperty</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A generic ordering relation indicating that the subject comes before</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">the object.</span>
 <span class="nt">comments</span><span class="p">:</span>
@@ -627,19 +628,22 @@ Alias: precedes</p>
 <span class="nt">aliases</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">precedes</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:precedes</span>
-<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">precedes</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:precedes</span>
 <span class="nt">transitive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

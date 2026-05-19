@@ -520,16 +520,16 @@
 
 <h1 id="slot-planned_end_date_time">Slot: planned_end_date_time</h1>
 <p><em>The date that something is or was planned to end, with no implied precision.</em></p>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/plannedEndDateTime">gist_upstream:plannedEndDateTime</a>
-Alias: planned_end_date_time</p>
+<div>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/plannedEndDateTime">gist:plannedEndDateTime</a></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../at_date_time/">at_date_time</a><ul>
 <li><a href="../end_date_time/">end_date_time</a><ul>
 <li><strong>planned_end_date_time</strong><ul>
 <li><a href="../planned_end_minute/">planned_end_minute</a></li>
-<li><a href="../planned_end_date/">planned_end_date</a></li>
 <li><a href="../planned_end_year/">planned_end_year</a></li>
+<li><a href="../planned_end_date/">planned_end_date</a></li>
 </ul>
 </li>
 </ul>
@@ -553,7 +553,7 @@ Alias: planned_end_date_time</p>
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/plannedEndDateTime">gist_upstream:plannedEndDateTime</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/plannedEndDateTime">gist:plannedEndDateTime</a></td>
 </tr>
 </tbody>
 </table>
@@ -582,8 +582,8 @@ Alias: planned_end_date_time</p>
 </ul>
 <h2 id="comments">Comments</h2>
 <ul>
-<li>This is an abstraction over the various precisions of planned end time, and is not expected to be asserted directly. Values of predicates with different precisions can be compared since they are all formally xsd:datetimes.</li>
 <li>This property, unlike gist:actualEndDateTime, does not have a subproperty for microsecond precision, because planned times typically are not expressed at that level of granularity. Typically a planned date is in the future when first captured, but when tasks run late, we leave the plan where it was and compare it to the actual.</li>
+<li>This is an abstraction over the various precisions of planned end time, and is not expected to be asserted directly. Values of predicates with different precisions can be compared since they are all formally xsd:datetimes.</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -601,26 +601,28 @@ Alias: planned_end_date_time</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>gist_upstream:plannedEndDateTime</td>
+<td>gist:plannedEndDateTime</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist:planned_end_date_time</td>
+<td>gist_linkml:planned_end_date_time</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">planned_end_date_time</span>
+<span class="nt">implements</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:DatatypeProperty</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The date that something is or was planned to end, with no implied precision.</span>
 <span class="nt">comments</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This is an abstraction over the various precisions of planned end time, and is not</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">expected to be asserted directly. Values of predicates with different precisions</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">can be compared since they are all formally xsd:datetimes.</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This property, unlike gist:actualEndDateTime, does not have a subproperty for microsecond</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">precision, because planned times typically are not expressed at that level of granularity.</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Typically a planned date is in the future when first captured, but when tasks run</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">late, we leave the plan where it was and compare it to the actual.</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This is an abstraction over the various precisions of planned end time, and is not</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">expected to be asserted directly. Values of predicates with different precisions</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">can be compared since they are all formally xsd:datetimes.</span>
 <span class="nt">in_subset</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_core</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/lmodel/gist</span>
@@ -628,17 +630,20 @@ Alias: planned_end_date_time</p>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">planned end date time</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">end_date_time</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:plannedEndDateTime</span>
-<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">planned_end_date_time</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:plannedEndDateTime</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">datetime</span>
 </code></pre></div>
 </details>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

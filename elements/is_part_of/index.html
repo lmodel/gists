@@ -520,8 +520,8 @@
 
 <h1 id="slot-is_part_of">Slot: is_part_of</h1>
 <p><em>The relationship between a part and a whole where the part has independent existence.</em></p>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/isPartOf">gist_upstream:isPartOf</a>
-Alias: is_part_of</p>
+<div>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/isPartOf">gist:isPartOf</a></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><strong>is_part_of</strong><ul>
@@ -545,7 +545,7 @@ Alias: is_part_of</p>
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/isPartOf">gist_upstream:isPartOf</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/isPartOf">gist:isPartOf</a></td>
 </tr>
 </tbody>
 </table>
@@ -572,7 +572,6 @@ Alias: is_part_of</p>
 | Transitive | Yes |
 
 </details>
-
 <h2 id="in-subsets">In Subsets</h2>
 <ul>
 <li><a href="../GistCore/">GistCore</a></li>
@@ -602,17 +601,19 @@ Alias: is_part_of</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>gist_upstream:isPartOf</td>
+<td>gist:isPartOf</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist:is_part_of</td>
+<td>gist_linkml:is_part_of</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">is_part_of</span>
+<span class="nt">implements</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:ObjectProperty</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The relationship between a part and a whole where the part has independent</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">existence.</span>
 <span class="nt">comments</span><span class="p">:</span>
@@ -624,19 +625,22 @@ Alias: is_part_of</p>
 <span class="nt">aliases</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">is part of</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:isPartOf</span>
-<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">is_part_of</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:isPartOf</span>
 <span class="nt">transitive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

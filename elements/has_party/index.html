@@ -531,8 +531,8 @@
 
 <h1 id="slot-has_party">Slot: has_party</h1>
 <p><em>Relates an event, agreement, or obligation to a participating person or organization.</em></p>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/hasParty">gist_upstream:hasParty</a>
-Alias: has_party</p>
+<div>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/hasParty">gist:hasParty</a></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../has_participant/">has_participant</a><ul>
@@ -552,11 +552,11 @@ Alias: has_party</p>
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../Organization/">Organization</a>&nbsp;or&nbsp;<br /><a href="../Person/">Person</a>&nbsp;or&nbsp;<br /><a href="../String/">String</a></td>
+<td><a href="../String/">String</a>&nbsp;or&nbsp;<br /><a href="../Organization/">Organization</a>&nbsp;or&nbsp;<br /><a href="../Person/">Person</a></td>
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/hasParty">gist_upstream:hasParty</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/hasParty">gist:hasParty</a></td>
 </tr>
 </tbody>
 </table>
@@ -576,7 +576,7 @@ Alias: has_party</p>
 </tbody>
 </table>
 <details>
-<summary>Expressions & Logic</summary>
+<summary>Expressions &amp; Logic</summary>
 #### Any Of
 
 Value must satisfy at least one of:
@@ -584,7 +584,6 @@ Value must satisfy at least one of:
 - AnonymousSlotExpression({'range': 'Person'})
 
 </details>
-
 <h2 id="in-subsets">In Subsets</h2>
 <ul>
 <li><a href="../GistCore/">GistCore</a></li>
@@ -626,17 +625,19 @@ Value must satisfy at least one of:
 <tbody>
 <tr>
 <td>self</td>
-<td>gist_upstream:hasParty</td>
+<td>gist:hasParty</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist:has_party</td>
+<td>gist_linkml:has_party</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">has_party</span>
+<span class="nt">implements</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:ObjectProperty</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Relates an event, agreement, or obligation to a participating person</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">or organization.</span>
 <span class="nt">comments</span><span class="p">:</span>
@@ -651,8 +652,7 @@ Value must satisfy at least one of:
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">has party</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">has_participant</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:hasParty</span>
-<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">has_party</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:hasParty</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">any_of</span><span class="p">:</span>
@@ -660,12 +660,16 @@ Value must satisfy at least one of:
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Person</span>
 </code></pre></div>
 </details>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

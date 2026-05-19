@@ -520,10 +520,9 @@
 
 <h1 id="slot-id_text">Slot: id_text</h1>
 <p><em>A text string that identifies an individual.</em></p>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/idText">gist_upstream:idText</a>
-Alias: id_text</p>
+<div>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/idText">gist:idText</a></p>
 <!-- no inheritance hierarchy -->
-
 <h2 id="properties">Properties</h2>
 <h3 id="type-and-range">Type and Range</h3>
 <table>
@@ -540,7 +539,7 @@ Alias: id_text</p>
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/idText">gist_upstream:idText</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/idText">gist:idText</a></td>
 </tr>
 </tbody>
 </table>
@@ -582,8 +581,8 @@ Alias: id_text</p>
 </table>
 <h2 id="comments">Comments</h2>
 <ul>
-<li>Often, there will be just one identifying text string. More would be appropriate if the individual had different identifiers, such as employee number and social security number. A good way to model that would be to have functional subproperties of idText, such as departmentNumber.</li>
 <li>This property is an alternative to using the property gist:isIdentifiedBy in conjunction with instances of the class gist:ID.</li>
+<li>Often, there will be just one identifying text string. More would be appropriate if the individual had different identifiers, such as employee number and social security number. A good way to model that would be to have functional subproperties of idText, such as departmentNumber.</li>
 <li>A common use case would be for preexisting internal company identifiers.</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -602,25 +601,27 @@ Alias: id_text</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>gist_upstream:idText</td>
+<td>gist:idText</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist:id_text</td>
+<td>gist_linkml:id_text</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">id_text</span>
+<span class="nt">implements</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:DatatypeProperty</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A text string that identifies an individual.</span>
 <span class="nt">comments</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This property is an alternative to using the property gist:isIdentifiedBy in conjunction</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">with instances of the class gist:ID.</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Often, there will be just one identifying text string. More would be appropriate</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">if the individual had different identifiers, such as employee number and social</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">security number. A good way to model that would be to have functional subproperties</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">of idText, such as departmentNumber.</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This property is an alternative to using the property gist:isIdentifiedBy in conjunction</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">with instances of the class gist:ID.</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A common use case would be for preexisting internal company identifiers.</span>
 <span class="nt">examples</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The id text for a car is &#39;4Y1SL65848Z411439&#39;; the id text for the HR department</span>
@@ -631,17 +632,20 @@ Alias: id_text</p>
 <span class="nt">aliases</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">id text</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:idText</span>
-<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">id_text</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:idText</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 </code></pre></div>
 </details>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

@@ -509,8 +509,8 @@
 
 <h1 id="slot-links_from">Slot: links_from</h1>
 <p><em>Relates a network link to its origin network node. Unlike the superproperty, this represents a directed connection.</em></p>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/linksFrom">gist_upstream:linksFrom</a>
-Alias: links_from</p>
+<div>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/linksFrom">gist:linksFrom</a></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../links/">links</a><ul>
@@ -534,7 +534,7 @@ Alias: links_from</p>
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/linksFrom">gist_upstream:linksFrom</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/linksFrom">gist:linksFrom</a></td>
 </tr>
 </tbody>
 </table>
@@ -577,17 +577,19 @@ Alias: links_from</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>gist_upstream:linksFrom</td>
+<td>gist:linksFrom</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist:links_from</td>
+<td>gist_linkml:links_from</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">links_from</span>
+<span class="nt">implements</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:ObjectProperty</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Relates a network link to its origin network node. Unlike the superproperty,</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">this represents a directed connection.</span>
 <span class="nt">in_subset</span><span class="p">:</span>
@@ -597,18 +599,21 @@ Alias: links_from</p>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">links from</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">links</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:linksFrom</span>
-<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">links_from</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:linksFrom</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NetworkNode</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

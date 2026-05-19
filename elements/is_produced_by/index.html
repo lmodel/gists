@@ -509,10 +509,9 @@
 
 <h1 id="slot-is_produced_by">Slot: is_produced_by</h1>
 <p><em>Relates something to the thing that created, composed, or brought it into existence.</em></p>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/isProducedBy">gist_upstream:isProducedBy</a>
-Alias: is_produced_by</p>
+<div>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/isProducedBy">gist:isProducedBy</a></p>
 <!-- no inheritance hierarchy -->
-
 <h2 id="properties">Properties</h2>
 <h3 id="type-and-range">Type and Range</h3>
 <table>
@@ -529,7 +528,7 @@ Alias: is_produced_by</p>
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/isProducedBy">gist_upstream:isProducedBy</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/isProducedBy">gist:isProducedBy</a></td>
 </tr>
 </tbody>
 </table>
@@ -565,13 +564,13 @@ Alias: is_produced_by</p>
 </thead>
 <tbody>
 <tr>
+<td>A deliverable is produces by a task.</td>
+</tr>
+<tr>
 <td>A painting is produced by a person.</td>
 </tr>
 <tr>
 <td>A measurement is produced by a sensor.</td>
-</tr>
-<tr>
-<td>A deliverable is produces by a task.</td>
 </tr>
 </tbody>
 </table>
@@ -591,41 +590,46 @@ Alias: is_produced_by</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>gist_upstream:isProducedBy</td>
+<td>gist:isProducedBy</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist:is_produced_by</td>
+<td>gist_linkml:is_produced_by</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">is_produced_by</span>
+<span class="nt">implements</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:ObjectProperty</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Relates something to the thing that created, composed, or brought it</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">into existence.</span>
 <span class="nt">examples</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A deliverable is produces by a task.</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A painting is produced by a person.</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A measurement is produced by a sensor.</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A deliverable is produces by a task.</span>
 <span class="nt">in_subset</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_core</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/lmodel/gist</span>
 <span class="nt">aliases</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">is produced by</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:isProducedBy</span>
-<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">is_produced_by</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:isProducedBy</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

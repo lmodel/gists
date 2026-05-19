@@ -509,10 +509,9 @@
 
 <h1 id="slot-owns">Slot: owns</h1>
 <p><em>Relates a party to something that it possesses and controls.</em></p>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/owns">gist_upstream:owns</a>
-Alias: owns</p>
+<div>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/owns">gist:owns</a></p>
 <!-- no inheritance hierarchy -->
-
 <h2 id="properties">Properties</h2>
 <h3 id="type-and-range">Type and Range</h3>
 <table>
@@ -525,7 +524,7 @@ Alias: owns</p>
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../Organization/">Organization</a>&nbsp;or&nbsp;<br /><a href="../Person/">Person</a>&nbsp;or&nbsp;<br /><a href="../String/">String</a></td>
+<td><a href="../String/">String</a>&nbsp;or&nbsp;<br /><a href="../Organization/">Organization</a>&nbsp;or&nbsp;<br /><a href="../Person/">Person</a></td>
 </tr>
 <tr>
 <td>Domain</td>
@@ -533,7 +532,7 @@ Alias: owns</p>
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/owns">gist_upstream:owns</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/owns">gist:owns</a></td>
 </tr>
 </tbody>
 </table>
@@ -553,7 +552,7 @@ Alias: owns</p>
 </tbody>
 </table>
 <details>
-<summary>Expressions & Logic</summary>
+<summary>Expressions &amp; Logic</summary>
 #### Any Of
 
 Value must satisfy at least one of:
@@ -561,7 +560,6 @@ Value must satisfy at least one of:
 - AnonymousSlotExpression({'range': 'Person'})
 
 </details>
-
 <h2 id="in-subsets">In Subsets</h2>
 <ul>
 <li><a href="../GistCore/">GistCore</a></li>
@@ -591,17 +589,19 @@ Value must satisfy at least one of:
 <tbody>
 <tr>
 <td>self</td>
-<td>gist_upstream:owns</td>
+<td>gist:owns</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist:owns</td>
+<td>gist_linkml:owns</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owns</span>
+<span class="nt">implements</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:ObjectProperty</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Relates a party to something that it possesses and controls.</span>
 <span class="nt">comments</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">There is a long list of potential range classes.</span>
@@ -613,8 +613,7 @@ Value must satisfy at least one of:
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owns</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Organization</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:owns</span>
-<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owns</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:owns</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">any_of</span><span class="p">:</span>
@@ -622,12 +621,16 @@ Value must satisfy at least one of:
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Person</span>
 </code></pre></div>
 </details>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

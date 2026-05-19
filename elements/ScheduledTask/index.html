@@ -323,12 +323,13 @@
 <article class="md-content__inner md-typeset">
 <h1 id="class-scheduledtask">Class: ScheduledTask</h1>
 <p><em>A task with a planned start datetime.</em></p>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/ScheduledTask">gist_upstream:ScheduledTask</a></p>
+<div>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/ScheduledTask">gist:ScheduledTask</a></p>
 <pre class="mermaid"><code> classDiagram
     class ScheduledTask
     click ScheduledTask href "../ScheduledTask/"
-      Task &lt;|-- ScheduledTask
-        click Task href "../Task/"
+      ScheduledEvent &lt;|-- ScheduledTask
+        click ScheduledEvent href "../ScheduledEvent/"
 
       ScheduledTask : description
 
@@ -338,7 +339,7 @@
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../Event/">Event</a> [ <a href="../GistThing/">GistThing</a>]<ul>
-<li><a href="../Task/">Task</a><ul>
+<li><a href="../ScheduledEvent/">ScheduledEvent</a><ul>
 <li><strong>ScheduledTask</strong></li>
 </ul>
 </li>
@@ -356,7 +357,7 @@
 <tbody>
 <tr>
 <td>Class URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/ScheduledTask">gist_upstream:ScheduledTask</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/ScheduledTask">gist:ScheduledTask</a></td>
 </tr>
 </tbody>
 </table>
@@ -399,7 +400,7 @@
 </ul>
 <h2 id="notes">Notes</h2>
 <ul>
-<li>Additional named superclasses (modelled as OWL multiple inheritance): ScheduledEvent</li>
+<li>Additional named superclasses (modelled as OWL multiple inheritance): Task</li>
 <li>OWL equivalentClass: (gist:ScheduledEvent &amp; gist:Task)</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -418,11 +419,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>gist_upstream:ScheduledTask</td>
+<td>gist:ScheduledTask</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist:ScheduledTask</td>
+<td>gist_linkml:ScheduledTask</td>
 </tr>
 </tbody>
 </table>
@@ -433,7 +434,7 @@
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ScheduledTask</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A task with a planned start datetime.</span>
 <span class="nt">notes</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'Additional</span><span class="nv"> </span><span class="s">named</span><span class="nv"> </span><span class="s">superclasses</span><span class="nv"> </span><span class="s">(modelled</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">OWL</span><span class="nv"> </span><span class="s">multiple</span><span class="nv"> </span><span class="s">inheritance):</span><span class="nv"> </span><span class="s">ScheduledEvent'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'Additional</span><span class="nv"> </span><span class="s">named</span><span class="nv"> </span><span class="s">superclasses</span><span class="nv"> </span><span class="s">(modelled</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">OWL</span><span class="nv"> </span><span class="s">multiple</span><span class="nv"> </span><span class="s">inheritance):</span><span class="nv"> </span><span class="s">Task'</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'OWL</span><span class="nv"> </span><span class="s">equivalentClass:</span><span class="nv"> </span><span class="s">(gist:ScheduledEvent</span><span class="nv"> </span><span class="s">&amp;</span><span class="nv"> </span><span class="s">gist:Task)'</span>
 <span class="nt">comments</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">If work on the task has already started, but has not yet ended, it will have an</span>
@@ -445,8 +446,8 @@
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/lmodel/gist</span>
 <span class="nt">aliases</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Scheduled Task</span>
-<span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Task</span>
-<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:ScheduledTask</span>
+<span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ScheduledEvent</span>
+<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:ScheduledTask</span>
 </code></pre></div>
 </details>
 <h3 id="induced">Induced</h3>
@@ -454,7 +455,7 @@
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ScheduledTask</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A task with a planned start datetime.</span>
 <span class="nt">notes</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'Additional</span><span class="nv"> </span><span class="s">named</span><span class="nv"> </span><span class="s">superclasses</span><span class="nv"> </span><span class="s">(modelled</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">OWL</span><span class="nv"> </span><span class="s">multiple</span><span class="nv"> </span><span class="s">inheritance):</span><span class="nv"> </span><span class="s">ScheduledEvent'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'Additional</span><span class="nv"> </span><span class="s">named</span><span class="nv"> </span><span class="s">superclasses</span><span class="nv"> </span><span class="s">(modelled</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">OWL</span><span class="nv"> </span><span class="s">multiple</span><span class="nv"> </span><span class="s">inheritance):</span><span class="nv"> </span><span class="s">Task'</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'OWL</span><span class="nv"> </span><span class="s">equivalentClass:</span><span class="nv"> </span><span class="s">(gist:ScheduledEvent</span><span class="nv"> </span><span class="s">&amp;</span><span class="nv"> </span><span class="s">gist:Task)'</span>
 <span class="nt">comments</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">If work on the task has already started, but has not yet ended, it will have an</span>
@@ -466,10 +467,12 @@
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/lmodel/gist</span>
 <span class="nt">aliases</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Scheduled Task</span>
-<span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Task</span>
+<span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ScheduledEvent</span>
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
+<span class="w">    </span><span class="nt">implements</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:DatatypeProperty</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Relates an individual to (one of) its name(s).</span>
 <span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_core</span>
@@ -477,14 +480,15 @@
 <span class="w">    </span><span class="nt">aliases</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:name</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
+<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:name</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ScheduledTask</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GistThing</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">  </span><span class="nt">description</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
+<span class="w">    </span><span class="nt">implements</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:DatatypeProperty</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A statement about someone or something's attributes or characteristics.</span>
 <span class="w">    </span><span class="nt">comments</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This property is used to describe instance data which is not part of the ontology.</span>
@@ -492,27 +496,27 @@
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">for a statement of the meaning of a thing and gist:description to describe a</span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">thing's attributes, characteristics, or features.</span>
 <span class="w">    </span><span class="nt">examples</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A person does not have a definition, but might be described as being</span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">six feet tall with brown hair and blue eyes; an ontology class or taxonomy</span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">term has a definition.</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">'</span><span class="se">''</span><span class="s">The</span><span class="nv"> </span><span class="s">Empire</span><span class="nv"> </span><span class="s">State</span><span class="nv"> </span><span class="s">Building</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">102-story</span><span class="nv"> </span><span class="s">Art</span><span class="nv"> </span><span class="s">Deco</span><span class="nv"> </span><span class="s">skyscraper</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">midtown</span>
 <span class="w">        </span><span class="s">Manhattan</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">New</span><span class="nv"> </span><span class="s">York</span><span class="nv"> </span><span class="s">City.</span><span class="nv"> </span><span class="s">It</span><span class="nv"> </span><span class="s">was</span><span class="nv"> </span><span class="s">designed</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">Shreve,</span><span class="nv"> </span><span class="s">Lamb</span><span class="nv"> </span><span class="s">&amp;</span><span class="nv"> </span><span class="s">Harmon</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">built</span>
 <span class="w">        </span><span class="s">from</span><span class="nv"> </span><span class="s">1930</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">1931.</span><span class="se">''</span><span class="s">'</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A person does not have a definition, but might be described as being</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">six feet tall with brown hair and blue eyes; an ontology class or taxonomy</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">term has a definition.</span>
 <span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_core</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/lmodel/gist</span>
 <span class="w">    </span><span class="nt">aliases</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:description</span>
-<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
+<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:description</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ScheduledTask</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GistThing</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:ScheduledTask</span>
+<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:ScheduledTask</span>
 </code></pre></div>
 </details>
+</div>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>

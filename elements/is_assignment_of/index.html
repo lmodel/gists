@@ -520,10 +520,9 @@
 
 <h1 id="slot-is_assignment_of">Slot: is_assignment_of</h1>
 <p><em>Relates an assignment to the resource it assigns.</em></p>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/isAssignmentOf">gist_upstream:isAssignmentOf</a>
-Alias: is_assignment_of</p>
+<div>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/isAssignmentOf">gist:isAssignmentOf</a></p>
 <!-- no inheritance hierarchy -->
-
 <h2 id="properties">Properties</h2>
 <h3 id="type-and-range">Type and Range</h3>
 <table>
@@ -536,11 +535,11 @@ Alias: is_assignment_of</p>
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../Equipment/">Equipment</a>&nbsp;or&nbsp;<br /><a href="../String/">String</a>&nbsp;or&nbsp;<br /><a href="../Organization/">Organization</a>&nbsp;or&nbsp;<br /><a href="../Person/">Person</a>&nbsp;or&nbsp;<br /><a href="../IntellectualProperty/">IntellectualProperty</a></td>
+<td><a href="../String/">String</a>&nbsp;or&nbsp;<br /><a href="../Person/">Person</a>&nbsp;or&nbsp;<br /><a href="../Equipment/">Equipment</a>&nbsp;or&nbsp;<br /><a href="../IntellectualProperty/">IntellectualProperty</a>&nbsp;or&nbsp;<br /><a href="../Organization/">Organization</a></td>
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/isAssignmentOf">gist_upstream:isAssignmentOf</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/isAssignmentOf">gist:isAssignmentOf</a></td>
 </tr>
 </tbody>
 </table>
@@ -560,17 +559,16 @@ Alias: is_assignment_of</p>
 </tbody>
 </table>
 <details>
-<summary>Expressions & Logic</summary>
+<summary>Expressions &amp; Logic</summary>
 #### Any Of
 
 Value must satisfy at least one of:
-- AnonymousSlotExpression({'range': 'Equipment'})
 - AnonymousSlotExpression({'range': 'Person'})
+- AnonymousSlotExpression({'range': 'Equipment'})
 - AnonymousSlotExpression({'range': 'IntellectualProperty'})
 - AnonymousSlotExpression({'range': 'Organization'})
 
 </details>
-
 <h2 id="in-subsets">In Subsets</h2>
 <ul>
 <li><a href="../GistCore/">GistCore</a></li>
@@ -594,8 +592,8 @@ Value must satisfy at least one of:
 </table>
 <h2 id="comments">Comments</h2>
 <ul>
-<li>People, organizations, monetary amounts, equipment can all be assigned.</li>
 <li>While typically this predicate will be used with assignment subjects, there may be other use cases, and therefore a domain is not specified.</li>
+<li>People, organizations, monetary amounts, equipment can all be assigned.</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -613,22 +611,24 @@ Value must satisfy at least one of:
 <tbody>
 <tr>
 <td>self</td>
-<td>gist_upstream:isAssignmentOf</td>
+<td>gist:isAssignmentOf</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist:is_assignment_of</td>
+<td>gist_linkml:is_assignment_of</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">is_assignment_of</span>
+<span class="nt">implements</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:ObjectProperty</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Relates an assignment to the resource it assigns.</span>
 <span class="nt">comments</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">People, organizations, monetary amounts, equipment can all be assigned.</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">While typically this predicate will be used with assignment subjects, there may</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">be other use cases, and therefore a domain is not specified.</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">People, organizations, monetary amounts, equipment can all be assigned.</span>
 <span class="nt">examples</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Assignment of a person to a project.</span>
 <span class="nt">in_subset</span><span class="p">:</span>
@@ -637,23 +637,26 @@ Value must satisfy at least one of:
 <span class="nt">aliases</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">is assignment of</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:isAssignmentOf</span>
-<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">is_assignment_of</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:isAssignmentOf</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">any_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Equipment</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Person</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Equipment</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IntellectualProperty</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Organization</span>
 </code></pre></div>
 </details>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

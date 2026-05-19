@@ -520,10 +520,9 @@
 
 <h1 id="slot-exponent_of_number">Slot: exponent_of_number</h1>
 <p><em>The exponent of number in a product of powers of base units.</em></p>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/exponentOfNumber">gist_upstream:exponentOfNumber</a>
-Alias: exponent_of_number</p>
+<div>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/exponentOfNumber">gist:exponentOfNumber</a></p>
 <!-- no inheritance hierarchy -->
-
 <h2 id="properties">Properties</h2>
 <h3 id="type-and-range">Type and Range</h3>
 <table>
@@ -536,7 +535,7 @@ Alias: exponent_of_number</p>
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../UnitGroup/">UnitGroup</a>&nbsp;or&nbsp;<br /><a href="../Decimal/">Decimal</a>&nbsp;or&nbsp;<br /><a href="../UnitOfMeasure/">UnitOfMeasure</a></td>
+<td><a href="../Decimal/">Decimal</a>&nbsp;or&nbsp;<br /><a href="../UnitGroup/">UnitGroup</a>&nbsp;or&nbsp;<br /><a href="../UnitOfMeasure/">UnitOfMeasure</a></td>
 </tr>
 <tr>
 <td>Domain</td>
@@ -544,7 +543,7 @@ Alias: exponent_of_number</p>
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/exponentOfNumber">gist_upstream:exponentOfNumber</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/exponentOfNumber">gist:exponentOfNumber</a></td>
 </tr>
 </tbody>
 </table>
@@ -564,7 +563,7 @@ Alias: exponent_of_number</p>
 </tbody>
 </table>
 <details>
-<summary>Expressions & Logic</summary>
+<summary>Expressions &amp; Logic</summary>
 #### Any Of
 
 Value must satisfy at least one of:
@@ -572,7 +571,6 @@ Value must satisfy at least one of:
 - AnonymousSlotExpression({'range': 'UnitOfMeasure'})
 
 </details>
-
 <h2 id="in-subsets">In Subsets</h2>
 <ul>
 <li><a href="../GistCore/">GistCore</a></li>
@@ -621,17 +619,19 @@ Value must satisfy at least one of:
 <tbody>
 <tr>
 <td>self</td>
-<td>gist_upstream:exponentOfNumber</td>
+<td>gist:exponentOfNumber</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist:exponent_of_number</td>
+<td>gist_linkml:exponent_of_number</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exponent_of_number</span>
+<span class="nt">implements</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:DatatypeProperty</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The exponent of number in a product of powers of base units.</span>
 <span class="nt">comments</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Use when the unit of measure involves a count or other number.</span>
@@ -648,20 +648,23 @@ Value must satisfy at least one of:
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exponent of number</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UnitGroup</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:exponentOfNumber</span>
-<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exponent_of_number</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:exponentOfNumber</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">decimal</span>
 <span class="nt">any_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UnitGroup</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UnitOfMeasure</span>
 </code></pre></div>
 </details>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

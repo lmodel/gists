@@ -482,6 +482,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#schema-source" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -542,8 +553,8 @@
 
 <h1 id="slot-unique_text">Slot: unique_text</h1>
 <p><em>The unique string value of some content object, to be used when there is no possibility of having more than one value.</em></p>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/uniqueText">gist_upstream:uniqueText</a>
-Alias: unique_text</p>
+<div>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/uniqueText">gist:uniqueText</a></p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../contained_text/">contained_text</a><ul>
@@ -567,7 +578,7 @@ Alias: unique_text</p>
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/uniqueText">gist_upstream:uniqueText</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/uniqueText">gist:uniqueText</a></td>
 </tr>
 </tbody>
 </table>
@@ -581,8 +592,8 @@ Alias: unique_text</p>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
+<td>Maximum Cardinality</td>
+<td>1</td>
 </tr>
 </tbody>
 </table>
@@ -613,9 +624,24 @@ Alias: unique_text</p>
 </ul>
 <h2 id="notes">Notes</h2>
 <ul>
-<li>OWL FunctionalProperty (at most one value)</li>
+<li>OWL FunctionalProperty (at most one value per subject)</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="annotations">Annotations</h3>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>owl_functional</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: <a href="https://w3id.org/lmodel/gist">https://w3id.org/lmodel/gist</a></li>
@@ -631,21 +657,27 @@ Alias: unique_text</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>gist_upstream:uniqueText</td>
+<td>gist:uniqueText</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist:unique_text</td>
+<td>gist_linkml:unique_text</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unique_text</span>
+<span class="nt">implements</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:DatatypeProperty</span>
+<span class="nt">annotations</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">owl_functional</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl_functional</span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The unique string value of some content object, to be used when there</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">is no possibility of having more than one value.</span>
 <span class="nt">notes</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OWL FunctionalProperty (at most one value)</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OWL FunctionalProperty (at most one value per subject)</span>
 <span class="nt">comments</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Note</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">uniqueness</span><span class="nv"> </span><span class="s">only</span><span class="nv"> </span><span class="s">goes</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">one</span><span class="nv"> </span><span class="s">direction:</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">product</span><span class="nv"> </span><span class="s">catalog</span><span class="nv"> </span><span class="s">number</span><span class="nv"> </span><span class="s">might</span>
 <span class="w">  </span><span class="s">also</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">employee</span><span class="nv"> </span><span class="s">ID.&#39;</span>
@@ -658,17 +690,21 @@ Alias: unique_text</p>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unique text</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">contained_text</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:uniqueText</span>
-<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unique_text</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:uniqueText</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="nt">maximum_cardinality</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 </code></pre></div>
 </details>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

@@ -498,10 +498,9 @@
 
 <h1 id="slot-refers_to">Slot: refers_to</h1>
 <p><em>Relates something to another resource that it points to, indicates, or references.</em></p>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/refersTo">gist_upstream:refersTo</a>
-Alias: refers_to</p>
+<div>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/refersTo">gist:refersTo</a></p>
 <!-- no inheritance hierarchy -->
-
 <h2 id="properties">Properties</h2>
 <h3 id="type-and-range">Type and Range</h3>
 <table>
@@ -518,7 +517,7 @@ Alias: refers_to</p>
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/refersTo">gist_upstream:refersTo</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/refersTo">gist:refersTo</a></td>
 </tr>
 </tbody>
 </table>
@@ -561,17 +560,19 @@ Alias: refers_to</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>gist_upstream:refersTo</td>
+<td>gist:refersTo</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist:refers_to</td>
+<td>gist_linkml:refers_to</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">refers_to</span>
+<span class="nt">implements</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:ObjectProperty</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Relates something to another resource that it points to, indicates, or</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">references.</span>
 <span class="nt">in_subset</span><span class="p">:</span>
@@ -580,18 +581,21 @@ Alias: refers_to</p>
 <span class="nt">aliases</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">refers to</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:refersTo</span>
-<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">refers_to</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:refersTo</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 
