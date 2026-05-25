@@ -448,17 +448,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        See Also
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -480,17 +469,6 @@
   
     <nav class="md-nav" aria-label="Identifier and Mapping Information">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Annotations
-      
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#schema-source" class="md-nav__link">
@@ -553,9 +531,10 @@
 
 <h1 id="slot-conversion_factor">Slot: conversion_factor</h1>
 <p><em>A value that relates a unit of measure to units of the International System of Units.</em></p>
-<div>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/conversionFactor">gist:conversionFactor</a></p>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/conversionFactor">gist_upstream:conversionFactor</a>
+Alias: conversion_factor</p>
 <!-- no inheritance hierarchy -->
+
 <h2 id="properties">Properties</h2>
 <h3 id="type-and-range">Type and Range</h3>
 <table>
@@ -576,7 +555,7 @@
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/conversionFactor">gist:conversionFactor</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/conversionFactor">gist_upstream:conversionFactor</a></td>
 </tr>
 </tbody>
 </table>
@@ -590,8 +569,8 @@
 </thead>
 <tbody>
 <tr>
-<td>Maximum Cardinality</td>
-<td>1</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -630,30 +609,11 @@ so
 </code></pre>
 </li>
 </ul>
-<h2 id="see-also">See Also</h2>
-<ul>
-<li><a href="https://w3id.org/semanticarts/ns/ontology/gist/conversionOffset">gist:conversionOffset</a></li>
-</ul>
 <h2 id="notes">Notes</h2>
 <ul>
-<li>OWL FunctionalProperty (at most one value per subject)</li>
+<li>OWL FunctionalProperty (at most one value)</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="annotations">Annotations</h3>
-<table>
-<thead>
-<tr>
-<th>property</th>
-<th>value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>owl_functional</td>
-<td>True</td>
-</tr>
-</tbody>
-</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: <a href="https://w3id.org/lmodel/gist">https://w3id.org/lmodel/gist</a></li>
@@ -669,27 +629,21 @@ so
 <tbody>
 <tr>
 <td>self</td>
-<td>gist:conversionFactor</td>
+<td>gist_upstream:conversionFactor</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist_linkml:conversion_factor</td>
+<td>gist:conversion_factor</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conversion_factor</span>
-<span class="nt">implements</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:DatatypeProperty</span>
-<span class="nt">annotations</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">owl_functional</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl_functional</span>
-<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A value that relates a unit of measure to units of the International</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">System of Units.</span>
 <span class="nt">notes</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OWL FunctionalProperty (at most one value per subject)</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OWL FunctionalProperty (at most one value)</span>
 <span class="nt">comments</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;To</span><span class="nv"> </span><span class="s">convert</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">numeric</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">one</span><span class="nv"> </span><span class="s">unit</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">measure</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">another,</span><span class="nv"> </span><span class="s">multiply</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">the\</span>
 <span class="w">  </span><span class="s">\ conversion</span><span class="nv"> </span><span class="s">factor</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">first</span><span class="nv"> </span><span class="s">unit</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">then</span><span class="nv"> </span><span class="s">divide</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">conversion</span><span class="nv"> </span><span class="s">factor</span><span class="nv"> </span><span class="s">of\</span>
@@ -702,27 +656,21 @@ so
 <span class="nt">in_subset</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_core</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/lmodel/gist</span>
-<span class="nt">see_also</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:conversionOffset</span>
 <span class="nt">aliases</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conversion factor</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UnitOfMeasure</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:conversionFactor</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:conversionFactor</span>
+<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conversion_factor</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="nt">maximum_cardinality</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 </code></pre></div>
 </details>
-</div>
 
 
 
 
 
 
-
-  
-  
 
 
 

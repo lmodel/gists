@@ -520,9 +520,10 @@
 
 <h1 id="slot-domain_includes">Slot: domain_includes</h1>
 <p><em>Relates a property to a class that the property is expected to be used on.</em></p>
-<div>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/domainIncludes">gist:domainIncludes</a></p>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/domainIncludes">gist_upstream:domainIncludes</a>
+Alias: domain_includes</p>
 <!-- no inheritance hierarchy -->
+
 <h2 id="properties">Properties</h2>
 <h3 id="type-and-range">Type and Range</h3>
 <table>
@@ -539,7 +540,7 @@
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/domainIncludes">gist:domainIncludes</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/domainIncludes">gist_upstream:domainIncludes</a></td>
 </tr>
 </tbody>
 </table>
@@ -581,8 +582,8 @@
 </table>
 <h2 id="comments">Comments</h2>
 <ul>
-<li>This property is used to guide the ontology user; like all annotation properties, it does not play a role in inference.</li>
 <li>There may be multiple domainIncludes assertions on a single property.</li>
+<li>This property is used to guide the ontology user; like all annotation properties, it does not play a role in inference.</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -600,11 +601,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>gist:domainIncludes</td>
+<td>gist_upstream:domainIncludes</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist_linkml:domain_includes</td>
+<td>gist:domain_includes</td>
 </tr>
 <tr>
 <td>related</td>
@@ -615,14 +616,12 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">domain_includes</span>
-<span class="nt">implements</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:AnnotationProperty</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Relates a property to a class that the property is expected to be used</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">on.</span>
 <span class="nt">comments</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">There may be multiple domainIncludes assertions on a single property.</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This property is used to guide the ontology user; like all annotation properties,</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">it does not play a role in inference.</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">There may be multiple domainIncludes assertions on a single property.</span>
 <span class="nt">examples</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The domain of the property gist:containedText includes gist:Tag and gist:Text.</span>
 <span class="nt">in_subset</span><span class="p">:</span>
@@ -633,20 +632,17 @@
 <span class="nt">related_mappings</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://www.w3.org/2004/02/skos/core#scopeNote</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:domainIncludes</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:domainIncludes</span>
+<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">domain_includes</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 </code></pre></div>
 </details>
-</div>
 
 
 
 
 
 
-
-  
-  
 
 
 

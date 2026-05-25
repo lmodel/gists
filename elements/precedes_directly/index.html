@@ -520,8 +520,8 @@
 
 <h1 id="slot-precedes_directly">Slot: precedes_directly</h1>
 <p><em>A generic ordering relation indicating that the subject comes immediately before the object.</em></p>
-<div>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/precedesDirectly">gist:precedesDirectly</a></p>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/precedesDirectly">gist_upstream:precedesDirectly</a>
+Alias: precedes_directly</p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../precedes/">precedes</a><ul>
@@ -545,7 +545,7 @@
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/precedesDirectly">gist:precedesDirectly</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/precedesDirectly">gist_upstream:precedesDirectly</a></td>
 </tr>
 </tbody>
 </table>
@@ -574,8 +574,8 @@
 </ul>
 <h2 id="comments">Comments</h2>
 <ul>
-<li>If two items in an ordered collection share the same position, they both directly precede the following element.</li>
 <li>Typically this predicate would be used asymmetrically and irreflexively, but the ontology does not formalize this.</li>
+<li>If two items in an ordered collection share the same position, they both directly precede the following element.</li>
 <li>It is safest to use this property only when the directness has a semantic correspondence with the world. Only break a direct link by inserting an intermediate item when that change corresponds to a change in the world.</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -594,26 +594,24 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>gist:precedesDirectly</td>
+<td>gist_upstream:precedesDirectly</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist_linkml:precedes_directly</td>
+<td>gist:precedes_directly</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">precedes_directly</span>
-<span class="nt">implements</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:ObjectProperty</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A generic ordering relation indicating that the subject comes immediately</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">before the object.</span>
 <span class="nt">comments</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">If two items in an ordered collection share the same position, they both directly</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">precede the following element.</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Typically this predicate would be used asymmetrically and irreflexively, but the</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">ontology does not formalize this.</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">If two items in an ordered collection share the same position, they both directly</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">precede the following element.</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">It is safest to use this property only when the directness has a semantic correspondence</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">with the world. Only break a direct link by inserting an intermediate item when</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">that change corresponds to a change in the world.</span>
@@ -624,21 +622,18 @@
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">precedes directly</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">precedes</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:precedesDirectly</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:precedesDirectly</span>
+<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">precedes_directly</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>
-</div>
 
 
 
 
 
 
-
-  
-  
 
 
 

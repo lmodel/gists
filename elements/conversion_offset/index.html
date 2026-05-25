@@ -449,17 +449,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Annotations
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#schema-source" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -534,9 +523,10 @@ _</p>
 <p>_
 _</p>
 <p>_       To convert from Kelvin to Fahrenheit, reverse the steps: first divide by the conversion factor and then subtract the offset._</p>
-<div>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/conversionOffset">gist:conversionOffset</a></p>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/conversionOffset">gist_upstream:conversionOffset</a>
+Alias: conversion_offset</p>
 <!-- no inheritance hierarchy -->
+
 <h2 id="properties">Properties</h2>
 <h3 id="type-and-range">Type and Range</h3>
 <table>
@@ -557,7 +547,7 @@ _</p>
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/conversionOffset">gist:conversionOffset</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/conversionOffset">gist_upstream:conversionOffset</a></td>
 </tr>
 </tbody>
 </table>
@@ -571,8 +561,8 @@ _</p>
 </thead>
 <tbody>
 <tr>
-<td>Maximum Cardinality</td>
-<td>1</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -586,24 +576,9 @@ _</p>
 </ul>
 <h2 id="notes">Notes</h2>
 <ul>
-<li>OWL FunctionalProperty (at most one value per subject)</li>
+<li>OWL FunctionalProperty (at most one value)</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="annotations">Annotations</h3>
-<table>
-<thead>
-<tr>
-<th>property</th>
-<th>value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>owl_functional</td>
-<td>True</td>
-</tr>
-</tbody>
-</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: <a href="https://w3id.org/lmodel/gist">https://w3id.org/lmodel/gist</a></li>
@@ -619,23 +594,17 @@ _</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>gist:conversionOffset</td>
+<td>gist_upstream:conversionOffset</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist_linkml:conversion_offset</td>
+<td>gist:conversion_offset</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conversion_offset</span>
-<span class="nt">implements</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:DatatypeProperty</span>
-<span class="nt">annotations</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">owl_functional</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl_functional</span>
-<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;\r\n\t\tA</span><span class="nv"> </span><span class="s">value</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">along</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">conversion</span><span class="nv"> </span><span class="s">factor</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">relate</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">unit\</span>
 <span class="w">  </span><span class="s">\ to</span><span class="nv"> </span><span class="s">its</span><span class="nv"> </span><span class="s">corresponding</span><span class="nv"> </span><span class="s">unit</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">International</span><span class="nv"> </span><span class="s">System</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">Units.</span><span class="nv"> </span><span class="s">In</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">equation\</span>
 <span class="w">  </span><span class="s">\ below,</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">conversion</span><span class="nv"> </span><span class="s">offset</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">459.669607</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">conversion</span><span class="nv"> </span><span class="s">factor</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">5/9.\r\</span>
@@ -644,7 +613,7 @@ _</p>
 <span class="w">  </span><span class="s">\ the</span><span class="nv"> </span><span class="s">conversion</span><span class="nv"> </span><span class="s">factor.\r\n\r\n\t\tTo</span><span class="nv"> </span><span class="s">convert</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">Kelvin</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">Fahrenheit,</span><span class="nv"> </span><span class="s">reverse\</span>
 <span class="w">  </span><span class="s">\ the</span><span class="nv"> </span><span class="s">steps:</span><span class="nv"> </span><span class="s">first</span><span class="nv"> </span><span class="s">divide</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">conversion</span><span class="nv"> </span><span class="s">factor</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">then</span><span class="nv"> </span><span class="s">subtract</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">offset.&quot;</span>
 <span class="nt">notes</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OWL FunctionalProperty (at most one value per subject)</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OWL FunctionalProperty (at most one value)</span>
 <span class="nt">in_subset</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_core</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/lmodel/gist</span>
@@ -652,21 +621,17 @@ _</p>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conversion offset</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UnitOfMeasure</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:conversionOffset</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:conversionOffset</span>
+<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conversion_offset</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">decimal</span>
-<span class="nt">maximum_cardinality</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 </code></pre></div>
 </details>
-</div>
 
 
 
 
 
 
-
-  
-  
 
 
 

@@ -509,9 +509,10 @@
 
 <h1 id="slot-goes_to_place">Slot: goes_to_place</h1>
 <p><em>Relates something to its destination place.</em></p>
-<div>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/goesToPlace">gist:goesToPlace</a></p>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/goesToPlace">gist_upstream:goesToPlace</a>
+Alias: goes_to_place</p>
 <!-- no inheritance hierarchy -->
+
 <h2 id="properties">Properties</h2>
 <h3 id="type-and-range">Type and Range</h3>
 <table>
@@ -524,11 +525,11 @@
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../String/">String</a>&nbsp;or&nbsp;<br /><a href="../Address/">Address</a>&nbsp;or&nbsp;<br /><a href="../GeoLocation/">GeoLocation</a></td>
+<td><a href="../Address/">Address</a>&nbsp;or&nbsp;<br /><a href="../String/">String</a>&nbsp;or&nbsp;<br /><a href="../GeoLocation/">GeoLocation</a></td>
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/goesToPlace">gist:goesToPlace</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/goesToPlace">gist_upstream:goesToPlace</a></td>
 </tr>
 </tbody>
 </table>
@@ -548,7 +549,7 @@
 </tbody>
 </table>
 <details>
-<summary>Expressions &amp; Logic</summary>
+<summary>Expressions & Logic</summary>
 #### Any Of
 
 Value must satisfy at least one of:
@@ -556,6 +557,7 @@ Value must satisfy at least one of:
 - AnonymousSlotExpression({'range': 'GeoLocation'})
 
 </details>
+
 <h2 id="in-subsets">In Subsets</h2>
 <ul>
 <li><a href="../GistCore/">GistCore</a></li>
@@ -593,19 +595,17 @@ Value must satisfy at least one of:
 <tbody>
 <tr>
 <td>self</td>
-<td>gist:goesToPlace</td>
+<td>gist_upstream:goesToPlace</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist_linkml:goes_to_place</td>
+<td>gist:goes_to_place</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">goes_to_place</span>
-<span class="nt">implements</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:ObjectProperty</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Relates something to its destination place.</span>
 <span class="nt">examples</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A letter has an address indicating its destination; a segment of a delivery</span>
@@ -617,7 +617,8 @@ Value must satisfy at least one of:
 <span class="nt">aliases</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">goes to place</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:goesToPlace</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:goesToPlace</span>
+<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">goes_to_place</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">any_of</span><span class="p">:</span>
@@ -625,16 +626,12 @@ Value must satisfy at least one of:
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeoLocation</span>
 </code></pre></div>
 </details>
-</div>
 
 
 
 
 
 
-
-  
-  
 
 
 

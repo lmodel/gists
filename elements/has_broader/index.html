@@ -520,13 +520,13 @@
 
 <h1 id="slot-has_broader">Slot: has_broader</h1>
 <p><em>Relates a thing to another thing with a broader meaning.</em></p>
-<div>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/hasBroader">gist:hasBroader</a></p>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/hasBroader">gist_upstream:hasBroader</a>
+Alias: has_broader</p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><strong>has_broader</strong><ul>
-<li><a href="../has_direct_broader/">has_direct_broader</a></li>
 <li><a href="../has_unique_broader/">has_unique_broader</a></li>
+<li><a href="../has_direct_broader/">has_direct_broader</a></li>
 </ul>
 </li>
 </ul>
@@ -546,7 +546,7 @@
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/hasBroader">gist:hasBroader</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/hasBroader">gist_upstream:hasBroader</a></td>
 </tr>
 </tbody>
 </table>
@@ -573,6 +573,7 @@
 | Transitive | Yes |
 
 </details>
+
 <h2 id="in-subsets">In Subsets</h2>
 <ul>
 <li><a href="../GistCore/">GistCore</a></li>
@@ -610,19 +611,17 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>gist:hasBroader</td>
+<td>gist_upstream:hasBroader</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist_linkml:has_broader</td>
+<td>gist:has_broader</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">has_broader</span>
-<span class="nt">implements</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:ObjectProperty</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Relates a thing to another thing with a broader meaning.</span>
 <span class="nt">examples</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The aspect distance is broader than the aspect height.</span>
@@ -632,22 +631,19 @@
 <span class="nt">aliases</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">has broader</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:hasBroader</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:hasBroader</span>
+<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">has_broader</span>
 <span class="nt">transitive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>
-</div>
 
 
 
 
 
 
-
-  
-  
 
 
 

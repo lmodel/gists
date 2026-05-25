@@ -509,9 +509,10 @@
 
 <h1 id="slot-exponent_of_bit">Slot: exponent_of_bit</h1>
 <p><em>The exponent of bit in a product of powers of base units.</em></p>
-<div>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/exponentOfBit">gist:exponentOfBit</a></p>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/exponentOfBit">gist_upstream:exponentOfBit</a>
+Alias: exponent_of_bit</p>
 <!-- no inheritance hierarchy -->
+
 <h2 id="properties">Properties</h2>
 <h3 id="type-and-range">Type and Range</h3>
 <table>
@@ -524,7 +525,7 @@
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../Decimal/">Decimal</a>&nbsp;or&nbsp;<br /><a href="../UnitGroup/">UnitGroup</a>&nbsp;or&nbsp;<br /><a href="../UnitOfMeasure/">UnitOfMeasure</a></td>
+<td><a href="../Decimal/">Decimal</a>&nbsp;or&nbsp;<br /><a href="../UnitOfMeasure/">UnitOfMeasure</a>&nbsp;or&nbsp;<br /><a href="../UnitGroup/">UnitGroup</a></td>
 </tr>
 <tr>
 <td>Domain</td>
@@ -532,7 +533,7 @@
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/exponentOfBit">gist:exponentOfBit</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/exponentOfBit">gist_upstream:exponentOfBit</a></td>
 </tr>
 </tbody>
 </table>
@@ -552,7 +553,7 @@
 </tbody>
 </table>
 <details>
-<summary>Expressions &amp; Logic</summary>
+<summary>Expressions & Logic</summary>
 #### Any Of
 
 Value must satisfy at least one of:
@@ -560,6 +561,7 @@ Value must satisfy at least one of:
 - AnonymousSlotExpression({'range': 'UnitOfMeasure'})
 
 </details>
+
 <h2 id="in-subsets">In Subsets</h2>
 <ul>
 <li><a href="../GistCore/">GistCore</a></li>
@@ -604,19 +606,17 @@ Value must satisfy at least one of:
 <tbody>
 <tr>
 <td>self</td>
-<td>gist:exponentOfBit</td>
+<td>gist_upstream:exponentOfBit</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist_linkml:exponent_of_bit</td>
+<td>gist:exponent_of_bit</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exponent_of_bit</span>
-<span class="nt">implements</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:DatatypeProperty</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The exponent of bit in a product of powers of base units.</span>
 <span class="nt">examples</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;In</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">equation</span><span class="nv"> </span><span class="s">&#39;1</span><span class="nv"> </span><span class="s">megabit</span><span class="nv"> </span><span class="s">per</span><span class="nv"> </span><span class="s">second</span><span class="nv"> </span><span class="s">=</span><span class="nv"> </span><span class="s">1000000</span><span class="nv"> </span><span class="s">x</span><span class="nv"> </span><span class="s">bit</span><span class="nv"> </span><span class="s">per</span><span class="nv"> </span><span class="s">second&#39;\r\n\r\n\</span>
@@ -631,23 +631,20 @@ Value must satisfy at least one of:
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exponent of bit</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UnitGroup</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:exponentOfBit</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:exponentOfBit</span>
+<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exponent_of_bit</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">decimal</span>
 <span class="nt">any_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UnitGroup</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UnitOfMeasure</span>
 </code></pre></div>
 </details>
-</div>
 
 
 
 
 
 
-
-  
-  
 
 
 

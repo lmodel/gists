@@ -471,17 +471,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Annotations
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#schema-source" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -542,8 +531,8 @@
 
 <h1 id="slot-is_first_member_of">Slot: is_first_member_of</h1>
 <p><em>Relates the first member of an ordered collection to the collection.</em></p>
-<div>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/isFirstMemberOf">gist:isFirstMemberOf</a></p>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/isFirstMemberOf">gist_upstream:isFirstMemberOf</a>
+Alias: is_first_member_of</p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../is_member_of/">is_member_of</a><ul>
@@ -571,7 +560,7 @@
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/isFirstMemberOf">gist:isFirstMemberOf</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/isFirstMemberOf">gist_upstream:isFirstMemberOf</a></td>
 </tr>
 </tbody>
 </table>
@@ -587,10 +576,6 @@
 <tr>
 <td>Multivalued</td>
 <td>Yes</td>
-</tr>
-<tr>
-<td>Maximum Cardinality</td>
-<td>1</td>
 </tr>
 </tbody>
 </table>
@@ -608,24 +593,9 @@
 </ul>
 <h2 id="notes">Notes</h2>
 <ul>
-<li>OWL FunctionalProperty (at most one value per subject)</li>
+<li>OWL FunctionalProperty (at most one value)</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="annotations">Annotations</h3>
-<table>
-<thead>
-<tr>
-<th>property</th>
-<th>value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>owl_functional</td>
-<td>True</td>
-</tr>
-</tbody>
-</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: <a href="https://w3id.org/lmodel/gist">https://w3id.org/lmodel/gist</a></li>
@@ -641,26 +611,20 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>gist:isFirstMemberOf</td>
+<td>gist_upstream:isFirstMemberOf</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist_linkml:is_first_member_of</td>
+<td>gist:is_first_member_of</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">is_first_member_of</span>
-<span class="nt">implements</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:ObjectProperty</span>
-<span class="nt">annotations</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">owl_functional</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl_functional</span>
-<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Relates the first member of an ordered collection to the collection.</span>
 <span class="nt">notes</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OWL FunctionalProperty (at most one value per subject)</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OWL FunctionalProperty (at most one value)</span>
 <span class="nt">comments</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Given the Open World Assumption, the absence of a predecessor does not entail that</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">an ordered member is the first member of an ordered collection. This property is</span>
@@ -674,22 +638,18 @@
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">is_member_of</span>
 <span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OrderedMember</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:isFirstMemberOf</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:isFirstMemberOf</span>
+<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">is_first_member_of</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OrderedCollection</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="nt">maximum_cardinality</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 </code></pre></div>
 </details>
-</div>
 
 
 
 
 
 
-
-  
-  
 
 
 

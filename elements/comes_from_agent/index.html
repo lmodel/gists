@@ -531,8 +531,8 @@
 
 <h1 id="slot-comes_from_agent">Slot: comes_from_agent</h1>
 <p><em>Relates something to the originating agent.</em></p>
-<div>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/comesFromAgent">gist:comesFromAgent</a></p>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/comesFromAgent">gist_upstream:comesFromAgent</a>
+Alias: comes_from_agent</p>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../has_participant/">has_participant</a><ul>
@@ -552,11 +552,11 @@
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../String/">String</a>&nbsp;or&nbsp;<br /><a href="../Organization/">Organization</a>&nbsp;or&nbsp;<br /><a href="../Person/">Person</a></td>
+<td><a href="../Person/">Person</a>&nbsp;or&nbsp;<br /><a href="../String/">String</a>&nbsp;or&nbsp;<br /><a href="../Organization/">Organization</a></td>
 </tr>
 <tr>
 <td>Slot URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/comesFromAgent">gist:comesFromAgent</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/comesFromAgent">gist_upstream:comesFromAgent</a></td>
 </tr>
 </tbody>
 </table>
@@ -576,7 +576,7 @@
 </tbody>
 </table>
 <details>
-<summary>Expressions &amp; Logic</summary>
+<summary>Expressions & Logic</summary>
 #### Any Of
 
 Value must satisfy at least one of:
@@ -584,6 +584,7 @@ Value must satisfy at least one of:
 - AnonymousSlotExpression({'range': 'Person'})
 
 </details>
+
 <h2 id="in-subsets">In Subsets</h2>
 <ul>
 <li><a href="../GistCore/">GistCore</a></li>
@@ -626,19 +627,17 @@ Value must satisfy at least one of:
 <tbody>
 <tr>
 <td>self</td>
-<td>gist:comesFromAgent</td>
+<td>gist_upstream:comesFromAgent</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist_linkml:comes_from_agent</td>
+<td>gist:comes_from_agent</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">comes_from_agent</span>
-<span class="nt">implements</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:ObjectProperty</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Relates something to the originating agent.</span>
 <span class="nt">comments</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This is not the inverse of gist:goesToAgent, as both properties have the message</span>
@@ -658,7 +657,8 @@ Value must satisfy at least one of:
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">comes from agent</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">has_participant</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:comesFromAgent</span>
+<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:comesFromAgent</span>
+<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">comes_from_agent</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">any_of</span><span class="p">:</span>
@@ -666,16 +666,12 @@ Value must satisfy at least one of:
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Person</span>
 </code></pre></div>
 </details>
-</div>
 
 
 
 
 
 
-
-  
-  
 
 
 

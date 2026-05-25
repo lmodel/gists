@@ -332,8 +332,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="class-category">Class: Category</h1>
 <p><em>A concept or label used to categorize other instances without specifying any formal semantics.</em></p>
-<div>
-<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/Category">gist:Category</a></p>
+<p>URI: <a href="https://w3id.org/semanticarts/ns/ontology/gist/Category">gist_upstream:Category</a></p>
 <pre class="mermaid"><code> classDiagram
     class Category
     click Category href "../Category/"
@@ -341,32 +340,32 @@
         click GistThing href "../GistThing/"
 
 
-      Category &lt;|-- Behavior
-        click Behavior href "../Behavior/"
-      Category &lt;|-- EquipmentType
-        click EquipmentType href "../EquipmentType/"
-      Category &lt;|-- PhysicalActionType
-        click PhysicalActionType href "../PhysicalActionType/"
-      Category &lt;|-- DegreeOfCommitment
-        click DegreeOfCommitment href "../DegreeOfCommitment/"
-      Category &lt;|-- GeneralMediaType
-        click GeneralMediaType href "../GeneralMediaType/"
-      Category &lt;|-- Tag
-        click Tag href "../Tag/"
       Category &lt;|-- PhysicalAddressType
         click PhysicalAddressType href "../PhysicalAddressType/"
-      Category &lt;|-- MediaType
-        click MediaType href "../MediaType/"
-      Category &lt;|-- Discipline
-        click Discipline href "../Discipline/"
+      Category &lt;|-- Tag
+        click Tag href "../Tag/"
       Category &lt;|-- Medium
         click Medium href "../Medium/"
-      Category &lt;|-- AddressUsageType
-        click AddressUsageType href "../AddressUsageType/"
-      Category &lt;|-- ProductCategory
-        click ProductCategory href "../ProductCategory/"
+      Category &lt;|-- Discipline
+        click Discipline href "../Discipline/"
+      Category &lt;|-- GeneralMediaType
+        click GeneralMediaType href "../GeneralMediaType/"
+      Category &lt;|-- MediaType
+        click MediaType href "../MediaType/"
+      Category &lt;|-- EquipmentType
+        click EquipmentType href "../EquipmentType/"
       Category &lt;|-- ElectronicAddressType
         click ElectronicAddressType href "../ElectronicAddressType/"
+      Category &lt;|-- AddressUsageType
+        click AddressUsageType href "../AddressUsageType/"
+      Category &lt;|-- Behavior
+        click Behavior href "../Behavior/"
+      Category &lt;|-- DegreeOfCommitment
+        click DegreeOfCommitment href "../DegreeOfCommitment/"
+      Category &lt;|-- PhysicalActionType
+        click PhysicalActionType href "../PhysicalActionType/"
+      Category &lt;|-- ProductCategory
+        click ProductCategory href "../ProductCategory/"
 
 
       Category : description
@@ -377,19 +376,19 @@
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><strong>Category</strong> [ <a href="../GistThing/">GistThing</a>]<ul>
-<li><a href="../Behavior/">Behavior</a></li>
-<li><a href="../EquipmentType/">EquipmentType</a></li>
-<li><a href="../PhysicalActionType/">PhysicalActionType</a></li>
-<li><a href="../DegreeOfCommitment/">DegreeOfCommitment</a></li>
-<li><a href="../GeneralMediaType/">GeneralMediaType</a></li>
-<li><a href="../Tag/">Tag</a></li>
 <li><a href="../PhysicalAddressType/">PhysicalAddressType</a></li>
-<li><a href="../MediaType/">MediaType</a></li>
-<li><a href="../Discipline/">Discipline</a></li>
+<li><a href="../Tag/">Tag</a></li>
 <li><a href="../Medium/">Medium</a></li>
-<li><a href="../AddressUsageType/">AddressUsageType</a></li>
-<li><a href="../ProductCategory/">ProductCategory</a></li>
+<li><a href="../Discipline/">Discipline</a></li>
+<li><a href="../GeneralMediaType/">GeneralMediaType</a></li>
+<li><a href="../MediaType/">MediaType</a></li>
+<li><a href="../EquipmentType/">EquipmentType</a></li>
 <li><a href="../ElectronicAddressType/">ElectronicAddressType</a></li>
+<li><a href="../AddressUsageType/">AddressUsageType</a></li>
+<li><a href="../Behavior/">Behavior</a></li>
+<li><a href="../DegreeOfCommitment/">DegreeOfCommitment</a></li>
+<li><a href="../PhysicalActionType/">PhysicalActionType</a></li>
+<li><a href="../ProductCategory/">ProductCategory</a></li>
 </ul>
 </li>
 </ul>
@@ -404,7 +403,7 @@
 <tbody>
 <tr>
 <td>Class URI</td>
-<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/Category">gist:Category</a></td>
+<td><a href="https://w3id.org/semanticarts/ns/ontology/gist/Category">gist_upstream:Category</a></td>
 </tr>
 <tr>
 <td>Disjoint With</td>
@@ -482,11 +481,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>gist:Category</td>
+<td>gist_upstream:Category</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist_linkml:Category</td>
+<td>gist:Category</td>
 </tr>
 </tbody>
 </table>
@@ -515,7 +514,7 @@
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Category</span>
 <span class="nt">mixins</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GistThing</span>
-<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:Category</span>
+<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:Category</span>
 <span class="nt">disjoint_with</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 </code></pre></div>
@@ -546,8 +545,6 @@
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
-<span class="w">    </span><span class="nt">implements</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:DatatypeProperty</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Relates an individual to (one of) its name(s).</span>
 <span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_core</span>
@@ -555,15 +552,14 @@
 <span class="w">    </span><span class="nt">aliases</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:name</span>
+<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:name</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Category</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GistThing</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">  </span><span class="nt">description</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
-<span class="w">    </span><span class="nt">implements</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:DatatypeProperty</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A statement about someone or something's attributes or characteristics.</span>
 <span class="w">    </span><span class="nt">comments</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This property is used to describe instance data which is not part of the ontology.</span>
@@ -571,29 +567,29 @@
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">for a statement of the meaning of a thing and gist:description to describe a</span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">thing's attributes, characteristics, or features.</span>
 <span class="w">    </span><span class="nt">examples</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">'</span><span class="se">''</span><span class="s">The</span><span class="nv"> </span><span class="s">Empire</span><span class="nv"> </span><span class="s">State</span><span class="nv"> </span><span class="s">Building</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">102-story</span><span class="nv"> </span><span class="s">Art</span><span class="nv"> </span><span class="s">Deco</span><span class="nv"> </span><span class="s">skyscraper</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">midtown</span>
-<span class="w">        </span><span class="s">Manhattan</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">New</span><span class="nv"> </span><span class="s">York</span><span class="nv"> </span><span class="s">City.</span><span class="nv"> </span><span class="s">It</span><span class="nv"> </span><span class="s">was</span><span class="nv"> </span><span class="s">designed</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">Shreve,</span><span class="nv"> </span><span class="s">Lamb</span><span class="nv"> </span><span class="s">&amp;</span><span class="nv"> </span><span class="s">Harmon</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">built</span>
-<span class="w">        </span><span class="s">from</span><span class="nv"> </span><span class="s">1930</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">1931.</span><span class="se">''</span><span class="s">'</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A person does not have a definition, but might be described as being</span>
 <span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">six feet tall with brown hair and blue eyes; an ontology class or taxonomy</span>
 <span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">term has a definition.</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">'</span><span class="se">''</span><span class="s">The</span><span class="nv"> </span><span class="s">Empire</span><span class="nv"> </span><span class="s">State</span><span class="nv"> </span><span class="s">Building</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">102-story</span><span class="nv"> </span><span class="s">Art</span><span class="nv"> </span><span class="s">Deco</span><span class="nv"> </span><span class="s">skyscraper</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">midtown</span>
+<span class="w">        </span><span class="s">Manhattan</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">New</span><span class="nv"> </span><span class="s">York</span><span class="nv"> </span><span class="s">City.</span><span class="nv"> </span><span class="s">It</span><span class="nv"> </span><span class="s">was</span><span class="nv"> </span><span class="s">designed</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">Shreve,</span><span class="nv"> </span><span class="s">Lamb</span><span class="nv"> </span><span class="s">&amp;</span><span class="nv"> </span><span class="s">Harmon</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">built</span>
+<span class="w">        </span><span class="s">from</span><span class="nv"> </span><span class="s">1930</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">1931.</span><span class="se">''</span><span class="s">'</span>
 <span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_core</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/lmodel/gist</span>
 <span class="w">    </span><span class="nt">aliases</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:description</span>
+<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:description</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Category</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GistThing</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:Category</span>
+<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:Category</span>
 <span class="nt">disjoint_with</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Event</span>
 </code></pre></div>
 </details>
-</div>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>

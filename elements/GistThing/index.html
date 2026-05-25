@@ -296,49 +296,48 @@
 <article class="md-content__inner md-typeset">
 <h1 id="class-gistthing">Class: GistThing</h1>
 <p><em>Mixin providing universal slots applicable to any GIST entity. Covers OWL properties with no rdfs:domain (open-world).</em></p>
-<div>
-<p>URI: <a href="https://w3id.org/lmodel/gist/GistThing">gist_linkml:GistThing</a></p>
+<p>URI: <a href="https://w3id.org/lmodel/gist/GistThing">gist:GistThing</a></p>
 <pre class="mermaid"><code> classDiagram
     class GistThing
     click GistThing href "../GistThing/"
-      GistThing &lt;|-- UnitOfMeasure
-        click UnitOfMeasure href "../UnitOfMeasure/"
-      GistThing &lt;|-- TemporalRelation
-        click TemporalRelation href "../TemporalRelation/"
-      GistThing &lt;|-- GeoLocation
-        click GeoLocation href "../GeoLocation/"
-      GistThing &lt;|-- Aspect
-        click Aspect href "../Aspect/"
-      GistThing &lt;|-- Template
-        click Template href "../Template/"
-      GistThing &lt;|-- Content
-        click Content href "../Content/"
-      GistThing &lt;|-- Language
-        click Language href "../Language/"
-      GistThing &lt;|-- TimeInterval
-        click TimeInterval href "../TimeInterval/"
-      GistThing &lt;|-- PhysicalIdentifiableItem
-        click PhysicalIdentifiableItem href "../PhysicalIdentifiableItem/"
-      GistThing &lt;|-- Category
-        click Category href "../Category/"
-      GistThing &lt;|-- SchemaMetaData
-        click SchemaMetaData href "../SchemaMetaData/"
-      GistThing &lt;|-- Event
-        click Event href "../Event/"
-      GistThing &lt;|-- Component
-        click Component href "../Component/"
-      GistThing &lt;|-- Organization
-        click Organization href "../Organization/"
-      GistThing &lt;|-- IntellectualProperty
-        click IntellectualProperty href "../IntellectualProperty/"
       GistThing &lt;|-- Magnitude
         click Magnitude href "../Magnitude/"
-      GistThing &lt;|-- PhysicalSubstance
-        click PhysicalSubstance href "../PhysicalSubstance/"
-      GistThing &lt;|-- Intention
-        click Intention href "../Intention/"
+      GistThing &lt;|-- Event
+        click Event href "../Event/"
+      GistThing &lt;|-- Content
+        click Content href "../Content/"
+      GistThing &lt;|-- Aspect
+        click Aspect href "../Aspect/"
+      GistThing &lt;|-- IntellectualProperty
+        click IntellectualProperty href "../IntellectualProperty/"
       GistThing &lt;|-- Composite
         click Composite href "../Composite/"
+      GistThing &lt;|-- GeoLocation
+        click GeoLocation href "../GeoLocation/"
+      GistThing &lt;|-- TimeInterval
+        click TimeInterval href "../TimeInterval/"
+      GistThing &lt;|-- Component
+        click Component href "../Component/"
+      GistThing &lt;|-- PhysicalIdentifiableItem
+        click PhysicalIdentifiableItem href "../PhysicalIdentifiableItem/"
+      GistThing &lt;|-- SchemaMetaData
+        click SchemaMetaData href "../SchemaMetaData/"
+      GistThing &lt;|-- TemporalRelation
+        click TemporalRelation href "../TemporalRelation/"
+      GistThing &lt;|-- Language
+        click Language href "../Language/"
+      GistThing &lt;|-- UnitOfMeasure
+        click UnitOfMeasure href "../UnitOfMeasure/"
+      GistThing &lt;|-- Template
+        click Template href "../Template/"
+      GistThing &lt;|-- Intention
+        click Intention href "../Intention/"
+      GistThing &lt;|-- Category
+        click Category href "../Category/"
+      GistThing &lt;|-- Organization
+        click Organization href "../Organization/"
+      GistThing &lt;|-- PhysicalSubstance
+        click PhysicalSubstance href "../PhysicalSubstance/"
 
       GistThing : description
 
@@ -396,80 +395,80 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../UnitOfMeasure/">UnitOfMeasure</a></td>
-<td>A standard amount used to measure or specify things</td>
-</tr>
-<tr>
-<td><a href="../TemporalRelation/">TemporalRelation</a></td>
-<td>A relationship existing for a period of time</td>
-</tr>
-<tr>
-<td><a href="../GeoLocation/">GeoLocation</a></td>
-<td>A physical location, with the earth as a frame of reference</td>
-</tr>
-<tr>
-<td><a href="../Aspect/">Aspect</a></td>
-<td>A measurable characteristic</td>
-</tr>
-<tr>
-<td><a href="../Template/">Template</a></td>
-<td>Something used to make objects in its own image</td>
-</tr>
-<tr>
-<td><a href="../Content/">Content</a></td>
-<td>Information available in some medium</td>
-</tr>
-<tr>
-<td><a href="../Language/">Language</a></td>
-<td>A recognized, organized set of symbols and grammar</td>
-</tr>
-<tr>
-<td><a href="../TimeInterval/">TimeInterval</a></td>
-<td>A span of time with a known start time, end time, and duration</td>
-</tr>
-<tr>
-<td><a href="../PhysicalIdentifiableItem/">PhysicalIdentifiableItem</a></td>
-<td>A discrete physical object which, if subdivided, will result in parts that ar...</td>
-</tr>
-<tr>
-<td><a href="../Category/">Category</a></td>
-<td>A concept or label used to categorize other instances without specifying any ...</td>
-</tr>
-<tr>
-<td><a href="../SchemaMetaData/">SchemaMetaData</a></td>
-<td>Superclass for all types of metadata</td>
+<td><a href="../Magnitude/">Magnitude</a></td>
+<td>The amount of a measurable characteristic (aspect)</td>
 </tr>
 <tr>
 <td><a href="../Event/">Event</a></td>
 <td>Something that occurs over a period of time, often characterized as an activi...</td>
 </tr>
 <tr>
-<td><a href="../Component/">Component</a></td>
-<td>Something that, while having an independent existence, is inherently part of ...</td>
+<td><a href="../Content/">Content</a></td>
+<td>Information available in some medium</td>
 </tr>
 <tr>
-<td><a href="../Organization/">Organization</a></td>
-<td>A structured entity formed to achieve specific goals, typically involving mem...</td>
+<td><a href="../Aspect/">Aspect</a></td>
+<td>A measurable characteristic</td>
 </tr>
 <tr>
 <td><a href="../IntellectualProperty/">IntellectualProperty</a></td>
 <td>An intangible work, invention, or concept, independent of its being expressed...</td>
 </tr>
 <tr>
-<td><a href="../Magnitude/">Magnitude</a></td>
-<td>The amount of a measurable characteristic (aspect)</td>
+<td><a href="../Composite/">Composite</a></td>
+<td>Something which is made up of various parts or elements that are independentl...</td>
 </tr>
 <tr>
-<td><a href="../PhysicalSubstance/">PhysicalSubstance</a></td>
-<td>An undifferentiated amount of physical material which, when subdivided, resul...</td>
+<td><a href="../GeoLocation/">GeoLocation</a></td>
+<td>A physical location, with the earth as a frame of reference</td>
+</tr>
+<tr>
+<td><a href="../TimeInterval/">TimeInterval</a></td>
+<td>A span of time with a known start time, end time, and duration</td>
+</tr>
+<tr>
+<td><a href="../Component/">Component</a></td>
+<td>Something that, while having an independent existence, is inherently part of ...</td>
+</tr>
+<tr>
+<td><a href="../PhysicalIdentifiableItem/">PhysicalIdentifiableItem</a></td>
+<td>A discrete physical object which, if subdivided, will result in parts that ar...</td>
+</tr>
+<tr>
+<td><a href="../SchemaMetaData/">SchemaMetaData</a></td>
+<td>Superclass for all types of metadata</td>
+</tr>
+<tr>
+<td><a href="../TemporalRelation/">TemporalRelation</a></td>
+<td>A relationship existing for a period of time</td>
+</tr>
+<tr>
+<td><a href="../Language/">Language</a></td>
+<td>A recognized, organized set of symbols and grammar</td>
+</tr>
+<tr>
+<td><a href="../UnitOfMeasure/">UnitOfMeasure</a></td>
+<td>A standard amount used to measure or specify things</td>
+</tr>
+<tr>
+<td><a href="../Template/">Template</a></td>
+<td>Something used to make objects in its own image</td>
 </tr>
 <tr>
 <td><a href="../Intention/">Intention</a></td>
 <td>A goal, desire, or aspiration</td>
 </tr>
 <tr>
-<td><a href="../Composite/">Composite</a></td>
-<td>Something which is made up of various parts or elements that are independentl...</td>
+<td><a href="../Category/">Category</a></td>
+<td>A concept or label used to categorize other instances without specifying any ...</td>
+</tr>
+<tr>
+<td><a href="../Organization/">Organization</a></td>
+<td>A structured entity formed to achieve specific goals, typically involving mem...</td>
+</tr>
+<tr>
+<td><a href="../PhysicalSubstance/">PhysicalSubstance</a></td>
+<td>An undifferentiated amount of physical material which, when subdivided, resul...</td>
 </tr>
 </tbody>
 </table>
@@ -493,11 +492,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>gist_linkml:GistThing</td>
+<td>gist:GistThing</td>
 </tr>
 <tr>
 <td>native</td>
-<td>gist_linkml:GistThing</td>
+<td>gist:GistThing</td>
 </tr>
 </tbody>
 </table>
@@ -529,8 +528,6 @@
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
-<span class="w">    </span><span class="nt">implements</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:DatatypeProperty</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Relates an individual to (one of) its name(s).</span>
 <span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_core</span>
@@ -538,15 +535,14 @@
 <span class="w">    </span><span class="nt">aliases</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:name</span>
+<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:name</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GistThing</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GistThing</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">  </span><span class="nt">description</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
-<span class="w">    </span><span class="nt">implements</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owl:DatatypeProperty</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A statement about someone or something's attributes or characteristics.</span>
 <span class="w">    </span><span class="nt">comments</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This property is used to describe instance data which is not part of the ontology.</span>
@@ -554,26 +550,26 @@
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">for a statement of the meaning of a thing and gist:description to describe a</span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">thing's attributes, characteristics, or features.</span>
 <span class="w">    </span><span class="nt">examples</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">'</span><span class="se">''</span><span class="s">The</span><span class="nv"> </span><span class="s">Empire</span><span class="nv"> </span><span class="s">State</span><span class="nv"> </span><span class="s">Building</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">102-story</span><span class="nv"> </span><span class="s">Art</span><span class="nv"> </span><span class="s">Deco</span><span class="nv"> </span><span class="s">skyscraper</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">midtown</span>
-<span class="w">        </span><span class="s">Manhattan</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">New</span><span class="nv"> </span><span class="s">York</span><span class="nv"> </span><span class="s">City.</span><span class="nv"> </span><span class="s">It</span><span class="nv"> </span><span class="s">was</span><span class="nv"> </span><span class="s">designed</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">Shreve,</span><span class="nv"> </span><span class="s">Lamb</span><span class="nv"> </span><span class="s">&amp;</span><span class="nv"> </span><span class="s">Harmon</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">built</span>
-<span class="w">        </span><span class="s">from</span><span class="nv"> </span><span class="s">1930</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">1931.</span><span class="se">''</span><span class="s">'</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A person does not have a definition, but might be described as being</span>
 <span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">six feet tall with brown hair and blue eyes; an ontology class or taxonomy</span>
 <span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">term has a definition.</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">'</span><span class="se">''</span><span class="s">The</span><span class="nv"> </span><span class="s">Empire</span><span class="nv"> </span><span class="s">State</span><span class="nv"> </span><span class="s">Building</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">102-story</span><span class="nv"> </span><span class="s">Art</span><span class="nv"> </span><span class="s">Deco</span><span class="nv"> </span><span class="s">skyscraper</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">midtown</span>
+<span class="w">        </span><span class="s">Manhattan</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">New</span><span class="nv"> </span><span class="s">York</span><span class="nv"> </span><span class="s">City.</span><span class="nv"> </span><span class="s">It</span><span class="nv"> </span><span class="s">was</span><span class="nv"> </span><span class="s">designed</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">Shreve,</span><span class="nv"> </span><span class="s">Lamb</span><span class="nv"> </span><span class="s">&amp;</span><span class="nv"> </span><span class="s">Harmon</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">built</span>
+<span class="w">        </span><span class="s">from</span><span class="nv"> </span><span class="s">1930</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">1931.</span><span class="se">''</span><span class="s">'</span>
 <span class="w">    </span><span class="nt">in_subset</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_core</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/lmodel/gist</span>
 <span class="w">    </span><span class="nt">aliases</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist:description</span>
+<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gist_upstream:description</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GistThing</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GistThing</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 </code></pre></div>
 </details>
-</div>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
