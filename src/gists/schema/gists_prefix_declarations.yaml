@@ -1,5 +1,5 @@
-id: https://w3id.org/lmodel/gist/prefix-declarations
-name: gist_prefix_declarations
+id: https://w3id.org/lmodel/gists/prefix-declarations
+name: gists_prefix_declarations
 title: gist Prefix Declarations
 description: |-
   SHACL prefix declarations from gist 14.1.0. Defines namespace-to-prefix bindings used by the gist ontology.
@@ -10,8 +10,8 @@ source: https://w3id.org/semanticarts/ontology/gistPrefixDeclarations
 version: 14.1.0
 
 prefixes:
-  gist: https://w3id.org/lmodel/gist/
-  gist_upstream: https://w3id.org/semanticarts/ns/ontology/gist/
+  gists: https://w3id.org/lmodel/gists/
+  gist: https://w3id.org/semanticarts/ns/ontology/gist/
   gistd: https://w3id.org/semanticarts/ns/data/gist/
   linkml: https://w3id.org/linkml/
   schema: http://schema.org/
@@ -23,7 +23,7 @@ prefixes:
   owl: http://www.w3.org/2002/07/owl#
   sh: http://www.w3.org/ns/shacl#
 
-default_prefix: gist
+default_prefix: gists
 default_range: string
 
 imports:
@@ -31,7 +31,7 @@ imports:
 
 subsets:
 
-  gist_prefix_declarations:
+  gists_prefix_declarations:
     description: SHACL prefix declaration instances from the gist Prefix Declarations module.
 
 enums:
@@ -39,33 +39,33 @@ enums:
   PrefixDeclarationInstance:
     description: Named SHACL prefix declarations from the gist ontology.
     in_subset:
-    - gist_prefix_declarations
+    - gists_prefix_declarations
     permissible_values:
       PREFIXDECLARATION_GIST:
         title: gist
         description: Prefix 'gist' for namespace <https://w3id.org/semanticarts/ns/ontology/gist/>.
-        meaning: gist_upstream:_PrefixDeclaration_gist
+        meaning: gist:_PrefixDeclaration_gist
       PREFIXDECLARATION_OWL:
         title: owl
         description: Prefix 'owl' for namespace <http://www.w3.org/2002/07/owl#>.
-        meaning: gist_upstream:_PrefixDeclaration_owl
+        meaning: gist:_PrefixDeclaration_owl
       PREFIXDECLARATION_RDF:
         title: rdf
         description: Prefix 'rdf' for namespace <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-        meaning: gist_upstream:_PrefixDeclaration_rdf
+        meaning: gist:_PrefixDeclaration_rdf
       PREFIXDECLARATION_RDFS:
         title: rdfs
         description: Prefix 'rdfs' for namespace <http://www.w3.org/2000/01/rdf-schema#>.
-        meaning: gist_upstream:_PrefixDeclaration_rdfs
+        meaning: gist:_PrefixDeclaration_rdfs
       PREFIXDECLARATION_SH:
         title: sh
         description: Prefix 'sh' for namespace <http://www.w3.org/ns/shacl#>.
-        meaning: gist_upstream:_PrefixDeclaration_sh
+        meaning: gist:_PrefixDeclaration_sh
       PREFIXDECLARATION_SKOS:
         title: skos
         description: Prefix 'skos' for namespace <http://www.w3.org/2004/02/skos/core#>.
-        meaning: gist_upstream:_PrefixDeclaration_skos
+        meaning: gist:_PrefixDeclaration_skos
       PREFIXDECLARATION_XSD:
         title: xsd
         description: Prefix 'xsd' for namespace <http://www.w3.org/2001/XMLSchema#>.
-        meaning: gist_upstream:_PrefixDeclaration_xsd
+        meaning: gist:_PrefixDeclaration_xsd

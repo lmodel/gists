@@ -1,0 +1,740 @@
+{
+   "@context": {
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "common_domain_model": "https://w3id.org/lmodel/common_domain_model/",
+      "dpvs": "https://w3id.org/lmodel/dpvs/",
+      "gist": "https://w3id.org/semanticarts/ns/ontology/gist/",
+      "gistd": "https://w3id.org/semanticarts/ns/data/gist/",
+      "gists": "https://w3id.org/lmodel/gists/",
+      "iso22989": "https://w3id.org/lmodel/iso22989/",
+      "linkml": "https://w3id.org/linkml/",
+      "media_app": "https://www.iana.org/assignments/media-types/application/",
+      "media_img": "https://www.iana.org/assignments/media-types/image/",
+      "media_txt": "https://www.iana.org/assignments/media-types/text/",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "@vocab": "https://w3id.org/lmodel/gists/",
+      "actual_end_date": {
+         "@type": "xsd:dateTime",
+         "@id": "gist:actualEndDate"
+      },
+      "actual_end_date_time": {
+         "@type": "xsd:dateTime",
+         "@id": "gist:actualEndDateTime"
+      },
+      "actual_end_microsecond": {
+         "@type": "xsd:dateTime",
+         "@id": "gist:actualEndMicrosecond"
+      },
+      "actual_end_minute": {
+         "@type": "xsd:dateTime",
+         "@id": "gist:actualEndMinute"
+      },
+      "actual_end_year": {
+         "@type": "xsd:dateTime",
+         "@id": "gist:actualEndYear"
+      },
+      "actual_start_date": {
+         "@type": "xsd:dateTime",
+         "@id": "gist:actualStartDate"
+      },
+      "actual_start_date_time": {
+         "@type": "xsd:dateTime",
+         "@id": "gist:actualStartDateTime"
+      },
+      "actual_start_microsecond": {
+         "@type": "xsd:dateTime",
+         "@id": "gist:actualStartMicrosecond"
+      },
+      "actual_start_minute": {
+         "@type": "xsd:dateTime",
+         "@id": "gist:actualStartMinute"
+      },
+      "actual_start_year": {
+         "@type": "xsd:dateTime",
+         "@id": "gist:actualStartYear"
+      },
+      "allows": {
+         "@id": "gist:allows"
+      },
+      "at_date_time": {
+         "@type": "xsd:dateTime",
+         "@id": "gist:atDateTime"
+      },
+      "birth_date": {
+         "@type": "xsd:dateTime",
+         "@id": "gist:birthDate"
+      },
+      "comes_from_agent": {
+         "@type": "@id",
+         "@id": "gist:comesFromAgent"
+      },
+      "comes_from_place": {
+         "@type": "@id",
+         "@id": "gist:comesFromPlace"
+      },
+      "conforms_to": {
+         "@type": "@id",
+         "@id": "gist:conformsTo"
+      },
+      "contained_text": {
+         "@id": "gist:containedText"
+      },
+      "contributes_to": {
+         "@id": "gist:contributesTo"
+      },
+      "conversion_factor": {
+         "@id": "gist:conversionFactor"
+      },
+      "conversion_offset": {
+         "@type": "xsd:decimal",
+         "@id": "gist:conversionOffset"
+      },
+      "death_date": {
+         "@type": "xsd:dateTime",
+         "@id": "gist:deathDate"
+      },
+      "description": {
+         "@id": "gist:description"
+      },
+      "domain_includes": {
+         "@id": "gist:domainIncludes"
+      },
+      "encrypted_text": {
+         "@id": "gist:encryptedText"
+      },
+      "end_date_time": {
+         "@type": "xsd:dateTime",
+         "@id": "gist:endDateTime"
+      },
+      "exponent_of_ampere": {
+         "@type": "@id",
+         "@id": "gist:exponentOfAmpere"
+      },
+      "exponent_of_bit": {
+         "@type": "@id",
+         "@id": "gist:exponentOfBit"
+      },
+      "exponent_of_candela": {
+         "@type": "@id",
+         "@id": "gist:exponentOfCandela"
+      },
+      "exponent_of_kelvin": {
+         "@type": "@id",
+         "@id": "gist:exponentOfKelvin"
+      },
+      "exponent_of_kilogram": {
+         "@type": "@id",
+         "@id": "gist:exponentOfKilogram"
+      },
+      "exponent_of_meter": {
+         "@type": "@id",
+         "@id": "gist:exponentOfMeter"
+      },
+      "exponent_of_mole": {
+         "@type": "@id",
+         "@id": "gist:exponentOfMole"
+      },
+      "exponent_of_number": {
+         "@type": "@id",
+         "@id": "gist:exponentOfNumber"
+      },
+      "exponent_of_other": {
+         "@type": "@id",
+         "@id": "gist:exponentOfOther"
+      },
+      "exponent_of_radian": {
+         "@type": "@id",
+         "@id": "gist:exponentOfRadian"
+      },
+      "exponent_of_second": {
+         "@type": "@id",
+         "@id": "gist:exponentOfSecond"
+      },
+      "exponent_of_steradian": {
+         "@type": "@id",
+         "@id": "gist:exponentOfSteradian"
+      },
+      "exponent_of_us_dollar": {
+         "@type": "@id",
+         "@id": "gist:exponentOfUSDollar"
+      },
+      "goes_to_agent": {
+         "@type": "@id",
+         "@id": "gist:goesToAgent"
+      },
+      "goes_to_place": {
+         "@type": "@id",
+         "@id": "gist:goesToPlace"
+      },
+      "has_accuracy": {
+         "@type": "@id",
+         "@id": "gist:hasAccuracy"
+      },
+      "has_addend": {
+         "@id": "gist:hasAddend"
+      },
+      "has_address": {
+         "@type": "@id",
+         "@id": "gist:hasAddress"
+      },
+      "has_aspect": {
+         "@type": "@id",
+         "@id": "gist:hasAspect"
+      },
+      "has_biological_parent": {
+         "@type": "@id",
+         "@id": "gist:hasBiologicalParent"
+      },
+      "has_broader": {
+         "@id": "gist:hasBroader"
+      },
+      "has_direct_broader": {
+         "@id": "gist:hasDirectBroader"
+      },
+      "has_divisor": {
+         "@id": "gist:hasDivisor"
+      },
+      "has_giver": {
+         "@id": "gist:hasGiver"
+      },
+      "has_goal": {
+         "@id": "gist:hasGoal"
+      },
+      "has_incumbent": {
+         "@id": "gist:hasIncumbent"
+      },
+      "has_magnitude": {
+         "@type": "@id",
+         "@id": "gist:hasMagnitude"
+      },
+      "has_multiplier": {
+         "@id": "gist:hasMultiplier"
+      },
+      "has_navigational_parent": {
+         "@id": "gist:hasNavigationalParent"
+      },
+      "has_participant": {
+         "@id": "gist:hasParticipant"
+      },
+      "has_party": {
+         "@type": "@id",
+         "@id": "gist:hasParty"
+      },
+      "has_physical_location": {
+         "@type": "@id",
+         "@id": "gist:hasPhysicalLocation"
+      },
+      "has_recipient": {
+         "@id": "gist:hasRecipient"
+      },
+      "has_subtrahend": {
+         "@id": "gist:hasSubtrahend"
+      },
+      "has_unique_broader": {
+         "@id": "gist:hasUniqueBroader"
+      },
+      "has_unique_navigational_parent": {
+         "@id": "gist:hasUniqueNavigationalParent"
+      },
+      "has_unit_group": {
+         "@type": "@id",
+         "@id": "gist:hasUnitGroup"
+      },
+      "has_unit_of_measure": {
+         "@type": "@id",
+         "@id": "gist:hasUnitOfMeasure"
+      },
+      "id_text": {
+         "@id": "gist:idText"
+      },
+      "is_about": {
+         "@id": "gist:isAbout"
+      },
+      "is_affected_by": {
+         "@id": "gist:isAffectedBy"
+      },
+      "is_allocated_by": {
+         "@type": "@id",
+         "@id": "gist:isAllocatedBy"
+      },
+      "is_assignment_of": {
+         "@type": "@id",
+         "@id": "gist:isAssignmentOf"
+      },
+      "is_assignment_to": {
+         "@id": "gist:isAssignmentTo"
+      },
+      "is_based_on": {
+         "@id": "gist:isBasedOn"
+      },
+      "is_categorized_by": {
+         "@type": "@id",
+         "@id": "gist:isCategorizedBy"
+      },
+      "is_connected_to": {
+         "@id": "gist:isConnectedTo"
+      },
+      "is_direct_part_of": {
+         "@id": "gist:isDirectPartOf"
+      },
+      "is_expressed_in": {
+         "@type": "@id",
+         "@id": "gist:isExpressedIn"
+      },
+      "is_first_member_of": {
+         "@type": "@id",
+         "@id": "gist:isFirstMemberOf"
+      },
+      "is_geo_contained_in": {
+         "@type": "@id",
+         "@id": "gist:isGeoContainedIn"
+      },
+      "is_governed_by": {
+         "@id": "gist:isGovernedBy"
+      },
+      "is_identified_by": {
+         "@type": "@id",
+         "@id": "gist:isIdentifiedBy"
+      },
+      "is_made_up_of": {
+         "@type": "@id",
+         "@id": "gist:isMadeUpOf"
+      },
+      "is_member_of": {
+         "@type": "@id",
+         "@id": "gist:isMemberOf"
+      },
+      "is_part_of": {
+         "@id": "gist:isPartOf"
+      },
+      "is_produced_by": {
+         "@id": "gist:isProducedBy"
+      },
+      "is_recognized_by": {
+         "@type": "@id",
+         "@id": "gist:isRecognizedBy"
+      },
+      "is_recorded_at": {
+         "@type": "xsd:dateTime",
+         "@id": "gist:isRecordedAt"
+      },
+      "is_rendered_on": {
+         "@id": "gist:isRenderedOn"
+      },
+      "is_superseded_by": {
+         "@id": "gist:isSupersededBy"
+      },
+      "is_triggered_by": {
+         "@id": "gist:isTriggeredBy"
+      },
+      "is_under_jurisdiction_of": {
+         "@type": "@id",
+         "@id": "gist:isUnderJurisdictionOf"
+      },
+      "latitude": {
+         "@type": "xsd:float",
+         "@id": "gist:latitude"
+      },
+      "license": {
+         "@id": "gist:license"
+      },
+      "links": {
+         "@type": "@id",
+         "@id": "gist:links"
+      },
+      "links_from": {
+         "@type": "@id",
+         "@id": "gist:linksFrom"
+      },
+      "links_to": {
+         "@type": "@id",
+         "@id": "gist:linksTo"
+      },
+      "longitude": {
+         "@type": "xsd:float",
+         "@id": "gist:longitude"
+      },
+      "name": {
+         "@id": "gist:name"
+      },
+      "numeric_value": {
+         "@id": "gist:numericValue"
+      },
+      "occurs_in": {
+         "@id": "gist:occursIn"
+      },
+      "offers_to_provide": {
+         "@id": "gist:offersToProvide"
+      },
+      "offers_to_receive": {
+         "@id": "gist:offersToReceive"
+      },
+      "owns": {
+         "@type": "@id",
+         "@id": "gist:owns"
+      },
+      "planned_end_date": {
+         "@type": "xsd:dateTime",
+         "@id": "gist:plannedEndDate"
+      },
+      "planned_end_date_time": {
+         "@type": "xsd:dateTime",
+         "@id": "gist:plannedEndDateTime"
+      },
+      "planned_end_minute": {
+         "@type": "xsd:dateTime",
+         "@id": "gist:plannedEndMinute"
+      },
+      "planned_end_year": {
+         "@type": "xsd:dateTime",
+         "@id": "gist:plannedEndYear"
+      },
+      "planned_start_date": {
+         "@type": "xsd:dateTime",
+         "@id": "gist:plannedStartDate"
+      },
+      "planned_start_date_time": {
+         "@type": "xsd:dateTime",
+         "@id": "gist:plannedStartDateTime"
+      },
+      "planned_start_minute": {
+         "@type": "xsd:dateTime",
+         "@id": "gist:plannedStartMinute"
+      },
+      "planned_start_year": {
+         "@type": "xsd:dateTime",
+         "@id": "gist:plannedStartYear"
+      },
+      "precedes": {
+         "@id": "gist:precedes"
+      },
+      "precedes_directly": {
+         "@id": "gist:precedesDirectly"
+      },
+      "prevents": {
+         "@type": "@id",
+         "@id": "gist:prevents"
+      },
+      "prohibits": {
+         "@type": "@id",
+         "@id": "gist:prohibits"
+      },
+      "provides_order_for": {
+         "@id": "gist:providesOrderFor"
+      },
+      "range_includes": {
+         "@id": "gist:rangeIncludes"
+      },
+      "refers_to": {
+         "@id": "gist:refersTo"
+      },
+      "requires": {
+         "@id": "gist:requires"
+      },
+      "sequence": {
+         "@type": "xsd:integer",
+         "@id": "gist:sequence"
+      },
+      "start_date_time": {
+         "@type": "xsd:dateTime",
+         "@id": "gist:startDateTime"
+      },
+      "symbol": {
+         "@id": "gist:symbol"
+      },
+      "unique_text": {
+         "@id": "gist:uniqueText"
+      },
+      "Account": {
+         "@id": "gist:Account"
+      },
+      "Address": {
+         "@id": "gist:Address"
+      },
+      "AddressUsageType": {
+         "@id": "gist:AddressUsageType"
+      },
+      "Agreement": {
+         "@id": "gist:Agreement"
+      },
+      "Aspect": {
+         "@id": "gist:Aspect"
+      },
+      "Assignment": {
+         "@id": "gist:Assignment"
+      },
+      "Behavior": {
+         "@id": "gist:Behavior"
+      },
+      "Building": {
+         "@id": "gist:Building"
+      },
+      "BundledCatalogItem": {
+         "@id": "gist:BundledCatalogItem"
+      },
+      "CatalogItem": {
+         "@id": "gist:CatalogItem"
+      },
+      "Category": {
+         "@id": "gist:Category"
+      },
+      "Collection": {
+         "@id": "gist:Collection"
+      },
+      "Commitment": {
+         "@id": "gist:Commitment"
+      },
+      "Component": {
+         "@id": "gist:Component"
+      },
+      "Composite": {
+         "@id": "gist:Composite"
+      },
+      "ContemporaryEvent": {
+         "@id": "gist:ContemporaryEvent"
+      },
+      "Content": {
+         "@id": "gist:Content"
+      },
+      "ContentExpression": {
+         "@id": "gist:ContentExpression"
+      },
+      "ContingentEvent": {
+         "@id": "gist:ContingentEvent"
+      },
+      "ContingentObligation": {
+         "@id": "gist:ContingentObligation"
+      },
+      "Contract": {
+         "@id": "gist:Contract"
+      },
+      "ContractTerm": {
+         "@id": "gist:ContractTerm"
+      },
+      "ControlledVocabulary": {
+         "@id": "gist:ControlledVocabulary"
+      },
+      "CountryGeoRegion": {
+         "@id": "gist:CountryGeoRegion"
+      },
+      "CountryGovernment": {
+         "@id": "gist:CountryGovernment"
+      },
+      "DegreeOfCommitment": {
+         "@id": "gist:DegreeOfCommitment"
+      },
+      "Determination": {
+         "@id": "gist:Determination"
+      },
+      "Discipline": {
+         "@id": "gist:Discipline"
+      },
+      "ElectronicAddress": {
+         "@id": "gist:ElectronicAddress"
+      },
+      "ElectronicAddressType": {
+         "@id": "gist:ElectronicAddressType"
+      },
+      "Equipment": {
+         "@id": "gist:Equipment"
+      },
+      "EquipmentType": {
+         "@id": "gist:EquipmentType"
+      },
+      "Event": {
+         "@id": "gist:Event"
+      },
+      "EventSpecification": {
+         "@id": "gist:EventSpecification"
+      },
+      "FormattedContent": {
+         "@id": "gist:FormattedContent"
+      },
+      "Function": {
+         "@id": "gist:Function"
+      },
+      "GeneralMediaType": {
+         "@id": "gist:GeneralMediaType"
+      },
+      "GeoLocation": {
+         "@id": "gist:GeoLocation"
+      },
+      "GeoPoint": {
+         "@id": "gist:GeoPoint"
+      },
+      "GeoRegion": {
+         "@id": "gist:GeoRegion"
+      },
+      "GeoRoute": {
+         "@id": "gist:GeoRoute"
+      },
+      "GeoVolume": {
+         "@id": "gist:GeoVolume"
+      },
+      "GistThing": {
+         "@id": "GistThing"
+      },
+      "GovernedGeoRegion": {
+         "@id": "gist:GovernedGeoRegion"
+      },
+      "GovernmentOrganization": {
+         "@id": "gist:GovernmentOrganization"
+      },
+      "HistoricalEvent": {
+         "@id": "gist:HistoricalEvent"
+      },
+      "ID": {
+         "@id": "gist:ID"
+      },
+      "IntellectualProperty": {
+         "@id": "gist:IntellectualProperty"
+      },
+      "Intention": {
+         "@id": "gist:Intention"
+      },
+      "IntergovernmentalOrganization": {
+         "@id": "gist:IntergovernmentalOrganization"
+      },
+      "KnowledgeConcept": {
+         "@id": "gist:KnowledgeConcept"
+      },
+      "Landmark": {
+         "@id": "gist:Landmark"
+      },
+      "Language": {
+         "@id": "gist:Language"
+      },
+      "LivingThing": {
+         "@id": "gist:LivingThing"
+      },
+      "Magnitude": {
+         "@id": "gist:Magnitude"
+      },
+      "MediaType": {
+         "@id": "gist:MediaType"
+      },
+      "Medium": {
+         "@id": "gist:Medium"
+      },
+      "Message": {
+         "@id": "gist:Message"
+      },
+      "Network": {
+         "@id": "gist:Network"
+      },
+      "NetworkLink": {
+         "@id": "gist:NetworkLink"
+      },
+      "NetworkNode": {
+         "@id": "gist:NetworkNode"
+      },
+      "Offer": {
+         "@id": "gist:Offer"
+      },
+      "OrderedCollection": {
+         "@id": "gist:OrderedCollection"
+      },
+      "OrderedMember": {
+         "@id": "gist:OrderedMember"
+      },
+      "Organization": {
+         "@id": "gist:Organization"
+      },
+      "Permission": {
+         "@id": "gist:Permission"
+      },
+      "Person": {
+         "@id": "gist:Person"
+      },
+      "PhysicalActionType": {
+         "@id": "gist:PhysicalActionType"
+      },
+      "PhysicalAddress": {
+         "@id": "gist:PhysicalAddress"
+      },
+      "PhysicalAddressType": {
+         "@id": "gist:PhysicalAddressType"
+      },
+      "PhysicalEvent": {
+         "@id": "gist:PhysicalEvent"
+      },
+      "PhysicalIdentifiableItem": {
+         "@id": "gist:PhysicalIdentifiableItem"
+      },
+      "PhysicalSubstance": {
+         "@id": "gist:PhysicalSubstance"
+      },
+      "ProductCategory": {
+         "@id": "gist:ProductCategory"
+      },
+      "ProductSpecification": {
+         "@id": "gist:ProductSpecification"
+      },
+      "Project": {
+         "@id": "gist:Project"
+      },
+      "ReferenceValue": {
+         "@id": "gist:ReferenceValue"
+      },
+      "RenderedContent": {
+         "@id": "gist:RenderedContent"
+      },
+      "Requirement": {
+         "@id": "gist:Requirement"
+      },
+      "Restriction": {
+         "@id": "gist:Restriction"
+      },
+      "ScheduledEvent": {
+         "@id": "gist:ScheduledEvent"
+      },
+      "ScheduledTask": {
+         "@id": "gist:ScheduledTask"
+      },
+      "SchemaMetaData": {
+         "@id": "gist:SchemaMetaData"
+      },
+      "ServiceSpecification": {
+         "@id": "gist:ServiceSpecification"
+      },
+      "Specification": {
+         "@id": "gist:Specification"
+      },
+      "SubCountryGovernment": {
+         "@id": "gist:SubCountryGovernment"
+      },
+      "System": {
+         "@id": "gist:System"
+      },
+      "Tag": {
+         "@id": "gist:Tag"
+      },
+      "Task": {
+         "@id": "gist:Task"
+      },
+      "TaskTemplate": {
+         "@id": "gist:TaskTemplate"
+      },
+      "Template": {
+         "@id": "gist:Template"
+      },
+      "TemporalRelation": {
+         "@id": "gist:TemporalRelation"
+      },
+      "Text": {
+         "@id": "gist:Text"
+      },
+      "TimeInterval": {
+         "@id": "gist:TimeInterval"
+      },
+      "Transaction": {
+         "@id": "gist:Transaction"
+      },
+      "UnitGroup": {
+         "@id": "gist:UnitGroup"
+      },
+      "UnitOfMeasure": {
+         "@id": "gist:UnitOfMeasure"
+      }
+   }
+}

@@ -4,7 +4,7 @@ import yaml
 from pathlib import Path
 
 
-SCHEMA_DIR = Path(__file__).parent.parent / "src" / "gist" / "schema"
+SCHEMA_DIR = Path(__file__).parent.parent / "src" / "gists" / "schema"
 SCHEMA_FILES = list(SCHEMA_DIR.glob("gist*.yaml"))
 
 
@@ -18,13 +18,13 @@ class TestSchemaExistence:
     """Test that expected schema files exist."""
 
     def test_main_schema_exists(self):
-        """Test that main gist.yaml schema exists."""
-        schema_file = SCHEMA_DIR / "gist.yaml"
+        """Test that main gists.yaml schema exists."""
+        schema_file = SCHEMA_DIR / "gists.yaml"
         assert schema_file.exists(), f"Main schema not found at {schema_file}"
 
     def test_core_schema_exists(self):
-        """Test that gist_core.yaml schema exists."""
-        schema_file = SCHEMA_DIR / "gist_core.yaml"
+        """Test that gists_core.yaml schema exists."""
+        schema_file = SCHEMA_DIR / "gists_core.yaml"
         assert schema_file.exists(), f"Core schema not found at {schema_file}"
 
     @pytest.mark.parametrize("schema_file", SCHEMA_FILES)
@@ -40,7 +40,7 @@ class TestSchemaStructure:
     @pytest.fixture(scope="class")
     def main_schema(self):
         """Load main schema."""
-        schema_file = SCHEMA_DIR / "gist.yaml"
+        schema_file = SCHEMA_DIR / "gists.yaml"
         return load_schema(schema_file)
 
     def test_schema_has_id(self, main_schema):
@@ -91,7 +91,7 @@ class TestSchemaStructure:
         """Test that main schema imports modular schemas."""
         imports = main_schema.get("imports", [])
         # Main schema should import submodules
-        assert any("gist_core" in i for i in imports), "Main schema should import gist_core"
+        assert any("gists_core" in i for i in imports), "Main schema should import gists_core"
 
 
 class TestSchemaElements:
@@ -100,7 +100,7 @@ class TestSchemaElements:
     @pytest.fixture(scope="class")
     def core_schema(self):
         """Load core schema."""
-        schema_file = SCHEMA_DIR / "gist_core.yaml"
+        schema_file = SCHEMA_DIR / "gists_core.yaml"
         return load_schema(schema_file)
 
     def test_schema_has_classes(self, core_schema):
@@ -136,30 +136,30 @@ class TestSchemaElements:
 class TestModularSchema:
     """Test modular schema structure."""
 
-    def test_gist_core_is_valid(self):
-        """Test that gist_core schema is valid."""
-        schema_file = SCHEMA_DIR / "gist_core.yaml"
+    def test_gists_core_is_valid(self):
+        """Test that gists_core schema is valid."""
+        schema_file = SCHEMA_DIR / "gists_core.yaml"
         schema = load_schema(schema_file)
         assert schema is not None
         assert "classes" in schema or "slots" in schema
 
-    def test_gist_media_types_is_valid(self):
-        """Test that gist_media_types schema is valid."""
-        schema_file = SCHEMA_DIR / "gist_media_types.yaml"
+    def test_gists_media_types_is_valid(self):
+        """Test that gists_media_types schema is valid."""
+        schema_file = SCHEMA_DIR / "gists_media_types.yaml"
         if schema_file.exists():
             schema = load_schema(schema_file)
             assert schema is not None
 
-    def test_gist_prefix_declarations_is_valid(self):
-        """Test that gist_prefix_declarations schema is valid."""
-        schema_file = SCHEMA_DIR / "gist_prefix_declarations.yaml"
+    def test_gists_prefix_declarations_is_valid(self):
+        """Test that gists_prefix_declarations schema is valid."""
+        schema_file = SCHEMA_DIR / "gists_prefix_declarations.yaml"
         if schema_file.exists():
             schema = load_schema(schema_file)
             assert schema is not None
 
     def test_modular_schemas_use_subsets(self):
         """Test that modular schemas use subsets for organization."""
-        schema_file = SCHEMA_DIR / "gist_core.yaml"
+        schema_file = SCHEMA_DIR / "gists_core.yaml"
         schema = load_schema(schema_file)
         if "subsets" in schema:
             subsets = schema["subsets"]
@@ -172,7 +172,7 @@ class TestOntologyAlignment:
     @pytest.fixture(scope="class")
     def main_schema(self):
         """Load main schema."""
-        schema_file = SCHEMA_DIR / "gist.yaml"
+        schema_file = SCHEMA_DIR / "gists.yaml"
         return load_schema(schema_file)
 
     def test_schema_elements_have_mappings(self, main_schema):
@@ -194,13 +194,13 @@ class TestSchemaConsistency:
     @pytest.fixture(scope="class")
     def main_schema(self):
         """Load main schema."""
-        schema_file = SCHEMA_DIR / "gist.yaml"
+        schema_file = SCHEMA_DIR / "gists.yaml"
         return load_schema(schema_file)
 
     @pytest.fixture(scope="class")
     def core_schema(self):
         """Load core schema."""
-        schema_file = SCHEMA_DIR / "gist_core.yaml"
+        schema_file = SCHEMA_DIR / "gists_core.yaml"
         return load_schema(schema_file)
 
     def test_imported_modules_exist(self, main_schema):

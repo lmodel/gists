@@ -1,5 +1,5 @@
 ---
-site_name: "gist"
+site_name: "gists"
 theme:
   # https://www.mkdocs.org/user-guide/configuration/#theme
   name: material
@@ -28,8 +28,8 @@ plugins:
       execute: false
   - mermaid2:
       version: 11.4.1
+  # https://pypi.org/project/mkdocs-pymdownx-material-extras
   - mkdocs_pymdownx_material_extras:
-    # https://pypi.org/project/mkdocs-pymdownx-material-extras
 
 markdown_extensions:
   - pymdownx.superfences:
@@ -56,13 +56,8 @@ markdown_extensions:
   # write markdown inside of HTML
   - md_in_html
 
-  # TODO rebuild docs on schema change (https://github.com/linkml/linkml-project-copier/issues/39)
-  # - gen-files:
-  #     scripts:
-  #       - gen_pages.py  # or any other name or path
-
 watch:
-  - src/gist/schema
+  - src/gists/schema
 
 nav:
   - Home: index.md
@@ -72,8 +67,8 @@ nav:
 exclude_docs: |
   /templates-linkml/
 
-site_url: https://lmodel.github.io/gist
-repo_url: https://github.com/lmodel/gist
+site_url: https://lmodel.github.io/gists
+repo_url: https://github.com/lmodel/gists
 
 # Uncomment this block to enable use of Google Analytics.
 # Replace the property value with your own ID.

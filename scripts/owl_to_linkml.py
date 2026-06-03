@@ -3,12 +3,12 @@
 Transform GIST OWL/Turtle ontology files into five LinkML schema YAMLs.
 
 Generates one schema per input TTL file into an output directory:
-  gist_core.yaml                 — classes, slots, enums; enriched by
+  gists_core.yaml                 — classes, slots, enums; enriched by
                                    RdfsAnnotations + SubClassAssertions
-  gist_media_types.yaml          — IANA MediaType enum (imports gist_core)
-  gist_prefix_declarations.yaml  — SHACL PrefixDeclaration enum (standalone)
-  gist_rdfs_annotations.yaml     — class/slot stubs from rdfs:label/comment
-  gist_sub_class_assertions.yaml — class stubs with is_a hierarchy
+  gists_media_types.yaml          — IANA MediaType enum (imports gists_core)
+  gists_prefix_declarations.yaml  — SHACL PrefixDeclaration enum (standalone)
+  gists_rdfs_annotations.yaml     — class/slot stubs from rdfs:label/comment
+  gists_sub_class_assertions.yaml — class stubs with is_a hierarchy
 
 Usage
 -----
@@ -46,8 +46,8 @@ from rdflib.namespace import OWL, RDF, RDFS, SKOS, XSD
 # ---------------------------------------------------------------------------
 GIST_NS = "https://w3id.org/semanticarts/ns/ontology/gist/"
 GISTD_NS = "https://w3id.org/semanticarts/ns/data/gist/"
-LMODEL_NS = "https://w3id.org/lmodel/gist/"
-LMODEL_BASE = "https://w3id.org/lmodel/gist"
+LMODEL_NS = "https://w3id.org/lmodel/gists/"
+LMODEL_BASE = "https://w3id.org/lmodel/gists"
 
 GIST = rdflib.Namespace(GIST_NS)
 GISTD = rdflib.Namespace(GISTD_NS)
@@ -65,9 +65,9 @@ MEDIA_PREFIXES = {
 
 # Ordered prefix table used by uri_to_curie() — longest namespace first avoids prefix ambiguity
 _CURIE_PREFIXES: list[tuple[str, str]] = [
-    (GIST_NS, "gist_upstream"),
+    (GIST_NS, "gist"),
     (GISTD_NS, "gistd"),
-    (LMODEL_NS, "gist"),
+    (LMODEL_NS, "gists"),
     ("http://schema.org/", "schema"),
     ("https://schema.org/", "schema"),
     ("http://www.w3.org/2004/02/skos/core#", "skos"),
@@ -137,7 +137,7 @@ def local_name(uri: URIRef) -> str:
     return s.rsplit("/", 1)[-1]
 
 
-def gist_local(uri: URIRef) -> str | None:
+def gists_local(uri: URIRef) -> str | None:
     s = str(uri)
     if s.startswith(GIST_NS):
         return s[len(GIST_NS):]
@@ -198,7 +198,7 @@ def owl_expr_str(g: Graph, node, depth: int = 0) -> str:
     if depth > 6:
         return "..."
     if isinstance(node, URIRef):
-        gl = gist_local(node)
+        gl = gists_local(node)
         if gl:
             return f"gist:{gl}"
         ln = local_name(node)
@@ -222,11 +222,11 @@ def owl_expr_str(g: Graph, node, depth: int = 0) -> str:
     on_prop = list(g.objects(node, OWL.onProperty))
     if on_prop:
         p = on_prop[0]
-        p_str = gist_local(p) or local_name(p) if isinstance(p, URIRef) else "?"
+        p_str = gists_local(p) or local_name(p) if isinstance(p, URIRef) else "?"
         # inverse property
         inv_p = list(g.objects(p, OWL.inverseOf)) if isinstance(p, BNode) else []
         if inv_p:
-            p_str = f"^{gist_local(inv_p[0]) or local_name(inv_p[0])}"
+            p_str = f"^{gists_local(inv_p[0]) or local_name(inv_p[0])}"
 
         some = list(g.objects(node, OWL.someValuesFrom))
         if some:
@@ -237,7 +237,7 @@ def owl_expr_str(g: Graph, node, depth: int = 0) -> str:
         has_v = list(g.objects(node, OWL.hasValue))
         if has_v:
             val = has_v[0]
-            val_s = gistd_local(val) or (gist_local(val) if isinstance(val, URIRef) else str(val))
+            val_s = gistd_local(val) or (gists_local(val) if isinstance(val, URIRef) else str(val))
             return f"∃{p_str}={val_s}"
         min_qc = list(g.objects(node, OWL.minQualifiedCardinality))
         if min_qc:
@@ -280,18 +280,18 @@ def _ifp_slots_by_domain_class(g: Graph) -> dict[str, list[str]]:
     for prop in g.subjects(RDF.type, OWL.InverseFunctionalProperty):
         if not isinstance(prop, URIRef):
             continue
-        prop_local = gist_local(prop)
+        prop_local = gists_local(prop)
         if not prop_local:
             continue
         slot_name = camel_to_snake(prop_local)
         for d in g.objects(prop, RDFS.domain):
-            if isinstance(d, URIRef) and gist_local(d):
-                by_class[gist_local(d)].append(slot_name)
+            if isinstance(d, URIRef) and gists_local(d):
+                by_class[gists_local(d)].append(slot_name)
             elif isinstance(d, BNode):
                 members = union_members(g, d) or []
                 for m in members:
-                    if gist_local(m):
-                        by_class[gist_local(m)].append(slot_name)
+                    if gists_local(m):
+                        by_class[gists_local(m)].append(slot_name)
     return by_class
 
 
@@ -303,7 +303,7 @@ def extract_classes(g: Graph) -> dict[str, dict]:
     for cls in g.subjects(RDF.type, OWL.Class):
         if not isinstance(cls, URIRef):
             continue
-        cls_local = gist_local(cls)
+        cls_local = gists_local(cls)
         if not cls_local:
             continue
 
@@ -328,7 +328,7 @@ def extract_classes(g: Graph) -> dict[str, dict]:
         # --- is_a: first simple named gist: superclass ---
         simple_parents = [
             o for o in g.objects(cls, RDFS.subClassOf)
-            if isinstance(o, URIRef) and gist_local(o)
+            if isinstance(o, URIRef) and gists_local(o)
         ]
         anon_parents = [
             o for o in g.objects(cls, RDFS.subClassOf)
@@ -336,9 +336,9 @@ def extract_classes(g: Graph) -> dict[str, dict]:
         ]
 
         if simple_parents:
-            entry["is_a"] = gist_local(simple_parents[0])
+            entry["is_a"] = gists_local(simple_parents[0])
             if len(simple_parents) > 1:
-                mixins = [gist_local(p) for p in simple_parents[1:]]
+                mixins = [gists_local(p) for p in simple_parents[1:]]
                 entry["notes"] = entry.get("notes", []) + [
                     f"Additional named superclasses (modelled as OWL multiple inheritance): "
                     + ", ".join(str(m) for m in mixins)
@@ -352,7 +352,7 @@ def extract_classes(g: Graph) -> dict[str, dict]:
             ]
 
         # --- class_uri maps to the upstream OWL class URI ---
-        entry["class_uri"] = f"gist_upstream:{cls_local}"
+        entry["class_uri"] = f"gist:{cls_local}"
 
         # --- equivalentClass ---
         # Named URIs  -> exact_mappings (owl:equivalentClass = owl:equivalentClass semantics)
@@ -419,8 +419,8 @@ def extract_classes(g: Graph) -> dict[str, dict]:
             entry["notes"] = entry.get("notes", []) + ed_notes
 
         # --- disjointWith  -> LinkML disjoint_with (class level) ---
-        disjoints = [gist_local(o) for o in named_objects(g, cls, OWL.disjointWith)
-                     if gist_local(o)]
+        disjoints = [gists_local(o) for o in named_objects(g, cls, OWL.disjointWith)
+                     if gists_local(o)]
         if disjoints:
             entry["disjoint_with"] = disjoints if len(disjoints) > 1 else disjoints[0]
 
@@ -459,7 +459,7 @@ def extract_slots(g: Graph) -> dict[str, dict]:
         for prop in g.subjects(RDF.type, prop_type):
             if not isinstance(prop, URIRef):
                 continue
-            prop_local = gist_local(prop)
+            prop_local = gists_local(prop)
             if not prop_local:
                 continue
 
@@ -467,7 +467,7 @@ def extract_slots(g: Graph) -> dict[str, dict]:
             entry: dict[str, Any] = {}
 
             # slot_uri maps to the upstream predicate URI
-            entry["slot_uri"] = f"gist_upstream:{prop_local}"
+            entry["slot_uri"] = f"gist:{prop_local}"
 
             # --- description ---
             defn = first_literal(g, prop, SKOS.definition)
@@ -479,27 +479,27 @@ def extract_slots(g: Graph) -> dict[str, dict]:
             # --- is_a: subPropertyOf (gist: only) ---
             sub_of = [
                 o for o in g.objects(prop, RDFS.subPropertyOf)
-                if isinstance(o, URIRef) and gist_local(o)
+                if isinstance(o, URIRef) and gists_local(o)
             ]
             if sub_of:
-                entry["is_a"] = camel_to_snake(gist_local(sub_of[0]))
+                entry["is_a"] = camel_to_snake(gists_local(sub_of[0]))
                 if len(sub_of) > 1:
                     entry["notes"] = entry.get("notes", []) + [
                         "OWL additional subPropertyOf (gist:): "
-                        + ", ".join(camel_to_snake(gist_local(o)) for o in sub_of[1:])
+                        + ", ".join(camel_to_snake(gists_local(o)) for o in sub_of[1:])
                     ]
             # Cross-namespace subPropertyOf  -> related_mappings
             cross_sub = [
                 o for o in g.objects(prop, RDFS.subPropertyOf)
-                if isinstance(o, URIRef) and not gist_local(o)
+                if isinstance(o, URIRef) and not gists_local(o)
             ]
             if cross_sub:
                 entry["related_mappings"] = [str(o) for o in cross_sub]
 
             # --- domain (rdfs:domain  -> LinkML domain; unionOf  -> domain + any_of) ---
-            gist_domains = [
-                gist_local(o) for o in g.objects(prop, RDFS.domain)
-                if isinstance(o, URIRef) and gist_local(o)
+            gists_domains = [
+                gists_local(o) for o in g.objects(prop, RDFS.domain)
+                if isinstance(o, URIRef) and gists_local(o)
             ]
             anon_domains = [o for o in g.objects(prop, RDFS.domain) if isinstance(o, BNode)]
 
@@ -508,14 +508,14 @@ def extract_slots(g: Graph) -> dict[str, dict]:
                 members = union_members(g, ad)
                 if members:
                     union_domain_members.extend(
-                        gist_local(m) for m in members if gist_local(m)
+                        gists_local(m) for m in members if gists_local(m)
                     )
                 else:
                     entry["notes"] = entry.get("notes", []) + [
                         "OWL domain restriction: " + owl_expr_str(g, ad)
                     ]
 
-            all_domains = list(gist_domains) + union_domain_members
+            all_domains = list(gists_domains) + union_domain_members
             # Deduplicate while preserving order
             seen = set()
             all_domains = [d for d in all_domains if not (d in seen or seen.add(d))]
@@ -537,18 +537,18 @@ def extract_slots(g: Graph) -> dict[str, dict]:
                     entry["range"] = linkml_type
                 # multivalued defaults to false; no need to state explicitly
             else:
-                gist_ranges = [gist_local(o) for o in range_uris if gist_local(o)]
-                if len(gist_ranges) == 1:
-                    entry["range"] = gist_ranges[0]
-                elif len(gist_ranges) > 1:
-                    entry["any_of"] = [{"range": r} for r in gist_ranges]
+                gists_ranges = [gists_local(o) for o in range_uris if gists_local(o)]
+                if len(gists_ranges) == 1:
+                    entry["range"] = gists_ranges[0]
+                elif len(gists_ranges) > 1:
+                    entry["any_of"] = [{"range": r} for r in gists_ranges]
 
                 for rb in range_bnodes:
                     members = union_members(g, rb)
                     if members:
-                        gist_ms = [gist_local(m) for m in members if gist_local(m)]
-                        if gist_ms:
-                            entry["any_of"] = [{"range": m} for m in gist_ms]
+                        gists_ms = [gists_local(m) for m in members if gists_local(m)]
+                        if gists_ms:
+                            entry["any_of"] = [{"range": m} for m in gists_ms]
                     else:
                         entry["notes"] = entry.get("notes", []) + [
                             "OWL range restriction: " + owl_expr_str(g, rb)
@@ -557,8 +557,8 @@ def extract_slots(g: Graph) -> dict[str, dict]:
                 # gist:rangeIncludes (soft range hints) — use when no hard rdfs:range
                 if "range" not in entry and "any_of" not in entry:
                     range_includes = [
-                        gist_local(o) for o in g.objects(prop, GIST.rangeIncludes)
-                        if isinstance(o, URIRef) and gist_local(o)
+                        gists_local(o) for o in g.objects(prop, GIST.rangeIncludes)
+                        if isinstance(o, URIRef) and gists_local(o)
                     ]
                     if len(range_includes) == 1:
                         entry["range"] = range_includes[0]
@@ -570,8 +570,8 @@ def extract_slots(g: Graph) -> dict[str, dict]:
 
             # --- inverseOf ---
             inv = [
-                gist_local(o) for o in named_objects(g, prop, OWL.inverseOf)
-                if gist_local(o)
+                gists_local(o) for o in named_objects(g, prop, OWL.inverseOf)
+                if gists_local(o)
             ]
             if inv:
                 entry["inverse"] = camel_to_snake(inv[0])
@@ -607,8 +607,8 @@ def extract_slots(g: Graph) -> dict[str, dict]:
             if depr and depr.lower() == "true":
                 entry["deprecated"] = "true"
                 superseded = [
-                    gist_local(o) for o in named_objects(g, prop, GIST.isSupersededBy)
-                    if gist_local(o)
+                    gists_local(o) for o in named_objects(g, prop, GIST.isSupersededBy)
+                    if gists_local(o)
                 ]
                 if superseded:
                     entry["deprecated_element_has_exact_replacement"] = camel_to_snake(superseded[0])
@@ -640,9 +640,9 @@ def extract_slots(g: Graph) -> dict[str, dict]:
 
             # --- propertyDisjointWith  -> LinkML disjoint_with ---
             disj = [
-                camel_to_snake(gist_local(o))
+                camel_to_snake(gists_local(o))
                 for o in named_objects(g, prop, OWL.propertyDisjointWith)
-                if gist_local(o)
+                if gists_local(o)
             ]
             if disj:
                 entry["disjoint_with"] = disj if len(disj) > 1 else disj[0]
@@ -687,16 +687,16 @@ def extract_enums(g: Graph) -> dict[str, dict]:
         if not (is_gistd or is_media):
             continue
 
-        gist_types = [
-            gist_local(t) for t in g.objects(subj, RDF.type)
-            if isinstance(t, URIRef) and gist_local(t)
+        gists_types = [
+            gists_local(t) for t in g.objects(subj, RDF.type)
+            if isinstance(t, URIRef) and gists_local(t)
             and t not in schema_types
         ]
-        for t in gist_types:
+        for t in gists_types:
             groups[t].append(subj)
 
-    for gist_type, individuals in sorted(groups.items()):
-        enum_name = f"{gist_type}Instance"
+    for gists_type, individuals in sorted(groups.items()):
+        enum_name = f"{gists_type}Instance"
         pv: dict[str, dict] = {}
         seen_keys: dict[str, str] = {}
 
@@ -735,7 +735,7 @@ def extract_enums(g: Graph) -> dict[str, dict]:
             pv[val_key] = pv_entry
 
         enums[enum_name] = {
-            "description": f"Named instances of gist:{gist_type} from gist reference data.",
+            "description": f"Named instances of gist:{gists_type} from gist reference data.",
             "permissible_values": pv,
         }
 
@@ -764,14 +764,14 @@ def extract_rdfs_annotations(
     subj_set: set[URIRef] = set()
     for pred in (RDFS.label, RDFS.comment):
         for s in g.subjects(pred, None):
-            if isinstance(s, URIRef) and gist_local(s):
+            if isinstance(s, URIRef) and gists_local(s):
                 subj_set.add(s)
 
     prop_types = {OWL.ObjectProperty, OWL.DatatypeProperty, OWL.AnnotationProperty}
 
     for subj in sorted(subj_set, key=str):
-        gist_name = gist_local(subj)
-        if not gist_name:
+        gists_name = gists_local(subj)
+        if not gists_name:
             continue
 
         # Determine class vs slot using context graph
@@ -808,11 +808,11 @@ def extract_rdfs_annotations(
             entry["comments"] = notes
 
         if is_slot:
-            entry["slot_uri"] = f"gist_upstream:{gist_name}"
-            slots[camel_to_snake(gist_name)] = entry
+            entry["slot_uri"] = f"gist:{gists_name}"
+            slots[camel_to_snake(gists_name)] = entry
         else:
-            entry["class_uri"] = f"gist_upstream:{gist_name}"
-            classes[gist_name] = entry
+            entry["class_uri"] = f"gist:{gists_name}"
+            classes[gists_name] = entry
 
     return classes, slots
 
@@ -828,14 +828,14 @@ def extract_sub_class_assertions(g: Graph) -> dict[str, dict]:
     for subj, obj in g.subject_objects(RDFS.subClassOf):
         if not isinstance(subj, URIRef) or not isinstance(obj, URIRef):
             continue
-        subj_name = gist_local(subj)
-        obj_name = gist_local(obj)
+        subj_name = gists_local(subj)
+        obj_name = gists_local(obj)
         if not subj_name or not obj_name:
             continue
 
         if subj_name not in classes:
             classes[subj_name] = {
-                "class_uri": f"gist_upstream:{subj_name}",
+                "class_uri": f"gist:{subj_name}",
                 "is_a": obj_name,
             }
         else:
@@ -849,7 +849,7 @@ def extract_sub_class_assertions(g: Graph) -> dict[str, dict]:
     all_parents = {entry["is_a"] for entry in classes.values() if "is_a" in entry}
     for parent in sorted(all_parents):
         if parent not in classes:
-            classes[parent] = {"class_uri": f"gist_upstream:{parent}"}
+            classes[parent] = {"class_uri": f"gist:{parent}"}
 
     return classes
 
@@ -870,9 +870,9 @@ def extract_prefix_declarations(g: Graph) -> dict[str, dict]:
         if not prefix_val:
             continue
 
-        gist_name = gist_local(subj)
-        key = _enum_val_key(gist_name) if gist_name else _enum_val_key(prefix_val)
-        meaning = f"gist_upstream:{gist_name}" if gist_name else str(subj)
+        gists_name = gists_local(subj)
+        key = _enum_val_key(gists_name) if gists_name else _enum_val_key(prefix_val)
+        meaning = f"gist:{gists_name}" if gists_name else str(subj)
 
         pv[key] = {
             "title": prefix_val,
@@ -1041,8 +1041,8 @@ def get_ontology_iri(g: Graph) -> str | None:
 
 def _base_prefixes() -> dict[str, str]:
     return {
-        "gist": LMODEL_NS,
-        "gist_upstream": GIST_NS,
+        "gists": LMODEL_NS,
+        "gist": GIST_NS,
         "gistd": GISTD_NS,
         "linkml": "https://w3id.org/linkml/",
         "schema": "http://schema.org/",
@@ -1061,10 +1061,10 @@ def build_schema(
     enums: dict,
     version: str = "14.1.0",
     schema_id: str = f"{LMODEL_BASE}/core",
-    schema_name: str = "gist_core",
+    schema_name: str = "gists_core",
     source: str | None = None,
 ) -> dict:
-    subset_name = "gist_core"
+    subset_name = "gists_core"
     prefixes = _base_prefixes()
     prefixes.update({
         "media_app": "https://www.iana.org/assignments/media-types/application/",
@@ -1081,7 +1081,7 @@ def build_schema(
         ),
         "license": "CC-BY-4.0",
         "see_also": [
-            "https://lmodel.github.io/gist",
+            "https://lmodel.github.io/gists",
             "https://www.semanticarts.com/gist/",
         ],
         "version": version,
@@ -1109,7 +1109,7 @@ def build_schema(
 
     schema.update({
         "prefixes": prefixes,
-        "default_prefix": "gist",
+        "default_prefix": "gists",
         "default_range": "string",
         "imports": ["linkml:types"],
         "subsets": {
@@ -1129,7 +1129,7 @@ def build_media_types_schema(
     version: str = "14.1.0",
     source: str | None = None,
 ) -> dict:
-    subset_name = "gist_media_types"
+    subset_name = "gists_media_types"
     prefixes = _base_prefixes()
     prefixes.update({
         "media_app": "https://www.iana.org/assignments/media-types/application/",
@@ -1138,11 +1138,11 @@ def build_media_types_schema(
     })
     schema: dict[str, Any] = {
         "id": f"{LMODEL_BASE}/media-types",
-        "name": "gist_media_types",
+        "name": "gists_media_types",
         "title": "gist Media Types",
         "description": (
             f"IANA Media Type named individuals from gist {version}. "
-            "Imports gist_core for class definitions."
+            "Imports gists_core for class definitions."
         ),
         "license": "CC-BY-4.0",
         "see_also": ["https://www.semanticarts.com/gist/"],
@@ -1152,9 +1152,9 @@ def build_media_types_schema(
         schema["source"] = source
     schema.update({
         "prefixes": prefixes,
-        "default_prefix": "gist",
+        "default_prefix": "gists",
         "default_range": "string",
-        "imports": ["linkml:types", "./gist_core"],
+        "imports": ["linkml:types", "./gists_core"],
         "subsets": {
             subset_name: {
                 "description": "IANA Media Type instances from the gist Media Types module.",
@@ -1170,12 +1170,12 @@ def build_prefix_declarations_schema(
     version: str = "14.1.0",
     source: str | None = None,
 ) -> dict:
-    subset_name = "gist_prefix_declarations"
+    subset_name = "gists_prefix_declarations"
     prefixes = _base_prefixes()
     prefixes["sh"] = "http://www.w3.org/ns/shacl#"
     schema: dict[str, Any] = {
         "id": f"{LMODEL_BASE}/prefix-declarations",
-        "name": "gist_prefix_declarations",
+        "name": "gists_prefix_declarations",
         "title": "gist Prefix Declarations",
         "description": (
             f"SHACL prefix declarations from gist {version}. "
@@ -1189,7 +1189,7 @@ def build_prefix_declarations_schema(
         schema["source"] = source
     schema.update({
         "prefixes": prefixes,
-        "default_prefix": "gist",
+        "default_prefix": "gists",
         "default_range": "string",
         "imports": ["linkml:types"],
         "subsets": {
@@ -1214,10 +1214,10 @@ def build_rdfs_annotations_schema(
     version: str = "14.1.0",
     source: str | None = None,
 ) -> dict:
-    subset_name = "gist_rdfs_annotations"
+    subset_name = "gists_rdfs_annotations"
     schema: dict[str, Any] = {
         "id": f"{LMODEL_BASE}/rdfs-annotations",
-        "name": "gist_rdfs_annotations",
+        "name": "gists_rdfs_annotations",
         "title": "gist RDFS Annotations",
         "description": (
             f"RDFS label and comment annotations for gist classes and properties ({version}). "
@@ -1232,7 +1232,7 @@ def build_rdfs_annotations_schema(
         schema["source"] = source
     schema.update({
         "prefixes": _base_prefixes(),
-        "default_prefix": "gist",
+        "default_prefix": "gists",
         "default_range": "string",
         "imports": ["linkml:types"],
         "subsets": {
@@ -1251,10 +1251,10 @@ def build_sub_class_assertions_schema(
     version: str = "14.1.0",
     source: str | None = None,
 ) -> dict:
-    subset_name = "gist_sub_class_assertions"
+    subset_name = "gists_sub_class_assertions"
     schema: dict[str, Any] = {
         "id": f"{LMODEL_BASE}/sub-class-assertions",
-        "name": "gist_sub_class_assertions",
+        "name": "gists_sub_class_assertions",
         "title": "gist Subclass Assertions",
         "description": (
             f"Explicit rdfs:subClassOf assertions for gist classes ({version}). "
@@ -1269,7 +1269,7 @@ def build_sub_class_assertions_schema(
         schema["source"] = source
     schema.update({
         "prefixes": _base_prefixes(),
-        "default_prefix": "gist",
+        "default_prefix": "gists",
         "default_range": "string",
         "imports": ["linkml:types"],
         "subsets": {
@@ -1282,45 +1282,45 @@ def build_sub_class_assertions_schema(
     return _order_keys(schema, _SCHEMA_KEY_ORDER)
 
 
-def build_gist_schema(version: str = "14.1.0") -> dict:
-    """Build the top-level gist.yaml that imports all compatible module schemas."""
+def build_gists_schema(version: str = "14.1.0") -> dict:
+    """Build the top-level gists.yaml that imports all compatible module schemas."""
     schema: dict[str, Any] = {
         "id": LMODEL_BASE,
-        "name": "gist",
-        "title": "gist",
+        "name": "gists",
+        "title": "gists",
         "description": (
             "gist  is a minimalist upper ontology "
             "created by Semantic Arts for enterprise knowledge graph applications. "
             "This LinkML schema (version " + version + ") aggregates the gist modules: "
             "Core (classes and properties), MediaTypes (IANA media type instances), and "
             "PrefixDeclarations (SHACL namespace bindings). "
-            "Supplementary schemas gist_rdfs_annotations and gist_sub_class_assertions "
+            "Supplementary schemas gists_rdfs_annotations and gists_sub_class_assertions "
             "are available for annotation enrichment and OWL RL reasoner support."
         ),
         "license": "CC-BY-4.0",
         "see_also": [
             "https://www.semanticarts.com/gist/",
             "https://w3id.org/semanticarts/ontology/gistCore",
-            "https://lmodel.github.io/gist",
+            "https://lmodel.github.io/gists",
 
         ],
         "version": version,
         "prefixes": {
-            "gist": LMODEL_NS,
-            "gist_upstream": GIST_NS,
+            "gists": LMODEL_NS,
+            "gist": GIST_NS,
             "gistd": GISTD_NS,
             "linkml": "https://w3id.org/linkml/",
             "media_app": "https://www.iana.org/assignments/media-types/application/",
             "media_img": "https://www.iana.org/assignments/media-types/image/",
             "media_txt": "https://www.iana.org/assignments/media-types/text/",
         },
-        "default_prefix": "gist",
+        "default_prefix": "gists",
         "default_range": "string",
         "imports": [
             "linkml:types",
-            "./gist_core",
-            "./gist_media_types",
-            "./gist_prefix_declarations",
+            "./gists_core",
+            "./gists_media_types",
+            "./gists_prefix_declarations",
         ],
     }
     return _order_keys(schema, _SCHEMA_KEY_ORDER)
@@ -1333,19 +1333,19 @@ def build_gist_schema(version: str = "14.1.0") -> dict:
 def coverage_report(g: Graph, classes: dict, slots: dict, enums: dict) -> str:
     n_classes = sum(
         1 for s in g.subjects(RDF.type, OWL.Class)
-        if isinstance(s, URIRef) and gist_local(s)
+        if isinstance(s, URIRef) and gists_local(s)
     )
     n_obj_props = sum(
         1 for s in g.subjects(RDF.type, OWL.ObjectProperty)
-        if isinstance(s, URIRef) and gist_local(s)
+        if isinstance(s, URIRef) and gists_local(s)
     )
     n_data_props = sum(
         1 for s in g.subjects(RDF.type, OWL.DatatypeProperty)
-        if isinstance(s, URIRef) and gist_local(s)
+        if isinstance(s, URIRef) and gists_local(s)
     )
     n_ann_props = sum(
         1 for s in g.subjects(RDF.type, OWL.AnnotationProperty)
-        if isinstance(s, URIRef) and gist_local(s)
+        if isinstance(s, URIRef) and gists_local(s)
     )
     n_prefix_decls = sum(
         1 for s in g.subjects(RDF.type, SH.PrefixDeclaration)
@@ -1447,9 +1447,9 @@ def generate_per_file_schemas(
         graphs[ftype] = g
         print(f"    {len(g)} triples", file=sys.stderr)
 
-    # ---- 1. gist_core.yaml ----
+    # ---- 1. gists_core.yaml ----
     # Enrich with rdfs annotations + subclass assertions for 100% coverage
-    print("\nBuilding gist_core.yaml ...", file=sys.stderr)
+    print("\nBuilding gists_core.yaml ...", file=sys.stderr)
     g_core_enriched = Graph()
     for ftype in ("core", "rdfs_annotations", "sub_class_assertions"):
         if ftype in graphs:
@@ -1462,34 +1462,34 @@ def generate_per_file_schemas(
         classes, slots, enums,
         version=version,
         schema_id=f"{LMODEL_BASE}/core",
-        schema_name="gist_core",
+        schema_name="gists_core",
         source=get_ontology_iri(graphs.get("core", Graph())),
     )
-    _write_schema_file(core_schema, output_dir / "gist_core.yaml", report, g_core_enriched)
+    _write_schema_file(core_schema, output_dir / "gists_core.yaml", report, g_core_enriched)
 
-    # ---- 2. gist_media_types.yaml ----
+    # ---- 2. gists_media_types.yaml ----
     if "media_types" in graphs:
-        print("Building gist_media_types.yaml ...", file=sys.stderr)
+        print("Building gists_media_types.yaml ...", file=sys.stderr)
         g_media = graphs["media_types"]
         media_enums = extract_enums(g_media)
         media_schema = build_media_types_schema(
             media_enums, version, source=get_ontology_iri(g_media)
         )
-        _write_schema_file(media_schema, output_dir / "gist_media_types.yaml", report, g_media)
+        _write_schema_file(media_schema, output_dir / "gists_media_types.yaml", report, g_media)
 
-    # ---- 3. gist_prefix_declarations.yaml ----
+    # ---- 3. gists_prefix_declarations.yaml ----
     if "prefix_declarations" in graphs:
-        print("Building gist_prefix_declarations.yaml ...", file=sys.stderr)
+        print("Building gists_prefix_declarations.yaml ...", file=sys.stderr)
         g_prefix = graphs["prefix_declarations"]
         pv = extract_prefix_declarations(g_prefix)
         prefix_schema = build_prefix_declarations_schema(
             pv, version, source=get_ontology_iri(g_prefix)
         )
-        _write_schema_file(prefix_schema, output_dir / "gist_prefix_declarations.yaml", report, g_prefix)
+        _write_schema_file(prefix_schema, output_dir / "gists_prefix_declarations.yaml", report, g_prefix)
 
-    # ---- 4. gist_rdfs_annotations.yaml ----
+    # ---- 4. gists_rdfs_annotations.yaml ----
     if "rdfs_annotations" in graphs:
-        print("Building gist_rdfs_annotations.yaml ...", file=sys.stderr)
+        print("Building gists_rdfs_annotations.yaml ...", file=sys.stderr)
         g_annot = graphs["rdfs_annotations"]
         # Use core as context for class-vs-slot classification
         g_ctx = graphs.get("core", Graph())
@@ -1497,22 +1497,22 @@ def generate_per_file_schemas(
         annot_schema = build_rdfs_annotations_schema(
             annot_classes, annot_slots, version, source=get_ontology_iri(g_annot)
         )
-        _write_schema_file(annot_schema, output_dir / "gist_rdfs_annotations.yaml", report, g_annot)
+        _write_schema_file(annot_schema, output_dir / "gists_rdfs_annotations.yaml", report, g_annot)
 
-    # ---- 5. gist_sub_class_assertions.yaml ----
+    # ---- 5. gists_sub_class_assertions.yaml ----
     if "sub_class_assertions" in graphs:
-        print("Building gist_sub_class_assertions.yaml ...", file=sys.stderr)
+        print("Building gists_sub_class_assertions.yaml ...", file=sys.stderr)
         g_sub = graphs["sub_class_assertions"]
         sub_classes = extract_sub_class_assertions(g_sub)
         sub_schema = build_sub_class_assertions_schema(
             sub_classes, version, source=get_ontology_iri(g_sub)
         )
-        _write_schema_file(sub_schema, output_dir / "gist_sub_class_assertions.yaml", report, g_sub)
+        _write_schema_file(sub_schema, output_dir / "gists_sub_class_assertions.yaml", report, g_sub)
 
-    # ---- 6. gist.yaml (main entry-point, imports core + media_types + prefix_declarations) ----
-    print("Building gist.yaml ...", file=sys.stderr)
-    gist_schema = build_gist_schema(version=version)
-    _write_schema_file(gist_schema, output_dir / "gist.yaml")
+    # ---- 6. gists.yaml (main entry-point, imports core + media_types + prefix_declarations) ----
+    print("Building gists.yaml ...", file=sys.stderr)
+    gists_schema = build_gists_schema(version=version)
+    _write_schema_file(gists_schema, output_dir / "gists.yaml")
 
     print(f"\nPer-file generation complete  -> {output_dir}", file=sys.stderr)
 
@@ -1526,7 +1526,7 @@ def main() -> None:
         Path(__file__).parent.parent
         / "upstream/gist14.1.0_webDownload/ontologies/turtle"
     )
-    default_output_dir = Path(__file__).parent.parent / "src/gist/schema"
+    default_output_dir = Path(__file__).parent.parent / "src/gists/schema"
 
     parser = argparse.ArgumentParser(
         description="Generate five LinkML schemas from GIST OWL Turtle files.",

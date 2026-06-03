@@ -4,53 +4,24 @@
 # name in this file is not possible until a known issue in just is fixed,
 # https://github.com/casey/just/issues/2540
 
-# Run comprehensive unit tests with coverage
-[group('testing')]
-@test-unit:
-    uv run python -m pytest tests/ -v --tb=short
+# Generate LinkML schema YAMLs from the upstream GIST OWL/Turtle ontology files.
+# Reads upstream/gist14.1.0_webDownload/ontologies/turtle/*.ttl and writes to src/gists/schema/.
+# Build order: `gen-linkml` -> `apply-sssom-overlay` -> `gen-project`.
+[group('model development')]
+gen-linkml:
+  uv run python scripts/owl_to_linkml.py
 
-# Run unit tests with coverage report
-[group('testing')]
-@test-coverage:
-    uv run python -m pytest tests/ -v --cov=src/gist --cov-report=html --cov-report=term
+# Apply curated SSSOM mapping TSVs to the generated LinkML schema YAMLs.
+# Merges SKOS exact/close/broad/narrow/related matches into the matching
+# class / enum / type bodies and declares any referenced object-side prefixes.
+# Idempotent: re-running on a clean tree produces no further changes.
+[group('model development')]
+apply-sssom-overlay: gen-linkml
+  uv run python scripts/apply_sssom_overlay.py \
+    --schema-dir src/gists/schema \
+    --mappings-dir src/gists/mappings
 
-# Run specific test file or module
-[group('testing')]
-@test-file file='tests/':
-    uv run python -m pytest {{file}} -v --tb=short
-
-# Run data validation tests
-[group('testing')]
-@test-data:
-    uv run python -m pytest tests/test_data.py -v --tb=short
-
-# Run schema validation tests
-[group('testing')]
-@test-schema:
-    uv run python -m pytest tests/test_schema_validation.py -v --tb=short
-
-# Run OWL to LinkML conversion tests
-[group('testing')]
-@test-owl:
-    uv run python -m pytest tests/test_owl_to_linkml.py -v --tb=short
-
-# Run SHACL shapes validation tests
-[group('testing')]
-@test-shacl:
-    uv run python -m pytest tests/test_shacl_validation.py -v --tb=short
-
-# Run generated artifacts tests
-[group('testing')]
-@test-artifacts:
-    uv run python -m pytest tests/test_generated_artifacts.py -v --tb=short
-
-# Run all tests with linting
-[group('testing')]
-@test-all: test-unit
-    @echo "All tests passed!"
-
-# Run tests in watch mode (requires pytest-watch)
-[group('testing')]
-@test-watch:
-    uv run python -m pytest_watch tests/ -v --tb=short || uv run python -m pip install pytest-watch && uv run python -m pytest_watch tests/ -v --tb=short
-
+# Verify the mappings were applied correctly to LinkML files.
+[group('model development')]
+verify-mappings: apply-sssom-overlay
+  uv run python scripts/verify_mappings.py

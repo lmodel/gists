@@ -1,4 +1,4 @@
-# Examples of using gist
+# Examples of using gists
 
 This folder contains examples using the datamodel.
 

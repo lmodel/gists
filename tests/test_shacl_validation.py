@@ -91,7 +91,7 @@ class TestVendorContentValidation:
         except ImportError:
             pytest.skip("rdflib not available")
 
-    def test_shapes_reference_gist_namespace(self):
+    def test_shapes_reference_gists_namespace(self):
         """Test that shapes reference gist namespace."""
         with open(SHAPES_FILE, 'r') as f:
             content = f.read()

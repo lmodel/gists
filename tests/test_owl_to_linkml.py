@@ -18,7 +18,7 @@ GISTD = rdflib.Namespace(M.GISTD_NS)
 SH = rdflib.Namespace("http://www.w3.org/ns/shacl#")
 
 # ---------------------------------------------------------------------------
-# Helper to build a minimal gist: class triple set
+# Helper to build a minimal gists: class triple set
 # ---------------------------------------------------------------------------
 
 
@@ -71,15 +71,15 @@ class TestLocalName:
 
 
 class TestGistLocal:
-    def test_gist_uri_returns_local(self):
+    def test_gists_uri_returns_local(self):
         uri = URIRef(M.GIST_NS + "Category")
-        assert M.gist_local(uri) == "Category"
+        assert M.gists_local(uri) == "Category"
 
-    def test_non_gist_uri_returns_none(self):
-        assert M.gist_local(URIRef("http://schema.org/Thing")) is None
+    def test_non_gists_uri_returns_none(self):
+        assert M.gists_local(URIRef("http://schema.org/Thing")) is None
 
     def test_empty_local(self):
-        assert M.gist_local(URIRef(M.GIST_NS)) == ""
+        assert M.gists_local(URIRef(M.GIST_NS)) == ""
 
 
 class TestGistdLocal:
@@ -200,7 +200,7 @@ class TestUnionMembers:
 
 
 class TestOwlExprStr:
-    def test_gist_uri(self):
+    def test_gists_uri(self):
         g = Graph()
         result = M.owl_expr_str(g, GIST.Category)
         assert result == "gist:Category"
@@ -244,7 +244,7 @@ def _core_class_graph() -> Graph:
 
 
 class TestExtractClasses:
-    def test_returns_gist_class(self):
+    def test_returns_gists_class(self):
         g = _core_class_graph()
         classes = M.extract_classes(g)
         assert "Category" in classes
@@ -262,7 +262,7 @@ class TestExtractClasses:
     def test_class_uri_set(self):
         g = _core_class_graph()
         classes = M.extract_classes(g)
-        assert classes["Category"]["class_uri"] == "gist_upstream:Category"
+        assert classes["Category"]["class_uri"] == "gist:Category"
 
     def test_is_a_from_subclassof(self):
         g = _core_class_graph()
@@ -271,7 +271,7 @@ class TestExtractClasses:
         classes = M.extract_classes(g)
         assert classes["Category"]["is_a"] == "Thing"
 
-    def test_non_gist_class_ignored(self):
+    def test_non_gists_class_ignored(self):
         g = Graph()
         g.add((URIRef("http://schema.org/Thing"), RDF.type, OWL.Class))
         classes = M.extract_classes(g)
@@ -348,7 +348,7 @@ class TestExtractSlots:
     def test_object_property_slot_uri(self):
         g = _object_prop_graph()
         slots = M.extract_slots(g)
-        assert slots["has_party"]["slot_uri"] == "gist_upstream:hasParty"
+        assert slots["has_party"]["slot_uri"] == "gist:hasParty"
 
     def test_object_property_range(self):
         g = _object_prop_graph()
@@ -476,7 +476,7 @@ class TestExtractSlots:
         slots = M.extract_slots(g)
         assert slots["old_prop"]["deprecated_element_has_exact_replacement"] == "new_prop"
 
-    def test_non_gist_property_ignored(self):
+    def test_non_gists_property_ignored(self):
         g = Graph()
         g.add((URIRef("http://schema.org/name"), RDF.type, OWL.DatatypeProperty))
         assert not M.extract_slots(g)
@@ -629,9 +629,9 @@ class TestExtractSubClassAssertions:
         g = Graph()
         g.add((GIST.Category, RDFS.subClassOf, GIST.Thing))
         classes = M.extract_sub_class_assertions(g)
-        assert classes["Category"]["class_uri"] == "gist_upstream:Category"
+        assert classes["Category"]["class_uri"] == "gist:Category"
 
-    def test_non_gist_subjects_ignored(self):
+    def test_non_gists_subjects_ignored(self):
         g = Graph()
         g.add((URIRef("http://schema.org/Cat"), RDFS.subClassOf, GIST.Thing))
         classes = M.extract_sub_class_assertions(g)
@@ -770,7 +770,7 @@ class TestAddBlankLines:
                 f"Double blank at lines {i} and {i+1}"
 
     def test_no_blank_before_list_items(self):
-        text = "imports:\n- linkml:types\n- ./gist_core"
+        text = "imports:\n- linkml:types\n- ./gists_core"
         result = M._add_blank_lines(text)
         lines = result.split("\n")
         for i, line in enumerate(lines):
@@ -828,18 +828,18 @@ class TestBuildSchema:
         assert keys.index("prefixes") < keys.index("classes")
         assert keys.index("subsets") < keys.index("enums")
 
-    def test_gist_core_subset_declared(self):
+    def test_gists_core_subset_declared(self):
         s = self._make_schema()
-        assert "gist_core" in s["subsets"]
+        assert "gists_core" in s["subsets"]
 
     def test_elements_tagged_with_subset(self):
         s = self._make_schema()
-        assert s["classes"]["Thing"]["in_subset"] == ["gist_core"]
-        assert s["slots"]["has_name"]["in_subset"] == ["gist_core"]
+        assert s["classes"]["Thing"]["in_subset"] == ["gists_core"]
+        assert s["slots"]["has_name"]["in_subset"] == ["gists_core"]
 
     def test_enum_tagged_with_subset(self):
         s = self._make_schema()
-        assert s["enums"]["MyEnum"]["in_subset"] == ["gist_core"]
+        assert s["enums"]["MyEnum"]["in_subset"] == ["gists_core"]
 
     def test_license_cc_by(self):
         s = self._make_schema()
@@ -863,17 +863,17 @@ class TestBuildMediaTypesSchema:
         enums = {"MediaTypeInstance": {"description": "d", "permissible_values": {"JSON": {}}}}
         return M.build_media_types_schema(enums, **kw)
 
-    def test_imports_gist_core(self):
+    def test_imports_gists_core(self):
         s = self._make_schema()
-        assert "./gist_core" in s["imports"]
+        assert "./gists_core" in s["imports"]
 
-    def test_subset_gist_media_types(self):
+    def test_subset_gists_media_types(self):
         s = self._make_schema()
-        assert "gist_media_types" in s["subsets"]
+        assert "gists_media_types" in s["subsets"]
 
     def test_enum_tagged(self):
         s = self._make_schema()
-        assert s["enums"]["MediaTypeInstance"]["in_subset"] == ["gist_media_types"]
+        assert s["enums"]["MediaTypeInstance"]["in_subset"] == ["gists_media_types"]
 
     def test_no_classes_or_slots(self):
         s = self._make_schema()
@@ -883,7 +883,7 @@ class TestBuildMediaTypesSchema:
 
 class TestBuildPrefixDeclarationsSchema:
     def _make_schema(self, **kw):
-        pv = {"GIST": {"title": "gist", "description": "d", "meaning": "gist_upstream:_PrefixDeclaration_gist"}}
+        pv = {"GIST": {"title": "gist", "description": "d", "meaning": "gist:_PrefixDeclaration_gist"}}
         return M.build_prefix_declarations_schema(pv, **kw)
 
     def test_prefix_declaration_instance_enum(self):
@@ -892,7 +892,7 @@ class TestBuildPrefixDeclarationsSchema:
 
     def test_subset_declared(self):
         s = self._make_schema()
-        assert "gist_prefix_declarations" in s["subsets"]
+        assert "gists_prefix_declarations" in s["subsets"]
 
     def test_no_classes_or_slots(self):
         s = self._make_schema()
@@ -902,8 +902,8 @@ class TestBuildPrefixDeclarationsSchema:
 
 class TestBuildRdfsAnnotationsSchema:
     def _make_schema(self, **kw):
-        classes = {"Foo": {"class_uri": "gist_upstream:Foo"}}
-        slots = {"has_foo": {"slot_uri": "gist_upstream:hasFoo"}}
+        classes = {"Foo": {"class_uri": "gist:Foo"}}
+        slots = {"has_foo": {"slot_uri": "gist:hasFoo"}}
         return M.build_rdfs_annotations_schema(classes, slots, **kw)
 
     def test_has_classes_and_slots(self):
@@ -917,18 +917,18 @@ class TestBuildRdfsAnnotationsSchema:
 
     def test_subset_declared(self):
         s = self._make_schema()
-        assert "gist_rdfs_annotations" in s["subsets"]
+        assert "gists_rdfs_annotations" in s["subsets"]
 
     def test_elements_tagged(self):
         s = self._make_schema()
-        assert s["classes"]["Foo"]["in_subset"] == ["gist_rdfs_annotations"]
+        assert s["classes"]["Foo"]["in_subset"] == ["gists_rdfs_annotations"]
 
 
 class TestBuildSubClassAssertionsSchema:
     def _make_schema(self, **kw):
         classes = {
-            "Category": {"class_uri": "gist_upstream:Category", "is_a": "Thing"},
-            "Thing": {"class_uri": "gist_upstream:Thing"},
+            "Category": {"class_uri": "gist:Category", "is_a": "Thing"},
+            "Thing": {"class_uri": "gist:Thing"},
         }
         return M.build_sub_class_assertions_schema(classes, **kw)
 
@@ -943,38 +943,38 @@ class TestBuildSubClassAssertionsSchema:
 
     def test_subset_declared(self):
         s = self._make_schema()
-        assert "gist_sub_class_assertions" in s["subsets"]
+        assert "gists_sub_class_assertions" in s["subsets"]
 
     def test_elements_tagged(self):
         s = self._make_schema()
-        assert s["classes"]["Category"]["in_subset"] == ["gist_sub_class_assertions"]
+        assert s["classes"]["Category"]["in_subset"] == ["gists_sub_class_assertions"]
 
 
 class TestBuildGistSchema:
     def test_imports_core(self):
-        s = M.build_gist_schema()
-        assert "./gist_core" in s["imports"]
+        s = M.build_gists_schema()
+        assert "./gists_core" in s["imports"]
 
     def test_imports_media_types(self):
-        s = M.build_gist_schema()
-        assert "./gist_media_types" in s["imports"]
+        s = M.build_gists_schema()
+        assert "./gists_media_types" in s["imports"]
 
     def test_imports_prefix_declarations(self):
-        s = M.build_gist_schema()
-        assert "./gist_prefix_declarations" in s["imports"]
+        s = M.build_gists_schema()
+        assert "./gists_prefix_declarations" in s["imports"]
 
     def test_no_classes_slots_enums(self):
-        s = M.build_gist_schema()
+        s = M.build_gists_schema()
         assert "classes" not in s
         assert "slots" not in s
         assert "enums" not in s
 
     def test_license(self):
-        s = M.build_gist_schema()
+        s = M.build_gists_schema()
         assert s["license"] == "CC-BY-4.0"
 
     def test_canonical_key_order(self):
-        s = M.build_gist_schema()
+        s = M.build_gists_schema()
         keys = list(s.keys())
         assert keys.index("id") < keys.index("name")
         assert keys.index("prefixes") > keys.index("version")
@@ -1123,7 +1123,7 @@ class TestIntegrationMinimalGraph:
         enums = M.extract_enums(minimal_graph)
         schema = M.build_schema(classes, slots, enums)
         yaml_text = M.dump_yaml(schema)
-        assert "gist_core" in yaml_text
+        assert "gists_core" in yaml_text
         assert "Category" in yaml_text
         assert "has_label" in yaml_text
 
@@ -1144,5 +1144,5 @@ class TestIntegrationMinimalGraph:
         ttl_path.write_text(_MINIMAL_TTL)
         M.generate_per_file_schemas([ttl_path], tmp_path / "out", version="14.1.0")
         out = tmp_path / "out"
-        assert (out / "gist_core.yaml").exists()
-        assert (out / "gist.yaml").exists()
+        assert (out / "gists_core.yaml").exists()
+        assert (out / "gists.yaml").exists()

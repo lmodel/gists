@@ -11,7 +11,7 @@ name: Publish Python Package
 on:  # yamllint disable-line rule:truthy
   push:
     tags:
-      # GitHub glob matching is limited [1]. So we can't define a pattern matching
+      # GitHub glob matching is limited. So we can't define a pattern matching
       # pep 440 version definition [N!]N(.N)*[{a|b|rc}N][.postN][.devN]
       - 'v[0-9]+.[0-9]+.[0-9]+.?*'
       - 'v[0-9]+.[0-9]+.[0-9]+rc[0-9]'
@@ -27,7 +27,7 @@ jobs:
 
     strategy:
       matrix:
-        pyversion: ["3.13"]
+        pyversion: ["3.14"]
 
     steps:
       # https://github.com/actions/checkout
@@ -40,18 +40,14 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v7.1.2
         with:
-          
           python-version: ${{ matrix.pyversion }}
-          
           enable-cache: true
 
       # https://github.com/actions/setup-python
       - name: Set up Python
         uses: actions/setup-python@v6.0.0
         with:
-          
           python-version: ${{ matrix.pyversion }}
-          
 
       - name: Install just
         run: |
@@ -73,7 +69,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi-release
-      url: https://pypi.org/p/gist
+      url: https://pypi.org/p/gists
     permissions:
       id-token: write  # this permission is mandatory for trusted publishing
     steps:
@@ -97,5 +93,3 @@ jobs:
         uses: pypa/gh-action-pypi-publish@v1.13.0
         with:
           verbose: true
-
-# [1] https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet

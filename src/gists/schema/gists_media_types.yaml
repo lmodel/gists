@@ -1,8 +1,8 @@
-id: https://w3id.org/lmodel/gist/media-types
-name: gist_media_types
+id: https://w3id.org/lmodel/gists/media-types
+name: gists_media_types
 title: gist Media Types
 description: |-
-  IANA Media Type named individuals from gist 14.1.0. Imports gist_core for class definitions.
+  IANA Media Type named individuals from gist 14.1.0. Imports gists_core for class definitions.
 license: CC-BY-4.0
 see_also:
 - https://www.semanticarts.com/gist/
@@ -10,8 +10,8 @@ source: https://w3id.org/semanticarts/ontology/gistMediaTypes
 version: 14.1.0
 
 prefixes:
-  gist: https://w3id.org/lmodel/gist/
-  gist_upstream: https://w3id.org/semanticarts/ns/ontology/gist/
+  gists: https://w3id.org/lmodel/gists/
+  gist: https://w3id.org/semanticarts/ns/ontology/gist/
   gistd: https://w3id.org/semanticarts/ns/data/gist/
   linkml: https://w3id.org/linkml/
   schema: http://schema.org/
@@ -25,16 +25,16 @@ prefixes:
   media_img: https://www.iana.org/assignments/media-types/image/
   media_txt: https://www.iana.org/assignments/media-types/text/
 
-default_prefix: gist
+default_prefix: gists
 default_range: string
 
 imports:
 - linkml:types
-- ./gist_core
+- ./gists_core
 
 subsets:
 
-  gist_media_types:
+  gists_media_types:
     description: IANA Media Type instances from the gist Media Types module.
 
 enums:
@@ -85,4 +85,4 @@ enums:
         title: Turtle
         meaning: media_txt:turtle
     in_subset:
-    - gist_media_types
+    - gists_media_types

@@ -1,1 +1,1 @@
-"""Tests for gist."""
+"""Tests for gists."""
