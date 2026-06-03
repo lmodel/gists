@@ -12,7 +12,7 @@ Generates one schema per input TTL file into an output directory:
 
 Usage
 -----
-    uv run python scripts/owl_to_linkml.py [TTL_FILE ...] [-d OUTPUT_DIR]
+    uv run python scripts/gist_to_linkml.py [TTL_FILE ...] [-d OUTPUT_DIR]
 
 100% coverage goals:
   - Every owl:Class                              -> LinkML class
@@ -44,12 +44,12 @@ from rdflib.namespace import OWL, RDF, RDFS, SKOS, XSD
 # ---------------------------------------------------------------------------
 # Namespace constants
 # ---------------------------------------------------------------------------
-GIST_NS = "https://w3id.org/semanticarts/ns/ontology/gist/"
+GIST_SA_NS = "https://w3id.org/semanticarts/ns/ontology/gist/"
 GISTD_NS = "https://w3id.org/semanticarts/ns/data/gist/"
 LMODEL_NS = "https://w3id.org/lmodel/gist/"
 LMODEL_BASE = "https://w3id.org/lmodel/gist"
 
-GIST = rdflib.Namespace(GIST_NS)
+GIST = rdflib.Namespace(GIST_SA_NS)
 GISTD = rdflib.Namespace(GISTD_NS)
 SH = rdflib.Namespace("http://www.w3.org/ns/shacl#")
 
@@ -65,7 +65,7 @@ MEDIA_PREFIXES = {
 
 # Ordered prefix table used by uri_to_curie() — longest namespace first avoids prefix ambiguity
 _CURIE_PREFIXES: list[tuple[str, str]] = [
-    (GIST_NS, "gist_upstream"),
+    (GIST_SA_NS, "gist_semanticarts"),
     (GISTD_NS, "gistd"),
     (LMODEL_NS, "gist"),
     ("http://schema.org/", "schema"),
@@ -139,8 +139,8 @@ def local_name(uri: URIRef) -> str:
 
 def gist_local(uri: URIRef) -> str | None:
     s = str(uri)
-    if s.startswith(GIST_NS):
-        return s[len(GIST_NS):]
+    if s.startswith(GIST_SA_NS):
+        return s[len(GIST_SA_NS):]
     return None
 
 
@@ -352,7 +352,7 @@ def extract_classes(g: Graph) -> dict[str, dict]:
             ]
 
         # --- class_uri maps to the upstream OWL class URI ---
-        entry["class_uri"] = f"gist_upstream:{cls_local}"
+        entry["class_uri"] = f"gist:{cls_local}"
 
         # --- equivalentClass ---
         # Named URIs  -> exact_mappings (owl:equivalentClass = owl:equivalentClass semantics)
@@ -467,7 +467,7 @@ def extract_slots(g: Graph) -> dict[str, dict]:
             entry: dict[str, Any] = {}
 
             # slot_uri maps to the upstream predicate URI
-            entry["slot_uri"] = f"gist_upstream:{prop_local}"
+            entry["slot_uri"] = f"gist:{prop_local}"
 
             # --- description ---
             defn = first_literal(g, prop, SKOS.definition)
@@ -808,10 +808,10 @@ def extract_rdfs_annotations(
             entry["comments"] = notes
 
         if is_slot:
-            entry["slot_uri"] = f"gist_upstream:{gist_name}"
+            entry["slot_uri"] = f"gist:{gist_name}"
             slots[camel_to_snake(gist_name)] = entry
         else:
-            entry["class_uri"] = f"gist_upstream:{gist_name}"
+            entry["class_uri"] = f"gist:{gist_name}"
             classes[gist_name] = entry
 
     return classes, slots
@@ -835,7 +835,7 @@ def extract_sub_class_assertions(g: Graph) -> dict[str, dict]:
 
         if subj_name not in classes:
             classes[subj_name] = {
-                "class_uri": f"gist_upstream:{subj_name}",
+                "class_uri": f"gist:{subj_name}",
                 "is_a": obj_name,
             }
         else:
@@ -849,7 +849,7 @@ def extract_sub_class_assertions(g: Graph) -> dict[str, dict]:
     all_parents = {entry["is_a"] for entry in classes.values() if "is_a" in entry}
     for parent in sorted(all_parents):
         if parent not in classes:
-            classes[parent] = {"class_uri": f"gist_upstream:{parent}"}
+            classes[parent] = {"class_uri": f"gist:{parent}"}
 
     return classes
 
@@ -872,7 +872,7 @@ def extract_prefix_declarations(g: Graph) -> dict[str, dict]:
 
         gist_name = gist_local(subj)
         key = _enum_val_key(gist_name) if gist_name else _enum_val_key(prefix_val)
-        meaning = f"gist_upstream:{gist_name}" if gist_name else str(subj)
+        meaning = f"gist:{gist_name}" if gist_name else str(subj)
 
         pv[key] = {
             "title": prefix_val,
@@ -1042,7 +1042,7 @@ def get_ontology_iri(g: Graph) -> str | None:
 def _base_prefixes() -> dict[str, str]:
     return {
         "gist": LMODEL_NS,
-        "gist_upstream": GIST_NS,
+        "gist_semanticarts": GIST_SA_NS,
         "gistd": GISTD_NS,
         "linkml": "https://w3id.org/linkml/",
         "schema": "http://schema.org/",
@@ -1307,7 +1307,7 @@ def build_gist_schema(version: str = "14.1.0") -> dict:
         "version": version,
         "prefixes": {
             "gist": LMODEL_NS,
-            "gist_upstream": GIST_NS,
+            "gist_semanticarts": GIST_SA_NS,
             "gistd": GISTD_NS,
             "linkml": "https://w3id.org/linkml/",
             "media_app": "https://www.iana.org/assignments/media-types/application/",

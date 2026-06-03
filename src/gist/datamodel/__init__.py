@@ -1,5 +1,7 @@
+"""Data model package for gist."""
+
 from pathlib import Path
-from .gist import *
+from .gist import *  # noqa: F403
 
 THIS_PATH = Path(__file__).parent
 

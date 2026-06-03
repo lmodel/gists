@@ -5,13 +5,13 @@ description: |-
   Explicit rdfs:subClassOf assertions for gist classes (14.1.0). Supplement for RL reasoners that do not infer subclass relationships from OWL equivalentClass axioms.
 license: CC-BY-4.0
 see_also:
-- https://www.semanticarts.com/gist/
+  - https://www.semanticarts.com/gist/
 source: https://w3id.org/semanticarts/ontology/gistSubClassAssertions
 version: 14.1.0
 
 prefixes:
   gist: https://w3id.org/lmodel/gist/
-  gist_upstream: https://w3id.org/semanticarts/ns/ontology/gist/
+  gist_semanticarts: https://w3id.org/semanticarts/ns/ontology/gist/
   gistd: https://w3id.org/semanticarts/ns/data/gist/
   linkml: https://w3id.org/linkml/
   schema: http://schema.org/
@@ -22,11 +22,14 @@ prefixes:
   xsd: http://www.w3.org/2001/XMLSchema#
   owl: http://www.w3.org/2002/07/owl#
 
+  common_domain_model: https://w3id.org/lmodel/common_domain_model/
+  dpvs: https://w3id.org/lmodel/dpvs/
+  iso22989: https://w3id.org/lmodel/iso22989/
 default_prefix: gist
 default_range: string
 
 imports:
-- linkml:types
+  - linkml:types
 
 subsets:
 
@@ -37,529 +40,619 @@ classes:
 
   Account:
     is_a: Agreement
-    class_uri: gist_upstream:Account
+    class_uri: gist:Account
+    close_mappings:
+      - common_domain_model:Account
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Contract:
     is_a: Agreement
-    class_uri: gist_upstream:Contract
+    class_uri: gist:Contract
+    exact_mappings:
+      - dpvs:DpvContract
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Address:
     is_a: Content
-    class_uri: gist_upstream:Address
+    class_uri: gist:Address
+    close_mappings:
+      - common_domain_model:Address
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   ContentExpression:
     is_a: Content
-    class_uri: gist_upstream:ContentExpression
+    class_uri: gist:ContentExpression
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   ID:
     is_a: Content
-    class_uri: gist_upstream:ID
+    class_uri: gist:ID
+    close_mappings:
+      - common_domain_model:Identifier
+      - common_domain_model:PartyIdentifier
+      - common_domain_model:PersonIdentifier
+      - common_domain_model:EntityIdentifier
+      - common_domain_model:AssignedIdentifier
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   AddressUsageType:
     is_a: Category
-    class_uri: gist_upstream:AddressUsageType
+    class_uri: gist:AddressUsageType
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Behavior:
     is_a: Category
-    class_uri: gist_upstream:Behavior
+    class_uri: gist:Behavior
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   DegreeOfCommitment:
     is_a: Category
-    class_uri: gist_upstream:DegreeOfCommitment
+    class_uri: gist:DegreeOfCommitment
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Discipline:
     is_a: Category
-    class_uri: gist_upstream:Discipline
+    class_uri: gist:Discipline
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   ElectronicAddressType:
     is_a: Category
-    class_uri: gist_upstream:ElectronicAddressType
+    class_uri: gist:ElectronicAddressType
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   EquipmentType:
     is_a: Category
-    class_uri: gist_upstream:EquipmentType
+    class_uri: gist:EquipmentType
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   GeneralMediaType:
     is_a: Category
-    class_uri: gist_upstream:GeneralMediaType
+    class_uri: gist:GeneralMediaType
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   MediaType:
     is_a: Category
-    class_uri: gist_upstream:MediaType
+    class_uri: gist:MediaType
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Medium:
     is_a: Category
-    class_uri: gist_upstream:Medium
+    class_uri: gist:Medium
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   PhysicalActionType:
     is_a: Category
-    class_uri: gist_upstream:PhysicalActionType
+    class_uri: gist:PhysicalActionType
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   PhysicalAddressType:
     is_a: Category
-    class_uri: gist_upstream:PhysicalAddressType
+    class_uri: gist:PhysicalAddressType
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   ProductCategory:
     is_a: Category
-    class_uri: gist_upstream:ProductCategory
+    class_uri: gist:ProductCategory
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Tag:
     is_a: Category
-    class_uri: gist_upstream:Tag
+    class_uri: gist:Tag
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Agreement:
     is_a: Intention
-    class_uri: gist_upstream:Agreement
+    class_uri: gist:Agreement
+    exact_mappings:
+      - common_domain_model:Agreement
+    broad_mappings:
+      - common_domain_model:MasterAgreement
+      - dpvs:DataProcessingAgreement
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Commitment:
     is_a: Intention
-    class_uri: gist_upstream:Commitment
+    class_uri: gist:Commitment
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Function:
     is_a: Intention
-    class_uri: gist_upstream:Function
+    class_uri: gist:Function
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Permission:
     is_a: Intention
-    class_uri: gist_upstream:Permission
+    class_uri: gist:Permission
+    exact_mappings:
+      - dpvs:Permission
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Requirement:
     is_a: Intention
-    class_uri: gist_upstream:Requirement
+    class_uri: gist:Requirement
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Restriction:
     is_a: Intention
-    class_uri: gist_upstream:Restriction
+    class_uri: gist:Restriction
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Specification:
     is_a: Intention
-    class_uri: gist_upstream:Specification
+    class_uri: gist:Specification
+    related_mappings:
+      - common_domain_model:EligibleCollateralCriteria
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Assignment:
     is_a: TemporalRelation
-    class_uri: gist_upstream:Assignment
+    class_uri: gist:Assignment
+    close_mappings:
+      - common_domain_model:RelatedParty
+      - common_domain_model:Counterparty
+      - common_domain_model:NaturalPersonRole
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Building:
     is_a: Landmark
-    class_uri: gist_upstream:Building
+    class_uri: gist:Building
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   BundledCatalogItem:
     is_a: CatalogItem
-    class_uri: gist_upstream:BundledCatalogItem
+    class_uri: gist:BundledCatalogItem
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   ProductSpecification:
     is_a: CatalogItem
-    class_uri: gist_upstream:ProductSpecification
+    class_uri: gist:ProductSpecification
+    close_mappings:
+      - common_domain_model:TradableProduct
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   ServiceSpecification:
     is_a: CatalogItem
-    class_uri: gist_upstream:ServiceSpecification
+    class_uri: gist:ServiceSpecification
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   CatalogItem:
     is_a: Specification
-    class_uri: gist_upstream:CatalogItem
+    class_uri: gist:CatalogItem
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   ContractTerm:
     is_a: Specification
-    class_uri: gist_upstream:ContractTerm
+    class_uri: gist:ContractTerm
+    related_mappings:
+      - common_domain_model:CollateralProvisions
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   EventSpecification:
     is_a: Specification
-    class_uri: gist_upstream:EventSpecification
+    class_uri: gist:EventSpecification
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Collection:
     is_a: Composite
-    class_uri: gist_upstream:Collection
+    class_uri: gist:Collection
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Network:
     is_a: Composite
-    class_uri: gist_upstream:Network
+    class_uri: gist:Network
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   System:
     is_a: Composite
-    class_uri: gist_upstream:System
+    class_uri: gist:System
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   ContemporaryEvent:
     is_a: Event
-    class_uri: gist_upstream:ContemporaryEvent
+    class_uri: gist:ContemporaryEvent
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   ContingentEvent:
     is_a: Event
-    class_uri: gist_upstream:ContingentEvent
+    class_uri: gist:ContingentEvent
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Determination:
     is_a: Event
-    class_uri: gist_upstream:Determination
+    class_uri: gist:Determination
+    close_mappings:
+      - iso22989:Decision
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   HistoricalEvent:
     is_a: Event
-    class_uri: gist_upstream:HistoricalEvent
+    class_uri: gist:HistoricalEvent
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   PhysicalEvent:
     is_a: Event
-    class_uri: gist_upstream:PhysicalEvent
+    class_uri: gist:PhysicalEvent
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   ScheduledEvent:
     is_a: Event
-    class_uri: gist_upstream:ScheduledEvent
+    class_uri: gist:ScheduledEvent
+    related_mappings:
+      - common_domain_model:Schedule
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Task:
     is_a: Event
-    class_uri: gist_upstream:Task
+    class_uri: gist:Task
+    close_mappings:
+      - iso22989:Task
+    related_mappings:
+      - common_domain_model:Workflow
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Transaction:
     is_a: Event
-    class_uri: gist_upstream:Transaction
+    class_uri: gist:Transaction
+    close_mappings:
+      - common_domain_model:Trade
+    related_mappings:
+      - common_domain_model:TradeState
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   ContingentObligation:
     is_a: Commitment
-    class_uri: gist_upstream:ContingentObligation
+    class_uri: gist:ContingentObligation
+    close_mappings:
+      - dpvs:Obligation
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   ControlledVocabulary:
     is_a: Collection
-    class_uri: gist_upstream:ControlledVocabulary
+    class_uri: gist:ControlledVocabulary
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   OrderedCollection:
     is_a: Collection
-    class_uri: gist_upstream:OrderedCollection
+    class_uri: gist:OrderedCollection
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   UnitGroup:
     is_a: Collection
-    class_uri: gist_upstream:UnitGroup
+    class_uri: gist:UnitGroup
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   CountryGeoRegion:
     is_a: GovernedGeoRegion
-    class_uri: gist_upstream:CountryGeoRegion
+    class_uri: gist:CountryGeoRegion
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   CountryGovernment:
     is_a: GovernmentOrganization
-    class_uri: gist_upstream:CountryGovernment
+    class_uri: gist:CountryGovernment
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   SubCountryGovernment:
     is_a: GovernmentOrganization
-    class_uri: gist_upstream:SubCountryGovernment
+    class_uri: gist:SubCountryGovernment
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   ElectronicAddress:
     is_a: Address
-    class_uri: gist_upstream:ElectronicAddress
+    class_uri: gist:ElectronicAddress
+    close_mappings:
+      - common_domain_model:ContactInformation
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   PhysicalAddress:
     is_a: Address
-    class_uri: gist_upstream:PhysicalAddress
+    class_uri: gist:PhysicalAddress
+    related_mappings:
+      - common_domain_model:Address
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Equipment:
     is_a: PhysicalIdentifiableItem
-    class_uri: gist_upstream:Equipment
+    class_uri: gist:Equipment
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Landmark:
     is_a: PhysicalIdentifiableItem
-    class_uri: gist_upstream:Landmark
+    class_uri: gist:Landmark
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   LivingThing:
     is_a: PhysicalIdentifiableItem
-    class_uri: gist_upstream:LivingThing
+    class_uri: gist:LivingThing
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   FormattedContent:
     is_a: ContentExpression
-    class_uri: gist_upstream:FormattedContent
+    class_uri: gist:FormattedContent
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Message:
     is_a: ContentExpression
-    class_uri: gist_upstream:Message
+    class_uri: gist:Message
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Text:
     is_a: ContentExpression
-    class_uri: gist_upstream:Text
+    class_uri: gist:Text
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   GeoPoint:
     is_a: GeoLocation
-    class_uri: gist_upstream:GeoPoint
+    class_uri: gist:GeoPoint
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   GeoRegion:
     is_a: GeoLocation
-    class_uri: gist_upstream:GeoRegion
+    class_uri: gist:GeoRegion
+    broad_mappings:
+      - dpvs:PersonalSpace
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   GeoVolume:
     is_a: GeoLocation
-    class_uri: gist_upstream:GeoVolume
+    class_uri: gist:GeoVolume
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   GeoRoute:
     is_a: OrderedCollection
-    class_uri: gist_upstream:GeoRoute
+    class_uri: gist:GeoRoute
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   GovernedGeoRegion:
     is_a: GeoRegion
-    class_uri: gist_upstream:GovernedGeoRegion
+    class_uri: gist:GovernedGeoRegion
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   GovernmentOrganization:
     is_a: Organization
-    class_uri: gist_upstream:GovernmentOrganization
+    class_uri: gist:GovernmentOrganization
+    broad_mappings:
+      - common_domain_model:LegalEntity
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   IntergovernmentalOrganization:
     is_a: Organization
-    class_uri: gist_upstream:IntergovernmentalOrganization
+    class_uri: gist:IntergovernmentalOrganization
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   KnowledgeConcept:
     is_a: IntellectualProperty
-    class_uri: gist_upstream:KnowledgeConcept
+    class_uri: gist:KnowledgeConcept
+    related_mappings:
+      - iso22989:KnowledgeGraph
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   NetworkLink:
     is_a: Component
-    class_uri: gist_upstream:NetworkLink
+    class_uri: gist:NetworkLink
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   NetworkNode:
     is_a: Component
-    class_uri: gist_upstream:NetworkNode
+    class_uri: gist:NetworkNode
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   OrderedMember:
     is_a: Component
-    class_uri: gist_upstream:OrderedMember
+    class_uri: gist:OrderedMember
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Offer:
     is_a: ContingentObligation
-    class_uri: gist_upstream:Offer
+    class_uri: gist:Offer
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Person:
     is_a: LivingThing
-    class_uri: gist_upstream:Person
+    class_uri: gist:Person
+    exact_mappings:
+      - dpvs:NaturalPerson
+    close_mappings:
+      - common_domain_model:NaturalPerson
+      - iso22989:AIUser
+      - iso22989:DataSubject
+    broad_mappings:
+      - dpvs:DataSubject
+    related_mappings:
+      - common_domain_model:Party
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Project:
     is_a: Task
-    class_uri: gist_upstream:Project
+    class_uri: gist:Project
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   ScheduledTask:
     is_a: Task
-    class_uri: gist_upstream:ScheduledTask
+    class_uri: gist:ScheduledTask
     notes:
-    - 'OWL additional subClassOf: ScheduledEvent'
+      - 'OWL additional subClassOf: ScheduledEvent'
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   ReferenceValue:
     is_a: Magnitude
-    class_uri: gist_upstream:ReferenceValue
+    class_uri: gist:ReferenceValue
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   RenderedContent:
     is_a: FormattedContent
-    class_uri: gist_upstream:RenderedContent
+    class_uri: gist:RenderedContent
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   TaskTemplate:
     is_a: Template
-    class_uri: gist_upstream:TaskTemplate
+    class_uri: gist:TaskTemplate
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Category:
-    class_uri: gist_upstream:Category
+    class_uri: gist:Category
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Component:
-    class_uri: gist_upstream:Component
+    class_uri: gist:Component
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Composite:
-    class_uri: gist_upstream:Composite
+    class_uri: gist:Composite
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Content:
-    class_uri: gist_upstream:Content
+    class_uri: gist:Content
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Event:
-    class_uri: gist_upstream:Event
+    class_uri: gist:Event
+    close_mappings:
+      - common_domain_model:BusinessEvent
+      - iso22989:Action
+    narrow_mappings:
+      - iso22989:AILifecycleProcess
+      - iso22989:DataProcess
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   GeoLocation:
-    class_uri: gist_upstream:GeoLocation
+    class_uri: gist:GeoLocation
+    close_mappings:
+      - dpvs:StorageLocation
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   IntellectualProperty:
-    class_uri: gist_upstream:IntellectualProperty
+    class_uri: gist:IntellectualProperty
+    broad_mappings:
+      - dpvs:IntellectualPropertyData
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Intention:
-    class_uri: gist_upstream:Intention
+    class_uri: gist:Intention
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Magnitude:
-    class_uri: gist_upstream:Magnitude
+    class_uri: gist:Magnitude
+    close_mappings:
+      - common_domain_model:Money
+      - common_domain_model:Cash
+      - common_domain_model:Quantity
+      - common_domain_model:Measure
+    related_mappings:
+      - common_domain_model:Price
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Organization:
-    class_uri: gist_upstream:Organization
+    class_uri: gist:Organization
+    exact_mappings:
+      - iso22989:Organization
+    close_mappings:
+      - common_domain_model:Party
+      - common_domain_model:LegalEntity
+      - common_domain_model:BusinessUnit
+      - dpvs:LegalEntity
+    broad_mappings:
+      - dpvs:OrganisationalUnit
+      - dpvs:ThirdParty
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   PhysicalIdentifiableItem:
-    class_uri: gist_upstream:PhysicalIdentifiableItem
+    class_uri: gist:PhysicalIdentifiableItem
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   Template:
-    class_uri: gist_upstream:Template
+    class_uri: gist:Template
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions
 
   TemporalRelation:
-    class_uri: gist_upstream:TemporalRelation
+    class_uri: gist:TemporalRelation
     in_subset:
-    - gist_sub_class_assertions
+      - gist_sub_class_assertions

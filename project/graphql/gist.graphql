@@ -1,0 +1,624 @@
+# metamodel_version: 1.11.0
+# version: 14.1.0
+enum AspectInstance
+  {
+    ASPECT_ALTITUDE
+    ASPECT_AREA
+    ASPECT_DURATION
+    ASPECT_FINANCIAL_BALANCE
+    ASPECT_MASS
+    ASPECT_MONETARY_VALUE
+    ASPECT_PROBABILITY
+    ASPECT_VOLUME
+  }
+
+enum MediaTypeInstance
+  {
+    JSON
+    LD_PLUS_JSON
+    N_QUADS
+    N_TRIPLES
+    RDF_PLUS_XML
+    SPARQL_RESULTS_PLUS_JSON
+    SPARQL_RESULTS_PLUS_XML
+    TRIG
+    JPG
+    PNG
+    CSV
+    HTML
+    PLAIN
+    TURTLE
+  }
+
+enum PrefixDeclarationInstance
+  {
+    PREFIXDECLARATION_GIST
+    PREFIXDECLARATION_OWL
+    PREFIXDECLARATION_RDF
+    PREFIXDECLARATION_RDFS
+    PREFIXDECLARATION_SH
+    PREFIXDECLARATION_SKOS
+    PREFIXDECLARATION_XSD
+  }
+
+type Account
+  {
+    name: String
+    description: String
+  }
+
+type Address
+  {
+    name: String
+    description: String
+  }
+
+type AddressUsageType
+  {
+    name: String
+    description: String
+  }
+
+type Agreement
+  {
+    name: String
+    description: String
+  }
+
+type Aspect implements GistThing
+  {
+    name: String
+    description: String
+  }
+
+type Assignment
+  {
+    name: String
+    description: String
+  }
+
+type Behavior
+  {
+    name: String
+    description: String
+  }
+
+type Building
+  {
+    name: String
+    description: String
+  }
+
+type BundledCatalogItem
+  {
+    name: String
+    description: String
+  }
+
+type CatalogItem
+  {
+    name: String
+    description: String
+  }
+
+type Category implements GistThing
+  {
+    name: String
+    description: String
+  }
+
+type Collection
+  {
+    name: String
+    description: String
+  }
+
+type Commitment
+  {
+    name: String
+    description: String
+  }
+
+type Component implements GistThing
+  {
+    name: String
+    description: String
+  }
+
+type Composite implements GistThing
+  {
+    name: String
+    description: String
+  }
+
+type ContemporaryEvent
+  {
+    name: String
+    description: String
+  }
+
+type Content implements GistThing
+  {
+    name: String
+    description: String
+  }
+
+type ContentExpression
+  {
+    name: String
+    description: String
+  }
+
+type ContingentEvent
+  {
+    name: String
+    description: String
+  }
+
+type ContingentObligation
+  {
+    name: String
+    description: String
+  }
+
+type Contract
+  {
+    name: String
+    description: String
+  }
+
+type ContractTerm
+  {
+    name: String
+    description: String
+  }
+
+type ControlledVocabulary
+  {
+    name: String
+    description: String
+  }
+
+type CountryGeoRegion
+  {
+    name: String
+    description: String
+  }
+
+type CountryGovernment
+  {
+    name: String
+    description: String
+  }
+
+type DegreeOfCommitment
+  {
+    name: String
+    description: String
+  }
+
+type Determination
+  {
+    name: String
+    description: String
+  }
+
+type Discipline
+  {
+    name: String
+    description: String
+  }
+
+type ElectronicAddress
+  {
+    name: String
+    description: String
+  }
+
+type ElectronicAddressType
+  {
+    name: String
+    description: String
+  }
+
+type Equipment
+  {
+    name: String
+    description: String
+  }
+
+type EquipmentType
+  {
+    name: String
+    description: String
+  }
+
+type Event implements GistThing
+  {
+    name: String
+    description: String
+  }
+
+type EventSpecification
+  {
+    name: String
+    description: String
+  }
+
+type FormattedContent
+  {
+    name: String
+    description: String
+  }
+
+type Function
+  {
+    name: String
+    description: String
+  }
+
+type GeneralMediaType
+  {
+    name: String
+    description: String
+  }
+
+type GeoLocation implements GistThing
+  {
+    name: String
+    description: String
+  }
+
+type GeoPoint
+  {
+    name: String
+    description: String
+  }
+
+type GeoRegion
+  {
+    name: String
+    description: String
+  }
+
+type GeoRoute
+  {
+    name: String
+    description: String
+  }
+
+type GeoVolume
+  {
+    name: String
+    description: String
+  }
+
+interface GistThing
+  {
+    name: String
+    description: String
+  }
+
+type GovernedGeoRegion
+  {
+    name: String
+    description: String
+  }
+
+type GovernmentOrganization
+  {
+    name: String
+    description: String
+  }
+
+type HistoricalEvent
+  {
+    name: String
+    description: String
+  }
+
+type ID
+  {
+    name: String
+    description: String
+  }
+
+type IntellectualProperty implements GistThing
+  {
+    name: String
+    description: String
+  }
+
+type Intention implements GistThing
+  {
+    name: String
+    description: String
+  }
+
+type IntergovernmentalOrganization
+  {
+    name: String
+    description: String
+  }
+
+type KnowledgeConcept
+  {
+    name: String
+    description: String
+  }
+
+type Landmark
+  {
+    name: String
+    description: String
+  }
+
+type Language implements GistThing
+  {
+    name: String
+    description: String
+  }
+
+type LivingThing
+  {
+    name: String
+    description: String
+  }
+
+type Magnitude implements GistThing
+  {
+    name: String
+    description: String
+  }
+
+type MediaType
+  {
+    name: String
+    description: String
+  }
+
+type Medium
+  {
+    name: String
+    description: String
+  }
+
+type Message
+  {
+    name: String
+    description: String
+  }
+
+type Network
+  {
+    name: String
+    description: String
+  }
+
+type NetworkLink
+  {
+    name: String
+    description: String
+  }
+
+type NetworkNode
+  {
+    name: String
+    description: String
+  }
+
+type Offer
+  {
+    name: String
+    description: String
+  }
+
+type OrderedCollection
+  {
+    name: String
+    description: String
+  }
+
+type OrderedMember
+  {
+    name: String
+    description: String
+  }
+
+type Organization implements GistThing
+  {
+    name: String
+    description: String
+  }
+
+type Permission
+  {
+    name: String
+    description: String
+  }
+
+type Person
+  {
+    name: String
+    description: String
+  }
+
+type PhysicalActionType
+  {
+    name: String
+    description: String
+  }
+
+type PhysicalAddress
+  {
+    name: String
+    description: String
+  }
+
+type PhysicalAddressType
+  {
+    name: String
+    description: String
+  }
+
+type PhysicalEvent
+  {
+    name: String
+    description: String
+  }
+
+type PhysicalIdentifiableItem implements GistThing
+  {
+    name: String
+    description: String
+  }
+
+type PhysicalSubstance implements GistThing
+  {
+    name: String
+    description: String
+  }
+
+type ProductCategory
+  {
+    name: String
+    description: String
+  }
+
+type ProductSpecification
+  {
+    name: String
+    description: String
+  }
+
+type Project
+  {
+    name: String
+    description: String
+  }
+
+type ReferenceValue
+  {
+    name: String
+    description: String
+  }
+
+type RenderedContent
+  {
+    name: String
+    description: String
+  }
+
+type Requirement
+  {
+    name: String
+    description: String
+  }
+
+type Restriction
+  {
+    name: String
+    description: String
+  }
+
+type ScheduledEvent
+  {
+    name: String
+    description: String
+  }
+
+type ScheduledTask
+  {
+    name: String
+    description: String
+  }
+
+type SchemaMetaData implements GistThing
+  {
+    name: String
+    description: String
+  }
+
+type ServiceSpecification
+  {
+    name: String
+    description: String
+  }
+
+type Specification
+  {
+    name: String
+    description: String
+  }
+
+type SubCountryGovernment
+  {
+    name: String
+    description: String
+  }
+
+type System
+  {
+    name: String
+    description: String
+  }
+
+type Tag
+  {
+    name: String
+    description: String
+  }
+
+type Task
+  {
+    name: String
+    description: String
+  }
+
+type TaskTemplate
+  {
+    name: String
+    description: String
+  }
+
+type Template implements GistThing
+  {
+    name: String
+    description: String
+  }
+
+type TemporalRelation implements GistThing
+  {
+    name: String
+    description: String
+  }
+
+type Text
+  {
+    name: String
+    description: String
+  }
+
+type TimeInterval implements GistThing
+  {
+    name: String
+    description: String
+  }
+
+type Transaction
+  {
+    name: String
+    description: String
+  }
+
+type UnitGroup
+  {
+    name: String
+    description: String
+  }
+
+type UnitOfMeasure implements GistThing
+  {
+    name: String
+    description: String
+  }

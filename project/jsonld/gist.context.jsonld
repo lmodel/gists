@@ -1,0 +1,740 @@
+{
+   "@context": {
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "common_domain_model": "https://w3id.org/lmodel/common_domain_model/",
+      "dpvs": "https://w3id.org/lmodel/dpvs/",
+      "gist": "https://w3id.org/lmodel/gist/",
+      "gist_semanticarts": "https://w3id.org/semanticarts/ns/ontology/gist/",
+      "gistd": "https://w3id.org/semanticarts/ns/data/gist/",
+      "iso22989": "https://w3id.org/lmodel/iso22989/",
+      "linkml": "https://w3id.org/linkml/",
+      "media_app": "https://www.iana.org/assignments/media-types/application/",
+      "media_img": "https://www.iana.org/assignments/media-types/image/",
+      "media_txt": "https://www.iana.org/assignments/media-types/text/",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "@vocab": "https://w3id.org/lmodel/gist/",
+      "actual_end_date": {
+         "@type": "xsd:dateTime",
+         "@id": "actualEndDate"
+      },
+      "actual_end_date_time": {
+         "@type": "xsd:dateTime",
+         "@id": "actualEndDateTime"
+      },
+      "actual_end_microsecond": {
+         "@type": "xsd:dateTime",
+         "@id": "actualEndMicrosecond"
+      },
+      "actual_end_minute": {
+         "@type": "xsd:dateTime",
+         "@id": "actualEndMinute"
+      },
+      "actual_end_year": {
+         "@type": "xsd:dateTime",
+         "@id": "actualEndYear"
+      },
+      "actual_start_date": {
+         "@type": "xsd:dateTime",
+         "@id": "actualStartDate"
+      },
+      "actual_start_date_time": {
+         "@type": "xsd:dateTime",
+         "@id": "actualStartDateTime"
+      },
+      "actual_start_microsecond": {
+         "@type": "xsd:dateTime",
+         "@id": "actualStartMicrosecond"
+      },
+      "actual_start_minute": {
+         "@type": "xsd:dateTime",
+         "@id": "actualStartMinute"
+      },
+      "actual_start_year": {
+         "@type": "xsd:dateTime",
+         "@id": "actualStartYear"
+      },
+      "allows": {
+         "@id": "allows"
+      },
+      "at_date_time": {
+         "@type": "xsd:dateTime",
+         "@id": "atDateTime"
+      },
+      "birth_date": {
+         "@type": "xsd:dateTime",
+         "@id": "birthDate"
+      },
+      "comes_from_agent": {
+         "@type": "@id",
+         "@id": "comesFromAgent"
+      },
+      "comes_from_place": {
+         "@type": "@id",
+         "@id": "comesFromPlace"
+      },
+      "conforms_to": {
+         "@type": "@id",
+         "@id": "conformsTo"
+      },
+      "contained_text": {
+         "@id": "containedText"
+      },
+      "contributes_to": {
+         "@id": "contributesTo"
+      },
+      "conversion_factor": {
+         "@id": "conversionFactor"
+      },
+      "conversion_offset": {
+         "@type": "xsd:decimal",
+         "@id": "conversionOffset"
+      },
+      "death_date": {
+         "@type": "xsd:dateTime",
+         "@id": "deathDate"
+      },
+      "description": {
+         "@id": "description"
+      },
+      "domain_includes": {
+         "@id": "domainIncludes"
+      },
+      "encrypted_text": {
+         "@id": "encryptedText"
+      },
+      "end_date_time": {
+         "@type": "xsd:dateTime",
+         "@id": "endDateTime"
+      },
+      "exponent_of_ampere": {
+         "@type": "@id",
+         "@id": "exponentOfAmpere"
+      },
+      "exponent_of_bit": {
+         "@type": "@id",
+         "@id": "exponentOfBit"
+      },
+      "exponent_of_candela": {
+         "@type": "@id",
+         "@id": "exponentOfCandela"
+      },
+      "exponent_of_kelvin": {
+         "@type": "@id",
+         "@id": "exponentOfKelvin"
+      },
+      "exponent_of_kilogram": {
+         "@type": "@id",
+         "@id": "exponentOfKilogram"
+      },
+      "exponent_of_meter": {
+         "@type": "@id",
+         "@id": "exponentOfMeter"
+      },
+      "exponent_of_mole": {
+         "@type": "@id",
+         "@id": "exponentOfMole"
+      },
+      "exponent_of_number": {
+         "@type": "@id",
+         "@id": "exponentOfNumber"
+      },
+      "exponent_of_other": {
+         "@type": "@id",
+         "@id": "exponentOfOther"
+      },
+      "exponent_of_radian": {
+         "@type": "@id",
+         "@id": "exponentOfRadian"
+      },
+      "exponent_of_second": {
+         "@type": "@id",
+         "@id": "exponentOfSecond"
+      },
+      "exponent_of_steradian": {
+         "@type": "@id",
+         "@id": "exponentOfSteradian"
+      },
+      "exponent_of_us_dollar": {
+         "@type": "@id",
+         "@id": "exponentOfUSDollar"
+      },
+      "goes_to_agent": {
+         "@type": "@id",
+         "@id": "goesToAgent"
+      },
+      "goes_to_place": {
+         "@type": "@id",
+         "@id": "goesToPlace"
+      },
+      "has_accuracy": {
+         "@type": "@id",
+         "@id": "hasAccuracy"
+      },
+      "has_addend": {
+         "@id": "hasAddend"
+      },
+      "has_address": {
+         "@type": "@id",
+         "@id": "hasAddress"
+      },
+      "has_aspect": {
+         "@type": "@id",
+         "@id": "hasAspect"
+      },
+      "has_biological_parent": {
+         "@type": "@id",
+         "@id": "hasBiologicalParent"
+      },
+      "has_broader": {
+         "@id": "hasBroader"
+      },
+      "has_direct_broader": {
+         "@id": "hasDirectBroader"
+      },
+      "has_divisor": {
+         "@id": "hasDivisor"
+      },
+      "has_giver": {
+         "@id": "hasGiver"
+      },
+      "has_goal": {
+         "@id": "hasGoal"
+      },
+      "has_incumbent": {
+         "@id": "hasIncumbent"
+      },
+      "has_magnitude": {
+         "@type": "@id",
+         "@id": "hasMagnitude"
+      },
+      "has_multiplier": {
+         "@id": "hasMultiplier"
+      },
+      "has_navigational_parent": {
+         "@id": "hasNavigationalParent"
+      },
+      "has_participant": {
+         "@id": "hasParticipant"
+      },
+      "has_party": {
+         "@type": "@id",
+         "@id": "hasParty"
+      },
+      "has_physical_location": {
+         "@type": "@id",
+         "@id": "hasPhysicalLocation"
+      },
+      "has_recipient": {
+         "@id": "hasRecipient"
+      },
+      "has_subtrahend": {
+         "@id": "hasSubtrahend"
+      },
+      "has_unique_broader": {
+         "@id": "hasUniqueBroader"
+      },
+      "has_unique_navigational_parent": {
+         "@id": "hasUniqueNavigationalParent"
+      },
+      "has_unit_group": {
+         "@type": "@id",
+         "@id": "hasUnitGroup"
+      },
+      "has_unit_of_measure": {
+         "@type": "@id",
+         "@id": "hasUnitOfMeasure"
+      },
+      "id_text": {
+         "@id": "idText"
+      },
+      "is_about": {
+         "@id": "isAbout"
+      },
+      "is_affected_by": {
+         "@id": "isAffectedBy"
+      },
+      "is_allocated_by": {
+         "@type": "@id",
+         "@id": "isAllocatedBy"
+      },
+      "is_assignment_of": {
+         "@type": "@id",
+         "@id": "isAssignmentOf"
+      },
+      "is_assignment_to": {
+         "@id": "isAssignmentTo"
+      },
+      "is_based_on": {
+         "@id": "isBasedOn"
+      },
+      "is_categorized_by": {
+         "@type": "@id",
+         "@id": "isCategorizedBy"
+      },
+      "is_connected_to": {
+         "@id": "isConnectedTo"
+      },
+      "is_direct_part_of": {
+         "@id": "isDirectPartOf"
+      },
+      "is_expressed_in": {
+         "@type": "@id",
+         "@id": "isExpressedIn"
+      },
+      "is_first_member_of": {
+         "@type": "@id",
+         "@id": "isFirstMemberOf"
+      },
+      "is_geo_contained_in": {
+         "@type": "@id",
+         "@id": "isGeoContainedIn"
+      },
+      "is_governed_by": {
+         "@id": "isGovernedBy"
+      },
+      "is_identified_by": {
+         "@type": "@id",
+         "@id": "isIdentifiedBy"
+      },
+      "is_made_up_of": {
+         "@type": "@id",
+         "@id": "isMadeUpOf"
+      },
+      "is_member_of": {
+         "@type": "@id",
+         "@id": "isMemberOf"
+      },
+      "is_part_of": {
+         "@id": "isPartOf"
+      },
+      "is_produced_by": {
+         "@id": "isProducedBy"
+      },
+      "is_recognized_by": {
+         "@type": "@id",
+         "@id": "isRecognizedBy"
+      },
+      "is_recorded_at": {
+         "@type": "xsd:dateTime",
+         "@id": "isRecordedAt"
+      },
+      "is_rendered_on": {
+         "@id": "isRenderedOn"
+      },
+      "is_superseded_by": {
+         "@id": "isSupersededBy"
+      },
+      "is_triggered_by": {
+         "@id": "isTriggeredBy"
+      },
+      "is_under_jurisdiction_of": {
+         "@type": "@id",
+         "@id": "isUnderJurisdictionOf"
+      },
+      "latitude": {
+         "@type": "xsd:float",
+         "@id": "latitude"
+      },
+      "license": {
+         "@id": "license"
+      },
+      "links": {
+         "@type": "@id",
+         "@id": "links"
+      },
+      "links_from": {
+         "@type": "@id",
+         "@id": "linksFrom"
+      },
+      "links_to": {
+         "@type": "@id",
+         "@id": "linksTo"
+      },
+      "longitude": {
+         "@type": "xsd:float",
+         "@id": "longitude"
+      },
+      "name": {
+         "@id": "name"
+      },
+      "numeric_value": {
+         "@id": "numericValue"
+      },
+      "occurs_in": {
+         "@id": "occursIn"
+      },
+      "offers_to_provide": {
+         "@id": "offersToProvide"
+      },
+      "offers_to_receive": {
+         "@id": "offersToReceive"
+      },
+      "owns": {
+         "@type": "@id",
+         "@id": "owns"
+      },
+      "planned_end_date": {
+         "@type": "xsd:dateTime",
+         "@id": "plannedEndDate"
+      },
+      "planned_end_date_time": {
+         "@type": "xsd:dateTime",
+         "@id": "plannedEndDateTime"
+      },
+      "planned_end_minute": {
+         "@type": "xsd:dateTime",
+         "@id": "plannedEndMinute"
+      },
+      "planned_end_year": {
+         "@type": "xsd:dateTime",
+         "@id": "plannedEndYear"
+      },
+      "planned_start_date": {
+         "@type": "xsd:dateTime",
+         "@id": "plannedStartDate"
+      },
+      "planned_start_date_time": {
+         "@type": "xsd:dateTime",
+         "@id": "plannedStartDateTime"
+      },
+      "planned_start_minute": {
+         "@type": "xsd:dateTime",
+         "@id": "plannedStartMinute"
+      },
+      "planned_start_year": {
+         "@type": "xsd:dateTime",
+         "@id": "plannedStartYear"
+      },
+      "precedes": {
+         "@id": "precedes"
+      },
+      "precedes_directly": {
+         "@id": "precedesDirectly"
+      },
+      "prevents": {
+         "@type": "@id",
+         "@id": "prevents"
+      },
+      "prohibits": {
+         "@type": "@id",
+         "@id": "prohibits"
+      },
+      "provides_order_for": {
+         "@id": "providesOrderFor"
+      },
+      "range_includes": {
+         "@id": "rangeIncludes"
+      },
+      "refers_to": {
+         "@id": "refersTo"
+      },
+      "requires": {
+         "@id": "requires"
+      },
+      "sequence": {
+         "@type": "xsd:integer",
+         "@id": "sequence"
+      },
+      "start_date_time": {
+         "@type": "xsd:dateTime",
+         "@id": "startDateTime"
+      },
+      "symbol": {
+         "@id": "symbol"
+      },
+      "unique_text": {
+         "@id": "uniqueText"
+      },
+      "Account": {
+         "@id": "Account"
+      },
+      "Address": {
+         "@id": "Address"
+      },
+      "AddressUsageType": {
+         "@id": "AddressUsageType"
+      },
+      "Agreement": {
+         "@id": "Agreement"
+      },
+      "Aspect": {
+         "@id": "Aspect"
+      },
+      "Assignment": {
+         "@id": "Assignment"
+      },
+      "Behavior": {
+         "@id": "Behavior"
+      },
+      "Building": {
+         "@id": "Building"
+      },
+      "BundledCatalogItem": {
+         "@id": "BundledCatalogItem"
+      },
+      "CatalogItem": {
+         "@id": "CatalogItem"
+      },
+      "Category": {
+         "@id": "Category"
+      },
+      "Collection": {
+         "@id": "Collection"
+      },
+      "Commitment": {
+         "@id": "Commitment"
+      },
+      "Component": {
+         "@id": "Component"
+      },
+      "Composite": {
+         "@id": "Composite"
+      },
+      "ContemporaryEvent": {
+         "@id": "ContemporaryEvent"
+      },
+      "Content": {
+         "@id": "Content"
+      },
+      "ContentExpression": {
+         "@id": "ContentExpression"
+      },
+      "ContingentEvent": {
+         "@id": "ContingentEvent"
+      },
+      "ContingentObligation": {
+         "@id": "ContingentObligation"
+      },
+      "Contract": {
+         "@id": "Contract"
+      },
+      "ContractTerm": {
+         "@id": "ContractTerm"
+      },
+      "ControlledVocabulary": {
+         "@id": "ControlledVocabulary"
+      },
+      "CountryGeoRegion": {
+         "@id": "CountryGeoRegion"
+      },
+      "CountryGovernment": {
+         "@id": "CountryGovernment"
+      },
+      "DegreeOfCommitment": {
+         "@id": "DegreeOfCommitment"
+      },
+      "Determination": {
+         "@id": "Determination"
+      },
+      "Discipline": {
+         "@id": "Discipline"
+      },
+      "ElectronicAddress": {
+         "@id": "ElectronicAddress"
+      },
+      "ElectronicAddressType": {
+         "@id": "ElectronicAddressType"
+      },
+      "Equipment": {
+         "@id": "Equipment"
+      },
+      "EquipmentType": {
+         "@id": "EquipmentType"
+      },
+      "Event": {
+         "@id": "Event"
+      },
+      "EventSpecification": {
+         "@id": "EventSpecification"
+      },
+      "FormattedContent": {
+         "@id": "FormattedContent"
+      },
+      "Function": {
+         "@id": "Function"
+      },
+      "GeneralMediaType": {
+         "@id": "GeneralMediaType"
+      },
+      "GeoLocation": {
+         "@id": "GeoLocation"
+      },
+      "GeoPoint": {
+         "@id": "GeoPoint"
+      },
+      "GeoRegion": {
+         "@id": "GeoRegion"
+      },
+      "GeoRoute": {
+         "@id": "GeoRoute"
+      },
+      "GeoVolume": {
+         "@id": "GeoVolume"
+      },
+      "GistThing": {
+         "@id": "GistThing"
+      },
+      "GovernedGeoRegion": {
+         "@id": "GovernedGeoRegion"
+      },
+      "GovernmentOrganization": {
+         "@id": "GovernmentOrganization"
+      },
+      "HistoricalEvent": {
+         "@id": "HistoricalEvent"
+      },
+      "ID": {
+         "@id": "ID"
+      },
+      "IntellectualProperty": {
+         "@id": "IntellectualProperty"
+      },
+      "Intention": {
+         "@id": "Intention"
+      },
+      "IntergovernmentalOrganization": {
+         "@id": "IntergovernmentalOrganization"
+      },
+      "KnowledgeConcept": {
+         "@id": "KnowledgeConcept"
+      },
+      "Landmark": {
+         "@id": "Landmark"
+      },
+      "Language": {
+         "@id": "Language"
+      },
+      "LivingThing": {
+         "@id": "LivingThing"
+      },
+      "Magnitude": {
+         "@id": "Magnitude"
+      },
+      "MediaType": {
+         "@id": "MediaType"
+      },
+      "Medium": {
+         "@id": "Medium"
+      },
+      "Message": {
+         "@id": "Message"
+      },
+      "Network": {
+         "@id": "Network"
+      },
+      "NetworkLink": {
+         "@id": "NetworkLink"
+      },
+      "NetworkNode": {
+         "@id": "NetworkNode"
+      },
+      "Offer": {
+         "@id": "Offer"
+      },
+      "OrderedCollection": {
+         "@id": "OrderedCollection"
+      },
+      "OrderedMember": {
+         "@id": "OrderedMember"
+      },
+      "Organization": {
+         "@id": "Organization"
+      },
+      "Permission": {
+         "@id": "Permission"
+      },
+      "Person": {
+         "@id": "Person"
+      },
+      "PhysicalActionType": {
+         "@id": "PhysicalActionType"
+      },
+      "PhysicalAddress": {
+         "@id": "PhysicalAddress"
+      },
+      "PhysicalAddressType": {
+         "@id": "PhysicalAddressType"
+      },
+      "PhysicalEvent": {
+         "@id": "PhysicalEvent"
+      },
+      "PhysicalIdentifiableItem": {
+         "@id": "PhysicalIdentifiableItem"
+      },
+      "PhysicalSubstance": {
+         "@id": "PhysicalSubstance"
+      },
+      "ProductCategory": {
+         "@id": "ProductCategory"
+      },
+      "ProductSpecification": {
+         "@id": "ProductSpecification"
+      },
+      "Project": {
+         "@id": "Project"
+      },
+      "ReferenceValue": {
+         "@id": "ReferenceValue"
+      },
+      "RenderedContent": {
+         "@id": "RenderedContent"
+      },
+      "Requirement": {
+         "@id": "Requirement"
+      },
+      "Restriction": {
+         "@id": "Restriction"
+      },
+      "ScheduledEvent": {
+         "@id": "ScheduledEvent"
+      },
+      "ScheduledTask": {
+         "@id": "ScheduledTask"
+      },
+      "SchemaMetaData": {
+         "@id": "SchemaMetaData"
+      },
+      "ServiceSpecification": {
+         "@id": "ServiceSpecification"
+      },
+      "Specification": {
+         "@id": "Specification"
+      },
+      "SubCountryGovernment": {
+         "@id": "SubCountryGovernment"
+      },
+      "System": {
+         "@id": "System"
+      },
+      "Tag": {
+         "@id": "Tag"
+      },
+      "Task": {
+         "@id": "Task"
+      },
+      "TaskTemplate": {
+         "@id": "TaskTemplate"
+      },
+      "Template": {
+         "@id": "Template"
+      },
+      "TemporalRelation": {
+         "@id": "TemporalRelation"
+      },
+      "Text": {
+         "@id": "Text"
+      },
+      "TimeInterval": {
+         "@id": "TimeInterval"
+      },
+      "Transaction": {
+         "@id": "Transaction"
+      },
+      "UnitGroup": {
+         "@id": "UnitGroup"
+      },
+      "UnitOfMeasure": {
+         "@id": "UnitOfMeasure"
+      }
+   }
+}

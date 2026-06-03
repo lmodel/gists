@@ -11,7 +11,7 @@ version: 14.1.0
 
 prefixes:
   gist: https://w3id.org/lmodel/gist/
-  gist_upstream: https://w3id.org/semanticarts/ns/ontology/gist/
+  gist_semanticarts: https://w3id.org/semanticarts/ns/ontology/gist/
   gistd: https://w3id.org/semanticarts/ns/data/gist/
   linkml: https://w3id.org/linkml/
   schema: http://schema.org/

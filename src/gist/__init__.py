@@ -1,3 +1,8 @@
+"""gist.
+
+GIST (Semantic Arts, Upper Enterprise Ontology) - LinkML Schema
+"""
+
 try:
     from gist._version import __version__, __version_tuple__
 except ImportError:  # pragma: no cover

@@ -1,0 +1,920 @@
+# metamodel_version: 1.11.0
+# version: 14.1.0
+BASE <https://w3id.org/lmodel/gist/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX linkml: <https://w3id.org/linkml/>
+
+
+linkml:String xsd:string
+
+linkml:Integer xsd:integer
+
+linkml:Boolean xsd:boolean
+
+linkml:Float xsd:float
+
+linkml:Double xsd:double
+
+linkml:Decimal xsd:decimal
+
+linkml:Time xsd:time
+
+linkml:Date xsd:date
+
+linkml:Datetime xsd:dateTime
+
+linkml:DateOrDatetime linkml:DateOrDatetime
+
+linkml:Uriorcurie IRI
+
+linkml:Curie xsd:string
+
+linkml:Uri IRI
+
+linkml:Ncname xsd:string
+
+linkml:Objectidentifier IRI
+
+linkml:Nodeidentifier NONLITERAL
+
+linkml:Jsonpointer xsd:string
+
+linkml:Jsonpath xsd:string
+
+linkml:Sparqlpath xsd:string
+
+<Account> CLOSED {
+    (  $<Account_tes> (  &<Agreement_tes> ;
+          rdf:type [ <Agreement> ] ?
+       ) ;
+       rdf:type [ <Account> ] ?
+    )
+}
+
+<Address>  (
+    CLOSED {
+       (  $<Address_tes> (  &<Content_tes> ;
+             rdf:type [ <Content> ] ?
+          ) ;
+          rdf:type [ <Address> ] ?
+       )
+    } OR @<ElectronicAddress> OR @<PhysicalAddress>
+)
+
+<AddressUsageType> CLOSED {
+    (  $<AddressUsageType_tes> (  &<Category_tes> ;
+          rdf:type [ <Category> ] ?
+       ) ;
+       rdf:type [ <AddressUsageType> ] ?
+    )
+}
+
+<Agreement>  (
+    CLOSED {
+       (  $<Agreement_tes> (  &<Intention_tes> ;
+             rdf:type [ <Intention> ] ?
+          ) ;
+          rdf:type [ <Agreement> ] ?
+       )
+    } OR @<Account> OR @<Contract>
+)
+
+<Aspect> CLOSED {
+    (  $<Aspect_tes> (  &<GistThing_tes> ;
+          rdf:type [ <GistThing> ] ? ;
+          <name> @linkml:String ? ;
+          <description> @linkml:String ?
+       ) ;
+       rdf:type [ <Aspect> ] ?
+    )
+}
+
+<Assignment> CLOSED {
+    (  $<Assignment_tes> (  &<TemporalRelation_tes> ;
+          rdf:type [ <TemporalRelation> ] ?
+       ) ;
+       rdf:type [ <Assignment> ] ?
+    )
+}
+
+<Behavior> CLOSED {
+    (  $<Behavior_tes> (  &<Category_tes> ;
+          rdf:type [ <Category> ] ?
+       ) ;
+       rdf:type [ <Behavior> ] ?
+    )
+}
+
+<Building> CLOSED {
+    (  $<Building_tes> (  &<Landmark_tes> ;
+          rdf:type [ <Landmark> ] ?
+       ) ;
+       rdf:type [ <Building> ] ?
+    )
+}
+
+<BundledCatalogItem> CLOSED {
+    (  $<BundledCatalogItem_tes> (  &<CatalogItem_tes> ;
+          rdf:type [ <CatalogItem> ] ?
+       ) ;
+       rdf:type [ <BundledCatalogItem> ] ?
+    )
+}
+
+<CatalogItem>  (
+    CLOSED {
+       (  $<CatalogItem_tes> (  &<Specification_tes> ;
+             rdf:type [ <Specification> ] ?
+          ) ;
+          rdf:type [ <CatalogItem> ] ?
+       )
+    } OR @<BundledCatalogItem> OR @<ProductSpecification> OR @<ServiceSpecification>
+)
+
+<Category>  (
+    CLOSED {
+       (  $<Category_tes> (  &<GistThing_tes> ;
+             rdf:type [ <GistThing> ] ? ;
+             <name> @linkml:String ? ;
+             <description> @linkml:String ?
+          ) ;
+          rdf:type [ <Category> ] ?
+       )
+    } OR @<AddressUsageType> OR @<Behavior> OR @<DegreeOfCommitment> OR @<Discipline> OR @<ElectronicAddressType> OR
+    @<EquipmentType> OR @<GeneralMediaType> OR @<MediaType> OR @<Medium> OR @<PhysicalActionType> OR @<PhysicalAddressType> OR
+    @<ProductCategory> OR @<Tag>
+)
+
+<Collection>  (
+    CLOSED {
+       (  $<Collection_tes> (  &<Composite_tes> ;
+             rdf:type [ <Composite> ] ?
+          ) ;
+          rdf:type [ <Collection> ] ?
+       )
+    } OR @<ControlledVocabulary> OR @<OrderedCollection> OR @<UnitGroup>
+)
+
+<Commitment>  (
+    CLOSED {
+       (  $<Commitment_tes> (  &<Intention_tes> ;
+             rdf:type [ <Intention> ] ?
+          ) ;
+          rdf:type [ <Commitment> ] ?
+       )
+    } OR @<ContingentObligation>
+)
+
+<Component>  (
+    CLOSED {
+       (  $<Component_tes> (  &<GistThing_tes> ;
+             rdf:type [ <GistThing> ] ? ;
+             <name> @linkml:String ? ;
+             <description> @linkml:String ?
+          ) ;
+          rdf:type [ <Component> ] ?
+       )
+    } OR @<NetworkLink> OR @<NetworkNode> OR @<OrderedMember>
+)
+
+<Composite>  (
+    CLOSED {
+       (  $<Composite_tes> (  &<GistThing_tes> ;
+             rdf:type [ <GistThing> ] ? ;
+             <name> @linkml:String ? ;
+             <description> @linkml:String ?
+          ) ;
+          rdf:type [ <Composite> ] ?
+       )
+    } OR @<Collection> OR @<Network> OR @<System>
+)
+
+<ContemporaryEvent> CLOSED {
+    (  $<ContemporaryEvent_tes> (  &<Event_tes> ;
+          rdf:type [ <Event> ] ?
+       ) ;
+       rdf:type [ <ContemporaryEvent> ] ?
+    )
+}
+
+<Content>  (
+    CLOSED {
+       (  $<Content_tes> (  &<GistThing_tes> ;
+             rdf:type [ <GistThing> ] ? ;
+             <name> @linkml:String ? ;
+             <description> @linkml:String ?
+          ) ;
+          rdf:type [ <Content> ] ?
+       )
+    } OR @<Address> OR @<ContentExpression> OR @<ID>
+)
+
+<ContentExpression>  (
+    CLOSED {
+       (  $<ContentExpression_tes> (  &<Content_tes> ;
+             rdf:type [ <Content> ] ?
+          ) ;
+          rdf:type [ <ContentExpression> ] ?
+       )
+    } OR @<FormattedContent> OR @<Message> OR @<Text>
+)
+
+<ContingentEvent> CLOSED {
+    (  $<ContingentEvent_tes> (  &<Event_tes> ;
+          rdf:type [ <Event> ] ?
+       ) ;
+       rdf:type [ <ContingentEvent> ] ?
+    )
+}
+
+<ContingentObligation>  (
+    CLOSED {
+       (  $<ContingentObligation_tes> (  &<Commitment_tes> ;
+             rdf:type [ <Commitment> ] ?
+          ) ;
+          rdf:type [ <ContingentObligation> ] ?
+       )
+    } OR @<Offer>
+)
+
+<Contract> CLOSED {
+    (  $<Contract_tes> (  &<Agreement_tes> ;
+          rdf:type [ <Agreement> ] ?
+       ) ;
+       rdf:type [ <Contract> ] ?
+    )
+}
+
+<ContractTerm> CLOSED {
+    (  $<ContractTerm_tes> (  &<Specification_tes> ;
+          rdf:type [ <Specification> ] ?
+       ) ;
+       rdf:type [ <ContractTerm> ] ?
+    )
+}
+
+<ControlledVocabulary> CLOSED {
+    (  $<ControlledVocabulary_tes> (  &<Collection_tes> ;
+          rdf:type [ <Collection> ] ?
+       ) ;
+       rdf:type [ <ControlledVocabulary> ] ?
+    )
+}
+
+<CountryGeoRegion> CLOSED {
+    (  $<CountryGeoRegion_tes> (  &<GovernedGeoRegion_tes> ;
+          rdf:type [ <GovernedGeoRegion> ] ?
+       ) ;
+       rdf:type [ <CountryGeoRegion> ] ?
+    )
+}
+
+<CountryGovernment> CLOSED {
+    (  $<CountryGovernment_tes> (  &<GovernmentOrganization_tes> ;
+          rdf:type [ <GovernmentOrganization> ] ?
+       ) ;
+       rdf:type [ <CountryGovernment> ] ?
+    )
+}
+
+<DegreeOfCommitment> CLOSED {
+    (  $<DegreeOfCommitment_tes> (  &<Category_tes> ;
+          rdf:type [ <Category> ] ?
+       ) ;
+       rdf:type [ <DegreeOfCommitment> ] ?
+    )
+}
+
+<Determination> CLOSED {
+    (  $<Determination_tes> (  &<Event_tes> ;
+          rdf:type [ <Event> ] ?
+       ) ;
+       rdf:type [ <Determination> ] ?
+    )
+}
+
+<Discipline> CLOSED {
+    (  $<Discipline_tes> (  &<Category_tes> ;
+          rdf:type [ <Category> ] ?
+       ) ;
+       rdf:type [ <Discipline> ] ?
+    )
+}
+
+<ElectronicAddress> CLOSED {
+    (  $<ElectronicAddress_tes> (  &<Address_tes> ;
+          rdf:type [ <Address> ] ?
+       ) ;
+       rdf:type [ <ElectronicAddress> ] ?
+    )
+}
+
+<ElectronicAddressType> CLOSED {
+    (  $<ElectronicAddressType_tes> (  &<Category_tes> ;
+          rdf:type [ <Category> ] ?
+       ) ;
+       rdf:type [ <ElectronicAddressType> ] ?
+    )
+}
+
+<Equipment> CLOSED {
+    (  $<Equipment_tes> (  &<PhysicalIdentifiableItem_tes> ;
+          rdf:type [ <PhysicalIdentifiableItem> ] ?
+       ) ;
+       rdf:type [ <Equipment> ] ?
+    )
+}
+
+<EquipmentType> CLOSED {
+    (  $<EquipmentType_tes> (  &<Category_tes> ;
+          rdf:type [ <Category> ] ?
+       ) ;
+       rdf:type [ <EquipmentType> ] ?
+    )
+}
+
+<Event>  (
+    CLOSED {
+       (  $<Event_tes> (  &<GistThing_tes> ;
+             rdf:type [ <GistThing> ] ? ;
+             <name> @linkml:String ? ;
+             <description> @linkml:String ?
+          ) ;
+          rdf:type [ <Event> ] ?
+       )
+    } OR @<ContemporaryEvent> OR @<ContingentEvent> OR @<Determination> OR @<HistoricalEvent> OR @<PhysicalEvent> OR
+    @<ScheduledEvent> OR @<Task> OR @<Transaction>
+)
+
+<EventSpecification> CLOSED {
+    (  $<EventSpecification_tes> (  &<Specification_tes> ;
+          rdf:type [ <Specification> ] ?
+       ) ;
+       rdf:type [ <EventSpecification> ] ?
+    )
+}
+
+<FormattedContent>  (
+    CLOSED {
+       (  $<FormattedContent_tes> (  &<ContentExpression_tes> ;
+             rdf:type [ <ContentExpression> ] ?
+          ) ;
+          rdf:type [ <FormattedContent> ] ?
+       )
+    } OR @<RenderedContent>
+)
+
+<Function> CLOSED {
+    (  $<Function_tes> (  &<Intention_tes> ;
+          rdf:type [ <Intention> ] ?
+       ) ;
+       rdf:type [ <Function> ] ?
+    )
+}
+
+<GeneralMediaType> CLOSED {
+    (  $<GeneralMediaType_tes> (  &<Category_tes> ;
+          rdf:type [ <Category> ] ?
+       ) ;
+       rdf:type [ <GeneralMediaType> ] ?
+    )
+}
+
+<GeoLocation>  (
+    CLOSED {
+       (  $<GeoLocation_tes> (  &<GistThing_tes> ;
+             rdf:type [ <GistThing> ] ? ;
+             <name> @linkml:String ? ;
+             <description> @linkml:String ?
+          ) ;
+          rdf:type [ <GeoLocation> ] ?
+       )
+    } OR @<GeoPoint> OR @<GeoRegion> OR @<GeoVolume>
+)
+
+<GeoPoint> CLOSED {
+    (  $<GeoPoint_tes> (  &<GeoLocation_tes> ;
+          rdf:type [ <GeoLocation> ] ?
+       ) ;
+       rdf:type [ <GeoPoint> ] ?
+    )
+}
+
+<GeoRegion>  (
+    CLOSED {
+       (  $<GeoRegion_tes> (  &<GeoLocation_tes> ;
+             rdf:type [ <GeoLocation> ] ?
+          ) ;
+          rdf:type [ <GeoRegion> ] ?
+       )
+    } OR @<GovernedGeoRegion>
+)
+
+<GeoRoute> CLOSED {
+    (  $<GeoRoute_tes> (  &<OrderedCollection_tes> ;
+          rdf:type [ <OrderedCollection> ] ?
+       ) ;
+       rdf:type [ <GeoRoute> ] ?
+    )
+}
+
+<GeoVolume> CLOSED {
+    (  $<GeoVolume_tes> (  &<GeoLocation_tes> ;
+          rdf:type [ <GeoLocation> ] ?
+       ) ;
+       rdf:type [ <GeoVolume> ] ?
+    )
+}
+
+<GistThing> {
+    (  $<GistThing_tes> (  <name> @linkml:String ? ;
+          <description> @linkml:String ?
+       ) ;
+       rdf:type [ <GistThing> ] ?
+    )
+}
+
+<GovernedGeoRegion>  (
+    CLOSED {
+       (  $<GovernedGeoRegion_tes> (  &<GeoRegion_tes> ;
+             rdf:type [ <GeoRegion> ] ?
+          ) ;
+          rdf:type [ <GovernedGeoRegion> ] ?
+       )
+    } OR @<CountryGeoRegion>
+)
+
+<GovernmentOrganization>  (
+    CLOSED {
+       (  $<GovernmentOrganization_tes> (  &<Organization_tes> ;
+             rdf:type [ <Organization> ] ?
+          ) ;
+          rdf:type [ <GovernmentOrganization> ] ?
+       )
+    } OR @<CountryGovernment> OR @<SubCountryGovernment>
+)
+
+<HistoricalEvent> CLOSED {
+    (  $<HistoricalEvent_tes> (  &<Event_tes> ;
+          rdf:type [ <Event> ] ?
+       ) ;
+       rdf:type [ <HistoricalEvent> ] ?
+    )
+}
+
+<ID> CLOSED {
+    (  $<ID_tes> (  &<Content_tes> ;
+          rdf:type [ <Content> ] ?
+       ) ;
+       rdf:type [ <ID> ] ?
+    )
+}
+
+<IntellectualProperty>  (
+    CLOSED {
+       (  $<IntellectualProperty_tes> (  &<GistThing_tes> ;
+             rdf:type [ <GistThing> ] ? ;
+             <name> @linkml:String ? ;
+             <description> @linkml:String ?
+          ) ;
+          rdf:type [ <IntellectualProperty> ] ?
+       )
+    } OR @<KnowledgeConcept>
+)
+
+<Intention>  (
+    CLOSED {
+       (  $<Intention_tes> (  &<GistThing_tes> ;
+             rdf:type [ <GistThing> ] ? ;
+             <name> @linkml:String ? ;
+             <description> @linkml:String ?
+          ) ;
+          rdf:type [ <Intention> ] ?
+       )
+    } OR @<Agreement> OR @<Commitment> OR @<Function> OR @<Permission> OR @<Requirement> OR @<Restriction> OR @<Specification>
+)
+
+<IntergovernmentalOrganization> CLOSED {
+    (  $<IntergovernmentalOrganization_tes> (  &<Organization_tes> ;
+          rdf:type [ <Organization> ] ?
+       ) ;
+       rdf:type [ <IntergovernmentalOrganization> ] ?
+    )
+}
+
+<KnowledgeConcept> CLOSED {
+    (  $<KnowledgeConcept_tes> (  &<IntellectualProperty_tes> ;
+          rdf:type [ <IntellectualProperty> ] ?
+       ) ;
+       rdf:type [ <KnowledgeConcept> ] ?
+    )
+}
+
+<Landmark>  (
+    CLOSED {
+       (  $<Landmark_tes> (  &<PhysicalIdentifiableItem_tes> ;
+             rdf:type [ <PhysicalIdentifiableItem> ] ?
+          ) ;
+          rdf:type [ <Landmark> ] ?
+       )
+    } OR @<Building>
+)
+
+<Language> CLOSED {
+    (  $<Language_tes> (  &<GistThing_tes> ;
+          rdf:type [ <GistThing> ] ? ;
+          <name> @linkml:String ? ;
+          <description> @linkml:String ?
+       ) ;
+       rdf:type [ <Language> ] ?
+    )
+}
+
+<LivingThing>  (
+    CLOSED {
+       (  $<LivingThing_tes> (  &<PhysicalIdentifiableItem_tes> ;
+             rdf:type [ <PhysicalIdentifiableItem> ] ?
+          ) ;
+          rdf:type [ <LivingThing> ] ?
+       )
+    } OR @<Person>
+)
+
+<Magnitude>  (
+    CLOSED {
+       (  $<Magnitude_tes> (  &<GistThing_tes> ;
+             rdf:type [ <GistThing> ] ? ;
+             <name> @linkml:String ? ;
+             <description> @linkml:String ?
+          ) ;
+          rdf:type [ <Magnitude> ] ?
+       )
+    } OR @<ReferenceValue>
+)
+
+<MediaType> CLOSED {
+    (  $<MediaType_tes> (  &<Category_tes> ;
+          rdf:type [ <Category> ] ?
+       ) ;
+       rdf:type [ <MediaType> ] ?
+    )
+}
+
+<Medium> CLOSED {
+    (  $<Medium_tes> (  &<Category_tes> ;
+          rdf:type [ <Category> ] ?
+       ) ;
+       rdf:type [ <Medium> ] ?
+    )
+}
+
+<Message> CLOSED {
+    (  $<Message_tes> (  &<ContentExpression_tes> ;
+          rdf:type [ <ContentExpression> ] ?
+       ) ;
+       rdf:type [ <Message> ] ?
+    )
+}
+
+<Network> CLOSED {
+    (  $<Network_tes> (  &<Composite_tes> ;
+          rdf:type [ <Composite> ] ?
+       ) ;
+       rdf:type [ <Network> ] ?
+    )
+}
+
+<NetworkLink> CLOSED {
+    (  $<NetworkLink_tes> (  &<Component_tes> ;
+          rdf:type [ <Component> ] ?
+       ) ;
+       rdf:type [ <NetworkLink> ] ?
+    )
+}
+
+<NetworkNode> CLOSED {
+    (  $<NetworkNode_tes> (  &<Component_tes> ;
+          rdf:type [ <Component> ] ?
+       ) ;
+       rdf:type [ <NetworkNode> ] ?
+    )
+}
+
+<Offer> CLOSED {
+    (  $<Offer_tes> (  &<ContingentObligation_tes> ;
+          rdf:type [ <ContingentObligation> ] ?
+       ) ;
+       rdf:type [ <Offer> ] ?
+    )
+}
+
+<OrderedCollection>  (
+    CLOSED {
+       (  $<OrderedCollection_tes> (  &<Collection_tes> ;
+             rdf:type [ <Collection> ] ?
+          ) ;
+          rdf:type [ <OrderedCollection> ] ?
+       )
+    } OR @<GeoRoute>
+)
+
+<OrderedMember> CLOSED {
+    (  $<OrderedMember_tes> (  &<Component_tes> ;
+          rdf:type [ <Component> ] ?
+       ) ;
+       rdf:type [ <OrderedMember> ] ?
+    )
+}
+
+<Organization>  (
+    CLOSED {
+       (  $<Organization_tes> (  &<GistThing_tes> ;
+             rdf:type [ <GistThing> ] ? ;
+             <name> @linkml:String ? ;
+             <description> @linkml:String ?
+          ) ;
+          rdf:type [ <Organization> ] ?
+       )
+    } OR @<GovernmentOrganization> OR @<IntergovernmentalOrganization>
+)
+
+<Permission> CLOSED {
+    (  $<Permission_tes> (  &<Intention_tes> ;
+          rdf:type [ <Intention> ] ?
+       ) ;
+       rdf:type [ <Permission> ] ?
+    )
+}
+
+<Person> CLOSED {
+    (  $<Person_tes> (  &<LivingThing_tes> ;
+          rdf:type [ <LivingThing> ] ?
+       ) ;
+       rdf:type [ <Person> ] ?
+    )
+}
+
+<PhysicalActionType> CLOSED {
+    (  $<PhysicalActionType_tes> (  &<Category_tes> ;
+          rdf:type [ <Category> ] ?
+       ) ;
+       rdf:type [ <PhysicalActionType> ] ?
+    )
+}
+
+<PhysicalAddress> CLOSED {
+    (  $<PhysicalAddress_tes> (  &<Address_tes> ;
+          rdf:type [ <Address> ] ?
+       ) ;
+       rdf:type [ <PhysicalAddress> ] ?
+    )
+}
+
+<PhysicalAddressType> CLOSED {
+    (  $<PhysicalAddressType_tes> (  &<Category_tes> ;
+          rdf:type [ <Category> ] ?
+       ) ;
+       rdf:type [ <PhysicalAddressType> ] ?
+    )
+}
+
+<PhysicalEvent> CLOSED {
+    (  $<PhysicalEvent_tes> (  &<Event_tes> ;
+          rdf:type [ <Event> ] ?
+       ) ;
+       rdf:type [ <PhysicalEvent> ] ?
+    )
+}
+
+<PhysicalIdentifiableItem>  (
+    CLOSED {
+       (  $<PhysicalIdentifiableItem_tes> (  &<GistThing_tes> ;
+             rdf:type [ <GistThing> ] ? ;
+             <name> @linkml:String ? ;
+             <description> @linkml:String ?
+          ) ;
+          rdf:type [ <PhysicalIdentifiableItem> ] ?
+       )
+    } OR @<Equipment> OR @<Landmark> OR @<LivingThing>
+)
+
+<PhysicalSubstance> CLOSED {
+    (  $<PhysicalSubstance_tes> (  &<GistThing_tes> ;
+          rdf:type [ <GistThing> ] ? ;
+          <name> @linkml:String ? ;
+          <description> @linkml:String ?
+       ) ;
+       rdf:type [ <PhysicalSubstance> ] ?
+    )
+}
+
+<ProductCategory> CLOSED {
+    (  $<ProductCategory_tes> (  &<Category_tes> ;
+          rdf:type [ <Category> ] ?
+       ) ;
+       rdf:type [ <ProductCategory> ] ?
+    )
+}
+
+<ProductSpecification> CLOSED {
+    (  $<ProductSpecification_tes> (  &<CatalogItem_tes> ;
+          rdf:type [ <CatalogItem> ] ?
+       ) ;
+       rdf:type [ <ProductSpecification> ] ?
+    )
+}
+
+<Project> CLOSED {
+    (  $<Project_tes> (  &<Task_tes> ;
+          rdf:type [ <Task> ] ?
+       ) ;
+       rdf:type [ <Project> ] ?
+    )
+}
+
+<ReferenceValue> CLOSED {
+    (  $<ReferenceValue_tes> (  &<Magnitude_tes> ;
+          rdf:type [ <Magnitude> ] ?
+       ) ;
+       rdf:type [ <ReferenceValue> ] ?
+    )
+}
+
+<RenderedContent> CLOSED {
+    (  $<RenderedContent_tes> (  &<FormattedContent_tes> ;
+          rdf:type [ <FormattedContent> ] ?
+       ) ;
+       rdf:type [ <RenderedContent> ] ?
+    )
+}
+
+<Requirement> CLOSED {
+    (  $<Requirement_tes> (  &<Intention_tes> ;
+          rdf:type [ <Intention> ] ?
+       ) ;
+       rdf:type [ <Requirement> ] ?
+    )
+}
+
+<Restriction> CLOSED {
+    (  $<Restriction_tes> (  &<Intention_tes> ;
+          rdf:type [ <Intention> ] ?
+       ) ;
+       rdf:type [ <Restriction> ] ?
+    )
+}
+
+<ScheduledEvent> CLOSED {
+    (  $<ScheduledEvent_tes> (  &<Event_tes> ;
+          rdf:type [ <Event> ] ?
+       ) ;
+       rdf:type [ <ScheduledEvent> ] ?
+    )
+}
+
+<ScheduledTask> CLOSED {
+    (  $<ScheduledTask_tes> (  &<Task_tes> ;
+          rdf:type [ <Task> ] ?
+       ) ;
+       rdf:type [ <ScheduledTask> ] ?
+    )
+}
+
+<SchemaMetaData> CLOSED {
+    (  $<SchemaMetaData_tes> (  &<GistThing_tes> ;
+          rdf:type [ <GistThing> ] ? ;
+          <name> @linkml:String ? ;
+          <description> @linkml:String ?
+       ) ;
+       rdf:type [ <SchemaMetaData> ] ?
+    )
+}
+
+<ServiceSpecification> CLOSED {
+    (  $<ServiceSpecification_tes> (  &<CatalogItem_tes> ;
+          rdf:type [ <CatalogItem> ] ?
+       ) ;
+       rdf:type [ <ServiceSpecification> ] ?
+    )
+}
+
+<Specification>  (
+    CLOSED {
+       (  $<Specification_tes> (  &<Intention_tes> ;
+             rdf:type [ <Intention> ] ?
+          ) ;
+          rdf:type [ <Specification> ] ?
+       )
+    } OR @<CatalogItem> OR @<ContractTerm> OR @<EventSpecification>
+)
+
+<SubCountryGovernment> CLOSED {
+    (  $<SubCountryGovernment_tes> (  &<GovernmentOrganization_tes> ;
+          rdf:type [ <GovernmentOrganization> ] ?
+       ) ;
+       rdf:type [ <SubCountryGovernment> ] ?
+    )
+}
+
+<System> CLOSED {
+    (  $<System_tes> (  &<Composite_tes> ;
+          rdf:type [ <Composite> ] ?
+       ) ;
+       rdf:type [ <System> ] ?
+    )
+}
+
+<Tag> CLOSED {
+    (  $<Tag_tes> (  &<Category_tes> ;
+          rdf:type [ <Category> ] ?
+       ) ;
+       rdf:type [ <Tag> ] ?
+    )
+}
+
+<Task>  (
+    CLOSED {
+       (  $<Task_tes> (  &<Event_tes> ;
+             rdf:type [ <Event> ] ?
+          ) ;
+          rdf:type [ <Task> ] ?
+       )
+    } OR @<Project> OR @<ScheduledTask>
+)
+
+<TaskTemplate> CLOSED {
+    (  $<TaskTemplate_tes> (  &<Template_tes> ;
+          rdf:type [ <Template> ] ?
+       ) ;
+       rdf:type [ <TaskTemplate> ] ?
+    )
+}
+
+<Template>  (
+    CLOSED {
+       (  $<Template_tes> (  &<GistThing_tes> ;
+             rdf:type [ <GistThing> ] ? ;
+             <name> @linkml:String ? ;
+             <description> @linkml:String ?
+          ) ;
+          rdf:type [ <Template> ] ?
+       )
+    } OR @<TaskTemplate>
+)
+
+<TemporalRelation>  (
+    CLOSED {
+       (  $<TemporalRelation_tes> (  &<GistThing_tes> ;
+             rdf:type [ <GistThing> ] ? ;
+             <name> @linkml:String ? ;
+             <description> @linkml:String ?
+          ) ;
+          rdf:type [ <TemporalRelation> ] ?
+       )
+    } OR @<Assignment>
+)
+
+<Text> CLOSED {
+    (  $<Text_tes> (  &<ContentExpression_tes> ;
+          rdf:type [ <ContentExpression> ] ?
+       ) ;
+       rdf:type [ <Text> ] ?
+    )
+}
+
+<TimeInterval> CLOSED {
+    (  $<TimeInterval_tes> (  &<GistThing_tes> ;
+          rdf:type [ <GistThing> ] ? ;
+          <name> @linkml:String ? ;
+          <description> @linkml:String ?
+       ) ;
+       rdf:type [ <TimeInterval> ] ?
+    )
+}
+
+<Transaction> CLOSED {
+    (  $<Transaction_tes> (  &<Event_tes> ;
+          rdf:type [ <Event> ] ?
+       ) ;
+       rdf:type [ <Transaction> ] ?
+    )
+}
+
+<UnitGroup> CLOSED {
+    (  $<UnitGroup_tes> (  &<Collection_tes> ;
+          rdf:type [ <Collection> ] ?
+       ) ;
+       rdf:type [ <UnitGroup> ] ?
+    )
+}
+
+<UnitOfMeasure> CLOSED {
+    (  $<UnitOfMeasure_tes> (  &<GistThing_tes> ;
+          rdf:type [ <GistThing> ] ? ;
+          <name> @linkml:String ? ;
+          <description> @linkml:String ?
+       ) ;
+       rdf:type [ <UnitOfMeasure> ] ?
+    )
+}

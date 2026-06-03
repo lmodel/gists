@@ -2,7 +2,7 @@
 
 # gist
 
-Gist - LinkML Schema
+GIST (Semantic Arts, Upper Enterprise Ontology) - LinkML Schema
 
 ## Documentation Website
 
@@ -26,7 +26,8 @@ Gist - LinkML Schema
 ## Developer Tools
 
 There are several pre-defined command-recipes available.
-They are written for the command runner [just](https://github.com/casey/just/). To list all pre-defined commands, run `just` or `just --list`.
+They are written for the command runner [just](https://github.com/casey/just/).
+To list all pre-defined commands, run `just` or `just --list`.
 
 ## Credits
 

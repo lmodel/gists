@@ -1,0 +1,2195 @@
+{
+    "$defs": {
+        "Account": {
+            "additionalProperties": false,
+            "description": "An agreement having a balance.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Account",
+            "type": "object"
+        },
+        "Address": {
+            "additionalProperties": false,
+            "description": "A reference to a place (real or virtual) that can be located by some routing algorithm and where messages or things can be sent or received.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Address",
+            "type": "object"
+        },
+        "AddressUsageType": {
+            "additionalProperties": false,
+            "description": "A category indicating the context or manner in which an address may be used.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AddressUsageType",
+            "type": "object"
+        },
+        "Agreement": {
+            "additionalProperties": false,
+            "description": "A mutually understood arrangement in which two or more parties make commitments to one another.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Agreement",
+            "type": "object"
+        },
+        "Aspect": {
+            "additionalProperties": false,
+            "description": "A measurable characteristic.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Aspect",
+            "type": "object"
+        },
+        "AspectInstance": {
+            "description": "Named instances of gist:Aspect from gist reference data.",
+            "enum": [
+                "ASPECT_ALTITUDE",
+                "ASPECT_AREA",
+                "ASPECT_DURATION",
+                "ASPECT_FINANCIAL_BALANCE",
+                "ASPECT_MASS",
+                "ASPECT_MONETARY_VALUE",
+                "ASPECT_PROBABILITY",
+                "ASPECT_VOLUME"
+            ],
+            "title": "AspectInstance",
+            "type": "string"
+        },
+        "Assignment": {
+            "additionalProperties": false,
+            "description": "A temporal relationship between an assignee, the thing assigned, and the resource that made the assignment.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Assignment",
+            "type": "object"
+        },
+        "Behavior": {
+            "additionalProperties": false,
+            "description": "A category indicating the nature of an activity.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Behavior",
+            "type": "object"
+        },
+        "Building": {
+            "additionalProperties": false,
+            "description": "A relatively permanent man-made structure situated on a plot of land, having a roof and walls, commonly used for dwelling, entertaining, or working.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Building",
+            "type": "object"
+        },
+        "BundledCatalogItem": {
+            "additionalProperties": false,
+            "description": "Any combination of descriptions of things offered together.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "BundledCatalogItem",
+            "type": "object"
+        },
+        "CatalogItem": {
+            "additionalProperties": false,
+            "description": "A description of a product or service to be delivered, given in a sufficient level of detail that a receiver could determine whether delivery constituted discharge of the obligation to deliver.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "CatalogItem",
+            "type": "object"
+        },
+        "Category": {
+            "additionalProperties": false,
+            "description": "A concept or label used to categorize other instances without specifying any formal semantics.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Category",
+            "type": "object"
+        },
+        "Collection": {
+            "additionalProperties": false,
+            "description": "A grouping of things.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Collection",
+            "type": "object"
+        },
+        "Commitment": {
+            "additionalProperties": false,
+            "description": "A promise made by a single party to one or more parties to do or not do something or act in a particular way.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Commitment",
+            "type": "object"
+        },
+        "Component": {
+            "additionalProperties": false,
+            "description": "Something that, while having an independent existence, is inherently part of or designed to be part of a larger entity, such as a system or network.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Component",
+            "type": "object"
+        },
+        "Composite": {
+            "additionalProperties": false,
+            "description": "Something which is made up of various parts or elements that are independently identifiable.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Composite",
+            "type": "object"
+        },
+        "ContemporaryEvent": {
+            "additionalProperties": false,
+            "description": "An event that has started but has not yet ended.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ContemporaryEvent",
+            "type": "object"
+        },
+        "Content": {
+            "additionalProperties": false,
+            "description": "Information available in some medium.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Content",
+            "type": "object"
+        },
+        "ContentExpression": {
+            "additionalProperties": false,
+            "description": "Content reduced to text, audio, etc.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ContentExpression",
+            "type": "object"
+        },
+        "ContingentEvent": {
+            "additionalProperties": false,
+            "description": "An event with a probability of happening in the future, and usually dependent upon some other event or condition.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ContingentEvent",
+            "type": "object"
+        },
+        "ContingentObligation": {
+            "additionalProperties": false,
+            "description": "An obligation that is not yet firm. There is some contingent event whose occurrence will cause the obligation to become firm.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ContingentObligation",
+            "type": "object"
+        },
+        "Contract": {
+            "additionalProperties": false,
+            "description": "An agreement which can be enforced by law.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Contract",
+            "type": "object"
+        },
+        "ContractTerm": {
+            "additionalProperties": false,
+            "description": "A specification of some aspect of a contract.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ContractTerm",
+            "type": "object"
+        },
+        "ControlledVocabulary": {
+            "additionalProperties": false,
+            "description": "A collection of terms approved and managed by some organization or person.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ControlledVocabulary",
+            "type": "object"
+        },
+        "CountryGeoRegion": {
+            "additionalProperties": false,
+            "description": "A geographic region governed by exactly one country government.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "CountryGeoRegion",
+            "type": "object"
+        },
+        "CountryGovernment": {
+            "additionalProperties": false,
+            "description": "A government organization which asserts both sovereignty (i.e., it is not governed by some other government organization) and governance over an entity generally recognized as a country.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "CountryGovernment",
+            "type": "object"
+        },
+        "DegreeOfCommitment": {
+            "additionalProperties": false,
+            "description": "The difficulty of reversing a commitment.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "DegreeOfCommitment",
+            "type": "object"
+        },
+        "Determination": {
+            "additionalProperties": false,
+            "description": "An event whose purpose is to establish a specific result, value, or outcome, usually by research, measuring, evaluating, or calculating.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Determination",
+            "type": "object"
+        },
+        "Discipline": {
+            "additionalProperties": false,
+            "description": "An area of study or practice.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Discipline",
+            "type": "object"
+        },
+        "ElectronicAddress": {
+            "additionalProperties": false,
+            "description": "An address referring to a locatable virtual place that does not physically exist but is made by software or electronics to appear to do so.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ElectronicAddress",
+            "type": "object"
+        },
+        "ElectronicAddressType": {
+            "additionalProperties": false,
+            "description": "A category indicating a kind of electronic address. Such a category is usually based on the technology that enables routing to the address referent.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ElectronicAddressType",
+            "type": "object"
+        },
+        "Equipment": {
+            "additionalProperties": false,
+            "description": "Human-made, tangible property other than land or buildings used to perform a task or activity.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Equipment",
+            "type": "object"
+        },
+        "EquipmentType": {
+            "additionalProperties": false,
+            "description": "A category of equipment.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "EquipmentType",
+            "type": "object"
+        },
+        "Event": {
+            "additionalProperties": false,
+            "description": "Something that occurs over a period of time, often characterized as an activity being carried out by some person, organization, or software application or brought about by natural forces.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Event",
+            "type": "object"
+        },
+        "EventSpecification": {
+            "additionalProperties": false,
+            "description": "A characterization of an event that might happen.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "EventSpecification",
+            "type": "object"
+        },
+        "FormattedContent": {
+            "additionalProperties": false,
+            "description": "Content encoded in a specific format, but existing as data independent of any particular physical medium.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "FormattedContent",
+            "type": "object"
+        },
+        "Function": {
+            "additionalProperties": false,
+            "description": "The activity that a human-made item is intended to perform.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Function",
+            "type": "object"
+        },
+        "GeneralMediaType": {
+            "additionalProperties": false,
+            "description": "The real-world media type for content.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "GeneralMediaType",
+            "type": "object"
+        },
+        "GeoLocation": {
+            "additionalProperties": false,
+            "description": "A physical location, with the earth as a frame of reference.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "GeoLocation",
+            "type": "object"
+        },
+        "GeoPoint": {
+            "additionalProperties": false,
+            "description": "An individual point on or above the Earth's surface, identified by latitude, longitude and altitude. Altitude is the distance measured from sea level. If altitude is missing, the point is assumed to be at the Earth's surface. These points are described using decimal latitude/longitude.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "GeoPoint",
+            "type": "object"
+        },
+        "GeoRegion": {
+            "additionalProperties": false,
+            "description": "A bounded region (or set of regions) on the surface of the Earth.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "GeoRegion",
+            "type": "object"
+        },
+        "GeoRoute": {
+            "additionalProperties": false,
+            "description": "An ordered set of geographic points that defines a path from a starting point to an ending point.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "GeoRoute",
+            "type": "object"
+        },
+        "GeoVolume": {
+            "additionalProperties": false,
+            "description": "A three-dimensional space on or near the surface of the Earth.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "GeoVolume",
+            "type": "object"
+        },
+        "GistThing": {
+            "additionalProperties": false,
+            "description": "Mixin providing universal slots applicable to any GIST entity. Covers OWL properties with no rdfs:domain (open-world).",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "GistThing",
+            "type": "object"
+        },
+        "GovernedGeoRegion": {
+            "additionalProperties": false,
+            "description": "A geographic region governed by at least one government organization.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "GovernedGeoRegion",
+            "type": "object"
+        },
+        "GovernmentOrganization": {
+            "additionalProperties": false,
+            "description": "An independent organization exercising political and/or regulatory authority over a political unit, people, geographical region, etc., as well as performing certain functions for this unit or body.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "GovernmentOrganization",
+            "type": "object"
+        },
+        "HistoricalEvent": {
+            "additionalProperties": false,
+            "description": "An event which occurred in time, with an actual end earlier than the present moment.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "HistoricalEvent",
+            "type": "object"
+        },
+        "ID": {
+            "additionalProperties": false,
+            "description": "Content that is used to uniquely identify something or someone.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ID",
+            "type": "object"
+        },
+        "IntellectualProperty": {
+            "additionalProperties": false,
+            "description": "An intangible work, invention, or concept, independent of its being expressed in text, audio, video, image, or live performance. IP can also be tacit knowledge, know-how, or skill.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "IntellectualProperty",
+            "type": "object"
+        },
+        "Intention": {
+            "additionalProperties": false,
+            "description": "A goal, desire, or aspiration.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Intention",
+            "type": "object"
+        },
+        "IntergovernmentalOrganization": {
+            "additionalProperties": false,
+            "description": "An organization whose members are government organizations. This can comprise regional, municipal, state/province, or national level entities.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "IntergovernmentalOrganization",
+            "type": "object"
+        },
+        "KnowledgeConcept": {
+            "additionalProperties": false,
+            "description": "An abstract concept that arises from the distillation of experience. It is similar to a category but, rather than being a simple tag, it has rich structure.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "KnowledgeConcept",
+            "type": "object"
+        },
+        "Landmark": {
+            "additionalProperties": false,
+            "description": "Something permanently attached to the Earth.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Landmark",
+            "type": "object"
+        },
+        "Language": {
+            "additionalProperties": false,
+            "description": "A recognized, organized set of symbols and grammar.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Language",
+            "type": "object"
+        },
+        "LivingThing": {
+            "additionalProperties": false,
+            "description": "Something that is currently, or at some point in time was, alive.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "LivingThing",
+            "type": "object"
+        },
+        "Magnitude": {
+            "additionalProperties": false,
+            "description": "The amount of a measurable characteristic (aspect).",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Magnitude",
+            "type": "object"
+        },
+        "MediaType": {
+            "additionalProperties": false,
+            "description": "A digitized type that computer applications can recognize.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "MediaType",
+            "type": "object"
+        },
+        "MediaTypeInstance": {
+            "description": "Named instances of gist:MediaType from gist reference data.",
+            "enum": [
+                "JSON",
+                "LD_PLUS_JSON",
+                "N_QUADS",
+                "N_TRIPLES",
+                "RDF_PLUS_XML",
+                "SPARQL_RESULTS_PLUS_JSON",
+                "SPARQL_RESULTS_PLUS_XML",
+                "TRIG",
+                "JPG",
+                "PNG",
+                "CSV",
+                "HTML",
+                "PLAIN",
+                "TURTLE"
+            ],
+            "title": "MediaTypeInstance",
+            "type": "string"
+        },
+        "Medium": {
+            "additionalProperties": false,
+            "description": "A physical material on which a work can be rendered, represented, or implemented.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Medium",
+            "type": "object"
+        },
+        "Message": {
+            "additionalProperties": false,
+            "description": "A specific instance of content sent from a sender to at least one other recipient.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Message",
+            "type": "object"
+        },
+        "Network": {
+            "additionalProperties": false,
+            "description": "A composite consisting of nodes connected by links.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Network",
+            "type": "object"
+        },
+        "NetworkLink": {
+            "additionalProperties": false,
+            "description": "An abstract representation of the connection between two or more nodes in a network.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "NetworkLink",
+            "type": "object"
+        },
+        "NetworkNode": {
+            "additionalProperties": false,
+            "description": "A node in a network.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "NetworkNode",
+            "type": "object"
+        },
+        "Offer": {
+            "additionalProperties": false,
+            "description": "A contingent commitment to buy, sell, swap or provide one or more described or identified goods or services in exchange for another (or others).",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Offer",
+            "type": "object"
+        },
+        "OrderedCollection": {
+            "additionalProperties": false,
+            "description": "A collection whose members are ordered in some way.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "OrderedCollection",
+            "type": "object"
+        },
+        "OrderedMember": {
+            "additionalProperties": false,
+            "description": "A member of an ordered collection serving as a proxy for a real world item, which can appear in different orders in different collections. The ordered member appears in exactly one ordered collection.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "OrderedMember",
+            "type": "object"
+        },
+        "Organization": {
+            "additionalProperties": false,
+            "description": "A structured entity formed to achieve specific goals, typically involving members with defined roles.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Organization",
+            "type": "object"
+        },
+        "Permission": {
+            "additionalProperties": false,
+            "description": "A description of things one is permitted to do.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Permission",
+            "type": "object"
+        },
+        "Person": {
+            "additionalProperties": false,
+            "description": "A human being who was or is alive.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Person",
+            "type": "object"
+        },
+        "PhysicalActionType": {
+            "additionalProperties": false,
+            "description": "A category indicating the type of an action based on its effect in the physical world.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "PhysicalActionType",
+            "type": "object"
+        },
+        "PhysicalAddress": {
+            "additionalProperties": false,
+            "description": "An address that refers to a locatable place within the physical universe.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "PhysicalAddress",
+            "type": "object"
+        },
+        "PhysicalAddressType": {
+            "additionalProperties": false,
+            "description": "A category indicating local customary characterizations of physical addresses.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "PhysicalAddressType",
+            "type": "object"
+        },
+        "PhysicalEvent": {
+            "additionalProperties": false,
+            "description": "An event that can be said to have occurred at some place in space.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "PhysicalEvent",
+            "type": "object"
+        },
+        "PhysicalIdentifiableItem": {
+            "additionalProperties": false,
+            "description": "A discrete physical object which, if subdivided, will result in parts that are distinguishable in nature from the whole and in general also from the other parts.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "PhysicalIdentifiableItem",
+            "type": "object"
+        },
+        "PhysicalSubstance": {
+            "additionalProperties": false,
+            "description": "An undifferentiated amount of physical material which, when subdivided, results in each part being indistinguishable in nature from the whole and from every other part.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "PhysicalSubstance",
+            "type": "object"
+        },
+        "PrefixDeclarationInstance": {
+            "description": "Named SHACL prefix declarations from the gist ontology.",
+            "enum": [
+                "PREFIXDECLARATION_GIST",
+                "PREFIXDECLARATION_OWL",
+                "PREFIXDECLARATION_RDF",
+                "PREFIXDECLARATION_RDFS",
+                "PREFIXDECLARATION_SH",
+                "PREFIXDECLARATION_SKOS",
+                "PREFIXDECLARATION_XSD"
+            ],
+            "title": "PrefixDeclarationInstance",
+            "type": "string"
+        },
+        "ProductCategory": {
+            "additionalProperties": false,
+            "description": "Any of many ways of categorizing products.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ProductCategory",
+            "type": "object"
+        },
+        "ProductSpecification": {
+            "additionalProperties": false,
+            "description": "A description of something that could be physically warehoused or digitally stored and physically or digitally delivered.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ProductSpecification",
+            "type": "object"
+        },
+        "Project": {
+            "additionalProperties": false,
+            "description": "A task, usually of longer duration, made up of other tasks.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Project",
+            "type": "object"
+        },
+        "ReferenceValue": {
+            "additionalProperties": false,
+            "description": "A magnitude that was neither measured nor estimated but set by fiat.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ReferenceValue",
+            "type": "object"
+        },
+        "RenderedContent": {
+            "additionalProperties": false,
+            "description": "Content expressed via some physical medium.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "RenderedContent",
+            "type": "object"
+        },
+        "Requirement": {
+            "additionalProperties": false,
+            "description": "The obligation of a person or organization to behave in a certain way.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Requirement",
+            "type": "object"
+        },
+        "Restriction": {
+            "additionalProperties": false,
+            "description": "A description of things one is prevented from doing.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Restriction",
+            "type": "object"
+        },
+        "ScheduledEvent": {
+            "additionalProperties": false,
+            "description": "An event with a planned start datetime.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ScheduledEvent",
+            "type": "object"
+        },
+        "ScheduledTask": {
+            "additionalProperties": false,
+            "description": "A task with a planned start datetime.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ScheduledTask",
+            "type": "object"
+        },
+        "SchemaMetaData": {
+            "additionalProperties": false,
+            "description": "Superclass for all types of metadata.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "SchemaMetaData",
+            "type": "object"
+        },
+        "ServiceSpecification": {
+            "additionalProperties": false,
+            "description": "A description of something that can be done for a person or organization (which produces some form of an act).",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ServiceSpecification",
+            "type": "object"
+        },
+        "Specification": {
+            "additionalProperties": false,
+            "description": "The set of characteristics and constraints on their values that specify what it means to be a particular type of thing, such as a material, product, service or event. A specification is sufficiently precise to allow evaluating conformance to the specification.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Specification",
+            "type": "object"
+        },
+        "SubCountryGovernment": {
+            "additionalProperties": false,
+            "description": "The government of a governed geographic region other than a country which is under the direct or indirect control of a country government.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "SubCountryGovernment",
+            "type": "object"
+        },
+        "System": {
+            "additionalProperties": false,
+            "description": "A composite made up of interacting or interdependent components that together operate as a whole.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "System",
+            "type": "object"
+        },
+        "Tag": {
+            "additionalProperties": false,
+            "description": "A term in a folksonomy used to categorize things. Tags can be made up on the fly by users.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Tag",
+            "type": "object"
+        },
+        "Task": {
+            "additionalProperties": false,
+            "description": "An activity or piece of work that is either proposed, planned, scheduled, underway, or completed.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Task",
+            "type": "object"
+        },
+        "TaskTemplate": {
+            "additionalProperties": false,
+            "description": "An outline of a task of a particular type, which is the basis for executing such tasks.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "TaskTemplate",
+            "type": "object"
+        },
+        "Template": {
+            "additionalProperties": false,
+            "description": "Something used to make objects in its own image.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Template",
+            "type": "object"
+        },
+        "TemporalRelation": {
+            "additionalProperties": false,
+            "description": "A relationship existing for a period of time.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "TemporalRelation",
+            "type": "object"
+        },
+        "Text": {
+            "additionalProperties": false,
+            "description": "Content expressed as a written sequence of characters.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Text",
+            "type": "object"
+        },
+        "TimeInterval": {
+            "additionalProperties": false,
+            "description": "A span of time with a known start time, end time, and duration. As long as two of the three are known, the third can be inferred.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "TimeInterval",
+            "type": "object"
+        },
+        "Transaction": {
+            "additionalProperties": false,
+            "description": "An exchange or transfer of goods, services, or funds.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Transaction",
+            "type": "object"
+        },
+        "UnitGroup": {
+            "additionalProperties": false,
+            "description": "A collection of units of measure that can all be used to measure the same aspects.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "UnitGroup",
+            "type": "object"
+        },
+        "UnitOfMeasure": {
+            "additionalProperties": false,
+            "description": "A standard amount used to measure or specify things.",
+            "properties": {
+                "description": {
+                    "description": "A statement about someone or something's attributes or characteristics.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Relates an individual to (one of) its name(s).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "UnitOfMeasure",
+            "type": "object"
+        }
+    },
+    "$id": "https://w3id.org/lmodel/gist",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": true,
+    "metamodel_version": "1.11.0",
+    "title": "gist",
+    "type": "object",
+    "version": "14.1.0"
+}

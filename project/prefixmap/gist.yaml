@@ -1,0 +1,13 @@
+{
+   "common_domain_model": "https://w3id.org/lmodel/common_domain_model/",
+   "dpvs": "https://w3id.org/lmodel/dpvs/",
+   "gist": "https://w3id.org/lmodel/gist/",
+   "gist_semanticarts": "https://w3id.org/semanticarts/ns/ontology/gist/",
+   "gistd": "https://w3id.org/semanticarts/ns/data/gist/",
+   "iso22989": "https://w3id.org/lmodel/iso22989/",
+   "linkml": "https://w3id.org/linkml/",
+   "media_app": "https://www.iana.org/assignments/media-types/application/",
+   "media_img": "https://www.iana.org/assignments/media-types/image/",
+   "media_txt": "https://www.iana.org/assignments/media-types/text/",
+   "skos": "http://www.w3.org/2004/02/skos/core#"
+}
